@@ -7,7 +7,7 @@
 A Visual Studio Code extension that provides diferentes components completion in the HTML, XHTML and JSF. Based on the official Taglib definitions.
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Taglib supported for
@@ -108,6 +108,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/per-steinar"><img src="https://avatars.githubusercontent.com/u/25014042?v=4?s=100" width="100px;" alt="Per-Steinar Karlsen"/><br /><sub><b>Per-Steinar Karlsen</b></sub></a><br /><a href="https://github.com/primefaces-extensions/faces-intellisense/commits?author=per-steinar" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://tmsanchezdev.blogspot.com/"><img src="https://avatars.githubusercontent.com/u/486370?v=4?s=100" width="100px;" alt="Tito Sanchez"/><br /><sub><b>Tito Sanchez</b></sub></a><br /><a href="https://github.com/primefaces-extensions/faces-intellisense/commits?author=tmsanchez" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/leosj29"><img src="https://avatars.githubusercontent.com/u/2030440?v=4?s=100" width="100px;" alt="Leonardo SJ"/><br /><sub><b>Leonardo SJ</b></sub></a><br /><a href="https://github.com/primefaces-extensions/faces-intellisense/commits?author=leosj29" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/FlipWarthog"><img src="https://avatars.githubusercontent.com/u/83613837?v=4?s=100" width="100px;" alt="FlipWarthog"/><br /><sub><b>FlipWarthog</b></sub></a><br /><a href="#maintenance-FlipWarthog" title="Maintenance">🚧</a> <a href="https://github.com/primefaces-extensions/faces-intellisense/commits?author=FlipWarthog" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
