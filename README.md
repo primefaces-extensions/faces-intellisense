@@ -4,7 +4,6 @@
 # Intellisense for Faces
 </div>
 
-# Goals
 A Visual Studio Code extension that provides diferentes components completion in the HTML, XHTML and JSF. Based on the official Taglib definitions.
 
 # Taglib supported for
