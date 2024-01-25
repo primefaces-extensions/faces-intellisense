@@ -1,0 +1,142 @@
+{
+    "components": {
+      "component": [
+        {
+          "name": "catch",
+          "description": "Catches any Throwable that occurs in its body and optionally exposes it.",
+          "attribute": [
+            {
+              "name": "var",
+              "required": "false",
+              "type": "java.lang.String",
+              "description": "Name of the exported scoped variable for the exception thrown from a nested action. The type of the scoped variable is the type of the exception thrown."
+            }
+          ]
+        },
+        {
+          "name": "forEach",
+          "description": "The basic iteration tag, accepting many different collection types and supporting subsetting and other functionality",
+          "attribute": [
+            {
+              "name": "items",
+              "required": "false",
+              "type": "javax.el.ValueExpression (must evaluate to java.lang.Object) ",
+              "description": "Collection of items to iterate over."
+            },
+            {
+              "name": "begin",
+              "required": "false",
+              "type": "int",
+              "description": "If items specified: Iteration begins at the item located at the specified index. First item of the collection has index 0. If items not specified: Iteration begins with index set at the value specified."
+            },
+            {
+              "name": "end",
+              "required": "false",
+              "type": "int",
+              "description": "If items specified: Iteration ends at the item located at the specified index (inclusive). If items not specified: Iteration ends when index reaches the value specified."
+            },
+            {
+              "name": "step",
+              "required": "false",
+              "type": "int",
+              "description": "Iteration will only process every step items of the collection, starting with the first one."
+            },
+            {
+              "name": "var",
+              "required": "false",
+              "type": "java.lang.String",
+              "description": "Name of the exported scoped variable for the current item of the iteration. This scoped variable has nested visibility. Its type depends on the object of the underlying collection."
+            },
+            {
+              "name": "varStatus",
+              "required": "false",
+              "type": "java.lang.String",
+              "description": "Name of the exported scoped variable for the status of the iteration. Object exported is of type javax.servlet.jsp.jstl.core.LoopTagStatus. This scoped variable has nested visibility."
+            }
+          ]
+        },
+        {
+          "name": "choose",
+          "description": "Simple conditional tag that establishes a context for mutually exclusive conditional operations, marked by and",
+          "attribute": []
+        },
+        {
+          "name": "set",
+          "description": "Sets the result of an expression evaluation based on the value of the attributes. If 'scope' the is present, but has a zero length or is equal to the string 'page', TagException is thrown with an informative error message, ensuring page location information is saved.",
+          "attribute": [
+            {
+              "name": "var",
+              "required": "false",
+              "type": "java.lang.String",
+              "description": "Name of the exported scoped variable to hold the value specified in the action. The type of the scoped variable is whatever type the value expression evaluates to."
+            },
+            {
+              "name": "value",
+              "required": "false",
+              "type": "javax.el.ValueExpression (must evaluate to java.lang.Object) ",
+              "description": "Expression to be evaluated."
+            },
+            {
+              "name": "target",
+              "required": "false",
+              "type": "java.lang.String",
+              "description": "Target object whose property will be set. Must evaluate to a JavaBeans object with setter property property, or to a java.util.Map object."
+            },
+            {
+              "name": "property",
+              "required": "false",
+              "type": "java.lang.String",
+              "description": "Name of the property to be set in the target object."
+            },
+            {
+              "name": "scope",
+              "required": "false",
+              "type": "java.lang.String",
+              "description": "Scope for var."
+            }
+          ]
+        },
+        {
+          "name": "when",
+          "description": "Subtag of that includes its body if its condition evalutes to 'true'",
+          "attribute": [
+            {
+              "name": "test",
+              "required": "true",
+              "type": "boolean",
+              "description": "The test condition that determines whether or not the body content should be processed."
+            }
+          ]
+        },
+        {
+          "name": "if",
+          "description": "Simple conditional tag, which evalutes its body if the supplied condition is true and optionally exposes a Boolean scripting variable representing the evaluation of this condition",
+          "attribute": [
+            {
+              "name": "test",
+              "required": "true",
+              "type": "boolean",
+              "description": "The test condition that determines whether or not the body content should be processed."
+            },
+            {
+              "name": "var",
+              "required": "false",
+              "type": "java.lang.String",
+              "description": "Name of the exported scoped variable for the resulting value of the test condition. The type of the scoped variable is Boolean."
+            },
+            {
+              "name": "scope",
+              "required": "false",
+              "type": "java.lang.String",
+              "description": "Scope for var."
+            }
+          ]
+        },
+        {
+          "name": "otherwise",
+          "description": "Subtag of that follows tags and runs only if all of the prior conditions evaluated to 'false'",
+          "attribute": []
+        }
+      ]
+    }
+  }

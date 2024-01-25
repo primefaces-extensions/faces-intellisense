@@ -1,0 +1,139 @@
+{
+    "name": "jsf-primefaces-intellisense",
+    "displayName": "JSF Primefaces Intellisense",
+    "description": "JSF and Primefaces IntelliSense",
+    "version": "1.8.1",
+    "publisher": "leosj29",
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.76.0"
+    },
+    "keywords": [
+        "a4j",
+        "html",
+        "intellisense",
+        "jsf",
+        "java",
+        "jakarta",
+        "server",
+        "faces",
+        "omnifaces",
+        "primefaces",
+        "rich",
+        "richfaces",
+        "xhtml"
+    ],
+    "categories": [
+        "Programming Languages",
+        "Snippets",
+        "Other"
+    ],
+    "activationEvents": [
+        "onLanguage:html",
+        "onLanguage:xml",
+        "onLanguage:xhtml",
+        "onLanguage:jsfl"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "jsf-primefaces-intellisense.cache",
+                "title": "JSF and PrimeFaces Cache"
+            }
+        ],
+        "configuration": [
+            {
+                "title": "JSF and PrimeFaces IntelliSense",
+                "properties": {
+                    "jsf-primefaces-intellisense.languages": {
+                        "type": "array",
+                        "description": "A list of HTML based languages where suggestions are enabled.",
+                        "default": [
+                            "html",
+                            "xhtml",
+                            "xml",
+                            "jsf"
+                        ]
+                    },
+                    "jsf-primefaces-intellisense.primeVersion": {
+                        "enum": [
+                            "primefaces-8.0.0",
+                            "primefaces-10.0.0",
+                            "primefaces-11.0.0",
+                            "primefaces-12.0.0"
+                        ],
+                        "default": "primefaces-8.0.0",
+                        "description": "PrimeFaces Version. (Restart Required)."
+                    },
+                    "jsf-primefaces-intellisense.primeExtVersion": {
+                        "enum": [
+                            "primefaces-extensions-10.0.0",
+                            "primefaces-extensions-11.0.0",
+                            "primefaces-extensions-12.0.0",
+                            "primefaces-extensions-12.0.6"
+                        ],
+                        "default": "primefaces-extensions-10.0.0",
+                        "description": "PrimeFaces Extensions Version. (Restart Required)."
+                    },
+                    "jsf-primefaces-intellisense.omniVersion": {
+                        "enum": [
+                            "omnifaces-3.0",
+                            "omnifaces-4.0"
+                        ],
+                        "default": "omnifaces-3.0",
+                        "description": "OmniFaces Version. (Restart Required)."
+                    },
+                    "jsf-primefaces-intellisense.richVersion": {
+                        "enum": [
+                            "richfaces-4.5.17"
+                        ],
+                        "default": "richfaces-4.5.17",
+                        "description": "RichFaces Version. (Restart Required)."
+                    },
+                    "jsf-primefaces-intellisense.facesVersion": {
+                        "enum": [
+                            "java-server-faces(1.0 - 2.2)",
+                            "jakarta-server-faces(2.3 - 3.0)",
+                            "jakarta-faces-4.0"
+                        ],
+                        "default": "java-server-faces(1.0 - 2.2)",
+                        "description": "Faces Version. (Restart Required)."
+                    }
+                }
+            }
+        ]
+    },
+    "icon": "images/icon.png",
+    "repository": {
+        "url": "https://github.com/leosj29/jsf-primefaces-intellisense"
+    },
+    "scripts": {
+        "vsix": "vsce package",
+        "vscode:prepublish": "yarn run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "yarn run compile && yarn run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/glob": "^8.1.0",
+        "@types/lodash": "^4.14.191",
+        "@types/mocha": "^10.0.1",
+        "@types/node": "16.x",
+        "@types/verror": "^1.10.6",
+        "@types/vscode": "^1.76.0",
+        "@typescript-eslint/eslint-plugin": "^5.53.0",
+        "@typescript-eslint/parser": "^5.53.0",
+        "@vscode/test-electron": "^2.2.3",
+        "eslint": "^8.34.0",
+        "glob": "^8.1.0",
+        "mocha": "^10.2.0",
+        "typescript": "^4.9.5"
+    },
+    "dependencies": {
+        "lodash": "^4.17.21",
+        "verror": "^1.10.1"
+    }
+}

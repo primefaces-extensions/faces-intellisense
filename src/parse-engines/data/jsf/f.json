@@ -1,0 +1,1091 @@
+{
+  "components": {
+    "component": [
+      {
+        "name": "actionListener",
+        "description": "Register an ActionListener instance on the UIComponent associated with the closest parent UIComponent custom action.",
+        "attribute": [
+          {
+            "name": "type",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Fully qualified Java class name of an ActionListener to be created and registered."
+          },
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.event.ActionListener) ",
+            "description": "Value binding expression that evaluates to an object that implements javax.faces.event.ActionListener."
+          },
+          {
+            "name": "for",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested."
+          }
+        ]
+      },
+      {
+        "name": "attributes",
+        "description": " Add attributes to the UIComponent associated with the closest parent UIComponent custom action. For each Map.Entry in the Map<String, Object> referenced by the value attribute of this tag, take the following action. If parent.getAttributes().containsKey(entry.getKey()) returns true, take no action for this entry. Otherwise, if entry.getValue() is a ValueExpression call parent.setValueExpression(entry.getKey(), entry.getValue()). Otherwise, call parent.getAttributes.put(entry.getKey(), entry.getValue()). ",
+        "attribute": [
+          {
+            "name": "value",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.util.Map) ",
+            "description": "An EL ValueExpression that evaluates to a Map<String, Object>."
+          }
+        ]
+      },
+      {
+        "name": "validateLongRange",
+        "description": "",
+        "attribute": [
+          {
+            "name": "disabled",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "A boolean value enabling page level determination of whether or not this validator is enabled on the enclosing component."
+          },
+          {
+            "name": "maximum",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Long) ",
+            "description": "Maximum value allowed for this component."
+          },
+          {
+            "name": "minimum",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Long) ",
+            "description": "Minimum value allowed for this component."
+          },
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.validator.LongRangeValidator) ",
+            "description": "A ValueExpression that evaluates to an instance of LongRangeValidator."
+          },
+          {
+            "name": "for",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested."
+          }
+        ]
+      },
+      {
+        "name": "setPropertyActionListener",
+        "description": "Register an ActionListener instance on the UIComponent associated with the closest parent UIComponent custom action. This actionListener will cause the value given by the 'value' attribute to be set into the ValueExpression given by the 'target' attribute.",
+        "attribute": [
+          {
+            "name": "value",
+            "required": "true",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Object) ",
+            "description": "ValueExpression to be stored as the value of the target attribute."
+          },
+          {
+            "name": "target",
+            "required": "true",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Object) ",
+            "description": "ValueExpression that is the destination of the value attribute."
+          },
+          {
+            "name": "for",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested."
+          }
+        ]
+      },
+      {
+        "name": "attribute",
+        "description": "",
+        "attribute": [
+          {
+            "name": "name",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "The name of the component attribute to be set."
+          },
+          {
+            "name": "value",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Object) ",
+            "description": "The value of the component attribute to be set."
+          }
+        ]
+      },
+      {
+        "name": "selectItems",
+        "description": "Add a child UISelectItems component to the UIComponent associated with the closest parent UIComponent custom action.",
+        "attribute": [
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.component.UIComponent) ",
+            "description": "Value binding expression to a backing bean property bound to the component instance for the UIComponent created by this custom action."
+          },
+          {
+            "name": "id",
+            "required": "false",
+            "type": "java.lang.String",
+            "description": "Component identifier of the UISelectItems component to be created."
+          },
+          {
+            "name": "value",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Object) ",
+            "description": "Value expression pointing at any Collection or array. The member elements may be instances of SelectItem or any Java Object. In the case where the member elements are plain Java Objects, several additional attributes must be used by the page author to correctly identify the data to the enclosing UISelectOne or UISelectMany component, as shown in the following example. <h:selectOneListbox size='1' id='escape02' value='#{select05NoSelection.initialCollectionValues}'> <f:selectItems value='#{select05NoSelection.hobbitList}' var='n' itemValue='#{n.id}' itemLabel='#{n.bio}' itemDescription='#{n.description}' itemDisabled='#{n.disabled}' itemLabelEscaped='true' noSelectionValue='#{select05NoSelection.hobbitList[0]}'/> </h:selectOneListbox> In the preceding example, the value attribute on line 1 points to a Collection<HobbitBean>. HobbitBean is just a regular Java Object (POJO) that conforms to JavaBeans naming conventions for its properties. The value attribute on line 2 points to a List<HobbitBean>, though it could just as well point to a Collection, array, or javax.faces.model.DataModel. The attributes on lines 3 through 9, inclusive, leverage the fact that the value is a collection of POJOs. "
+          },
+          {
+            "name": "var",
+            "required": "false",
+            "type": "java.lang.String",
+            "description": "Expose the value from the value attribute under this request scoped key so that it may be referred to in EL for the value of other attributes."
+          },
+          {
+            "name": "itemValue",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Object) ",
+            "description": "This attribute lets you refer to a property of the current member of the collection referenced by the 'value' attribute, using the value of the 'var' attribute as the base. For example, #{n.id}."
+          },
+          {
+            "name": "itemLabel",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "evaluates to a String that will serve as the label to be shown for the item."
+          },
+          {
+            "name": "itemDescription",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "evaluates to a String that will serve as the description to be shown for the item."
+          },
+          {
+            "name": "itemDisabled",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "evaluates to a boolean that will determine if the item value is selectable or not."
+          },
+          {
+            "name": "itemLabelEscaped",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "evaluates to a boolean that will determine if the rendered markup for the item receives normal JSF HTML escaping or not. If not specified, the runtime must behave as if the value were true."
+          },
+          {
+            "name": "noSelectionValue",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "Is either an EL expression pointing to the element in the value collection whose value should be marked as a “no selection” item, or a literal string that exactly matches the value of the item in the collection that must be marked as the “no selection” item. If the user selects such an item and the field is marked as required, then it will not pass validation."
+          }
+        ]
+      },
+      {
+        "name": "convertDateTime",
+        "description": "",
+        "attribute": [
+          {
+            "name": "dateStyle",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Predefined formatting style which determines how the date component of a date string is to be formatted and parsed. Applied only if type is 'date' or 'both'. Valid values are 'default', 'short', 'medium', 'long', and 'full'. Default value is 'default'."
+          },
+          {
+            "name": "locale",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Object) ",
+            "description": "Locale whose predefined styles for dates and times are used during formatting or parsing. If not specified, the Locale returned by FacesContext.getViewRoot().getLocale() will be used. Value must be either a VB expression that evaluates to a java.util.Locale instance, or a String that is valid to pass as the first argument to the constructor java.util.Locale(String language, String country). The empty string is passed as the second argument."
+          },
+          {
+            "name": "pattern",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Custom formatting pattern which determines how the date/time string should be formatted and parsed."
+          },
+          {
+            "name": "timeStyle",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Predefined formatting style which determines how the time component of a date string is to be formatted and parsed. Applied only if type is 'time' or 'both'. Valid values are 'default', 'short', 'medium', 'long', and 'full'. Default value is 'default'."
+          },
+          {
+            "name": "timeZone",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Object) ",
+            "description": "Time zone in which to interpret any time information in the date String. Value must be either a VB expression that evaluates to a java.util.TimeZone instance, or a String that is a timezone ID as described in the javadocs for java.util.TimeZone.getTimeZone()."
+          },
+          {
+            "name": "type",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Specifies what contents the string value will be formatted to include, or parsed expecting. Valid values are 'date', 'time', and 'both'. Default value is 'date'."
+          },
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.convert.DateTimeConverter) ",
+            "description": "A ValueExpression that evaluates to an instance of javax.faces.convert.DateTimeConverter."
+          },
+          {
+            "name": "for",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested."
+          }
+        ]
+      },
+      {
+        "name": "valueChangeListener",
+        "description": "",
+        "attribute": [
+          {
+            "name": "type",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Fully qualified Java class name of a ValueChangeListener to be created and registered."
+          },
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.event.ValueChangeListener) ",
+            "description": "Value binding expression that evaluates to an object that implements javax.faces.event.ValueChangeListener."
+          },
+          {
+            "name": "for",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested."
+          }
+        ]
+      },
+      {
+        "name": "view",
+        "description": "Container for all JavaServer Faces core and custom component actions used on a page.",
+        "attribute": [
+          {
+            "name": "transient",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to boolean) ",
+            "description": "If true, this view must not participate in state saving or restoring. Note that transient views may not be used with @ViewScoped managed beans. The implementation must call setTransient() on the UIViewRoot, passing the value of the attribute as specified in the markup."
+          },
+          {
+            "name": "locale",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Object) ",
+            "description": "Locale to use for localizing this page. Expressions must evaluate to a java.util.Locale or to a String that is converted to a Locale."
+          },
+          {
+            "name": "renderKitId",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Identifier for the RenderKit to use for rendering this page."
+          },
+          {
+            "name": "contracts",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "A comma separated list of resource library contracts that may be used from within the Facelets chain. If this attribute is present, it must only be on the outer-most file in the chain of files that started ultimately with a call to ViewDeclarationLanguage.createView(). Any use of this attribute on a non-outer-most file must be silently ignored. If this attribute exists on the tag, empty or not, the tag handler must create a List<String> for the value of the attribute and unconditionally call FacesContext.setRresourceLibraryContracts() passing that list value."
+          },
+          {
+            "name": "contentType",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Specifies the content-type of the response."
+          },
+          {
+            "name": "encoding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Specifies the character encoding that should be used for the response."
+          },
+          {
+            "name": "beforePhase",
+            "required": "false",
+            "type": "javax.el.MethodExpression (signature must match void beforePhase(javax.faces.event.PhaseEvent)) ",
+            "description": "MethodBinding pointing to a method that takes a javax.faces.event.PhaseEvent and returns void. This method will be called before every phase except for restore view."
+          },
+          {
+            "name": "afterPhase",
+            "required": "false",
+            "type": "javax.el.MethodExpression (signature must match void afterPhase(javax.faces.event.PhaseEvent)) ",
+            "description": "MethodBinding pointing to a method that takes a javax.faces.event.PhaseEvent and returns void. This method will be called after every phase except for restore view."
+          }
+        ]
+      },
+      {
+        "name": "validateBean",
+        "description": " A validator that delegates the validation of the local value to the Bean Validation API. The validationGroups attribute serves as a filter that instructs the Bean Validation API which contraints to enforce. If there are any constraint violations reported by Bean Validation, the value is considered invalid. ",
+        "attribute": [
+          {
+            "name": "validationGroups",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "A comma-separated list of validation groups. A validation group is a fully-qualified class name."
+          },
+          {
+            "name": "disabled",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "A boolean value enabling page level determination of whether or not this validator is enabled on the enclosing component."
+          },
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.validator.BeanValidator) ",
+            "description": "A ValueExpression that evaluates to an instance of BeanValidator."
+          },
+          {
+            "name": "for",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested."
+          }
+        ]
+      },
+      {
+        "name": "resetValues",
+        "description": "Reset specific input values. Interpret the value of the render attribute as a space separated list of client identifiers suitable for passing directly to UIViewRoot.resetValues(). The implementation must cause an ActionListener to be attached to the ActionSource component in which this tag is nested that calls UIViewRoot.resetValues() passing the value of the render attribute as the argument.",
+        "attribute": [
+          {
+            "name": "render",
+            "required": "true",
+            "type": "javax.el.ValueExpression (must evaluate to java.util.Collection) ",
+            "description": "Evaluates to Collection<String>. The clientIds of components that will be passed to UIViewRoot.resetValues(). The identifiers must be space delimited. Note: do not use any of the @ keywords such as @form or @this with this tag because UIViewRoot.resetValues() does not descend into the children of the listed components."
+          },
+          {
+            "name": "for",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested."
+          }
+        ]
+      },
+      {
+        "name": "event",
+        "description": "Allow JSF page authors to install ComponentSystemEventListener instances on a component in a page.",
+        "attribute": [
+          {
+            "name": "typepreRenderComponent preRenderView postAddToView preValidate postValidate ",
+            "required": "truejavax.faces.event.PreRenderComponentEvent javax.faces.event.PreRenderViewEvent javax.faces.event.PostAddToViewEvent javax.faces.event.PreValidateEvent javax.faces.event.PostValidateEvent ",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Name of the event for which to install a listener. The following table lists the valid values for this attribute, and the corresponding event type for which the listener action is registered. value for 'type' tag attribute Type of event sent to listener method preRenderComponent javax.faces.event.PreRenderComponentEvent preRenderView javax.faces.event.PreRenderViewEvent postAddToView javax.faces.event.PostAddToViewEvent preValidate javax.faces.event.PreValidateEvent postValidate javax.faces.event.PostValidateEvent In addition to these values, the fully qualified class name of any java class that extends javax.faces.event.ComponentSystemEvent may be used as the value of the 'type' attribute. Also, the @javax.faces.event.NamedEvent annotation may be attached to any java class that extends javax.faces.event.ComponentSystemEvent. This enables that event to be referenced from this attribute, as descibed in the javadocs for @NamedEvent. "
+          },
+          {
+            "name": "",
+            "required": "",
+            "type": "",
+            "description": ""
+          },
+          {
+            "name": "preRenderComponent ",
+            "required": "javax.faces.event.PreRenderComponentEvent ",
+            "type": "",
+            "description": ""
+          },
+          {
+            "name": "preRenderView ",
+            "required": "javax.faces.event.PreRenderViewEvent ",
+            "type": "",
+            "description": ""
+          },
+          {
+            "name": "postAddToView ",
+            "required": "javax.faces.event.PostAddToViewEvent ",
+            "type": "",
+            "description": ""
+          },
+          {
+            "name": "preValidate ",
+            "required": "javax.faces.event.PreValidateEvent ",
+            "type": "",
+            "description": ""
+          },
+          {
+            "name": "postValidate ",
+            "required": "javax.faces.event.PostValidateEvent ",
+            "type": "",
+            "description": ""
+          },
+          {
+            "name": "listener",
+            "required": "true",
+            "type": "javax.el.MethodExpression (signature must match public void listener(javax.faces.event.ComponentSystemEvent event) throws javax.faces.event.AbortProcessingException) ",
+            "description": "The expression must evaluate to a public method that takes a ComponentSystemEvent parameter, with a return type of void, or to a public method that takes no arguments with a return type of void. In the latter case, the method has no way of easily knowing where the event came from, but this can be useful in cases where a notification is needed that 'an event happened'."
+          }
+        ]
+      },
+      {
+        "name": "loadBundle",
+        "description": "",
+        "attribute": [
+          {
+            "name": "basename",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Base name of the resource bundle to be loaded."
+          },
+          {
+            "name": "var",
+            "required": "true",
+            "type": "java.lang.String",
+            "description": "Name of a request scope attribute under which the resource bundle will be exposed as a Map."
+          }
+        ]
+      },
+      {
+        "name": "phaseListener",
+        "description": "",
+        "attribute": [
+          {
+            "name": "type",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Fully qualified Java class name of an PhaseListener to be created and registered."
+          },
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.event.PhaseListener) ",
+            "description": "Value binding expression that evaluates to an object that implements javax.faces.event.PhaseListener."
+          }
+        ]
+      },
+      {
+        "name": "subview",
+        "description": "Container action for all JavaServer Faces core and custom component actions used on a nested page via 'jsp:include' or any custom action that dynamically includes another page from the same web application, such as JSTL's 'c:import'.",
+        "attribute": [
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.component.UIComponent) ",
+            "description": "Value binding expression to a backing bean property bound to the component instance for the UIComponent created by this custom action."
+          },
+          {
+            "name": "id",
+            "required": "true",
+            "type": "java.lang.String",
+            "description": "Component identifier of the UINamingContainer component to be created."
+          },
+          {
+            "name": "rendered",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "Flag indicating whether this component (and its children) should be rendered. Expressions must evaluate to a boolean."
+          }
+        ]
+      },
+      {
+        "name": "passThroughAttributes",
+        "description": "Add attributes to the passThroughAttributes Map of the UIComponent associated with the closest parent UIComponent tag. For each Map.Entry in the Map<String, Object> referenced by the value attribute of this tag, take the following action. Call component.getPassThroughAttributes().put(entry.getKey(), entry.getValue()).",
+        "attribute": [
+          {
+            "name": "value",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.util.Map) ",
+            "description": "An EL ValueExpression that evaluates to a Map<String, Object>."
+          }
+        ]
+      },
+      {
+        "name": "facet",
+        "description": "Register a named facet on the UIComponent associated with the closest parent UIComponent custom action.",
+        "attribute": [
+          {
+            "name": "name",
+            "required": "true",
+            "type": "java.lang.String",
+            "description": "Name of the facet to be created."
+          }
+        ]
+      },
+      {
+        "name": "ajax",
+        "description": "Register an AjaxBehavior instance on one or more UIComponents implementing the ClientBehaviorHolder interface. This tag may be nested witin a single component (enabling Ajax for a single component), or it may be 'wrapped' around multiple components (enabling Ajax for many components).",
+        "attribute": [
+          {
+            "name": "disabled",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "A value of 'true' indicates the AjaxBehavior should not be rendered. A value of 'false' indicates the AjaxBehavior should be rendered. 'false' is the default."
+          },
+          {
+            "name": "event",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "A String or ValueExpression (that evalulates to a String) identifying the type of event the Ajax action will apply to. If specified, it must be one of the events supported by the component the Ajax behavior is being applied to. For HTML components this would be the set of supported DOM events for the component, plus 'action' for Faces ActionSource components and 'valueChange' for Faces EditableValueHolder components. If not specified, the default event is determined for the component. The DOM event name is the actual DOM event name (for example: 'click') as opposed to (for example: 'onclick')."
+          },
+          {
+            "name": "execute",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.util.Collection) ",
+            "description": "Evaluates to Collection<String>. This is a space separated list of client ids of components that will participate in the 'execute' portion of the Request Processing Lifecycle. If a literal is specified the ids must be space delimited. Any of the keywords '@this', '@form', '@all', '@none' may be specified in the id list. If not specified, the default value of '@this' is assumed. For example, @this clientIdOne clientIdTwo."
+          },
+          {
+            "name": "immediate",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "If 'true' behavior events generated from this behavior are broadcast during Apply Request Values phase. Otherwise, the events will be broadcast during Invoke Aplications phase"
+          },
+          {
+            "name": "listener",
+            "required": "false",
+            "type": "javax.el.MethodExpression (signature must match public void processAjaxBehavior(javax.faces.event.AjaxBehaviorEvent event) throws javax.faces.event.AbortProcessingException) ",
+            "description": "Method expression referencing a method that will be called when an AjaxBehaviorEvent has been broadcast for the listener."
+          },
+          {
+            "name": "onevent",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "The name of the JavaScript function that will handle UI events."
+          },
+          {
+            "name": "delay",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "If less than delay milliseconds elapses between calls to request() only the most recent one is sent and all other requests are discarded. If this option is not specified, or if the value of delay is the literal string 'none' without the quotes, no delay is used. "
+          },
+          {
+            "name": "resetValues",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "If true, indicate that this particular Ajax transaction is a value reset transaction. This will cause resetValue() to be called on any EditableValueHolder instances encountered as a result of this ajax transaction. If not specified, or the value is false, no such indication is made."
+          },
+          {
+            "name": "onerror",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "The name of the JavaScript function that will handle errors."
+          },
+          {
+            "name": "render",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.util.Collection) ",
+            "description": "Evaluates to Collection<String>. The clientIds of components that will participate in the 'render' portion of the Request Processing Lifecycle. If a literal is specified the identifiers must be space delimited. Any of the keywords '@this', '@form', '@all', '@none' may be specified in the identifier list. If not specified, the default value of '@none' is assumed. For example, @this clientIdOne clientIdTwo."
+          }
+        ]
+      },
+      {
+        "name": "converter",
+        "description": "",
+        "attribute": [
+          {
+            "name": "converterId",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Converter identifier of the Converter instance to be created and registered."
+          },
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.convert.Converter) ",
+            "description": "A ValueExpression that evaluates to an object that implements javax.faces.convert.Converter."
+          },
+          {
+            "name": "for",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested."
+          }
+        ]
+      },
+      {
+        "name": "validateDoubleRange",
+        "description": "",
+        "attribute": [
+          {
+            "name": "disabled",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "A boolean value enabling page level determination of whether or not this validator is enabled on the enclosing component."
+          },
+          {
+            "name": "maximum",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Double) ",
+            "description": "Maximum value allowed for this component."
+          },
+          {
+            "name": "minimum",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Double) ",
+            "description": "Minimum value allowed for this component."
+          },
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.validator.DoubleRangeValidator) ",
+            "description": "A ValueExpression that evaluates to an instance of DoubleRangeValidator."
+          },
+          {
+            "name": "for",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested."
+          }
+        ]
+      },
+      {
+        "name": "verbatim",
+        "description": "The use of this element has been deprecated in Facelets for JSF 2.0 and beyond. Create and register a child UIOutput component associated with the closest parent UIComponent custom action, which renders nested body content.",
+        "attribute": [
+          {
+            "name": "escape",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "Flag indicating that generated markup must be escaped in a manner that is appropriate for the markup language to be rendered. Expressions must evaluate to a boolean. Default value is false."
+          },
+          {
+            "name": "rendered",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "Flag indicating whether or not this component should be rendered (during Render Response Phase), or processed on any subsequent form submit. The default value for this property is true."
+          }
+        ]
+      },
+      {
+        "name": "viewAction",
+        "description": "This action component specifies an application-specific command (or action), using an EL method expression, to be invoked during one of the JSF lifecycle phases, by default Invoke Application.",
+        "attribute": [
+          {
+            "name": "action",
+            "required": "true",
+            "type": "javax.el.MethodExpression (signature must match java.lang.Object action()) ",
+            "description": "MethodExpression representing the application action to invoke when this component is activated by the user. The expression must evaluate to a public method that takes no parameters, and returns an Object (the toString() of which is called to derive the logical outcome) which is passed to the NavigationHandler for this application."
+          },
+          {
+            "name": "onPostback",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "View actions are most commonly used on the initial view request. Therefore, view actions do not operate on postback, by default. This attribute enables a view action to operate on postback."
+          },
+          {
+            "name": "rendered",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "Like all children of <f:metadata>, a view action has no visual representation in the view. This attribute has exactly the same effect on a view action as the rendered attribute has on a visual component. Specifically, if the value of this attribute evaluates to false the component has no effect."
+          },
+          {
+            "name": "immediate",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "Flag indicating that, if this component is activated by the user, notifications should be delivered to interested listeners and actions immediately (that is, during Apply Request Values phase) rather than waiting until Invoke Application phase."
+          },
+          {
+            "name": "phase",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Specifies the phase in which the action invocation should occur using the name of the phase constant in the PhaseId class (the case does not matter). The value must be one of APPLY_REQUEST_VALUES, PROCESS_VALIDATIONS, UPDATE_MODEL_VALUES, or INVOKE_APPLICATION. The default is INVOKE_APPLICATION."
+          },
+          {
+            "name": "actionListener",
+            "required": "false",
+            "type": "javax.el.MethodExpression (signature must match void actionListener(javax.faces.event.ActionEvent)) ",
+            "description": " MethodExpression representing an action listener method that will be notified when this component is activated by the user. The expression must evaluate to a public method that takes an ActionEvent parameter, with a return type of void, or to a public method that takes no arguments with a return type of void. In the latter case, the method has no way of easily knowing where the event came from, but this can be useful in cases where a notification is needed that 'some action happened'. "
+          }
+        ]
+      },
+      {
+        "name": "param",
+        "description": "Add a child UIParameter component to the UIComponent associated with the closest parent UIComponent custom action.",
+        "attribute": [
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.component.UIComponent) ",
+            "description": "ValueExpression to a backing bean property bound to the component instance for the UIComponent created by this custom action."
+          },
+          {
+            "name": "id",
+            "required": "false",
+            "type": "java.lang.String",
+            "description": "Component identifier of the UIParameter component to be created."
+          },
+          {
+            "name": "name",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Name of the parameter to be created."
+          },
+          {
+            "name": "value",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Object) ",
+            "description": "Value of the parameter to be set."
+          },
+          {
+            "name": "disable",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to boolean) ",
+            "description": "Flag enabling or disabling the inclusion of the parameter. This flag is consulted by renderers that consider the UIParameter component associated with this <f:param> during their rendering. Such renderers include javax.faces.Output javax.faces.Link and javax.faces.OutcomeTarget javax.faces.Link."
+          }
+        ]
+      },
+      {
+        "name": "viewParam",
+        "description": "Used inside of the metadata facet of a view, this tag causes a UIViewParameter to be attached as metadata for the current view. Because UIViewParameter extends UIInput all of the attributes and nested child content for any UIInput tags are valid on this tag as well.",
+        "attribute": [
+          {
+            "name": "converter",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.convert.Converter) ",
+            "description": "Converter instance registered with this component."
+          },
+          {
+            "name": "converterMessage",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "A ValueExpression enabled attribute that, if present, will be used as the text of the converter message, replacing any message that comes from the converter."
+          },
+          {
+            "name": "id",
+            "required": "false",
+            "type": "java.lang.String",
+            "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container."
+          },
+          {
+            "name": "required",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to boolean) ",
+            "description": "Flag indicating that the user is required to provide a submitted value for this input component."
+          },
+          {
+            "name": "requiredMessage",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "A ValueExpression enabled attribute that, if present, will be used as the text of the validation message for the 'required' facility, if the 'required' facility is used."
+          },
+          {
+            "name": "validator",
+            "required": "false",
+            "type": "javax.el.MethodExpression (signature must match void validate(javax.faces.context.FacesContext, javax.faces.component.UIComponent, java.lang.Object)) ",
+            "description": "MethodExpression representing a validator method that will be called during Process Validations to perform correctness checks on the value of this component. The expression must evaluate to a public method that takes FacesContext, UIComponent, and Object parameters, with a return type of void."
+          },
+          {
+            "name": "validatorMessage",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "A ValueExpression enabled attribute that, if present, will be used as the text of the validator message, replacing any message that comes from the validator."
+          },
+          {
+            "name": "value",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Object) ",
+            "description": "A ValueExpression to which the value of the request parameter, as determined by the name attribute, is bound. The resolved value of this expression is used when encoding the view parameter into a bookmarkable link or redirect URL with view parameter encoding enabled. If this attribute is omitted, the value of the request parameter will instead be the local value of the UIViewParameter."
+          },
+          {
+            "name": "name",
+            "required": "true",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "The name of the request parameter from which the value for this component is retrieved on an initial request or to override the stored value on a postback."
+          },
+          {
+            "name": "valueChangeListener",
+            "required": "false",
+            "type": "javax.el.MethodExpression (signature must match void valueChange(javax.faces.event.ValueChangeEvent)) ",
+            "description": " MethodExpression representing a value change listener method that will be notified when a new value has been set for this input component. The expression must evaluate to a public method that takes a ValueChangeEvent parameter, with a return type of void, or to a public method that takes no arguments with a return type of void. In the latter case, the method has no way of easily knowing what the new value is, but this can be useful in cases where a notification is needed that 'this value changed'. "
+          },
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.component.UIComponent) ",
+            "description": "The ValueExpression linking this component to a property in a backing bean"
+          },
+          {
+            "name": "for",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested."
+          }
+        ]
+      },
+      {
+        "name": "validator",
+        "description": "Register a named Validator instance on the UIComponent associated with the closest parent UIComponent custom action.",
+        "attribute": [
+          {
+            "name": "disabled",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "A boolean value enabling page level determination of whether or not this validator is enabled on the enclosing component."
+          },
+          {
+            "name": "validatorId",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Validator identifier of the Validator to be created and registered."
+          },
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.validator.Validator) ",
+            "description": "A ValueExpression that evaluates to an object that implements the javax.faces.validator.Validator interface."
+          },
+          {
+            "name": "for",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested."
+          }
+        ]
+      },
+      {
+        "name": "convertNumber",
+        "description": "",
+        "attribute": [
+          {
+            "name": "currencyCode",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "ISO 4217 currency code, applied only when formatting currencies."
+          },
+          {
+            "name": "currencySymbol",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Currency symbol, applied only when formatting currencies."
+          },
+          {
+            "name": "groupingUsed",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "Flag specifying whether formatted output will contain grouping separators. Expressions must evaluate to a boolean. Default value is true."
+          },
+          {
+            "name": "integerOnly",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "Flag specifying whether only the integer part of the value will be formatted and parsed. Expressions must evaluate to a boolean. Default value is false."
+          },
+          {
+            "name": "locale",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Object) ",
+            "description": " Locale whose predefined styles for numbers are used during formatting and parsing. If not specified, the Locale returned by FacesContext.getViewRoot().getLocale() will be used. Expressions must evaluate to a java.util.Locale or a String that is valid to pass as the first argument to the constructor java.util.Locale(String language, String country). The empty string is passed as the second argument. "
+          },
+          {
+            "name": "maxFractionDigits",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Integer) ",
+            "description": "Maximum number of digits that will be formatted in the fractional portion of the output. Expressions must evaluate to an int."
+          },
+          {
+            "name": "maxIntegerDigits",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Integer) ",
+            "description": "Maximum number of digits that will be formatted in the integer portion of the output. Expressions must evaluate to an int."
+          },
+          {
+            "name": "minFractionDigits",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Integer) ",
+            "description": "Minimum number of digits that will be formatted in the fractional portion of the output. Expressions must evaluate to an int."
+          },
+          {
+            "name": "minIntegerDigits",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Integer) ",
+            "description": "Minimum number of digits that will be formatted in the integer portion of the output. Expressions must evaluate to an int."
+          },
+          {
+            "name": "pattern",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Custom formatting pattern which determins how the number string should be formatted and parsed."
+          },
+          {
+            "name": "type",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Specifies how the number string will be formatted and parsed. Valid values are 'number', 'currency', and 'percent'. Default value is 'number'."
+          },
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.convert.NumberConverter) ",
+            "description": "A ValueExpression that evaluates to an instance of javax.faces.convert.NumberConverter."
+          },
+          {
+            "name": "for",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested."
+          }
+        ]
+      },
+      {
+        "name": "metadata",
+        "description": "Declare the metadata facet for this view. This must be a child of the <f:view>. This tag must reside within the top level XHTML file for the given viewId, or in a template client, but not in a template. The implementation must insure that the direct child of the facet is a UIPanel, even if there is only one child of the facet. The implementation must set the id of the UIPanel to be the value of the UIViewRoot.METADATA_FACET_NAME symbolic constant.",
+        "attribute": []
+      },
+      {
+        "name": "validateRegex",
+        "description": " A validator that uses the pattern attribute to validate the wrapping component. The entire pattern is matched against the String value of the component. If it matches, it's valid. ",
+        "attribute": [
+          {
+            "name": "disabled",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "A boolean value enabling page level determination of whether or not this validator is enabled on the enclosing component."
+          },
+          {
+            "name": "pattern",
+            "required": "true",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "A regular expression pattern. Remember that, like in all Java strings, backslash must be escaped with another backslash."
+          },
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.validator.RegexValidator) ",
+            "description": "A ValueExpression that evaluates to an instance of RegexValidator."
+          },
+          {
+            "name": "for",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested."
+          }
+        ]
+      },
+      {
+        "name": "validateRequired",
+        "description": "A validator that enforces the presence of a value. It has the same affect as setting the required attribute on a UIInput to true.",
+        "attribute": [
+          {
+            "name": "disabled",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "A boolean value enabling page level determination of whether or not this validator is enabled on the enclosing component."
+          },
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.validator.RequiredValidator) ",
+            "description": "A ValueExpression that evaluates to an instance of RequiredValidator."
+          },
+          {
+            "name": "for",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested."
+          }
+        ]
+      },
+      {
+        "name": "validateLength",
+        "description": "",
+        "attribute": [
+          {
+            "name": "disabled",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "A boolean value enabling page level determination of whether or not this validator is enabled on the enclosing component."
+          },
+          {
+            "name": "maximum",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Integer) ",
+            "description": "Maximum length allowed for this component."
+          },
+          {
+            "name": "minimum",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Integer) ",
+            "description": "Minimum length allowed for this component."
+          },
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.validator.LengthValidator) ",
+            "description": "A ValueExpression that evaluates to an instance of LenghtValidator."
+          },
+          {
+            "name": "for",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested."
+          }
+        ]
+      },
+      {
+        "name": "selectItem",
+        "description": "",
+        "attribute": [
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.component.UIComponent) ",
+            "description": "Value binding expression to a backing bean property bound to the component instance for the UIComponent created by this custom action."
+          },
+          {
+            "name": "id",
+            "required": "false",
+            "type": "java.lang.String",
+            "description": "Component identifier of the UISelectItem component to be created."
+          },
+          {
+            "name": "itemDescription",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Description of this option, for use in development tools."
+          },
+          {
+            "name": "itemDisabled",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "Flag indicating whether the option created by this component is disabled. Expressions must evaluate to a boolean. Default value is false."
+          },
+          {
+            "name": "itemLabel",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Label to be displayed to the user for this option."
+          },
+          {
+            "name": "escapeItem",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "Flag indicating that characters that are sensitive in the value of the itemLabel attribute must be escaped. This flag is set to 'true' by default."
+          },
+          {
+            "name": "itemValue",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Object) ",
+            "description": "Value to be returned to the server if this option is selected by the user."
+          },
+          {
+            "name": "value",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to javax.faces.model.SelectItem) ",
+            "description": "Value binding expression pointing at a SelectItem instance containing the information for this option."
+          },
+          {
+            "name": "noSelectionOption",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Boolean) ",
+            "description": "Flag indicating whether the option created by this component represents the special 'no selection' option. Expressions must evaluate to a boolean. Default value is false."
+          }
+        ]
+      },
+      {
+        "name": "passThroughAttribute",
+        "description": "Add an attribute to the passThroughAttributes Map of the UIComponent associated with the closest parent UIComponent tag.",
+        "attribute": [
+          {
+            "name": "name",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": "The name of the pass through attribute. An attribute with this name, and the corresponding value will appear on the outer most markup element in the rendered markup for the component, as specified in the overview for the HTML_BASIC RenderKit. If the name of this attribute conflicts with Renderer specific attribute, the value specified here supercedes the one that would otherwise be rendered by the Renderer"
+          },
+          {
+            "name": "value",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Object) ",
+            "description": "The value of the pass through attribute. "
+          }
+        ]
+      }
+    ]
+  }
+}

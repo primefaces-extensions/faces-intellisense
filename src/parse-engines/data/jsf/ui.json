@@ -1,0 +1,197 @@
+{
+  "components": {
+    "component": [
+      {
+        "name": "component",
+        "description": "This tag is the same as the ui:composition, except for two things: JSF creates a component and adds it directly to the tree, and there's no associated template. ",
+        "attribute": [
+          {
+            "name": "id",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": " The identifier of the component that JSF inserts into the component tree. If an identifier is not explicitly specified by the page author, JSF will assign an identifier based on the algorithm that it uses for all components. "
+          },
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": " Binds the component to a backing bean property, as specified in the JSF specification. The Java language type of this property must be a class that extends javax.faces.component.UIComponent. The scope of the bean on which this property resides must be no wider than request scope. If either of these conditions are not met, the results are undefined. "
+          },
+          {
+            "name": "rendered",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": " Controls whether the component is rendered. Valid values for this attribute are either the strings 'true' or 'false' or an EL expression that evaluates to either 'true' or 'false'.If this attribute's value is 'false' or the value is an EL expression that evaluates to 'false', the component is not rendered in the page. "
+          }
+        ]
+      },
+      {
+        "name": "composition",
+        "description": "Defines a composition that optionally uses a template, as outlined in the description of the ui tag library. Multiple compositions can use the same template, thus encapsulating and reusing layout. JSF disregards everything outside of the composition, which lets developers embed compositions in well-formed XHTML pages that can be viewed in an XHTML viewer, such as Dreamweaver or a browser, without including extraneous elements such as head and body. ",
+        "attribute": [
+          {
+            "name": "template",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": " A URI that points to a template, also known as a layout, that inserts pieces of the page defined in the composition. If the URI cannot be resolved a TagAttributeException must be thrown, including accurate location information to help the page author resolve the problem. When the template is intended to come from a resource library contract, the value of this attribute must be an absolute path starting with '/'. "
+          }
+        ]
+      },
+      {
+        "name": "param",
+        "description": "Use this tag to pass parameters to an included file (using ui:include), or a template (linked to either a composition or decorator). Embed ui:param tags in either ui:include, ui:composition, or ui:decorate to pass the parameters.",
+        "attribute": [
+          {
+            "name": "name",
+            "required": "true",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": " The name of the parameter. "
+          },
+          {
+            "name": "value",
+            "required": "true",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": " The value of the parameter. Notice that this attribute's value can be an EL expression, which means that you can pass objects to either an included file or a template. "
+          }
+        ]
+      },
+      {
+        "name": "fragment",
+        "description": "The fragment tag is identical to the component tag, except that ui:fragment, unlike ui:component, JSF does not disregard all content outside of the tag.",
+        "attribute": [
+          {
+            "name": "id",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": " The identifier of the component that JSF inserts into the component tree. If an identifier is not explicitly specified by the page author, JSF will assign an identifier based on the algorithm that it uses for all components. "
+          },
+          {
+            "name": "binding",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": " Binds the component to a backing bean property, as specified in the JSF specification. The Java language type of this property must be a class that extends javax.faces.component.UIComponent. The scope of the bean on which this property resides must be no wider than request scope. If either of these conditions are not met, the results are undefined. "
+          },
+          {
+            "name": "rendered",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": " Controls whether the fragment is rendered. Valid values for this attribute are either the strings 'true' or 'false' or an EL expression that evaluates to either 'true' or 'false'.If this attribute's value is 'false' or the value is an EL expression that evaluates to 'false', the fragment is not rendered in the page. "
+          }
+        ]
+      },
+      {
+        "name": "include",
+        "description": "Use this tag—which is very similar to JSP's jsp:include—to encapsulate and reuse content among multiple XHTML pages. There are three things this tag can include: plain XHTML, and XHTML pages that have either a composition tag or a component tag. ",
+        "attribute": [
+          {
+            "name": "src",
+            "required": "true",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": " The filename of an XHTML page to include. The filename is relative to the XHTML page that was originally loaded. When the included file is intended to come from a resource library contract, the value of this attribute must be an absolute path starting with '/'. "
+          }
+        ]
+      },
+      {
+        "name": "insert",
+        "description": "Inserts content into a template. That content is defined—with the ui:define tag— in either a ui:composition, ui:component, ui:decorate, or ui:fragment.",
+        "attribute": [
+          {
+            "name": "name",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": " The optional name attribute matches the associated <ui:define/> tag in this template's client. If no name is specified, it's expected that the whole template client will be inserted. "
+          }
+        ]
+      },
+      {
+        "name": "debug",
+        "description": " When the ui:debug tag is placed in an XHTML page, it creates a component and adds it to the component tree. That debug component captures debugging information, namely the current state of the component tree and the scoped variables in the application, when the component is rendered. If the user presses CTRL + SHIFT + d, JSF opens a window that shows the debugging information captured by the debug component. ",
+        "attribute": [
+          {
+            "name": "hotkey",
+            "required": "false",
+            "type": "java.lang.String",
+            "description": " Defines a single character, that, pressed in conjunction with CTRL and SHIFT, will display the JSF debug window. By default, the hotkey is 'd'. The value for the hotkey attribute cannot be an EL expression. "
+          },
+          {
+            "name": "rendered",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": " Controls whether the debug component is rendered. Valid values for this attribute are either the strings 'true' or 'false' or an EL expression that evaluates to either 'true' or 'false'.If this attribute's value is 'false' or the value is an EL expression that evaluates to 'false', the debug component is not rendered in the page, the hotkey attribute is disregarded, and users cannot open the debugging information window with a hotkey. "
+          }
+        ]
+      },
+      {
+        "name": "define",
+        "description": "The define tag defines content that is inserted into a page by a template. The define tag can be used inside ui:composition, ui:component, ui:decorate, and ui:fragment tags.",
+        "attribute": [
+          {
+            "name": "name",
+            "required": "true",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": " Assigns a name to the content inside a define tag. That name is used by corresponding ui:insert tags in a template that insert the named content into a page. "
+          }
+        ]
+      },
+      {
+        "name": "remove",
+        "description": "Remove content from a page. This tag is often used in conjunction with the jsfc feature of Facelets, to wrap additional markup. When Facelets removes markup from a page by substituting markup items that have a jsfc attribute with the specified component, Facelets also removes anything in the page that is contained in a ui:remove tag.",
+        "attribute": []
+      },
+      {
+        "name": "decorate",
+        "description": "The decorate tag is identical to the composition tag, except that ui:decorate, unlike ui:composition, does not disregard all content outside of the tag. The decorate is useful when you want to decorate some content in a page, for example, you might want to decorate a list of items, like this: ",
+        "attribute": [
+          {
+            "name": "template",
+            "required": "true",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.String) ",
+            "description": " A URI that points to a template, also known as a layout, that inserts pieces of the page defined in the decorator. If the URI cannot be resolved a TagAttributeException must be thrown, including accurate location information to help the page author resolve the problem. When the template is intended to come from a resource library contract, the value of this attribute must be an absolute path starting with '/'. "
+          }
+        ]
+      },
+      {
+        "name": "repeat",
+        "description": "Use this tag as an alternative to h:dataTable or c:forEach, especially when you are using the jsfc feature of Facelets. You can specify this component as the value of the jsfc attribute, like this: <div... jsfc='ui:repeat' value='#{contacts}' var='contact'>... ",
+        "attribute": [
+          {
+            "name": "offset",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to int) ",
+            "description": " Read-write property setting the offset from the beginning of the collection from which to start the iteration. If not set, this offset is not considered and iteration will start at the beginning of the collection. "
+          },
+          {
+            "name": "size",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to int) ",
+            "description": " Read-write property setting the size of the collection to iterate. The value of this attribute must be less than or equal to the actual size of the collection, or a FacesException must be thrown. "
+          },
+          {
+            "name": "step",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to int) ",
+            "description": "Iteration will only process every step items of the collection, starting with the first one."
+          },
+          {
+            "name": "value",
+            "required": "true",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Object) ",
+            "description": " The name of a collection of items that this tag iterates over. The collection may be a List, array, java.sql.ResultSet, or an individual java Object. If the collection is null, this tag does nothing. "
+          },
+          {
+            "name": "var",
+            "required": "true",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Object) ",
+            "description": "Name of the exported scoped variable for the current item of the iteration. This scoped variable has nested visibility. Its type depends on the object of the underlying collection"
+          },
+          {
+            "name": "varStatus",
+            "required": "false",
+            "type": "javax.el.ValueExpression (must evaluate to java.lang.Object) ",
+            "description": "Name of the exported request scoped variable for the status of the iteration. Object is a POJO with the following read-only JavaBeans properties. This scoped variable has nested visibility. begin of type Integer end of type Integer index of type int step of type Integer even of type boolean odd of type boolean first of type boolean last of type boolean "
+          }
+        ]
+      }
+    ]
+  }
+}

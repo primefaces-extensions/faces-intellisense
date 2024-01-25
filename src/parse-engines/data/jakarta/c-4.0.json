@@ -1,0 +1,142 @@
+{
+  "components": {
+    "component": [
+      {
+        "name": "catch",
+        "description": "",
+        "attribute": [
+          {
+            "name": "var",
+            "required": "false",
+            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
+            "description": "Name of the exported scoped variable for the\n                exception thrown from a nested action. The type of the\n                scoped variable is the type of the exception thrown."
+          }
+        ]
+      },
+      {
+        "name": "choose",
+        "description": "",
+        "attribute": []
+      },
+      {
+        "name": "forEach",
+        "description": "",
+        "attribute": [
+          {
+            "name": "items",
+            "required": "false",
+            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Object)",
+            "description": "Collection of items to iterate over."
+          },
+          {
+            "name": "end",
+            "required": "false",
+            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to int)",
+            "description": "If items specified:\n                Iteration ends at the item located at the\n                specified index (inclusive).\n                If items not specified:\n                Iteration ends when index reaches the value\n                specified."
+          },
+          {
+            "name": "var",
+            "required": "false",
+            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
+            "description": "Name of the exported scoped variable for the\n                current item of the iteration. This scoped\n                variable has nested visibility. Its type depends\n                on the object of the underlying collection."
+          },
+          {
+            "name": "begin",
+            "required": "false",
+            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to int)",
+            "description": "If items specified:\n                Iteration begins at the item located at the\n                specified index. First item of the collection has\n                index 0.\n                If items not specified:\n                Iteration begins with index set at the value\n                specified."
+          },
+          {
+            "name": "step",
+            "required": "false",
+            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to int)",
+            "description": "Iteration will only process every step items of\n                the collection, starting with the first one."
+          },
+          {
+            "name": "varStatus",
+            "required": "false",
+            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
+            "description": "Name of the exported scoped variable for the\n                status of the iteration. Object exported is of type\n                jakarta.servlet.jsp.jstl.core.LoopTagStatus. This scoped variable\n                has nested\n                visibility."
+          }
+        ]
+      },
+      {
+        "name": "if",
+        "description": "",
+        "attribute": [
+          {
+            "name": "test",
+            "required": "true",
+            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to boolean)",
+            "description": "The test condition that determines whether or\n                not the body content should be processed."
+          },
+          {
+            "name": "scope",
+            "required": "false",
+            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
+            "description": "Scope for var."
+          },
+          {
+            "name": "var",
+            "required": "false",
+            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
+            "description": "Name of the exported scoped variable for the\n                resulting value of the test condition. The type\n                of the scoped variable is Boolean."
+          }
+        ]
+      },
+      {
+        "name": "otherwise",
+        "description": "",
+        "attribute": []
+      },
+      {
+        "name": "set",
+        "description": "Sets the result of an expression evaluation based on the\n            value of the attributes. If \"scope\" the is present, but has a zero\n            length or is equal to the string \"page\", TagException\n            is\n            thrown with an informative error message, ensuring page location\n            information is saved. This handler operates in one of two ways.\n\n             The user has set \"var\", \"value\" and (optionally)\n            \"scope\" attributes. The user has set \"target\", \"property\", and\n            \"value\"\n            attributes. The first case takes precedence over the second.",
+        "attribute": [
+          {
+            "name": "var",
+            "required": "false",
+            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
+            "description": "Name of the exported scoped variable to hold the value\n                specified in the action. The type of the scoped variable is\n                whatever type the value expression evaluates to."
+          },
+          {
+            "name": "target",
+            "required": "false",
+            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
+            "description": "Target object whose property will be set. Must evaluate to\n                a JavaBeans object with setter property property, or to a\n                java.util.Map object."
+          },
+          {
+            "name": "scope",
+            "required": "false",
+            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
+            "description": "Scope for var."
+          },
+          {
+            "name": "value",
+            "required": "false",
+            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Object)",
+            "description": "Expression to be evaluated."
+          },
+          {
+            "name": "property",
+            "required": "false",
+            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
+            "description": "Name of the property to be set in the target object."
+          }
+        ]
+      },
+      {
+        "name": "when",
+        "description": "",
+        "attribute": [
+          {
+            "name": "test",
+            "required": "true",
+            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to boolean)",
+            "description": "The test condition that determines whether or not the\n                body content should be processed."
+          }
+        ]
+      }
+    ]
+  }
+}
