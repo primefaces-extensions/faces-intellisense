@@ -67,15 +67,15 @@ A Visual Studio Code extension that provides diferentes components completion in
 * User Settings.
 
 ## Supported Language Modes
-* HTML.
-* XHTML.
-* JSF.
-* XML.
+* HTML
+* XHTML
+* JSF
+* XML
 
 ## Extended Support for Other Language Modes
 
 It's possible to specify which language modes will have autocompletion. There are five settings for this feature:
-* `jsf-primefaces-intellisense.languages` is for language modes based on HTML.
+* `faces-intellisense.languages` is for language modes based on HTML.
 
 
 ## Contributions
