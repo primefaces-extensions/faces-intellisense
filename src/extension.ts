@@ -6,16 +6,16 @@ import Notifier from "./notifier";
 import ParseEngineGateway from "./parse-engine-gateway";
 
 enum Command {
-  cache = "jsf-primefaces-intellisense.cache",
+  cache = "faces-intellisense.cache",
 }
 
 enum Configuration {
-  languages = "jsf-primefaces-intellisense.languages",
-  primeVersion = "jsf-primefaces-intellisense.primeVersion",
-  primeExtVersion = "jsf-primefaces-intellisense.primeExtVersion",
-  omniVersion = "jsf-primefaces-intellisense.omniVersion",
-  richVersion = "jsf-primefaces-intellisense.richVersion",
-  facesVersion = "jsf-primefaces-intellisense.facesVersion",
+  languages = "faces-intellisense.languages",
+  primeVersion = "faces-intellisense.primeVersion",
+  primeExtVersion = "faces-intellisense.primeExtVersion",
+  omniVersion = "faces-intellisense.omniVersion",
+  richVersion = "faces-intellisense.richVersion",
+  facesVersion = "faces-intellisense.facesVersion",
 }
 
 const notifier: Notifier = new Notifier(Command.cache);

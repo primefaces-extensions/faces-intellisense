@@ -6,7 +6,7 @@
   "publisher": "melloware",
   "license": "MIT",
   "engines": {
-    "vscode": "^1.76.0"
+    "vscode": "^1.85.0"
   },
   "keywords": [
     "a4j",
@@ -61,9 +61,10 @@
               "primefaces-8.0.0",
               "primefaces-10.0.0",
               "primefaces-11.0.0",
-              "primefaces-12.0.0"
+              "primefaces-12.0.0",
+              "primefaces-13.0.0"
             ],
-            "default": "primefaces-8.0.0",
+            "default": "primefaces-13.0.0",
             "description": "PrimeFaces Version. (Restart Required)."
           },
           "faces-intellisense.primeExtVersion": {
@@ -71,9 +72,10 @@
               "primefaces-extensions-10.0.0",
               "primefaces-extensions-11.0.0",
               "primefaces-extensions-12.0.0",
-              "primefaces-extensions-12.0.6"
+              "primefaces-extensions-12.0.6",
+              "primefaces-extensions-13.0.0"
             ],
-            "default": "primefaces-extensions-10.0.0",
+            "default": "primefaces-extensions-13.0.0",
             "description": "PrimeFaces Extensions Version. (Restart Required)."
           },
           "faces-intellisense.omniVersion": {
@@ -81,7 +83,7 @@
               "omnifaces-3.0",
               "omnifaces-4.0"
             ],
-            "default": "omnifaces-3.0",
+            "default": "omnifaces-4.0",
             "description": "OmniFaces Version. (Restart Required)."
           },
           "faces-intellisense.richVersion": {
@@ -133,8 +135,8 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "lodash": "^4.17.21",
-    "verror": "^1.10.1"
+    "lodash": "4.17.21",
+    "verror": "1.10.1"
   },
   "overrides": {
     "minimatch": "5.1.2"

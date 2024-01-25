@@ -3,11 +3,11 @@ import { IParseEngine } from ".";
 import TagLib from "../taglib";
 
 enum Configuration {
-    primeVersion = "jsf-primefaces-intellisense.primeVersion",
-    primeExtVersion = "jsf-primefaces-intellisense.primeExtVersion",
-    omniVersion = "jsf-primefaces-intellisense.omniVersion",
-    richVersion = "jsf-primefaces-intellisense.richVersion",
-    facesVersion = "jsf-primefaces-intellisense.facesVersion"
+    primeVersion = "faces-intellisense.primeVersion",
+    primeExtVersion = "faces-intellisense.primeExtVersion",
+    omniVersion = "faces-intellisense.omniVersion",
+    richVersion = "faces-intellisense.richVersion",
+    facesVersion = "faces-intellisense.facesVersion"
 }
 class ParseEngineRegistry {
     public static getParseEngine(taglibId: string): IParseEngine {
