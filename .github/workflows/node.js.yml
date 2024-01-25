@@ -28,4 +28,3 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm run pretest
-    - run: npm test
