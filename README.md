@@ -11,8 +11,8 @@ A Visual Studio Code extension that provides diferentes components completion in
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Taglib supported for
-* Primefaces (8.x, 10.x, 11.x, 12.x, 13.x)
-* Primefaces Extensions (10.x, 11.x, 12.x, 13.x)
+* Primefaces (8.x, 10.x, 11.x, 12.x, 13.x, 14.x)
+* Primefaces Extensions (10.x, 11.x, 12.x, 13.x, 14.x)
 * OmniFaces (3.x, 4.x)
 * RichFaces (4.5.x)
 * JSF (2.1, 2.2)
