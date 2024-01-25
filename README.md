@@ -16,7 +16,7 @@ A Visual Studio Code extension that provides diferentes components completion in
 * OmniFaces (3.x, 4.x)
 * RichFaces (4.5.x)
 * JSF (2.1, 2.2)
-* Jakarta Server Faces (2.3, 3.0)
+* Java Server Faces (2.3, 3.0)
 * Jakarta Faces 4.0
 
 
