@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://i.imgur.com/QkqSYdn.png" width="172" height="185">
+<img src="https://github.com/primefaces-extensions/faces-intellisense/blob/main/images/icon.png" width="172" height="185">
 
 # Intellisense for Faces
 </div>
@@ -17,7 +17,7 @@ A Visual Studio Code extension that provides diferentes components completion in
 * Jakarta Faces 4.0
 
 
-![](https://i.imgur.com/r6DrYYu.gif)
+![](https://github.com/primefaces-extensions/faces-intellisense/blob/main/images/demo-animated.gif)
 
 ## Features
 * Gives you autocompletion for Html Basic components (<h:).
@@ -76,11 +76,11 @@ It's possible to specify which language modes will have autocompletion. There ar
 
 
 ## Contributions
-You can request new features and contribute to the extension development on its [repository on GitHub](https://github.com/leosj29/jsf-primefaces-intellisense/issues). Look for an issue you're interested in working on, comment on it to let me know you're working on it and submit your pull request! :D
+You can request new features and contribute to the extension development on its [repository on GitHub](https://github.com/primefaces-extensions/faces-intellisense/issues). Look for an issue you're interested in working on, comment on it to let me know you're working on it and submit your pull request! :D
 
-## What's new in version 1.8.0 (Apr 14, 2023)
+## What's new
 
-Check out the [changelog](https://github.com/leosj29/jsf-primefaces-intellisense/blob/master/CHANGELOG.md) for the current and previous updates.
+Check out the [changelog](https://github.com/primefaces-extensions/faces-intellisense/blob/main/CHANGELOG.md) for the current and previous updates.
 
 ## Usage
 The extension will automatically display the completion options. In case the completion is not showing, you can run the command by pressing `Ctrl+Shift+P`(`Cmd+Shift+P` for Mac) and then typing "JSF and PrimeFaces Cache".
@@ -94,5 +94,5 @@ The extension will automatically display the completion options. In case the com
 The extension supports a few user settings, changes to these settings will be automatically recognized and the caching process will be re-executed.
 
 
-![](https://i.imgur.com/blwBYrK.gif)
-![](https://i.imgur.com/WK8Kr5r.gif)
+![](https://github.com/primefaces-extensions/faces-intellisense/blob/main/images/cache1-animated.gif)
+![](https://github.com/primefaces-extensions/faces-intellisense/blob/main/images/cache2-animated.gif)
