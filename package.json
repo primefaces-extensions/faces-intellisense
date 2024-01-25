@@ -135,5 +135,8 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "verror": "^1.10.1"
+  },
+  "overrides": {
+    "minimatch": "5.1.2"
   }
 }
