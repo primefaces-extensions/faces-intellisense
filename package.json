@@ -1,9 +1,9 @@
 {
-    "name": "jsf-primefaces-intellisense",
-    "displayName": "JSF Primefaces Intellisense",
-    "description": "JSF and Primefaces IntelliSense",
-    "version": "1.8.1",
-    "publisher": "leosj29",
+    "name": "faces-intellisense",
+    "displayName": "Faces Intellisense",
+    "description": "Faces IntelliSense",
+    "version": "2.0.0",
+    "publisher": "melloware",
     "license": "MIT",
     "engines": {
         "vscode": "^1.76.0"
@@ -38,15 +38,15 @@
     "contributes": {
         "commands": [
             {
-                "command": "jsf-primefaces-intellisense.cache",
-                "title": "JSF and PrimeFaces Cache"
+                "command": "faces-intellisense.cache",
+                "title": "Faces Cache"
             }
         ],
         "configuration": [
             {
-                "title": "JSF and PrimeFaces IntelliSense",
+                "title": "Faces IntelliSense",
                 "properties": {
-                    "jsf-primefaces-intellisense.languages": {
+                    "faces-intellisense.languages": {
                         "type": "array",
                         "description": "A list of HTML based languages where suggestions are enabled.",
                         "default": [
@@ -56,7 +56,7 @@
                             "jsf"
                         ]
                     },
-                    "jsf-primefaces-intellisense.primeVersion": {
+                    "faces-intellisense.primeVersion": {
                         "enum": [
                             "primefaces-8.0.0",
                             "primefaces-10.0.0",
@@ -66,7 +66,7 @@
                         "default": "primefaces-8.0.0",
                         "description": "PrimeFaces Version. (Restart Required)."
                     },
-                    "jsf-primefaces-intellisense.primeExtVersion": {
+                    "faces-intellisense.primeExtVersion": {
                         "enum": [
                             "primefaces-extensions-10.0.0",
                             "primefaces-extensions-11.0.0",
@@ -76,7 +76,7 @@
                         "default": "primefaces-extensions-10.0.0",
                         "description": "PrimeFaces Extensions Version. (Restart Required)."
                     },
-                    "jsf-primefaces-intellisense.omniVersion": {
+                    "faces-intellisense.omniVersion": {
                         "enum": [
                             "omnifaces-3.0",
                             "omnifaces-4.0"
@@ -84,14 +84,14 @@
                         "default": "omnifaces-3.0",
                         "description": "OmniFaces Version. (Restart Required)."
                     },
-                    "jsf-primefaces-intellisense.richVersion": {
+                    "faces-intellisense.richVersion": {
                         "enum": [
                             "richfaces-4.5.17"
                         ],
                         "default": "richfaces-4.5.17",
                         "description": "RichFaces Version. (Restart Required)."
                     },
-                    "jsf-primefaces-intellisense.facesVersion": {
+                    "faces-intellisense.facesVersion": {
                         "enum": [
                             "java-server-faces(1.0 - 2.2)",
                             "jakarta-server-faces(2.3 - 3.0)",
@@ -106,7 +106,7 @@
     },
     "icon": "images/icon.png",
     "repository": {
-        "url": "https://github.com/leosj29/jsf-primefaces-intellisense"
+        "url": "https://github.com/primefaces-extensions/faces-intellisense"
     },
     "scripts": {
         "vsix": "vsce package",
