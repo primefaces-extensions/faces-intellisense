@@ -2,6 +2,42 @@
   "components": {
     "component": [
       {
+        "name": "validateFile",
+        "description": "",
+        "attribute": [
+          {
+            "description": "Regular expression for accepted file types, e.g. /(\\.|\\/)(gif|jpe?g|png)$/",
+            "name": "allowTypes",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Maximum number of files to be uploaded.",
+            "name": "fileLimit",
+            "required": "false",
+            "type": "java.lang.Integer"
+          },
+          {
+            "description": "Individual file size limit in bytes. Default is unlimited.",
+            "name": "sizeLimit",
+            "required": "false",
+            "type": "java.lang.Long"
+          },
+          {
+            "description": "Wheter the content type should be validated based on the accept attribute of the attached component. Default is false.",
+            "name": "contentType",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Whether virus scan should be performed. Default is false.",
+            "name": "virusScan",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          }
+        ]
+      },
+      {
         "name": "autoUpdate",
         "description": "AutoUpdate is a TagHandler to mark the parent component to be updated at every AJAX request. AutoUpdate is ignored if the trigger (p:commandButton, p:ajax...) of AJAX request has the attribute ignoreAutoUpdate set to 'true'.",
         "attribute": [
@@ -112,6 +148,12 @@
             "name": "onTableRender",
             "required": "false",
             "type": "javax.el.MethodExpression"
+          },
+          {
+            "description": "Control how many items are fetched at a time when DataTable#lazy is enabled. Retrieve the entire underlying dataset in smaller, manageable chunks rather than all at once.",
+            "name": "bufferSize",
+            "required": "false",
+            "type": "javax.el.ValueExpression"
           }
         ]
       },
@@ -136,6 +178,12 @@
             "name": "monitorKey",
             "required": "false",
             "type": "java.lang.String"
+          },
+          {
+            "description": "Controls the 'no-store' attribute on the cache control header. Default false is to include 'no-store'.",
+            "name": "store",
+            "required": "false",
+            "type": "java.lang.Boolean"
           }
         ]
       },
@@ -544,6 +592,18 @@
             "name": "multiViewState",
             "required": "false",
             "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Sets toggle animation speed in milliseconds. Default is 500.",
+            "name": "toggleSpeed",
+            "required": "false",
+            "type": "java.lang.Integer"
+          },
+          {
+            "description": "Should the tab scroll into view. One of start, center, end, nearest, or null if disabled. Default is null.",
+            "name": "scrollIntoView",
+            "required": "false",
+            "type": "java.lang.String"
           }
         ]
       },
@@ -1242,20 +1302,8 @@
             "type": "java.lang.Integer"
           },
           {
-            "description": "Text to display when there is no data to display.",
-            "name": "emptyMessage",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
             "description": "Appends the overlay to the element defined by search expression. Defaults to document body.",
             "name": "appendTo",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Hint text for screen readers to provide information about the search results. Default is \"{0} results found, use arrow keys to navigate\".",
-            "name": "resultsMessage",
             "required": "false",
             "type": "java.lang.String"
           },
@@ -1370,12 +1418,6 @@
           {
             "description": "Position of the dropdown button in the tabbing order.",
             "name": "dropdownTabindex",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "ARIA Label for the dropdown button.",
-            "name": "dropdownAriaLabel",
             "required": "false",
             "type": "java.lang.String"
           },
@@ -4098,12 +4140,6 @@
             "type": "java.lang.String"
           },
           {
-            "description": "A collection of selectitems for filter dropdown.",
-            "name": "filterOptions",
-            "required": "false",
-            "type": "java.lang.Object"
-          },
-          {
             "description": "Match mode for filtering.",
             "name": "filterMatchMode",
             "required": "false",
@@ -4112,6 +4148,12 @@
           {
             "description": "Location of the column filter with respect to header content. Options are 'bottom'(default) and 'top'.",
             "name": "filterPosition",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Placeholder for plain input text style filters.",
+            "name": "filterPlaceholder",
             "required": "false",
             "type": "java.lang.String"
           },
@@ -4140,10 +4182,10 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Enables selection mode, valid values are \"single\" and \"multiple\".",
-            "name": "selectionMode",
+            "description": "Indicates whether or not the column should contain a radiobutton or checkbox for selection",
+            "name": "selectionBox",
             "required": "false",
-            "type": "java.lang.String"
+            "type": "java.lang.Boolean"
           },
           {
             "description": "Maximum number of characters for an input filter.",
@@ -4434,12 +4476,6 @@
             "type": "java.lang.String"
           },
           {
-            "description": "A collection of selectitems for filter dropdown.",
-            "name": "filterOptions",
-            "required": "false",
-            "type": "java.lang.Object"
-          },
-          {
             "description": "Match mode for filtering.",
             "name": "filterMatchMode",
             "required": "false",
@@ -4448,6 +4484,12 @@
           {
             "description": "Location of the column filter with respect to header content. Options are 'bottom'(default) and 'top'.",
             "name": "filterPosition",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Placeholder for plain input text style filters.",
+            "name": "filterPlaceholder",
             "required": "false",
             "type": "java.lang.String"
           },
@@ -4624,6 +4666,12 @@
             "name": "displayPriority",
             "required": "false",
             "type": "java.lang.Integer"
+          },
+          {
+            "description": "An EL expression or a literal text that defines a converter for the component. When it's an EL expression, it's resolved to a converter instance. In case it's a static text, it must refer to a converter id.",
+            "name": "converter",
+            "required": "false",
+            "type": "java.lang.Object"
           }
         ]
       },
@@ -5724,12 +5772,6 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Label for rowsPerPage dropdown.",
-            "name": "rowsPerPageLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
             "description": "Template of the currentPageReport UI.",
             "name": "currentPageReportTemplate",
             "required": "false",
@@ -5906,12 +5948,6 @@
           {
             "description": "Template of the rowsPerPage dropdown.",
             "name": "rowsPerPageTemplate",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Label for rowsPerPage dropdown.",
-            "name": "rowsPerPageLabel",
             "required": "false",
             "type": "java.lang.String"
           },
@@ -6186,12 +6222,6 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Label for rowsPerPage dropdown.",
-            "name": "rowsPerPageLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
             "description": "Template of the currentPageReport UI.",
             "name": "currentPageReportTemplate",
             "required": "false",
@@ -6445,13 +6475,13 @@
           },
           {
             "description": "Disables row selection when true.",
-            "name": "disabledSelection",
+            "name": "selectionDisabled",
             "required": "false",
             "type": "java.lang.Boolean"
           },
           {
             "description": "Defines row select mode for checkbox based selection, valid values are new (default), and none.",
-            "name": "rowSelectMode",
+            "name": "selectionRowMode",
             "required": "false",
             "type": "java.lang.String"
           },
@@ -6493,7 +6523,7 @@
           },
           {
             "description": "Disables text selection on row click. Default is true.",
-            "name": "disabledTextSelection",
+            "name": "selectionTextDisabled",
             "required": "false",
             "type": "java.lang.Boolean"
           },
@@ -6776,12 +6806,6 @@
           {
             "description": "Template of the rowsPerPage dropdown.",
             "name": "rowsPerPageTemplate",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Label for rowsPerPage dropdown.",
-            "name": "rowsPerPageLabel",
             "required": "false",
             "type": "java.lang.String"
           },
@@ -7770,7 +7794,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Sets toogle animation speed in milliseconds. Default is 500.",
+            "description": "Sets toggle animation speed in milliseconds. Default is 500.",
             "name": "toggleSpeed",
             "required": "false",
             "type": "java.lang.Integer"
@@ -7998,24 +8022,6 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Message to display when file size validation fails.",
-            "name": "invalidSizeMessage",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Message to display when file limit validation fails.",
-            "name": "invalidFileMessage",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Message to display when file count validation fails.",
-            "name": "fileLimitMessage",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
             "description": "Specifies dragdrop based file selection from filesystem, default is true and works only on supported browsers.",
             "name": "dragDropSupport",
             "required": "false",
@@ -8176,6 +8182,12 @@
             "name": "dropZone",
             "required": "false",
             "type": "java.lang.String"
+          },
+          {
+            "description": "Simple Mode: if the filename should be displayed.",
+            "name": "displayFilename",
+            "required": "false",
+            "type": "java.lang.Boolean"
           }
         ]
       },
@@ -9504,7 +9516,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Label to be shown in display mode when value isempty.",
+            "description": "Label to be shown in display mode when value is empty.",
             "name": "emptyLabel",
             "required": "false",
             "type": "java.lang.String"
@@ -10104,7 +10116,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "DO NOT USE! To limit the number of digits...set maximumValue, minimumValue and/or decimalPlaces accordingly.",
+            "description": "DO NOT USE! To limit the number of digits...set minValue, maxValue and/or decimalPlaces accordingly.",
             "name": "maxlength",
             "required": "false",
             "type": "int"
@@ -10467,7 +10479,7 @@
       },
       {
         "name": "inputSwitch",
-        "description": "\n            \n        ",
+        "description": "Deprecated since 10.0 for removal in 15.0.0)",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -12974,6 +12986,24 @@
           {
             "description": "Event to toggle the submenus, default is hover. Valid values are \"hover\" and \"click\".",
             "name": "toggleEvent",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Delay in milliseconds before displaying the submenu. Default is 0 meaning immediate.",
+            "name": "showDelay",
+            "required": "false",
+            "type": "java.lang.Integer"
+          },
+          {
+            "description": "Delay in milliseconds before hiding the submenu., if 0 not hidden until document.click(). Default is 0.",
+            "name": "hideDelay",
+            "required": "false",
+            "type": "java.lang.Integer"
+          },
+          {
+            "description": "Defines text direction, valid values are \"ltr\" (default) and \"rtl\".",
+            "name": "dir",
             "required": "false",
             "type": "java.lang.String"
           }
@@ -15516,54 +15546,6 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Text of add button. Default is \"Add\".",
-            "name": "addLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Text of add all button. Default is \"Add All\".",
-            "name": "addAllLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Text of remove button. Default is \"Remove\".",
-            "name": "removeLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Text of remove all button. Default is \"Remove All\".",
-            "name": "removeAllLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Text of move up button. Default is \"Move Up\".",
-            "name": "moveUpLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Text of move top button. Default is \"Move Top\".",
-            "name": "moveTopLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Text of move down button. Default is \"Move Down\".",
-            "name": "moveDownLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Text of move bottom button. Default is \"Move Down\".",
-            "name": "moveBottomLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
             "description": "Specifies visibility of reorder buttons of sourcelist. Default is false.",
             "name": "showSourceControls",
             "required": "false",
@@ -17478,6 +17460,12 @@
             "type": "java.lang.String"
           },
           {
+            "description": "Label to be shown in updateLabel mode when one or more items are selected. If not set the label is shown.",
+            "name": "multipleLabel",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
             "description": "Placeholder text to show when filter input is empty.",
             "name": "filterPlaceholder",
             "required": "false",
@@ -18718,12 +18706,6 @@
             "name": "tabindex",
             "required": "false",
             "type": "java.lang.String"
-          },
-          {
-            "description": "Plain mode displays radiobuttons using native browser rendering instead of themes. Deprecated.",
-            "name": "plain",
-            "required": "false",
-            "type": "java.lang.Boolean"
           },
           {
             "description": "Unselectable mode when true clicking a radio again will clear the selection. Default false.",
@@ -20350,6 +20332,12 @@
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
+          },
+          {
+            "description": "Adds a close icon to hide the message.",
+            "name": "closable",
+            "required": "false",
+            "type": "java.lang.Boolean"
           }
         ]
       },
@@ -21266,6 +21254,24 @@
           {
             "description": "Event to toggle the submenus, default is hover. Valid values are \"hover\" and \"click\".",
             "name": "toggleEvent",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Delay in milliseconds before displaying the submenu. Default is 0 meaning immediate.",
+            "name": "showDelay",
+            "required": "false",
+            "type": "java.lang.Integer"
+          },
+          {
+            "description": "Delay in milliseconds before hiding the submenu., if 0 not hidden until document.click(). Default is 0.",
+            "name": "hideDelay",
+            "required": "false",
+            "type": "java.lang.Integer"
+          },
+          {
+            "description": "Defines text direction, valid values are \"ltr\" (default) and \"rtl\".",
+            "name": "dir",
             "required": "false",
             "type": "java.lang.String"
           }
@@ -22584,12 +22590,6 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Label for rowsPerPage dropdown.",
-            "name": "rowsPerPageLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
             "description": "Template of the currentPageReport UI.",
             "name": "currentPageReportTemplate",
             "required": "false",
@@ -22916,48 +22916,6 @@
         ]
       },
       {
-        "name": "watermark",
-        "description": "Watermark displays a hint on an input field.",
-        "attribute": [
-          {
-            "description": "Unique identifier of the component in a namingContainer.",
-            "name": "id",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
-            "name": "rendered",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "An el expression referring to a server side UIComponent instance in a backing bean.",
-            "name": "binding",
-            "required": "false",
-            "type": "javax.faces.component.UIComponent"
-          },
-          {
-            "description": "Name of the client side widget.",
-            "name": "widgetVar",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Text of watermark. Required.",
-            "name": "value",
-            "required": "true",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Id of the component to attach the watermark.",
-            "name": "for",
-            "required": "false",
-            "type": "java.lang.String"
-          }
-        ]
-      },
-      {
         "name": "video",
         "description": "Video component is used for embedding video content such as MP4, OGG, WEBM to JSF views.",
         "attribute": [
@@ -23154,6 +23112,12 @@
             "type": "java.lang.Boolean"
           },
           {
+            "description": "If true, next and back navigation buttons will be disabled during Ajax requests triggered by them. Default is 'trie'.",
+            "name": "disableOnAjax",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
             "description": "Javascript event handler to be invoked when flow goes back.",
             "name": "onback",
             "required": "false",
@@ -23194,6 +23158,66 @@
             "name": "effectDuration",
             "required": "false",
             "type": "java.lang.Integer"
+          }
+        ]
+      },
+      {
+        "name": "chart",
+        "description": "Chart.js component using raw JSON or XDev model.",
+        "attribute": [
+          {
+            "description": "Unique identifier of the component in a namingContainer.",
+            "name": "id",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "name": "rendered",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "An el expression referring to a server side UIComponent instance in a backing bean.",
+            "name": "binding",
+            "required": "false",
+            "type": "javax.faces.component.UIComponent"
+          },
+          {
+            "description": "Name of the client side widget.",
+            "name": "widgetVar",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "JSON value of the chart.",
+            "name": "value",
+            "required": "true",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Inline style of the component.",
+            "name": "style",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Style class of the component.",
+            "name": "styleClass",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "The aria-label attribute is used to define a string that labels the current element for accessibility.",
+            "name": "ariaLabel",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Name of javascript function to extend the options of the underlying fullcalendar plugin.",
+            "name": "extender",
+            "required": "false",
+            "type": "java.lang.String"
           }
         ]
       },
@@ -24586,6 +24610,24 @@
             "name": "visible",
             "required": "false",
             "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Icon of the badge.",
+            "name": "icon",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Position of the icon, default value is left.",
+            "name": "iconPos",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when the badge element clicked.",
+            "name": "onclick",
+            "required": "false",
+            "type": "java.lang.String"
           }
         ]
       },

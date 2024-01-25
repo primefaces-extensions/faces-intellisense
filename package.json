@@ -62,7 +62,8 @@
               "primefaces-10.0.0",
               "primefaces-11.0.0",
               "primefaces-12.0.0",
-              "primefaces-13.0.0"
+              "primefaces-13.0.0",
+              "primefaces-14.0.0"
             ],
             "default": "primefaces-13.0.0",
             "description": "PrimeFaces Version. (Restart Required)."
@@ -72,8 +73,8 @@
               "primefaces-extensions-10.0.0",
               "primefaces-extensions-11.0.0",
               "primefaces-extensions-12.0.0",
-              "primefaces-extensions-12.0.6",
-              "primefaces-extensions-13.0.0"
+              "primefaces-extensions-13.0.0",
+              "primefaces-extensions-14.0.0"
             ],
             "default": "primefaces-extensions-13.0.0",
             "description": "PrimeFaces Extensions Version. (Restart Required)."

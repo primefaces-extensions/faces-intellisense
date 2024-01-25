@@ -6574,8 +6574,20 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "Format the input value (according to the nationalMode option) during initialisation, and on setNumber.\nLoads the utils script.",
+            "description": "Fix the dropdown width to the input width (rather than being as wide as the longest country name). Defaul false.",
+            "name": "fixDropdownWidth",
+            "required": "false",
+            "type": "boolean"
+          },
+          {
+            "description": "Format the input value (according to the nationalMode option) during initialisation, and on setNumber.\nLoads the utils script. Default true.",
             "name": "formatOnDisplay",
+            "required": "false",
+            "type": "boolean"
+          },
+          {
+            "description": "Format the number as the user types. This will automatically be disabled if the user types their own formatting characters. Requires the `utilsScript` option. Default true.",
+            "name": "formatAsYouType",
             "required": "false",
             "type": "boolean"
           },
@@ -6584,6 +6596,12 @@
             "name": "initialCountry",
             "required": "false",
             "type": "java.lang.String"
+          },
+          {
+            "description": "Add a search input to the top of the dropdown, so users can filter the displayed countries. Defaul false.",
+            "name": "countrySearch",
+            "required": "false",
+            "type": "boolean"
           },
           {
             "description": "Allow users to enter national numbers (and not have to think about international dial codes).\nFormatting, JS validation and placeholders still work. Defaults is true.",
@@ -7241,6 +7259,12 @@
             "name": "reactionPeriod",
             "required": "false",
             "type": "java.lang.Integer"
+          },
+          {
+            "description": "When set to true, the lastAccessed state will be shared between all browser windows for the same servlet context. Default true.",
+            "name": "multiWindowSupport",
+            "required": "false",
+            "type": "java.lang.Boolean"
           }
         ]
       },

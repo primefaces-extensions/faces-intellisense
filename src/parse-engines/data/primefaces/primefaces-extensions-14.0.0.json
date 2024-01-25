@@ -4984,7 +4984,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Timeout in seconds to do the ajax ajax requests. Default is 10.",
+            "description": "Timeout in seconds to do the Ajax request(s). Default is 10.",
             "name": "timeout",
             "required": "false",
             "type": "java.lang.Integer"
@@ -6262,7 +6262,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Direction indication for text that does not inherit directionality.",
+            "description": "Defines text direction, valid values are \"ltr\" (default) and \"rtl\".",
             "name": "dir",
             "required": "false",
             "type": "java.lang.String"
@@ -6574,8 +6574,20 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "Format the input value (according to the nationalMode option) during initialisation, and on setNumber.\nLoads the utils script.",
+            "description": "Fix the dropdown width to the input width (rather than being as wide as the longest country name). Defaul false.",
+            "name": "fixDropdownWidth",
+            "required": "false",
+            "type": "boolean"
+          },
+          {
+            "description": "Format the input value (according to the nationalMode option) during initialisation, and on setNumber.\nLoads the utils script. Default true.",
             "name": "formatOnDisplay",
+            "required": "false",
+            "type": "boolean"
+          },
+          {
+            "description": "Format the number as the user types. This will automatically be disabled if the user types their own formatting characters. Requires the `utilsScript` option. Default true.",
+            "name": "formatAsYouType",
             "required": "false",
             "type": "boolean"
           },
@@ -6584,6 +6596,12 @@
             "name": "initialCountry",
             "required": "false",
             "type": "java.lang.String"
+          },
+          {
+            "description": "Add a search input to the top of the dropdown, so users can filter the displayed countries. Defaul false.",
+            "name": "countrySearch",
+            "required": "false",
+            "type": "boolean"
           },
           {
             "description": "Allow users to enter national numbers (and not have to think about international dial codes).\nFormatting, JS validation and placeholders still work. Defaults is true.",
@@ -7241,12 +7259,18 @@
             "name": "reactionPeriod",
             "required": "false",
             "type": "java.lang.Integer"
+          },
+          {
+            "description": "When set to true, the lastAccessed state will be shared between all browser windows for the same servlet context. Default true.",
+            "name": "multiWindowSupport",
+            "required": "false",
+            "type": "java.lang.Boolean"
           }
         ]
       },
       {
         "name": "sunEditor",
-        "description": "SunEditor component, wysiwyg html editor in js. Client behavior events: change - on change (javax.faces.event.AjaxBehaviorEvent), scroll - on scroll (javax.faces.event.AjaxBehaviorEvent), mouseDown - on mouseDown (javax.faces.event.AjaxBehaviorEvent), click - on click (javax.faces.event.AjaxBehaviorEvent), input - on input (javax.faces.event.AjaxBehaviorEvent), keyDown - on keyDown (javax.faces.event.AjaxBehaviorEvent), keyUp - on keyUp (javax.faces.event.AjaxBehaviorEvent), focus - on focus (javax.faces.event.AjaxBehaviorEvent), blur - on blur (javax.faces.event.AjaxBehaviorEvent), paste - on paste (javax.faces.event.AjaxBehaviorEvent), copy - on copy (javax.faces.event.AjaxBehaviorEvent), cut - on cut (javax.faces.event.AjaxBehaviorEvent), drop - on drop (javax.faces.event.AjaxBehaviorEvent), save - on save (javax.faces.event.AjaxBehaviorEvent).",
+        "description": "SunEditor component, wysiwyg html editor in js. Client behavior events: change - on change (javax.faces.event.AjaxBehaviorEvent), scroll - on scroll (javax.faces.event.AjaxBehaviorEvent), mousedown - on mouseDown (javax.faces.event.AjaxBehaviorEvent), click - on click (javax.faces.event.AjaxBehaviorEvent), input - on input (javax.faces.event.AjaxBehaviorEvent), keydown - on keyDown (javax.faces.event.AjaxBehaviorEvent), keyup - on keyUp (javax.faces.event.AjaxBehaviorEvent), focus - on focus (javax.faces.event.AjaxBehaviorEvent), blur - on blur (javax.faces.event.AjaxBehaviorEvent), paste - on paste (javax.faces.event.AjaxBehaviorEvent), copy - on copy (javax.faces.event.AjaxBehaviorEvent), cut - on cut (javax.faces.event.AjaxBehaviorEvent), drop - on drop (javax.faces.event.AjaxBehaviorEvent), save - on save (javax.faces.event.AjaxBehaviorEvent). initialize - when editor is initialized (javax.faces.event.AjaxBehaviorEvent).",
         "attribute": [
           {
             "description": "Unique identifier of the component in a naming container.",
@@ -7279,13 +7303,13 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "Height of the editor. Default value: 200px.",
+            "description": "Height of the editor with CSS units, set as an inline style. For example 500px or 100%/code>. Default value: auto",
             "name": "height",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "width of the editor. Default value: 100%.",
+            "description": "Width of the editor with CSS units, set as an inline style. For example 500px or 100%/code>. Default value: 100%.",
             "name": "width",
             "required": "false",
             "type": "java.lang.String"
@@ -7327,32 +7351,44 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Whether to allow formatting to be included.",
+            "description": "Whether to allow formatting to be included when secure=true and the HTML is sanitized. Default true.",
             "name": "allowFormatting",
             "required": "false",
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Whether to allow blocks to be included.",
+            "description": "Whether to allow blocks to be included when secure=true and the HTML is sanitized. Default true.",
             "name": "allowBlocks",
             "required": "false",
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Whether to allow styles to be included.",
+            "description": "Whether to allow styles to be included when secure=true and the HTML is sanitized. Default true.",
             "name": "allowStyles",
             "required": "false",
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Whether to allow links to be included.",
+            "description": "Whether to allow links to be included when secure=true and the HTML is sanitized. Default true.",
             "name": "allowLinks",
             "required": "false",
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Whether to allow images to be included.",
+            "description": "Whether to allow images to be included when secure=true and the HTML is sanitized. Default true.",
             "name": "allowImages",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Whether to allow audio/video to be included when secure=true and the HTML is sanitized. Default true.",
+            "name": "allowMedia",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Whether to allow tables to be included when secure=true and the HTML is sanitized. Default true.",
+            "name": "allowTables",
             "required": "false",
             "type": "java.lang.Boolean"
           },
@@ -7393,7 +7429,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "editor mode : classic, inline, balloon, balloon-always.",
+            "description": "Editor mode : classic, inline, balloon, balloon-always. Default classic.",
             "name": "mode",
             "required": "false",
             "type": "java.lang.String"

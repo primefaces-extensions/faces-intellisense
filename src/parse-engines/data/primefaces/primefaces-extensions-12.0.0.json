@@ -1364,390 +1364,6 @@
         ]
       },
       {
-        "name": "ckEditor",
-        "description": "NOTICE: You must also include the org.primefaces.extensions.resources-ckeditor:*.jar artifact. Client behavior events: save - fired when the save button will be pressed (javax.faces.event.AjaxBehaviorEvent), initialize - fired after the editor was successfully intialized (javax.faces.event.AjaxBehaviorEvent), focus - fired when the editor gets focus (javax.faces.event.AjaxBehaviorEvent), blur - fired when the editor loses focus (javax.faces.event.AjaxBehaviorEvent), wysiwygMode - fired after switching to the wysiwyg mode (javax.faces.event.AjaxBehaviorEvent), sourceMode - fired after switching to the source mode (javax.faces.event.AjaxBehaviorEvent), dirty - fired once after the content has been changed; will be fired again after a change occurs if the editor gains focus after a blur (javax.faces.event.AjaxBehaviorEvent), change - fired if the content has been changed (javax.faces.event.AjaxBehaviorEvent).",
-        "attribute": [
-          {
-            "description": "Unique identifier of the component in a naming container.",
-            "name": "id",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
-            "name": "rendered",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "An EL expression referring to a server side UIComponent instance in a backing bean.",
-            "name": "binding",
-            "required": "false",
-            "type": "javax.faces.component.UIComponent"
-          },
-          {
-            "description": "Name of the client side widget.",
-            "name": "widgetVar",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Value of the component.",
-            "name": "value",
-            "required": "false",
-            "type": "java.lang.Object"
-          },
-          {
-            "description": "Height of the editor. Default value: 200px.",
-            "name": "height",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Width of the editor. Default value: 600px.",
-            "name": "width",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Theme of the editor.",
-            "name": "theme",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Skin of the editor. Valid skins are: flat, icy_orange, kama, minimalist, moono-lisa, moono, Moono_blue, moonocolor, moono-dark, office2013.",
-            "name": "skin",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "The toolbar layout.",
-            "name": "toolbar",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Defines if the editor is readonly.",
-            "name": "readonly",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "The color of the interface. For example: #33fc14.",
-            "name": "interfaceColor",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Default language is used in case no language is set using language option and the editor is not able to use the user language.",
-            "name": "language",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "This setting is used to set the CKEditor language. In case this option is not set, the editor will automatically try to load with user language if supported, otherwise the default language will be used.",
-            "name": "defaultLanguage",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "This setting specifies the CSS file to be used to apply style to the contents.",
-            "name": "contentsCss",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Path to a custom CKEditor js config file.",
-            "name": "customConfig",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Defines if the CKEditor Advanced Content Filter is enabled or disabled. Default is true.",
-            "name": "advancedContentFilter",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "By default, native browser spell check functionality is disabled in the editor. To enable it set this value to false. Default is true.",
-            "name": "disableNativeSpellChecker",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "Sets the behavior of the Enter key. It also determines other behavior rules of the editor, like whether the <br> element is to be used as a paragraph separator when indenting text. Default is CKEDITOR.ENTER_P.",
-            "name": "enterMode",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Sets the behavior of the Shift+Enter key. It also determines other behavior rules of the editor, like whether the <br> element is to be used as a paragraph separator when indenting text. Default is CKEDITOR.ENTER_BR.",
-            "name": "shiftEnterMode",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Default font to set the editor to such as 'Arial'. Default is null.",
-            "name": "font",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Default font size to set the editor to such as '12px'. Only used if Font is set.",
-            "name": "fontSize",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "The tab index to assign to the editor. If not given, no tab index will be assigned.",
-            "name": "tabindex",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "A display name for this component.",
-            "name": "label",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "HTML5 inputmode attribute for hinting at the type of data this control has for touch devices to display appropriate virtual keyboard.",
-            "name": "inputmode",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Marks component as required.",
-            "name": "required",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "Defines if the content of the component should be escaped or not.",
-            "name": "escape",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "Message to display when required field validation fails.",
-            "name": "requiredMessage",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Message to display when conversion fails.",
-            "name": "converterMessage",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Message to display when validation fails.",
-            "name": "validatorMessage",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "A method expression referring to a method validationg the input.",
-            "name": "validator",
-            "required": "false",
-            "type": "javax.faces.validator.Validator"
-          },
-          {
-            "description": "Client side callback to execute when input element loses focus.",
-            "name": "onblur",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when input element loses focus and its value has been modified since gaining focus.",
-            "name": "onchange",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when input element is clicked.",
-            "name": "onclick",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when input element is double clicked.",
-            "name": "ondblclick",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when input element receives focus.",
-            "name": "onfocus",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when a key is pressed down over input element.",
-            "name": "onkeydown",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when a key is released over input element.",
-            "name": "onkeyup",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when a pointer input element is pressed down over input element.",
-            "name": "onmousedown",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when a pointer input element is moved within input element.",
-            "name": "onmousemove",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when a pointer input element is moved away from input element.",
-            "name": "onmouseout",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when a pointer input element is moved onto input element.",
-            "name": "onmouseover",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when a pointer input element is released over input element.",
-            "name": "onmouseup",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when the mouse wheel rolls up or down over an element.",
-            "name": "onwheel",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when text within input element is selected by user.",
-            "name": "onselect",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when the user copies the content of an element.",
-            "name": "oncut",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when the user cuts the content of an element.",
-            "name": "oncopy",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when the user pastes some content in an element.",
-            "name": "onpaste",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when an element gets user input.",
-            "name": "oninput",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when a context menu is triggered.",
-            "name": "oncontextmenu",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when an element is invalid.",
-            "name": "oninvalid",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when the Reset button in a form is clicked.",
-            "name": "onreset",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when the user writes something in a search field.",
-            "name": "onsearch",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when an element is dragged.",
-            "name": "ondrag",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute at the end of a drag operation.",
-            "name": "ondragend",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when an element has been dragged to a valid drop target.",
-            "name": "ondragenter",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when an element leaves a valid drop target.",
-            "name": "ondragleave",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when an element is being dragged over a valid drop target.",
-            "name": "ondragover",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute at the start of a drag operation.",
-            "name": "ondragstart",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when dragged element is being dropped.",
-            "name": "ondrop",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when an element's scrollbar is being scrolled.",
-            "name": "onscroll",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "The placeholder attribute specifies a short hint that describes the expected value of an input field.",
-            "name": "placeholder",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Specifies the file upload POST URL.",
-            "name": "fileBrowserUploadUrl",
-            "required": "false",
-            "type": "java.lang.String"
-          }
-        ]
-      },
-      {
         "name": "clipboard",
         "description": "Clipboard allows copy/cut functions without the need for Flash. Client behavior events: success - fires when the clipboard sucessfully copies/cuts (org.primefaces.extensions.event.ClipboardSuccessEvent), error - fires when the clipboard fails to copy/cut (org.primefaces.extensions.event.ClipboardErrorEvent).",
         "attribute": [
@@ -3952,6 +3568,12 @@
             "type": "java.lang.Boolean"
           },
           {
+            "description": "If true show the breadcrumb at level 1, if false hide it at level 1. Default is true.",
+            "name": "showBreadcrumbFirstLevel",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
             "description": "Boolean flag to allow rendering of breadcrumb above or below header facet. Default is true.",
             "name": "breadcrumbAboveHeader",
             "required": "false",
@@ -5362,7 +4984,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Timeout in seconds to do the ajax ajax requests. Default is 10.",
+            "description": "Timeout in seconds to do the Ajax request(s). Default is 10.",
             "name": "timeout",
             "required": "false",
             "type": "java.lang.Integer"
@@ -6490,7 +6112,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Using font awesome icon to imply that the node has child nodes. Default is \"fa-users\"",
+            "description": "Using customized orgchart icon to imply that the node has child nodes. Default is \"oci-leader\"",
             "name": "parentNodeSymbol",
             "required": "false",
             "type": "java.lang.String"
@@ -6640,7 +6262,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Direction indication for text that does not inherit directionality.",
+            "description": "Defines text direction, valid values are \"ltr\" (default) and \"rtl\".",
             "name": "dir",
             "required": "false",
             "type": "java.lang.String"
@@ -6998,6 +6620,12 @@
             "name": "geoIpLookup",
             "required": "false",
             "type": "java.lang.String"
+          },
+          {
+            "description": "Localized countries map (key ISO 2 code, value name), or JSON string, example\n\"{'de':'Deutschland'}\". Default null.",
+            "name": "localizedCountries",
+            "required": "false",
+            "type": "java.lang.Object"
           }
         ]
       },
@@ -7589,6 +7217,228 @@
             "name": "markdown",
             "required": "false",
             "type": "java.lang.Boolean"
+          }
+        ]
+      },
+      {
+        "name": "session",
+        "description": "Gives client-side Javascript events when session will expire.",
+        "attribute": [
+          {
+            "description": "Client-side Javascript invoked when the session is about to expire.",
+            "name": "onexpire",
+            "required": "true",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client-side Javascript invoked when the session has expired.",
+            "name": "onexpired",
+            "required": "true",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Optional reaction period in seconds for the user to extend the session. Defaults to 60 seconds.",
+            "name": "reactionPeriod",
+            "required": "false",
+            "type": "java.lang.Integer"
+          },
+          {
+            "description": "When set to true, the lastAccessed state will be shared between all browser windows for the same servlet context. Default true.",
+            "name": "multiWindowSupport",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          }
+        ]
+      },
+      {
+        "name": "sunEditor",
+        "description": "SunEditor component, wysiwyg html editor in js. Client behavior events: change - on change (javax.faces.event.AjaxBehaviorEvent), scroll - on scroll (javax.faces.event.AjaxBehaviorEvent), mousedown - on mouseDown (javax.faces.event.AjaxBehaviorEvent), click - on click (javax.faces.event.AjaxBehaviorEvent), input - on input (javax.faces.event.AjaxBehaviorEvent), keydown - on keyDown (javax.faces.event.AjaxBehaviorEvent), keyup - on keyUp (javax.faces.event.AjaxBehaviorEvent), focus - on focus (javax.faces.event.AjaxBehaviorEvent), blur - on blur (javax.faces.event.AjaxBehaviorEvent), paste - on paste (javax.faces.event.AjaxBehaviorEvent), copy - on copy (javax.faces.event.AjaxBehaviorEvent), cut - on cut (javax.faces.event.AjaxBehaviorEvent), drop - on drop (javax.faces.event.AjaxBehaviorEvent), save - on save (javax.faces.event.AjaxBehaviorEvent). initialize - when editor is initialized (javax.faces.event.AjaxBehaviorEvent).",
+        "attribute": [
+          {
+            "description": "Unique identifier of the component in a naming container.",
+            "name": "id",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "name": "rendered",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "An EL expression referring to a server side UIComponent instance in a backing bean.",
+            "name": "binding",
+            "required": "false",
+            "type": "javax.faces.component.UIComponent"
+          },
+          {
+            "description": "Name of the client side widget.",
+            "name": "widgetVar",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Value of the component.",
+            "name": "value",
+            "required": "false",
+            "type": "java.lang.Object"
+          },
+          {
+            "description": "Height of the editor with CSS units, set as an inline style. For example 500px or 100%/code>. Default value: auto",
+            "name": "height",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Width of the editor with CSS units, set as an inline style. For example 500px or 100%/code>. Default value: 100%.",
+            "name": "width",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Defines if the editor is readonly.",
+            "name": "readonly",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Defines if the editor is disabled.",
+            "name": "disabled",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "The tab index to assign to the editor. If not given, no tab index will be assigned.",
+            "name": "tabindex",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Marks component as required.",
+            "name": "required",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Defines if the content of the component should be escaped or not.",
+            "name": "escape",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Secure the component with the HTML Sanitizer library on the classpath. Default is true.",
+            "name": "secure",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Whether to allow formatting to be included when secure=true and the HTML is sanitized. Default true.",
+            "name": "allowFormatting",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Whether to allow blocks to be included when secure=true and the HTML is sanitized. Default true.",
+            "name": "allowBlocks",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Whether to allow styles to be included when secure=true and the HTML is sanitized. Default true.",
+            "name": "allowStyles",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Whether to allow links to be included when secure=true and the HTML is sanitized. Default true.",
+            "name": "allowLinks",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Whether to allow images to be included when secure=true and the HTML is sanitized. Default true.",
+            "name": "allowImages",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Whether to allow audio/video to be included when secure=true and the HTML is sanitized. Default true.",
+            "name": "allowMedia",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Whether to allow tables to be included when secure=true and the HTML is sanitized. Default true.",
+            "name": "allowTables",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Message to display when required field validation fails.",
+            "name": "requiredMessage",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Message to display when conversion fails.",
+            "name": "converterMessage",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Message to display when validation fails.",
+            "name": "validatorMessage",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "A method expression referring to a method validationg the input.",
+            "name": "validator",
+            "required": "false",
+            "type": "javax.faces.validator.Validator"
+          },
+          {
+            "description": "CSS style(s) to be applied when this component is rendered.",
+            "name": "style",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Style class of the main container element. Default value is null.",
+            "name": "styleClass",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Editor mode : classic, inline, balloon, balloon-always. Default classic.",
+            "name": "mode",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "String or java.util.Locale representing user locale. Default is a locale specified in view root.",
+            "name": "locale",
+            "required": "false",
+            "type": "java.lang.Object"
+          },
+          {
+            "description": "Defines text direction, valid values are \"ltr\" (default) and \"rtl\".",
+            "name": "dir",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Name of javascript function to extend the options of the underlying SunEditor configuration.",
+            "name": "extender",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "JSON array of array using single quote that defines the toolbar.",
+            "name": "toolbar",
+            "required": "false",
+            "type": "java.lang.String"
           }
         ]
       }
