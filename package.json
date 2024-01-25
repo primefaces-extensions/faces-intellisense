@@ -100,7 +100,7 @@
               "jakarta-server-faces(2.3 - 3.0)",
               "jakarta-faces-4.0"
             ],
-            "default": "java-server-faces(1.0 - 2.2)",
+            "default": "jakarta-server-faces(2.3 - 3.0)",
             "description": "Faces Version. (Restart Required)."
           }
         }
