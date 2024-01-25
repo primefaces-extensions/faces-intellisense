@@ -88,11 +88,6 @@ Check out the [changelog](https://github.com/primefaces-extensions/faces-intelli
 ## Usage
 The extension will automatically display the completion options. In case the completion is not showing, you can run the command by pressing `Ctrl+Shift+P`(`Cmd+Shift+P` for Mac) and then typing "JSF and PrimeFaces Cache".
 
-## Special thanks to
-* [Per-Steinar Karlsen](https://github.com/per-steinar). 
-* [Tito Sanchez](https://github.com/tmsanchez). 
-
-
 ### More User Settings
 The extension supports a few user settings, changes to these settings will be automatically recognized and the caching process will be re-executed.
 
