@@ -34,16 +34,16 @@ A Visual Studio Code extension that provides diferentes components completion in
 * Gives you autocompletion for RichFaces components (<r:) and (<a4j:).
 
 * Automatic detection of xmlns (You must include the namespace mandatory).   
-    * Html Basic -> "http://java.sun.com/jsf/html" or "http://xmlns.jcp.org/jsf/html" or "jakarta.faces.html"
-    * Faces Core -> "http://java.sun.com/jsf/core" or "http://xmlns.jcp.org/jsf/core" or "jakarta.faces.core"
-    * JSTL Core -> ="http://xmlns.jcp.org/jsp/jstl/core" or "jakarta.tags.core"
-    * Composite Components -> "http://java.sun.com/jsf/composite" or "http://xmlns.jcp.org/jsf/composite" or "jakarta.faces.composite"
-    * Facelets Templating -> "http://java.sun.com/jsf/facelets" or "http://xmlns.jcp.org/jsf/facelets" or "jakarta.faces.facelets"
-    * PrimeFaces -> "http://primefaces.org/ui"
-    * PrimeFaces Extensions -> "http://primefaces.org/ui/extensions"
-    * OmniFaces -> "http://omnifaces.org/ui"
-    * RichFaces -> "http://richfaces.org/rich"
-    * RichFaces A4J -> "http://richfaces.org/a4j"
+    * Html Basic -> `http://java.sun.com/jsf/html` or `http://xmlns.jcp.org/jsf/html` or `jakarta.faces.html`
+    * Faces Core -> `http://java.sun.com/jsf/core` or `http://xmlns.jcp.org/jsf/core` or `jakarta.faces.core`
+    * JSTL Core -> `http://xmlns.jcp.org/jsp/jstl/core` or `jakarta.tags.core`
+    * Composite Components -> `http://java.sun.com/jsf/composite` or `http://xmlns.jcp.org/jsf/composite` or `jakarta.faces.composite`
+    * Facelets Templating -> `http://java.sun.com/jsf/facelets` or `http://xmlns.jcp.org/jsf/facelets` or `jakarta.faces.facelets`
+    * PrimeFaces -> `http://primefaces.org/ui`
+    * PrimeFaces Extensions -> `http://primefaces.org/ui/extensions`
+    * OmniFaces -> `http://omnifaces.org/ui`
+    * RichFaces -> `http://richfaces.org/rich`
+    * RichFaces A4J -> `http://richfaces.org/a4j`
 
 * You can customize the alias name.
     ```xml
