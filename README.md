@@ -86,7 +86,7 @@ You can request new features and contribute to the extension development on its 
 Check out the [changelog](https://github.com/primefaces-extensions/faces-intellisense/blob/main/CHANGELOG.md) for the current and previous updates.
 
 ## Usage
-The extension will automatically display the completion options. In case the completion is not showing, you can run the command by pressing <kbd>Ctrl+Shift+P</kbd> (<kbd>Cmd+Shift+P/kbd> for Mac) and then typing "Faces Cache".
+The extension will automatically display the completion options. In case the completion is not showing, you can run the command by pressing <kbd>Ctrl+Shift+P</kbd> (<kbd>Cmd+Shift+P</kbd> for Mac) and then typing "Faces Cache".
 
 ### More User Settings
 The extension supports a few user settings, changes to these settings will be automatically recognized and the caching process will be re-executed.
