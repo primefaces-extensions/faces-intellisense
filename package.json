@@ -107,7 +107,7 @@
       }
     ]
   },
-  "icon": "images/icon.png",
+  "icon": "images/jakarta.png",
   "repository": {
     "url": "https://github.com/primefaces-extensions/faces-intellisense"
   },
