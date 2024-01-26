@@ -5,6 +5,11 @@ import * as cc4 from "../data/jakarta/cc-4.0.json";
 import * as f4 from "../data/jakarta/f-4.0.json";
 import * as h4 from "../data/jakarta/h-4.0.json";
 import * as ui4 from "../data/jakarta/ui-4.0.json";
+import * as c5 from "../data/jakarta/c-5.0.json";
+import * as cc5 from "../data/jakarta/cc-5.0.json";
+import * as f5 from "../data/jakarta/f-5.0.json";
+import * as h5 from "../data/jakarta/h-5.0.json";
+import * as ui5 from "../data/jakarta/ui-5.0.json";
 // JSF
 import * as c from "../data/jsf/c.json";
 import * as cc from "../data/jsf/cc.json";
