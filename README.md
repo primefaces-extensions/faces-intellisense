@@ -1,10 +1,10 @@
 <div align="center">
 <img src="https://raw.githubusercontent.com/primefaces-extensions/faces-intellisense/main/images/jakarta.png" height="70"><img src="https://raw.githubusercontent.com/primefaces-extensions/faces-intellisense/main/images/plus-sign.png" height="70" ><img src="https://raw.githubusercontent.com/primefaces-extensions/faces-intellisense/main/images/vscode.png" height="70" >
 
-# Intellisense for Jakarta Faces
+# VS Code Intellisense for Jakarta Faces
 </div>
 
-A Visual Studio Code extension that provides diferentes components completion in the HTML, XHTML and JSF. Based on the official Taglib definitions.
+A Visual Studio Code extension that provides component completion in the HTML, XHTML and JSF. Based on the official Taglib definitions.
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
