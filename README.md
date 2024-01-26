@@ -1,7 +1,7 @@
 <div align="center">
 <img src="https://github.com/primefaces-extensions/faces-intellisense/blob/main/images/icon.png" width="172" height="185">
 
-# Intellisense for Faces
+# Intellisense for Jakarta Faces
 </div>
 
 A Visual Studio Code extension that provides diferentes components completion in the HTML, XHTML and JSF. Based on the official Taglib definitions.
