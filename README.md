@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/primefaces-extensions/faces-intellisense/blob/main/images/icon.png" width="172" height="185">
+<img src="https://raw.githubusercontent.com/primefaces-extensions/faces-intellisense/main/images/icon.png" width="172" height="185">
 
 # Intellisense for Jakarta Faces
 </div>
@@ -19,7 +19,7 @@ A Visual Studio Code extension that provides diferentes components completion in
 * Jakarta Faces (4.0, 5.0)
 
 
-![](https://github.com/primefaces-extensions/faces-intellisense/blob/main/images/demo-animated.gif)
+![](https://raw.githubusercontent.com/primefaces-extensions/faces-intellisense/main/images/demo-animated.gif)
 
 ## Features
 * Gives you autocompletion for Html Basic components (<h:).
@@ -87,8 +87,8 @@ The extension will automatically display the completion options. In case the com
 The extension supports a few user settings, changes to these settings will be automatically recognized and the caching process will be re-executed.
 
 
-![](https://github.com/primefaces-extensions/faces-intellisense/blob/main/images/cache1-animated.gif)
-![](https://github.com/primefaces-extensions/faces-intellisense/blob/main/images/cache2-animated.gif)
+![](https://raw.githubusercontent.com/primefaces-extensions/faces-intellisense/main/images/cache1-animated.gif)
+![](https://raw.githubusercontent.com/primefaces-extensions/faces-intellisense/main/images/cache2-animated.gif)
 
 ## Generate Tag Libraries
 
