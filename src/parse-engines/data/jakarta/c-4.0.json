@@ -3,139 +3,135 @@
     "component": [
       {
         "name": "catch",
-        "description": "",
-        "attribute": [
-          {
-            "name": "var",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Name of the exported scoped variable for the\n                exception thrown from a nested action. The type of the\n                scoped variable is the type of the exception thrown."
-          }
-        ]
+        "description": "Catches any Throwable that occurs in its body and optionally exposes it.",
+        "attribute": {
+          "description": "Name of the exported scoped variable for the exception thrown from a nested action. The type of the scoped variable is the type of the exception thrown.",
+          "name": "var",
+          "required": "false",
+          "type": "java.lang.String"
+        }
       },
       {
         "name": "choose",
-        "description": "",
+        "description": "Simple conditional tag that establishes a context for mutually exclusive conditional operations, marked by  and",
         "attribute": []
       },
       {
-        "name": "forEach",
-        "description": "",
+        "name": "if",
+        "description": "Simple conditional tag, which evalutes its body if the supplied condition is true and optionally exposes a Boolean scripting variable representing the evaluation of this condition",
         "attribute": [
           {
-            "name": "items",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Object)",
-            "description": "Collection of items to iterate over."
+            "description": "The test condition that determines whether or not the body content should be processed.",
+            "name": "test",
+            "required": "true",
+            "type": "boolean"
           },
           {
-            "name": "end",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to int)",
-            "description": "If items specified:\n                Iteration ends at the item located at the\n                specified index (inclusive).\n                If items not specified:\n                Iteration ends when index reaches the value\n                specified."
-          },
-          {
+            "description": "Name of the exported scoped variable for the resulting value of the test condition. The type of the scoped variable is Boolean.",
             "name": "var",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Name of the exported scoped variable for the\n                current item of the iteration. This scoped\n                variable has nested visibility. Its type depends\n                on the object of the underlying collection."
+            "type": "java.lang.String"
           },
           {
-            "name": "begin",
+            "description": "Scope for var.",
+            "name": "scope",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to int)",
-            "description": "If items specified:\n                Iteration begins at the item located at the\n                specified index. First item of the collection has\n                index 0.\n                If items not specified:\n                Iteration begins with index set at the value\n                specified."
-          },
-          {
-            "name": "step",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to int)",
-            "description": "Iteration will only process every step items of\n                the collection, starting with the first one."
-          },
-          {
-            "name": "varStatus",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Name of the exported scoped variable for the\n                status of the iteration. Object exported is of type\n                jakarta.servlet.jsp.jstl.core.LoopTagStatus. This scoped variable\n                has nested\n                visibility."
+            "type": "java.lang.String"
           }
         ]
       },
       {
-        "name": "if",
-        "description": "",
+        "name": "forEach",
+        "description": "The basic iteration tag, accepting many different collection types and supporting subsetting and other functionality",
         "attribute": [
           {
-            "name": "test",
-            "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to boolean)",
-            "description": "The test condition that determines whether or\n                not the body content should be processed."
-          },
-          {
-            "name": "scope",
+            "description": "Collection of items to iterate over.",
+            "name": "items",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Scope for var."
+            "type": "java.lang.Object"
           },
           {
+            "description": "If items specified: Iteration begins at the item located at the specified index. First item of the collection has index 0. If items not specified: Iteration begins with index set at the value specified.",
+            "name": "begin",
+            "required": "false",
+            "type": "int"
+          },
+          {
+            "description": "If items specified: Iteration ends at the item located at the specified index (inclusive). If items not specified: Iteration ends when index reaches the value specified.",
+            "name": "end",
+            "required": "false",
+            "type": "int"
+          },
+          {
+            "description": "Iteration will only process every step items of the collection, starting with the first one.",
+            "name": "step",
+            "required": "false",
+            "type": "int"
+          },
+          {
+            "description": "Name of the exported scoped variable for the current item of the iteration. This scoped variable has nested visibility. Its type depends on the object of the underlying collection.",
             "name": "var",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Name of the exported scoped variable for the\n                resulting value of the test condition. The type\n                of the scoped variable is Boolean."
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Name of the exported scoped variable for the status of the iteration. Object exported is of type jakarta.servlet.jsp.jstl.core.LoopTagStatus. This scoped variable has nested visibility.",
+            "name": "varStatus",
+            "required": "false",
+            "type": "java.lang.String"
           }
         ]
       },
       {
         "name": "otherwise",
-        "description": "",
+        "description": "Subtag of  that follows  tags and runs only if all of the prior conditions evaluated to 'false'",
         "attribute": []
       },
       {
         "name": "set",
-        "description": "Sets the result of an expression evaluation based on the\n            value of the attributes. If \"scope\" the is present, but has a zero\n            length or is equal to the string \"page\", TagException\n            is\n            thrown with an informative error message, ensuring page location\n            information is saved. This handler operates in one of two ways.\n\n             The user has set \"var\", \"value\" and (optionally)\n            \"scope\" attributes. The user has set \"target\", \"property\", and\n            \"value\"\n            attributes. The first case takes precedence over the second.",
+        "description": "Sets the result of an expression evaluation based on the value of the attributes. If \"scope\" the is present, but has a zero length or is equal to the string \"page\", TagException is thrown with an informative error message, ensuring page location information is saved. This handler operates in one of two ways.  The user has set \"var\", \"value\" and (optionally) \"scope\" attributes. The user has set \"target\", \"property\", and \"value\" attributes.  The first case takes precedence over the second.",
         "attribute": [
           {
+            "description": "Name of the exported scoped variable to hold the value specified in the action. The type of the scoped variable is whatever type the value expression evaluates to.",
             "name": "var",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Name of the exported scoped variable to hold the value\n                specified in the action. The type of the scoped variable is\n                whatever type the value expression evaluates to."
+            "type": "java.lang.String"
           },
           {
-            "name": "target",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Target object whose property will be set. Must evaluate to\n                a JavaBeans object with setter property property, or to a\n                java.util.Map object."
-          },
-          {
-            "name": "scope",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Scope for var."
-          },
-          {
+            "description": "Expression to be evaluated.",
             "name": "value",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Object)",
-            "description": "Expression to be evaluated."
+            "type": "java.lang.Object"
           },
           {
+            "description": "Target object whose property will be set. Must evaluate to a JavaBeans object with setter property property, or to a java.util.Map object.",
+            "name": "target",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Name of the property to be set in the target object.",
             "name": "property",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Name of the property to be set in the target object."
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Scope for var.",
+            "name": "scope",
+            "required": "false",
+            "type": "java.lang.String"
           }
         ]
       },
       {
         "name": "when",
-        "description": "",
-        "attribute": [
-          {
-            "name": "test",
-            "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to boolean)",
-            "description": "The test condition that determines whether or not the\n                body content should be processed."
-          }
-        ]
+        "description": "Subtag of <choose> that includes its body if its condition evalutes to 'true'",
+        "attribute": {
+          "description": "The test condition that determines whether or not the body content should be processed.",
+          "name": "test",
+          "required": "true",
+          "type": "boolean"
+        }
       }
     ]
   }

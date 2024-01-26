@@ -3,145 +3,195 @@
     "component": [
       {
         "name": "component",
-        "description": "This tag is the same as \n  ui:composition, except for two things: Faces creates a\n  component and adds it directly to the tree, and there's no associated\n  template.\n   Use this tag to create a component and\n  specify a filename for the component as either the source of a\n  ui:include, or the source of a Facelets tag.",
+        "description": "This tag is the same as ui:composition, except for two things: Faces creates a component and adds it directly to the tree, and there's no associated template.  Use this tag to create a component and specify a filename for the component as either the source of a ui:include, or the source of a Facelets tag.",
         "attribute": [
           {
+            "description": "The identifier of the component that Faces inserts into the component tree. If an identifier is not explicitly specified by the page author, Faces will assign an identifier based on the algorithm that it uses for all components.",
             "name": "id",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "The identifier of the component that Faces inserts into the\n                component tree. If an identifier is\n                not explicitly specified by the page author, Faces will assign an\n                identifier based on the algorithm\n                that it uses for all components."
+            "type": "java.lang.String"
           },
           {
-            "name": "rendered",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to boolean)",
-            "description": "Controls whether the component is rendered. Valid values for this attribute are either the strings \"true\" or \"false\" or an EL expression that evaluates to either \"true\" or \"false\".If this attribute's value is \"false\" or the value is an EL expression that evaluates to \"false\", the component is not rendered in the page."
-          },
-          {
+            "description": "Binds the component to a backing bean property, as specified in section 3.1.5 \"Component Bindings\" of the Jakarta Faces Specification Document. The Java language type of this property must be a class that extends jakarta.faces.component.UIComponent. The scope of the bean on which this property resides must be no wider than request scope. If either of these conditions are not met, the results are undefined.",
             "name": "binding",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Binds the component to a backing bean property, as specified in\n\tsection 3.1.5 \"Component Bindings\" of the Jakarta Faces Specification Document.\n    The\n\tJava language type of this property must be a class that extends\n\tjakarta.faces.component.UIComponent.  The scope of\n\tthe bean on which this property resides must be no wider than\n\trequest scope.  If either of these conditions are not met, the\n\tresults are undefined."
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Controls whether the component is rendered. Valid values for this attribute are either the strings \"true\" or \"false\" or an EL expression that evaluates to either \"true\" or \"false\".If this attribute's value is \"false\" or the value is an EL expression that evaluates to \"false\", the component is not rendered in the page.",
+            "name": "rendered",
+            "required": "false",
+            "type": "boolean"
           }
         ]
       },
       {
         "name": "composition",
-        "description": "Defines a composition that\noptionally uses a template, as outlined in the description of the ui tag\nlibrary. Multiple compositions can use the same template, thus\nencapsulating and reusing layout. Faces disregards everything outside of\nthe composition, which lets developers embed compositions in well-formed\nXHTML pages that can be viewed in an XHTML viewer, such as Dreamweaver\nor a browser, without including extraneous elements such as\nhead and body.",
-        "attribute": [
-          {
-            "name": "template",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "A URI that points to a\ntemplate, also known as a layout, that inserts pieces of the page\ndefined in the composition. If the URI\ncannot be resolved a TagAttributeException must be thrown,\nincluding accurate location information to help the page author resolve\nthe problem.  When the template is intended to come from a resource\nlibrary contract, the value of this attribute must be an absolute path\nstarting with \"/\"."
-          }
-        ]
+        "description": "Defines a composition thatoptionally uses a template, as outlined in the description of the ui taglibrary. Multiple compositions can use the same template, thusencapsulating and reusing layout. Faces disregards everything outside ofthe composition, which lets developers embed compositions in well-formedXHTML pages that can be viewed in an XHTML viewer, such as Dreamweaveror a browser, without including extraneous elements such ashead and body.  <!DOCTYPE html><html xmlns:ui=\"jakarta.faces.facelets\">&nbsp; <body>&nbsp;&nbsp; &nbsp; THIS LINE, AND EVERYTHING ABOVE IT IS DISREGARDED BY FACELETS&nbsp; &nbsp; <ui:composition template=\"/layout.xhtml\"> &nbsp;&nbsp; &nbsp; &nbsp; <ui:define name=\"title\">#{msgs.contactsWindowTitle}</ui:define>&nbsp; &nbsp; &nbsp; <ui:define name=\"heading\">#{msgs.contactsHeading}</ui:define> &nbsp;&nbsp; &nbsp; &nbsp; <ui:define name=\"content\">&nbsp; &nbsp; &nbsp; &nbsp; <ui:include src=\"contactsTable.xhtml\" /> &nbsp; &nbsp; &nbsp; </ui:define>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; </ui:composition>&nbsp; &nbsp; THIS LINE, AND EVERYTHING BELOW IT IS DISREGARDED BY FACELETS &nbsp;&nbsp; </body></html>",
+        "attribute": {
+          "description": "  A URI that points to a\ntemplate, also known as a layout, that inserts pieces of the page\ndefined in the composition. If the URI\ncannot be resolved a TagAttributeException must be thrown,\nincluding accurate location information to help the page author resolve\nthe problem. When the template is intended to come from a resource\nlibrary contract, the value of this attribute must be an absolute path\nstarting with \"/\". \n",
+          "name": "template",
+          "required": "false",
+          "type": "java.lang.String"
+        }
       },
       {
         "name": "debug",
-        "description": "When the ui:debug tag is placed in an XHTML\n            page, it creates a component and adds it to the\n            component tree. That debug component captures debugging information,\n            namely the current state of the component\n            tree and the scoped variables in the application, when the component\n            is rendered. If the user presses CTRL + SHIFT + d,\n            Faces opens a window that shows the debugging information captured by\n            the debug component.\n             \n            Typically, the best place to put the ui:debug\n            tag is in an application's main template, which\n            lets developers enable or disable viewing of debugging information\n            in one central location. Additionally, page\n            authors can change the hotkey (which by default is CTRL + SHIFT + d,\n            where the d stands for debug) to CTRL + SHIFT + ?,\n            where ? represents the key specified as the value of the hotkey\n            attribute.\n             \n            You can use the rendered attribute to\n            control whether the debug component is rendered.\n            Using an EL expression as the value for the rendered\n            attribute lets you control whether\n            debug output is enabled for multiple views based on a single bean\n            property.\n             \n              Note ui:debug only works when the ProjectStage is set to Development.",
+        "description": "When the ui:debug tag is placed in an XHTML page, it creates a component and adds it to the component tree. That debug component captures debugging information, namely the current state of the component tree and the scoped variables in the application, when the component is rendered. If the user presses CTRL + SHIFT + d, Faces opens a window that shows the debugging information captured by the debug component.   Typically, the best place to put the ui:debug tag is in an application's main template, which lets developers enable or disable viewing of debugging information in one central location. Additionally, page authors can change the hotkey (which by default is CTRL + SHIFT + d, where the d stands for debug) to CTRL + SHIFT + ?, where ? represents the key specified as the value of the hotkey attribute.   You can use the rendered attribute to control whether the debug component is rendered. Using an EL expression as the value for the rendered attribute lets you control whether debug output is enabled for multiple views based on a single bean property.   Note ui:debug only works when the ProjectStage is set to Development.",
         "attribute": [
           {
+            "description": "Defines a single character, that, pressed in conjunction with CTRL and SHIFT, will display the Faces debug window. By default, the hotkey is 'd'. The value for the hotkey attribute cannot be an EL expression.",
             "name": "hotkey",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Defines a single character, that, pressed in conjunction with\n                CTRL and SHIFT, will display the Faces debug window.\n                By default, the hotkey is 'd'. The value for the\n                hotkey attribute cannot be an EL expression."
+            "type": "java.lang.String"
           },
           {
+            "description": "Controls whether the debug component is rendered. Valid values for this attribute are either the strings \"true\" or \"false\" or an EL expression that evaluates to either \"true\" or \"false\".If this attribute's value is \"false\" or the value is an EL expression that evaluates to \"false\", the debug component is not rendered in the page, the hotkey attribute is disregarded, and users cannot open the debugging information window with a hotkey.",
             "name": "rendered",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Controls whether the debug component is rendered. Valid values\n                for this attribute are either the strings \"true\" or \"false\" or\n                an EL expression that evaluates to either \"true\" or \"false\".If\n                this attribute's value is \"false\" or the value is an EL\n                expression that evaluates to \"false\", the debug component is not\n                rendered in the page, the hotkey attribute is disregarded, and\n                users cannot open the debugging information window with a\n                hotkey."
-          }
-        ]
-      },
-      {
-        "name": "decorate",
-        "description": "The decorate tag\nis identical to the composition tag, except that\nui:decorate, unlike ui:composition, does not\ndisregard all content outside of the tag. The decorate is\nuseful when you want to decorate some content in a page, for example,\nyou might want to decorate a list of items, like this:",
-        "attribute": [
-          {
-            "name": "template",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "A URI that points to a\ntemplate, also known as a layout, that inserts pieces of the page\ndefined in the decorator. If the URI\ncannot be resolved a TagAttributeException must be thrown,\nincluding accurate location information to help the page author resolve\nthe problem.  When the template is intended to come from a resource\nlibrary contract, the value of this attribute must be an absolute path\nstarting with \"/\"."
+            "type": "java.lang.String"
           }
         ]
       },
       {
         "name": "define",
-        "description": "The define tag defines content\n            that is inserted into a page by a template. The define\n            tag can be used inside ui:composition, ui:component,\n            ui:decorate, and ui:fragment\n            tags. Content defined by the define tag\n            can be inserted into a page by using ui:insert.",
-        "attribute": [
-          {
-            "name": "name",
-            "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Assigns a name to the content inside a define\n                tag. That name is used by corresponding ui:insert\n                tags in a template that insert the named content into a page."
-          }
-        ]
+        "description": "The define tag defines content that is inserted into a page by a template. The define tag can be used inside ui:composition, ui:component, ui:decorate, and ui:fragment tags. Content defined by the define tag can be inserted into a page by using ui:insert.",
+        "attribute": {
+          "description": " Assigns a name to the content inside a define tag. That name is used by corresponding ui:insert tags in a template that insert the named content into a page. ",
+          "name": "name",
+          "required": "true",
+          "type": "java.lang.String"
+        }
+      },
+      {
+        "name": "decorate",
+        "description": "The decorate tagis identical to the composition tag, except thatui:decorate, unlike ui:composition, does notdisregard all content outside of the tag. The decorate isuseful when you want to decorate some content in a page, for example,you might want to decorate a list of items, like this:  <ui:decorate template=\"/layout.xhtml\" xmlns:ui=\"jakarta.faces.facelets\">&nbsp; <ui:define name=\"listHeading\"> &nbsp; &nbsp; <ui:include src=\"shared/listHeading.xhtml\"/>&nbsp; </ui:define>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <c:forEach items=\"#&#123;items&#125;\" var=\"item\"> &nbsp; &nbsp; ...&nbsp; </c:forEach>&nbsp; ...</ui:decorate>  Because Faces does not disregard everything outside of the ui:decorate tag, ui:decorate canbe used to decorate pieces of a page.",
+        "attribute": {
+          "description": " A URI that points to a\ntemplate, also known as a layout, that inserts pieces of the page\ndefined in the decorator. If the URI\ncannot be resolved a TagAttributeException must be thrown,\nincluding accurate location information to help the page author resolve\nthe problem. When the template is intended to come from a resource\nlibrary contract, the value of this attribute must be an absolute path\nstarting with \"/\". ",
+          "name": "template",
+          "required": "false",
+          "type": "java.lang.String"
+        }
       },
       {
         "name": "fragment",
-        "description": "The fragment\n          tag is identical to the component tag, except\n          that ui:fragment, unlike\n          ui:component, Faces does not disregard all content\n          outside of the tag.",
+        "description": "The fragment tag is identical to the component tag, except that ui:fragment, unlike ui:component, Faces does not disregard all content outside of the tag.",
         "attribute": [
           {
+            "description": "The identifier of the component that Faces inserts into the component tree. If an identifier is not explicitly specified by the page author, Faces will assign an identifier based on the algorithm that it uses for all components.",
             "name": "id",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "The identifier of the component that Faces inserts into the\n                component tree. If an identifier is\n                not explicitly specified by the page author, Faces will assign an\n                identifier based on the algorithm\n                that it uses for all components."
+            "type": "java.lang.String"
           },
           {
-            "name": "rendered",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Controls whether the fragment component is rendered. \n                        Valid values for this attribute are either the strings \n                        \"true\" or \"false\" or an EL expression that evaluates to\n                         either \"true\" or \"false\".\n                    \n                    \n                        If this attribute's value is \"false\" or the value is an\n                        EL expression that evaluates to \"false\", the fragment \n                        is not rendered in the page."
-          },
-          {
+            "description": "Binds the component to a backing bean property, as specified in section 3.1.5 \"Component Bindings\" of the Jakarta Faces Specification Document. The Java language type of this property must be a class that extends jakarta.faces.component.UIComponent. The scope of the bean on which this property resides must be no wider than request scope. If either of these conditions are not met, the results are undefined.",
             "name": "binding",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Binds the component to a backing bean property, as specified\n        in section 3.1.5 \"Component Bindings\" of the Jakarta Faces Specification Document.\n        The\n\tJava language type of this property must be a class that extends\n\tjakarta.faces.component.UIComponent.  The scope of\n\tthe bean on which this property resides must be no wider than\n\trequest scope.  If either of these conditions are not met, the\n\tresults are undefined."
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Controls whether the fragment component is rendered. Valid values for this attribute are either the strings \"true\" or \"false\" or an EL expression that evaluates to either \"true\" or \"false\".   If this attribute's value is \"false\" or the value is an EL expression that evaluates to \"false\", the fragment is not rendered in the page.",
+            "name": "rendered",
+            "required": "false",
+            "type": "java.lang.String"
           }
         ]
       },
       {
         "name": "include",
-        "description": "Use this tag —which\n            is very similar to JSP's jsp:include — to\n            encapsulate and reuse content among multiple XHTML\n            pages. There are three things this tag can include: plain\n            XHTML, and XHTML pages that have either a\n            composition tag or a component\n            tag.   You supply a filename, through\n            ui:include's src attribute for Faces\n            to include. That filename is relative to the XHTML file that\n            was rendered as a result of the last request. So, for\n            example, if Faces loaded the view login.xhtml,\n            and that file included\n            pageDecorations/header.xhtml, and \n            pageDecorations/header.xhtml included\n            companyLogo.xhtml, then\n            companyLogo.xhtml will not be found if it's in\n            the pageDecorations directory, because\n            companyLogo.xhtml has to be in the same\n            directory as login.xhtml.",
-        "attribute": [
-          {
-            "name": "src",
-            "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "The filename of an XHTML page to\ninclude. The filename is relative to the XHTML page that was originally\nloaded. When the included file is\nintended to come from a resource library contract, the value of this\nattribute must be an absolute path starting with \"/\"."
-          }
-        ]
+        "description": "Use this tag &mdash;which is very similar to JSP's jsp:include &mdash; to encapsulate and reuse content among multiple XHTML pages. There are three things this tag can include: plain XHTML, and XHTML pages that have either a composition tag or a component tag.  You supply a filename, through ui:include's src attribute for Faces to include. That filename is relative to the XHTML file that was rendered as a result of the last request. So, for example, if Faces loaded the view login.xhtml, and that file included pageDecorations/header.xhtml, and  pageDecorations/header.xhtml included companyLogo.xhtml, then companyLogo.xhtml will not be found if it's in the pageDecorations directory, because companyLogo.xhtml has to be in the same directory as login.xhtml.",
+        "attribute": {
+          "description": " The filename of an XHTML page to\ninclude. The filename is relative to the XHTML page that was originally\nloaded. When the included file is\nintended to come from a resource library contract, the value of this\nattribute must be an absolute path starting with \"/\". ",
+          "name": "src",
+          "required": "true",
+          "type": "java.lang.String"
+        }
       },
       {
         "name": "insert",
-        "description": "Inserts content into a template. That content is defined —with\n            the ui:define tag — in either a\n            ui:composition, ui:component,\n            ui:decorate, or ui:fragment.",
+        "description": "Inserts content into a template. That content is defined &mdash;with the ui:define tag &mdash; in either a ui:composition, ui:component, ui:decorate, or ui:fragment.",
+        "attribute": {
+          "description": " The optional name attribute matches the associated <ui:define/> tag in this template's client. If no name is specified, it's expected that the whole template client will be inserted. ",
+          "name": "name",
+          "required": "false",
+          "type": "java.lang.String"
+        }
+      },
+      {
+        "name": "param",
+        "description": "Use this tag to pass parameters to an included file (using ui:include), or a template (linked to either a composition or decorator). Embed ui:param tags in either ui:include, ui:composition, or ui:decorate to pass the parameters.",
         "attribute": [
           {
+            "description": "The name of the parameter.",
             "name": "name",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "The optional name attribute matches the associated <ui:define/>\n                tag in this template's client. If no name is specified, it's\n                expected\n                that the whole template client will be inserted."
+            "required": "true",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "The value of the parameter. Notice that this attribute's value can be an EL expression, which means that you can pass objects to either an included file or a template.",
+            "name": "value",
+            "required": "true",
+            "type": "java.lang.String"
           }
         ]
       },
       {
-        "name": "param",
-        "description": "Use this tag to pass parameters to an included file (using\n            ui:include), or a template\n            (linked to either a composition or decorator). Embed ui:param\n            tags in either ui:include,\n            ui:composition, or ui:decorate\n            to pass the parameters.",
+        "name": "repeat",
+        "description": "Use this tag as an alternative to h:dataTable or c:forEach",
         "attribute": [
           {
-            "name": "name",
-            "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "The name of the parameter."
+            "description": "If value specified: Iteration begins at the item located at the specified index. First item of the collection has index 0. If value not specified: Iteration begins with index set at the specified value.",
+            "name": "begin",
+            "required": "false",
+            "type": "int"
           },
           {
+            "description": "If value specified: Iteration ends at the item located at the specified index (inclusive). If value not specified: Iteration ends when index reaches the specified value (inclusive).",
+            "name": "end",
+            "required": "false",
+            "type": "int"
+          },
+          {
+            "description": "Read-write property setting the offset from the beginning of the collection from which to start the iteration. If not set, this offset is not considered and iteration will start at the beginning of the collection.",
+            "name": "offset",
+            "required": "false",
+            "type": "int"
+          },
+          {
+            "description": "Read-write property setting the size of the collection to iterate. If this value is less than the actual size of the collection, a FacesException must be thrown.",
+            "name": "size",
+            "required": "false",
+            "type": "int"
+          },
+          {
+            "description": "Iteration will only process every step items of the collection, starting with the first one.",
+            "name": "step",
+            "required": "false",
+            "type": "int"
+          },
+          {
+            "description": "The name of a collection of items that this tag iterates over. The collection may be a List, array, java.sql.ResultSet, java.lang.Iterable, java.util.Map or an individual java Object. If the collection is null, this tag does nothing.",
             "name": "value",
             "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "The value of the\n            parameter. Notice that this attribute's value can be an EL expression,\n            which means that you can pass objects to either an included file or a\n            template."
+            "type": "java.lang.Object"
+          },
+          {
+            "description": "Name of the exported scoped variable for the current item of the iteration. This scoped variable has nested visibility.",
+            "name": "var",
+            "required": "true",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Name of the exported request scoped variable for the status of the iteration. The object the name points to is a POJO with the following read-only JavaBeans properties. This scoped variable has nested visibility.  begin of type Integer end of type Integer index of type int step of type Integer even of type boolean odd of type boolean first of type boolean last of type boolean",
+            "name": "varStatus",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Controls whether the repeat component is rendered. Valid values for this attribute are either the strings \"true\" or \"false\" or an EL expression that evaluates to either \"true\" or \"false\".   If this attribute's value is \"false\" or the value is an EL expression that evaluates to \"false\", the repeat is not rendered in the page.",
+            "name": "rendered",
+            "required": "false",
+            "type": "java.lang.String"
           }
         ]
       },
@@ -149,66 +199,6 @@
         "name": "remove",
         "description": "Remove content from a page.",
         "attribute": []
-      },
-      {
-        "name": "repeat",
-        "description": "Use this tag as an alternative to\n        h:dataTable or c:forEach",
-        "attribute": [
-          {
-            "name": "begin",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to int)",
-            "description": "If value specified: Iteration begins at the item located at the specified index.\n                        First item of the collection has index 0.\n                        If value not specified: Iteration begins with index set at the specified value."
-          },
-          {
-            "name": "offset",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to int)",
-            "description": "Read-write property setting the offset from the\n                beginning of the\n                collection from which to start the iteration. If not set, this\n                offset\n                is not considered and iteration will start at the beginning of\n                the\n                collection."
-          },
-          {
-            "name": "step",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to int)",
-            "description": "Iteration\n                will only process every step items of the collection,\n                starting with the first one."
-          },
-          {
-            "name": "var",
-            "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Name of the exported scoped variable for the current item of \n                  the iteration. This scoped variable has nested visibility."
-          },
-          {
-            "name": "rendered",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Controls whether the repeat component is rendered. \n                        Valid values for this attribute are either the strings \n                        \"true\" or \"false\" or an EL expression that evaluates to\n                         either \"true\" or \"false\".\n                    \n                    \n                        If this attribute's value is \"false\" or the value is an\n                        EL expression that evaluates to \"false\", the repeat \n                        is not rendered in the page."
-          },
-          {
-            "name": "end",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to int)",
-            "description": "If value specified: Iteration ends at the item located at the specified index (inclusive).\n                        If value not specified: Iteration ends when index reaches the specified value (inclusive)."
-          },
-          {
-            "name": "size",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to int)",
-            "description": "Read-write property setting the size of the collection\n                to iterate.\n                If this value is less than the actual size of the collection, a\n                FacesException must be thrown."
-          },
-          {
-            "name": "value",
-            "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Object)",
-            "description": "The name of a collection of items that this tag\n                iterates over. The\n                collection may be a List, array,\n                java.sql.ResultSet, java.lang.Iterable, \n                java.util.Map or an individual java Object. If the\n                collection is null, this tag does nothing."
-          },
-          {
-            "name": "varStatus",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Name of the exported request scoped variable for the status \n                   of the iteration. The object the name points to is a POJO \n                   with the following read-only JavaBeans properties. This \n                   scoped variable has nested visibility.\n                  \n                  begin of type Integer\n                  end of type Integer\n                  index of type int\n                  step of type Integer\n                  even of type boolean\n                  odd of type boolean\n                  first of type boolean\n                  last of type boolean"
-          }
-        ]
       }
     ]
   }

@@ -3,1272 +3,1122 @@
     "component": [
       {
         "name": "actionListener",
-        "description": "Register an ActionListener instance on the\n            UIComponent associated with the closest parent UIComponent\n            tag.",
+        "description": "Register an ActionListener instance on the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
+            "description": "Value binding expression that evaluates to an object that implements jakarta.faces.event.ActionListener.",
             "name": "binding",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.event.ActionListener)",
-            "description": "Value binding expression that evaluates to an object that\n                implements jakarta.faces.event.ActionListener."
+            "type": "jakarta.faces.event.ActionListener"
           },
           {
-            "name": "type",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Fully qualified Java class name of an ActionListener to be\n                created and registered."
-          },
-          {
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested.",
             "name": "for",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "If present, this attribute\n                refers\n                to the value of one of the exposed attached objects within the\n                composite component inside of which this tag is nested."
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Fully qualified Java class name of an ActionListener to be created and registered.",
+            "name": "type",
+            "required": "false",
+            "type": "java.lang.String"
           }
         ]
       },
       {
         "name": "ajax",
-        "description": "Register an\n        AjaxBehavior instance on one or more UIComponents implementing\n        the ClientBehaviorHolder interface.  This tag may be nested\n        witin a single component (enabling Ajax for a single component),\n        or it may be \"wrapped\" around multiple components (enabling Ajax\n        for many components). The String value for ids\n        specified for execute and render may be specified as a search\n        expression as outlined in the JavaDocs for\n        UIComponent.findComponent(). The implementation\n        must resolve these ids as specified for\n        UIComponent.findComponent().  For example, consider\n        the following Facelets code. When the button is pressed,\n        panel_1, in form_1 will be re-rendered, along with panel_2 in\n        form_2.",
+        "description": "Register an AjaxBehavior instance on one or more UIComponents implementing the ClientBehaviorHolder interface. This tag may be nested witin a single component (enabling Ajax for a single component), or it may be \"wrapped\" around multiple components (enabling Ajax for many components). The String value for ids specified for execute and render may be specified as a search expression as outlined in the JavaDocs for UIComponent.findComponent(). The implementation must resolve these ids as specified for UIComponent.findComponent(). For example, consider the following Facelets code. <h:form id=\"form_1\"> &nbsp; <h:panelGrid id=\"panel_1\" rows=\"2\"> &nbsp; &nbsp; <!-- content irrelevant --> &nbsp; </h:panelGrid> </h:form> &nbsp; <h:form id=\"form_2\"> &nbsp; <h:commandButton id=\"button\"> &nbsp; &nbsp; <f:ajax render=\":form1:panel_1 panel_2\" /> &nbsp; </h:commandButton> &nbsp; <h:panelGrid id=\"panel_2\"> &nbsp; &nbsp; <!-- content irrelevant --> &nbsp; </h:panelGrid> </h:form>  When the button is pressed, panel_1, in form_1 will be re-rendered, along with panel_2 in form_2.",
         "attribute": [
           {
+            "description": "If less than delay milliseconds elapses between calls to request() only the most recent one is sent and all other requests are discarded. If this option is not specified, or if the value of delay is the literal string 'none' without the quotes, no delay is used.",
             "name": "delay",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "If less than\n      delay milliseconds elapses between calls to\n      request() only the most recent one is sent and all other\n      requests are discarded. If this option is not specified, or if the\n      value of delay is the literal string 'none'\n      without the quotes, no delay is used."
+            "type": "java.lang.String"
           },
           {
-            "name": "event",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "A String or\n             ValueExpression (that evalulates to a String) identifying the type of event \n             the Ajax action will apply to. If specified, it must be one of the \n             events supported by the component the Ajax behavior is being applied to. \n             For HTML components this would be the set of supported DOM events for the\n             component, plus \"action\" for Faces ActionSource components and \"valueChange\"\n             for Faces EditableValueHolder components.  If not specified, the default \n             event is determined for the component.  The DOM event name is the actual DOM\n             event name (for example: \"click\") as opposed to (for example: \"onclick\")."
-          },
-          {
-            "name": "immediate",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "If \"true\" behavior events\n                generated from this behavior\n                are broadcast during Apply Request Values phase. Otherwise, the\n                events will be\n                broadcast during Invoke Aplications phase"
-          },
-          {
-            "name": "onerror",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "The name of the JavaScript\n                function that will handle errors."
-          },
-          {
-            "name": "render",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.util.Collection)",
-            "description": "Evaluates to\n         Collection<String>. The search expressions to\n         components that will participate in the \"render\" portion\n         of the Request Processing Lifecycle.  See the javadoc for\n         SearchKeywordResolver for the complete list of\n         keywords. If a literal is specified the identifiers must\n         be space delimited.  If not specified, the\n         default value of \"@none\" is assumed.  For example, @this\n         clientIdOne clientIdTwo.\n         \n        When nested within a composite component,\n        and the value contains or implies the keyword @this,\n        then the keyword must be remapped to the client ID of the associated <composite:implementation>,\n        else if the value is not an absolute search expression,\n        then it must be reinterpreted relative to the location of the <f:ajax> declaration."
-          },
-          {
+            "description": "A value of \"true\" indicates the AjaxBehavior should not be rendered. A value of \"false\" indicates the AjaxBehavior should be rendered. \"false\" is the default.",
             "name": "disabled",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "A value of \"true\" indicates\n                the\n                AjaxBehavior should not be rendered. A value of \"false\"\n                indicates\n                the AjaxBehavior should be rendered. \"false\" is the default."
+            "type": "java.lang.Boolean"
           },
           {
+            "description": "A String or ValueExpression (that evalulates to a String) identifying the type of event the Ajax action will apply to. If specified, it must be one of the events supported by the component the Ajax behavior is being applied to. For HTML components this would be the set of supported DOM events for the component, plus \"action\" for Faces ActionSource components and \"valueChange\" for Faces EditableValueHolder components. If not specified, the default event is determined for the component. The DOM event name is the actual DOM event name (for example: \"click\") as opposed to (for example: \"onclick\").",
+            "name": "event",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Evaluates to Collection<String>. This is a space separated list of search expressions to components that will participate in the \"execute\" portion of the Request Processing Lifecycle. See the javadoc for SearchKeywordResolver for the complete list of keywords. If a literal is specified the ids must be space delimited. If not specified, the default value of \"@this\" is assumed. For example, @this clientIdOne clientIdTwo. When nested within a composite component, and the value contains or implies the keyword @this, then the keyword must be remapped to the targets attribute of the associated <composite:clientBehavior> declaration, if any, else if the value is not an absolute search expression, then it must be reinterpreted relative to the location of the <f:ajax> declaration.",
             "name": "execute",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.util.Collection)",
-            "description": "Evaluates to\n         Collection<String>. This is a space separated list of\n         search expressions to\n         components that will participate in the \"execute\"\n         portion of the Request Processing Lifecycle.  See the javadoc for\n         SearchKeywordResolver for the complete list of\n         keywords. If a literal is specified the ids must be\n         space delimited.  If\n         not specified, the default value of \"@this\" is assumed.  For\n         example, @this clientIdOne clientIdTwo.\n\n        When nested within a composite component,\n        and the value contains or implies the keyword @this,\n        then the keyword must be remapped to the targets attribute of the associated <composite:clientBehavior> declaration, if any,\n        else if the value is not an absolute search expression,\n        then it must be reinterpreted relative to the location of the <f:ajax> declaration."
+            "type": "java.util.Collection"
           },
           {
+            "description": "If \"true\" behavior events generated from this behavior are broadcast during Apply Request Values phase. Otherwise, the events will be broadcast during Invoke Aplications phase",
+            "name": "immediate",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Method expression referencing a method that will be called when an AjaxBehaviorEvent has been broadcast for the listener.",
             "name": "listener",
             "required": "false",
-            "type": "jakarta.el.MethodExpression\n                                \n                                (signature must match public void\n                processAjaxBehavior(jakarta.faces.event.AjaxBehaviorEvent event)\n                throws jakarta.faces.event.AbortProcessingException\n            )",
-            "description": "Method expression referencing\n                a method\n                that will be called when an AjaxBehaviorEvent has been\n                broadcast for the listener."
+            "method-signature": "public void processAjaxBehavior(jakarta.faces.event.AjaxBehaviorEvent event) throws jakarta.faces.event.AbortProcessingException"
           },
           {
+            "description": "The name of the JavaScript function that will handle errors.",
+            "name": "onerror",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "The name of the JavaScript function that will handle UI events.",
             "name": "onevent",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "The name of the JavaScript\n                function that will handle UI events."
+            "type": "java.lang.String"
           },
           {
+            "description": "Evaluates to Collection<String>. The search expressions to components that will participate in the \"render\" portion of the Request Processing Lifecycle. See the javadoc for SearchKeywordResolver for the complete list of keywords. If a literal is specified the identifiers must be space delimited. If not specified, the default value of \"@none\" is assumed. For example, @this clientIdOne clientIdTwo. When nested within a composite component, and the value contains or implies the keyword @this, then the keyword must be remapped to the client ID of the associated <composite:implementation>, else if the value is not an absolute search expression, then it must be reinterpreted relative to the location of the <f:ajax> declaration.",
+            "name": "render",
+            "required": "false",
+            "type": "java.util.Collection"
+          },
+          {
+            "description": "Reset specific input values. Interpret the value of the render attribute as a space separated list of client identifiers suitable for passing directly to UIViewRoot.resetValues(). The implementation must cause an ActionListener to be attached to the ActionSource component in which this tag is nested that calls UIViewRoot.resetValues() passing the value of the render attribute as the argument.",
             "name": "resetValues",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "Reset specific input values.\n            Interpret the value of the render attribute as\n            a space separated list of client identifiers suitable for\n            passing directly to UIViewRoot.resetValues().\n            The implementation must cause an ActionListener\n            to be attached to the ActionSource component\n            in which this tag is nested that calls\n            UIViewRoot.resetValues() passing the value of\n            the render attribute as the argument."
+            "type": "java.lang.Boolean"
           }
         ]
       },
       {
         "name": "attribute",
-        "description": "Add an attribute to the UIComponent associated with the closest\n            parent UIComponent tag.",
+        "description": "Add an attribute to the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
+            "description": "The name of the component attribute to be set.",
             "name": "name",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "The name of the component attribute to be set."
+            "type": "java.lang.String"
           },
           {
+            "description": "The value of the component attribute to be set.",
             "name": "value",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Object)",
-            "description": "The value of the component attribute to be set."
+            "type": "java.lang.Object"
           }
         ]
       },
       {
         "name": "attributes",
-        "description": "Add attributes to the UIComponent associated with the closest\n            parent UIComponent tag.  \n            For each Map.Entry in the Map<String, Object>\n            referenced by the value attribute of this tag, take the following action.\n            If parent.getAttributes().containsKey(entry.getKey()) returns \n            true, take no action for this entry.  Otherwise, if \n            entry.getValue() is a ValueExpression call \n            parent.setValueExpression(entry.getKey(), entry.getValue()).\n            Otherwise, call parent.getAttributes.put(entry.getKey(), entry.getValue()).",
-        "attribute": [
-          {
-            "name": "value",
-            "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.util.Map)",
-            "description": "An EL ValueExpression that evaluates to a Map<String, Object>."
-          }
-        ]
+        "description": "Add attributes to the UIComponent associated with the closest parent UIComponent tag. For each Map.Entry in the Map<String, Object> referenced by the value attribute of this tag, take the following action. If parent.getAttributes().containsKey(entry.getKey()) returns true, take no action for this entry. Otherwise, if entry.getValue() is a ValueExpression call parent.setValueExpression(entry.getKey(), entry.getValue()). Otherwise, call parent.getAttributes.put(entry.getKey(), entry.getValue()).",
+        "attribute": {
+          "description": "An EL ValueExpression that evaluates to a Map<String, Object>.",
+          "name": "value",
+          "required": "true",
+          "type": "java.util.Map"
+        }
       },
       {
         "name": "convertDateTime",
-        "description": "Register a\n            DateTimeConverter instance on the UIComponent associated\n            with the closest parent UIComponent tag.",
+        "description": "Register a DateTimeConverter instance on the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
+            "description": "A ValueExpression that evaluates to an instance of jakarta.faces.convert.DateTimeConverter.",
             "name": "binding",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.convert.DateTimeConverter)",
-            "description": "A ValueExpression that evaluates to an instance of\n                jakarta.faces.convert.DateTimeConverter."
+            "type": "jakarta.faces.convert.DateTimeConverter"
           },
           {
+            "description": "Predefined formatting style which determines how the date component of a date string is to be formatted and parsed. Applied only if type is \"date\", \"both\", \"localDate\", \"localDateTime\", or \"zonedDateTime\". Valid values are \"default\", \"short\", \"medium\", \"long\", and \"full\". Default value is \"default\". If a java.time formatter is being used, yet the dateStyle is set to \"default\", the value \"medium\" is assumed.",
+            "name": "dateStyle",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested.",
             "name": "for",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "If present, this attribute\n                refers\n                to the value of one of the exposed attached objects within the\n                composite component inside of which this tag is nested."
+            "type": "java.lang.String"
           },
           {
-            "name": "pattern",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Custom formatting pattern which determines how the\n                date/time string should be formatted and parsed."
-          },
-          {
-            "name": "timeZone",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Object)",
-            "description": "Time zone in which to interpret any time information in the date\n                String. Value must be either a ValueExpression that evaluates to\n                a java.util.TimeZone instance, or a String that is a timezone ID\n                as described in the javadocs for\n                java.util.TimeZone.getTimeZone()."
-          },
-          {
-            "name": "dateStyle",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Predefined\n                formatting style which determines how the date component\n                of a date string is to be formatted and parsed.  Applied\n                only if type is \"date\", \"both\", \"localDate\",\n                \"localDateTime\", or \"zonedDateTime\". Valid values\n                are \"default\", \"short\", \"medium\", \"long\", and \"full\".\n                Default value is \"default\".  If a java.time \n                formatter is being used, yet the dateStyle is set to \"default\", \n                the value \"medium\" is assumed."
-          },
-          {
+            "description": "Locale whose predefined styles for dates and times are used during formatting or parsing. If not specified, the Locale returned by FacesContext.getViewRoot().getLocale() will be used. Value must be either a VB expression that evaluates to a java.util.Locale instance, or a String that is valid to pass as the first argument to the constructor java.util.Locale(String language, String country). The empty string is passed as the second argument.",
             "name": "locale",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Object)",
-            "description": "Locale whose predefined styles for dates and times are used\n                during formatting or parsing. If not specified, the Locale\n                returned by FacesContext.getViewRoot().getLocale() will be used.\n                Value must be either a VB expression that evaluates to a\n                java.util.Locale instance, or a String that is valid to pass as\n                the first argument to the constructor java.util.Locale(String\n                language, String country). The empty string is passed as the\n                second argument."
+            "type": "java.lang.Object"
           },
           {
+            "description": "Custom formatting pattern which determines how the date/time string should be formatted and parsed.",
+            "name": "pattern",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Predefined formatting style which determines how the time component of a date string is to be formatted and parsed. Applied only if type is \"time\", \"both\", \"localTime\" or \"offsetTime\". Valid values are \"default\", \"short\", \"medium\", \"long\", and \"full\". Default value is \"default\". If a java.time formatter is being used, yet the timeStyle is set to \"default\", the value \"medium\" is assumed.",
             "name": "timeStyle",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Predefined \n                formatting style which determines how the time component of a \n                date string is to be formatted and\n                parsed. Applied only if type is \"time\", \"both\",\n                \"localTime\" or \n                \"offsetTime\".\n                Valid values are \"default\", \"short\", \"medium\", \"long\",\n                and \"full\". Default value is \"default\".  If a java.time \n                formatter is being used, yet the timeStyle is set to \"default\", \n                the value \"medium\" is assumed."
+            "type": "java.lang.String"
           },
           {
+            "description": "Time zone in which to interpret any time information in the date String. Value must be either a ValueExpression that evaluates to a java.util.TimeZone instance, or a String that is a timezone ID as described in the javadocs for java.util.TimeZone.getTimeZone().",
+            "name": "timeZone",
+            "type": "java.lang.Object"
+          },
+          {
+            "description": "Specifies what contents the string value will be formatted to include, or parsed expecting. Valid values are \"date\", \"time\", \"both\", \"localDate\", \"localDateTime\", \"localTime\", \"offsetTime\", \"offsetDateTime\", and \"zonedDateTime\". The values starting with \"local\", \"offset\" and \"zoned\" correspond to Java SE 8 Date Time API classes in package java.time with the name derived by upper casing the first letter. For example, java.time.LocalDate for the value \"localDate\". Default value is \"date\".",
             "name": "type",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Specifies what\n            contents the string value will be formatted to include, or\n            parsed expecting. Valid values are \"date\", \"time\",\n            \"both\", \"localDate\",\n            \"localDateTime\", \"localTime\", \"offsetTime\",\n            \"offsetDateTime\", and \"zonedDateTime\".  The values starting\n            with \"local\", \"offset\" and \"zoned\" correspond to Java SE 8\n            Date Time API classes in package java.time with\n            the name derived by upper casing the first letter.  For\n            example, java.time.LocalDate for the value\n            \"localDate\". Default value is \"date\"."
-          }
-        ]
-      },
-      {
-        "name": "converter",
-        "description": "Register a named Converter instance on the UIComponent\n            associated with the closest parent UIComponent tag.",
-        "attribute": [
-          {
-            "name": "binding",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.convert.Converter)",
-            "description": "A ValueExpression that evaluates to an object that\n                implements jakarta.faces.convert.Converter."
-          },
-          {
-            "name": "for",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "If present, this attribute\n                refers\n                to the value of one of the exposed attached objects within the\n                composite component inside of which this tag is nested."
-          },
-          {
-            "name": "converterId",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Converter identifier of the Converter instance to be\n                created and registered."
+            "type": "java.lang.String"
           }
         ]
       },
       {
         "name": "convertNumber",
-        "description": "",
+        "description": "Register a NumberConverter instance on the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
+            "description": "A ValueExpression that evaluates to an instance of jakarta.faces.convert.NumberConverter.",
             "name": "binding",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.convert.NumberConverter)",
-            "description": "A ValueExpression that evaluates to an instance of\n                jakarta.faces.convert.NumberConverter."
+            "type": "jakarta.faces.convert.NumberConverter"
           },
           {
-            "name": "currencySymbol",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Currency symbol, applied only when formatting\n                currencies."
-          },
-          {
-            "name": "groupingUsed",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "Flag specifying whether formatted output will\n                contain grouping separators. Expressions must\n                evaluate to a boolean. Default value\n                is true."
-          },
-          {
-            "name": "locale",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Object)",
-            "description": "Locale\n                whose\n                predefined styles for numbers are used during formatting\n                and parsing. If not specified, the Locale returned by\n                FacesContext.getViewRoot().getLocale() will be used.\n                Expressions must evaluate to a java.util.Locale or a String that is valid to\n                pass as the first argument to the constructor\n                java.util.Locale(String language, String country). The\n                empty string is passed as the second argument."
-          },
-          {
-            "name": "maxIntegerDigits",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Integer)",
-            "description": "Maximum number of digits that will be formatted\n                in the integer portion of the output. Expressions\n                must evaluate to an int."
-          },
-          {
-            "name": "minIntegerDigits",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Integer)",
-            "description": "Minimum number of digits that will be formatted\n                in the integer portion of the output. Expressions\n                must evaluate to an int."
-          },
-          {
-            "name": "type",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Specifies how the number string will be formatted\n                and parsed. Valid values are \"number\", \"currency\",\n                and \"percent\". Default value is \"number\"."
-          },
-          {
+            "description": "ISO 4217 currency code, applied only when formatting currencies.",
             "name": "currencyCode",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "ISO 4217 currency code, applied only when\n                formatting currencies."
+            "type": "java.lang.String"
           },
           {
+            "description": "Currency symbol, applied only when formatting currencies.",
+            "name": "currencySymbol",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested.",
             "name": "for",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "If present, this attribute\n                refers\n                to the value of one of the exposed attached objects within the\n                composite component inside of which this tag is nested."
+            "type": "java.lang.String"
           },
           {
+            "description": "Flag specifying whether formatted output will contain grouping separators. Expressions must evaluate to a boolean. Default value is true.",
+            "name": "groupingUsed",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Flag specifying whether only the integer part of the value will be formatted and parsed. Expressions must evaluate to a boolean. Default value is false.",
             "name": "integerOnly",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "Flag specifying whether only the integer part\n                of the value will be formatted and parsed.\n                Expressions must evaluate to a boolean.\n                Default value is false."
+            "type": "java.lang.Boolean"
           },
           {
+            "description": "Locale whose predefined styles for numbers are used during formatting and parsing. If not specified, the Locale returned by FacesContext.getViewRoot().getLocale() will be used. Expressions must evaluate to a java.util.Locale or a String that is valid to pass as the first argument to the constructor java.util.Locale(String language, String country). The empty string is passed as the second argument.",
+            "name": "locale",
+            "type": "java.lang.Object"
+          },
+          {
+            "description": "Maximum number of digits that will be formatted in the fractional portion of the output. Expressions must evaluate to an int.",
             "name": "maxFractionDigits",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Integer)",
-            "description": "Maximum number of digits that will be formatted\n                in the fractional portion of the output. Expressions\n                must evaluate to an int."
+            "type": "java.lang.Integer"
           },
           {
+            "description": "Maximum number of digits that will be formatted in the integer portion of the output. Expressions must evaluate to an int.",
+            "name": "maxIntegerDigits",
+            "type": "java.lang.Integer"
+          },
+          {
+            "description": "Minimum number of digits that will be formatted in the fractional portion of the output. Expressions must evaluate to an int.",
             "name": "minFractionDigits",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Integer)",
-            "description": "Minimum number of digits that will be formatted\n                in the fractional portion of the output. Expressions\n                must evaluate to an int."
+            "type": "java.lang.Integer"
           },
           {
+            "description": "Minimum number of digits that will be formatted in the integer portion of the output. Expressions must evaluate to an int.",
+            "name": "minIntegerDigits",
+            "type": "java.lang.Integer"
+          },
+          {
+            "description": "Custom formatting pattern which determins how the number string should be formatted and parsed.",
             "name": "pattern",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Specifies how the number string will be formatted and parsed. Valid values are \"number\", \"currency\", and \"percent\". Default value is \"number\".",
+            "name": "type",
+            "type": "java.lang.String"
+          }
+        ]
+      },
+      {
+        "name": "converter",
+        "description": "Register a named Converter instance on the UIComponent associated with the closest parent UIComponent tag.",
+        "attribute": [
+          {
+            "description": "A ValueExpression that evaluates to an object that implements jakarta.faces.convert.Converter.",
+            "name": "binding",
+            "type": "jakarta.faces.convert.Converter"
+          },
+          {
+            "description": "Converter identifier of the Converter instance to be created and registered.",
+            "name": "converterId",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested.",
+            "name": "for",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Custom formatting pattern which determins how the\n                number string should be formatted and parsed."
+            "type": "java.lang.String"
           }
         ]
       },
       {
         "name": "event",
-        "description": "Allow Jakarta Faces page authors to\n            install ComponentSystemEventListener\n            instances\n            on a component in a page.",
+        "description": "Allow Jakarta Faces page authors to install ComponentSystemEventListener instances on a component in a page.",
         "attribute": [
           {
+            "description": "The expression must evaluate to a public method that takes a ComponentSystemEvent parameter, with a return type of void, or to a public method that takes no arguments with a return type of void. In the latter case, the method has no way of easily knowing where the event came from, but this can be useful in cases where a notification is needed that \"an event happened\".",
             "name": "listener",
             "required": "true",
-            "type": "jakarta.el.MethodExpression\n                                \n                                (signature must match public void\n                listener(jakarta.faces.event.ComponentSystemEvent event) throws\n                jakarta.faces.event.AbortProcessingException\n            )",
-            "description": "The expression must\n              evaluate to a public method that takes a\n              ComponentSystemEvent parameter, with a return\n              type of void, or to a public method that takes no\n              arguments with a return type of void. In the latter case,\n              the method has no way of easily knowing where the event\n              came from, but this can be useful in cases where a\n              notification is needed that \"an event happened\"."
+            "method-signature": "public void listener(jakarta.faces.event.ComponentSystemEvent event) throws jakarta.faces.event.AbortProcessingException"
+          },
+          {
+            "description": "Name of the event for which to install a listener. The following table lists the valid values for this attribute, and the corresponding event type for which the listener action is registered.  value for \"type\" tagattribute Type of event sent to listener method   preRenderComponent jakarta.faces.event.PreRenderComponentEvent   preRenderView jakarta.faces.event.PreRenderViewEvent   postAddToView jakarta.faces.event.PostAddToViewEvent   preValidate jakarta.faces.event.PreValidateEvent   postValidate jakarta.faces.event.PostValidateEvent    In addition to these values, the fully qualified class name of anyjava class that extendsjakarta.faces.event.ComponentSystemEvent may be used as thevalue of the \"type\" attribute. Also, the @jakarta.faces.event.NamedEvent annotation maybe attached to any java class that extendsjakarta.faces.event.ComponentSystemEvent. This enables thatevent to be referenced from this attribute, as descibed in the javadocsfor @NamedEvent.",
+            "name": "type",
+            "required": "true",
+            "type": "java.lang.String"
           }
         ]
       },
       {
         "name": "facet",
-        "description": "Register a named\n            facet on the UIComponent associated with the closest parent\n            UIComponent tag. \n              When the facet contains more than one child the children will be\n              automatically put in a container UIPanel.",
-        "attribute": [
-          {
-            "name": "name",
-            "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Name of the facet to be created."
-          }
-        ]
+        "description": "Register a named facet on the UIComponent associated with the closest parent UIComponent tag.  When the facet contains more than one child the children will be automatically put in a container UIPanel.",
+        "attribute": {
+          "description": "Name of the facet to be created.",
+          "name": "name",
+          "required": "true",
+          "type": "java.lang.String"
+        }
       },
       {
         "name": "importConstants",
-        "description": "Used inside of the metadata facet of a view, this tag will import a mapping of all constant field values of the given type in the current view.\n                Constant field values are all public static final fields of the given type.\n                The map key represents the constant field name as String.\n                The map value represents the actual constant field value.\n                This works for classes, interfaces and enums.",
+        "description": "Used inside of the metadata facet of a view, this tag will import a mapping of all constant field values of the given type in the current view. Constant field values are all public static final fields of the given type. The map key represents the constant field name as String. The map value represents the actual constant field value. This works for classes, interfaces and enums.",
         "attribute": [
           {
+            "description": "The fully qualified name of the type to import the constant field values for.",
             "name": "type",
             "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "The fully qualified name of the type to import the constant field values for."
+            "type": "java.lang.String"
           },
           {
+            "description": "Name of request scope attribute under which constants will be exposed as a Map. Defaults to the simple name of the given type.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String",
-            "description": "Name of request scope attribute under which constants will be exposed as a Map.\n                    Defaults to the simple name of the given type."
+            "required": "false"
           }
         ]
       },
       {
         "name": "loadBundle",
-        "description": "Load a resource bundle localized for the Locale of the current\n            view, and expose it as a java.util.Map in the request attributes\n            of the current request under the key specified by the value of the\n            \"var\" attribute of this tag. The Map must behave such that if a\n            get() call is made for a key that does not exist in the Map, the\n            literal string ???KEY??? is returned from the Map, where KEY is\n            the key being looked up in the Map, instead of a\n            MissingResourceException being thrown. If the ResourceBundle does\n            not exist, a TagAttributeException must be thrown.",
+        "description": "Load a resource bundle localized for the Locale of the current view, and expose it as a java.util.Map in the request attributes of the current request under the key specified by the value of the \"var\" attribute of this tag. The Map must behave such that if a get() call is made for a key that does not exist in the Map, the literal string ???KEY??? is returned from the Map, where KEY is the key being looked up in the Map, instead of a MissingResourceException being thrown. If the ResourceBundle does not exist, a TagAttributeException must be thrown.",
         "attribute": [
           {
+            "description": "Base name of the resource bundle to be loaded.",
             "name": "basename",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Base name of the resource bundle\n                to be loaded."
+            "type": "java.lang.String"
           },
           {
+            "description": "Name of a request scope attribute under which the resource bundle will be exposed as a Map.",
             "name": "var",
             "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Name of a request scope attribute under which\n                the resource bundle will be exposed as a Map."
+            "type": "java.lang.String"
           }
         ]
       },
       {
         "name": "metadata",
-        "description": "Declare the metadata\n            facet for this view. This must be a child of the\n            <f:view>. This tag\n            must reside within the top level XHTML file for the given\n            viewId, or in a\n            template client, but not in a template. The\n            implementation must insure that the direct child of the\n            facet is a UIPanel, even if there\n            is only one child of the facet. The implementation must set\n            the id of the UIPanel to be the\n            value of the\n            UIViewRoot.METADATA_FACET_NAME\n            symbolic constant. The implementation must allow templating for this element\n            according\n            to the following pattern. template client XHTML view, view01.xhtml Note line 4. The page author must ensure that the\n            <f:metadata> element does not\n            appear on a template or\n            included page. It must reside on the root page that corresponds to\n            the\n            viewId. The template page, template.xhtml",
+        "description": "Declare the metadata facet for this view. This must be a child of the <f:view>. This tag must reside within the top level XHTML file for the given viewId, or in a template client, but not in a template. The implementation must insure that the direct child of the facet is a UIPanel, even if there is only one child of the facet. The implementation must set the id of the UIPanel to be the value of the UIViewRoot.METADATA_FACET_NAME symbolic constant.  The implementation must allow templating for this element according to the following pattern. template client XHTML view, view01.xhtml  <ui:composition template=\"template.xhtml\"> &nbsp; &nbsp; <ui:define name=\"metadata\"> &nbsp; &nbsp; &nbsp; <f:metadata> &nbsp; &nbsp; &nbsp; &nbsp; <f:viewParam name=\"id\"/> &nbsp; &nbsp; &nbsp; </f:metadata> &nbsp; &nbsp; </ui:define> &nbsp; &nbsp; <ui:define name=\"content\"> &nbsp; &nbsp; &nbsp; &nbsp; <h1>The big news stories of the day</h1> &nbsp; &nbsp; </ui:define> </ui:composition>   Note line 4. The page author must ensure that the <f:metadata> element does not appear on a template or included page. It must reside on the root page that corresponds to the viewId. The template page, template.xhtml  <html xmlns=\"http://www.w3.org/1999/xhtml\" &nbsp; &nbsp; &nbsp; xmlns:ui=\"jakarta.faces.facelets\" &nbsp; &nbsp; &nbsp; xmlns:f=\"jakarta.faces.core\" &nbsp; &nbsp; &nbsp; xml:lang=\"en\" lang=\"en\"> &nbsp; <body> <f:view> &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; <ui:insert name=\"metadata\"/> &nbsp; &nbsp; &nbsp; &nbsp; <div id=\"container\"> &nbsp; &nbsp; &nbsp; &nbsp; <ui:insert name=\"content\"/> &nbsp; &nbsp; </div> </f:view> </body> </html>  The page author is not required to use templating, but if they do, it must be done as shown above, (or with <ui:include> in a similar manner).",
         "attribute": []
       },
       {
         "name": "param",
-        "description": "Add a child UIParameter\n        component to the UIComponent associated with the closest parent\n        UIComponent tag.",
+        "description": "Add a child UIParameter component to the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
+            "description": "ValueExpression to a backing bean property bound to the component instance for the UIComponent created by this tag.",
             "name": "binding",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.component.UIComponent)",
-            "description": "ValueExpression to a backing bean\n                property bound to the component instance for\n                the UIComponent created by this tag."
+            "type": "jakarta.faces.component.UIComponent"
           },
           {
+            "description": "Flag enabling or disabling the inclusion of the parameter. This flag is consulted by renderers that consider the UIParameter component associated with this  during their rendering. Such renderers include jakarta.faces.Output jakarta.faces.Link and jakarta.faces.OutcomeTarget jakarta.faces.Link.",
+            "name": "disable",
+            "type": "boolean"
+          },
+          {
+            "description": "Component identifier of the UIParameter component to be created.",
             "name": "id",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Component identifier of the UIParameter component\n                to be created."
+            "type": "java.lang.String"
           },
           {
-            "name": "value",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Value of the parameter to be set."
-          },
-          {
-            "name": "disable",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to boolean)",
-            "description": "Flag enabling or disabling the inclusion of the\n                parameter.  This flag is\n                consulted by renderers that consider the\n                UIParameter component associated with this\n                 during their rendering.\n                Such renderers include jakarta.faces.Output\n                jakarta.faces.Link and\n                jakarta.faces.OutcomeTarget\n                jakarta.faces.Link."
-          },
-          {
+            "description": "Name of the parameter to be created.",
             "name": "name",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Name of the parameter to be created."
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Value of the parameter to be set.",
+            "name": "value",
+            "type": "java.lang.String"
           }
         ]
       },
       {
         "name": "passThroughAttribute",
-        "description": "Add an attribute to the \n            passThroughAttributes Map of the UIComponent \n            associated with the closest parent UIComponent tag.",
+        "description": "Add an attribute to the passThroughAttributes Map of the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
+            "description": "The name of the pass through attribute. An attribute with this name, and the corresponding value will appear on the outer most markup element in the rendered markup for the component, as specified in the overview for the HTML_BASIC RenderKit. If the name of this attribute conflicts with Renderer specific attribute, the value specified here supercedes the one that would otherwise be rendered by the Renderer",
             "name": "name",
             "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "The name\n            of the pass through attribute.  An attribute with this name,\n            and the corresponding value will appear on the outer most\n            markup element in the rendered markup for the component, as\n            specified in the overview for the HTML_BASIC RenderKit.  If\n            the name of this attribute conflicts with\n            Renderer specific attribute, the value\n            specified here supercedes the one that would otherwise be\n            rendered by the Renderer"
+            "type": "java.lang.String"
           },
           {
+            "description": "The value of the pass through attribute.",
             "name": "value",
             "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Object)",
-            "description": "The value\n            of the pass through attribute."
+            "type": "java.lang.Object"
           }
         ]
       },
       {
         "name": "passThroughAttributes",
-        "description": "Add attributes to the \n            passThroughAttributes Map of the UIComponent \n            associated with the closest parent UIComponent tag.\n            For each Map.Entry in the Map<String, Object>\n            referenced by the value attribute of this tag, take the following action.\n            Call component.getPassThroughAttributes().put(entry.getKey(), entry.getValue()).",
-        "attribute": [
-          {
-            "name": "value",
-            "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.util.Map)",
-            "description": "An EL ValueExpression that evaluates to a Map<String, Object>."
-          }
-        ]
+        "description": "Add attributes to the passThroughAttributes Map of the UIComponent associated with the closest parent UIComponent tag. For each Map.Entry in the Map<String, Object> referenced by the value attribute of this tag, take the following action. Call component.getPassThroughAttributes().put(entry.getKey(), entry.getValue()).",
+        "attribute": {
+          "description": "An EL ValueExpression that evaluates to a Map<String, Object>.",
+          "name": "value",
+          "required": "true",
+          "type": "java.util.Map"
+        }
       },
       {
         "name": "phaseListener",
-        "description": "Register a PhaseListener instance on the UIViewRoot in which\n            this tag is nested.",
+        "description": "Register a PhaseListener instance on the UIViewRoot in which this tag is nested.",
         "attribute": [
           {
+            "description": "Value binding expression that evaluates to an object that implements jakarta.faces.event.PhaseListener.",
             "name": "binding",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.event.PhaseListener)",
-            "description": "Value binding expression that evaluates to an object that\n                implements jakarta.faces.event.PhaseListener."
+            "type": "jakarta.faces.event.PhaseListener"
           },
           {
+            "description": "Fully qualified Java class name of a PhaseListener to be created and registered.",
             "name": "type",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Fully qualified Java class name of a PhaseListener to be\n                created and registered."
+            "type": "java.lang.String"
           }
         ]
       },
       {
         "name": "selectItem",
-        "description": "Add a child UISelectItem component to the UIComponent\n            associated with the closest parent UIComponent tag.",
+        "description": "Add a child UISelectItem component to the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
+            "description": "Value binding expression to a backing bean property bound to the component instance for the UIComponent created by this tag.",
             "name": "binding",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.component.UIComponent)",
-            "description": "Value binding expression to a backing bean\n                property bound to the component instance for\n                the UIComponent created by this tag."
+            "type": "jakarta.faces.component.UIComponent"
           },
           {
+            "description": "Component identifier of the UISelectItem component to be created.",
+            "name": "id",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Description of this option, for use in development tools.",
             "name": "itemDescription",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Description of this option, for use in\n                development tools."
+            "type": "java.lang.String"
           },
           {
+            "description": "Flag indicating whether the option created by this component is disabled. Expressions must evaluate to a boolean. Default value is false.",
+            "name": "itemDisabled",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Flag indicating that characters that are sensitive in the value of the itemLabel attribute must be escaped. This flag is set to \"true\" by default.",
             "name": "itemEscaped",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Flag indicating that characters that are sensitive in\n                the value of the itemLabel\n                attribute must be escaped. This flag is set to \"true\" by\n                default."
+            "type": "java.lang.String"
           },
           {
+            "description": "Label to be displayed to the user for this option.",
+            "name": "itemLabel",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Value to be returned to the server if this option is selected by the user.",
             "name": "itemValue",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Value to be returned to the server if this\n                option is selected by the user."
+            "type": "java.lang.String"
           },
           {
-            "name": "value",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.model.SelectItem)",
-            "description": "Value binding expression pointing at a\n                SelectItem instance containing the\n                information for this option."
-          },
-          {
-            "name": "id",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Component identifier of the UISelectItem\n                component to be created."
-          },
-          {
-            "name": "itemDisabled",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "Flag indicating whether the option created\n                by this component is disabled. Expressions\n                must evaluate to a boolean. Default value\n                is false."
-          },
-          {
-            "name": "itemLabel",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Label to be displayed to the user\n                for this option."
-          },
-          {
+            "description": "Flag indicating whether the option created by this component represents the special \"no selection\" option. Expressions must evaluate to a boolean. Default value is false.",
             "name": "noSelectionOption",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "Flag indicating whether the option created by this\n                component represents the special \"no selection\"\n                option. Expressions must evaluate to a boolean.\n                Default value is false."
-          }
-        ]
-      },
-      {
-        "name": "selectItemGroup",
-        "description": "UISelectItemGroup is a component that may be nested inside a UISelectMany or UISelectOne component,\n                and causes the addition of one SelectItemGroup of one or more SelectItem instances to the list of available options in the parent component.\n                This component accepts only children of type UISelectItems or UISelectItem.",
-        "attribute": [
-          {
-            "name": "id",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Component identifier of the UISelectItemGroup component to be created."
+            "type": "java.lang.Boolean"
           },
           {
-            "name": "itemLabel",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Label to be displayed to the user for this option group."
-          },
-          {
-            "name": "binding",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.component.UIComponent)",
-            "description": "Value binding expression to a backing bean property bound to the component instance for the UIComponent created by this tag."
-          }
-        ]
-      },
-      {
-        "name": "selectItemGroups",
-        "description": "UISelectItemGroups is a component that may be nested inside a UISelectMany or UISelectOne component,\n                and causes the addition of one or more SelectItemGroup of one or more SelectItem instances to the list of available options in the parent component.\n                This component accepts only children of type UISelectItems or UISelectItem.",
-        "attribute": [
-          {
-            "name": "id",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Component identifier of the UISelectItemGroups component to be created."
-          },
-          {
+            "description": "Value binding expression pointing at a SelectItem instance containing the information for this option.",
             "name": "value",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Object)",
-            "description": "Value expression pointing at any array or Iterable.\n                The member elements may be instances of any type which is acceptable by the value attribute of any nested UISelectItems or UISelectItem component."
-          },
-          {
-            "name": "itemLabel",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Label to be displayed to the user for this option group."
-          },
-          {
-            "name": "binding",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.component.UIComponent)",
-            "description": "Value binding expression to a backing bean property bound to the component instance for the UIComponent created by this tag."
-          },
-          {
-            "name": "var",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Expose the currently iterated member element from the value attribute under this request scoped key,\n                so that it may be referred to in EL for the value of other attributes of any nested component."
-          },
-          {
-            "name": "itemDisabled",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "Flag indicating whether the option group created by this component is disabled.\n                Expressions must evaluate to a boolean.\n                Default value is false."
+            "type": "jakarta.faces.model.SelectItem"
           }
         ]
       },
       {
         "name": "selectItems",
-        "description": "Add a\n            child UISelectItems component to the UIComponent associated\n            with the closed parent UIComponent tag. When iterating over the\n            select items, toString() must be called on\n            the\n            string rendered attribute values. Version 2 of the specification\n            introduces\n            several new attributes, described below. These are: var, itemValue,\n            itemLabel, itemDescription, itemDisabled, and itemLabelEscaped.",
+        "description": "Add a child UISelectItems component to the UIComponent associated with the closed parent UIComponent tag. When iterating over the select items, toString() must be called on the string rendered attribute values. Version 2 of the specification introduces several new attributes, described below. These are: var, itemValue, itemLabel, itemDescription, itemDisabled, and itemLabelEscaped.",
         "attribute": [
           {
+            "description": "Value binding expression to a backing bean property bound to the component instance for the UIComponent created by this tag.",
             "name": "binding",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.component.UIComponent)",
-            "description": "Value binding expression to a backing bean\n                property bound to the component instance for\n                the UIComponent created by this tag."
+            "type": "jakarta.faces.component.UIComponent"
           },
           {
-            "name": "itemDescription",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "evaluates to a String that\n                will\n                serve as the description to be shown for the item."
-          },
-          {
-            "name": "itemLabel",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "evaluates to a String that\n                will\n                serve as the label to be shown for the item."
-          },
-          {
-            "name": "itemValue",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Object)",
-            "description": "This attribute lets you refer\n            to a property of the current member of the collection\n            referenced by the \"value\" attribute, using the value of the\n            \"var\" attribute as the base.  For example,\n            #{n.id}."
-          },
-          {
-            "name": "value",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Object)",
-            "description": "Value expression pointing at any Collection\n                or array. The member elements may be instances of\n                SelectItem or any Java Object.  In the\n                case where the member elements are plain Java Objects,\n                several additional attributes must be used by the page\n                author to correctly identify the data to the enclosing\n                UISelectOne or UISelectMany\n                component, as shown in the following example.\n\n<h:selectOneListbox size=\"1\" id=\"escape02\" value=\"#{select05NoSelection.initialCollectionValues}\">\n  <f:selectItems value=\"#{select05NoSelection.hobbitList}\"\n                 var=\"n\"\n                 itemValue=\"#{n.id}\"\n                 itemLabel=\"#{n.bio}\"\n                 itemDescription=\"#{n.description}\"\n                 itemDisabled=\"#{n.disabled}\"\n                 itemLabelEscaped=\"true\"\n                 noSelectionValue=\"#{select05NoSelection.hobbitList[0]}\"/>\n</h:selectOneListbox> \n\nIn the preceding example, the\nvalue attribute on line 1 points to a\nCollection<HobbitBean>.  HobbitBean is\njust a regular Java Object (POJO) that conforms to JavaBeans naming\nconventions for its properties.  The value attribute on\nline 2 points to a List<HobbitBean>, though it could\njust as well point to a Collection, array, or\njakarta.faces.model.DataModel.  The attributes on lines 3\nthrough 9, inclusive, leverage the fact that the value is a collection\nof POJOs."
-          },
-          {
+            "description": "Component identifier of the UISelectItems component to be created.",
             "name": "id",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Component identifier of the UISelectItems\n                component to be created."
+            "type": "java.lang.String"
           },
           {
+            "description": "evaluates to a String that will serve as the description to be shown for the item.",
+            "name": "itemDescription",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "evaluates to a boolean that will determine if the item value is selectable or not.",
             "name": "itemDisabled",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "evaluates to a boolean that\n                will\n                determine if the item value is selectable or not."
+            "type": "java.lang.Boolean"
           },
           {
+            "description": "evaluates to a String that will serve as the label to be shown for the item.",
+            "name": "itemLabel",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "evaluates to a boolean that willdetermine if the rendered markup for the item receives normal Faces HTMLescaping or not. If not specified, theruntime must behave as if the value were true.",
             "name": "itemLabelEscaped",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "evaluates to a boolean that will\ndetermine if the rendered markup for the item receives normal Faces HTML\nescaping or not.  If not specified, the\nruntime must behave as if the value were true."
+            "type": "java.lang.Boolean"
           },
           {
+            "description": "This attribute lets you refer to a property of the current member of the collection referenced by the \"value\" attribute, using the value of the \"var\" attribute as the base. For example, #{n.id}.",
+            "name": "itemValue",
+            "type": "java.lang.Object"
+          },
+          {
+            "description": "Is either an EL expression pointing to the element in the value collection whose value should be marked as a &#8220;no selection&#8221; item, or a literal string that exactly matches the value of the item in the collection that must be marked as the &#8220;no selection&#8221; item. If the user selects such an item and the field is marked as required, then it will not pass validation.",
             "name": "noSelectionValue",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "Is either an EL\n            expression pointing to the element in the value collection\n            whose value should be marked as a “no selection”\n            item, or a literal string that exactly matches the value of\n            the item in the collection that must be marked as the\n            “no selection” item.  If the user selects such\n            an item and the field is marked as\n            required, then it will not pass validation."
+            "type": "java.lang.Boolean"
           },
           {
+            "description": "Value expression pointing at any Collection or array. The member elements may be instances of SelectItem or any Java Object. In the case where the member elements are plain Java Objects, several additional attributes must be used by the page author to correctly identify the data to the enclosing UISelectOne or UISelectMany component, as shown in the following example. <h:selectOneListbox size=\"1\" id=\"escape02\" value=\"#{select05NoSelection.initialCollectionValues}\">&nbsp; <f:selectItems value=\"#{select05NoSelection.hobbitList}\"&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;var=\"n\"&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;itemValue=\"#{n.id}\"&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;itemLabel=\"#{n.bio}\"&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;itemDescription=\"#{n.description}\"&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;itemDisabled=\"#{n.disabled}\"&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;itemLabelEscaped=\"true\"&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;noSelectionValue=\"#{select05NoSelection.hobbitList[0]}\"/></h:selectOneListbox>  In the preceding example, thevalue attribute on line 1 points to aCollection<HobbitBean>. HobbitBean isjust a regular Java Object (POJO) that conforms to JavaBeans namingconventions for its properties. The value attribute online 2 points to a List<HobbitBean>, though it couldjust as well point to a Collection, array, orjakarta.faces.model.DataModel. The attributes on lines 3through 9, inclusive, leverage the fact that the value is a collectionof POJOs.",
+            "name": "value",
+            "type": "java.lang.Object"
+          },
+          {
+            "description": "Expose the value from the value attribute under this request scoped key so that it may be referred to in EL for the value of other attributes.",
             "name": "var",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Expose the value from the\n                value attribute under this request\n                scoped key so that it\n                may be referred to in EL for the value of other attributes."
+            "type": "java.lang.String"
+          }
+        ]
+      },
+      {
+        "name": "selectItemGroup",
+        "description": "UISelectItemGroup is a component that may be nested inside a UISelectMany or UISelectOne component, and causes the addition of one SelectItemGroup of one or more SelectItem instances to the list of available options in the parent component. This component accepts only children of type UISelectItems or UISelectItem.",
+        "attribute": [
+          {
+            "description": "Component identifier of the UISelectItemGroup component to be created.",
+            "name": "id",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Value binding expression to a backing bean property bound to the component instance for the UIComponent created by this tag.",
+            "name": "binding",
+            "type": "jakarta.faces.component.UIComponent"
+          },
+          {
+            "description": "Label to be displayed to the user for this option group.",
+            "name": "itemLabel",
+            "type": "java.lang.String"
+          }
+        ]
+      },
+      {
+        "name": "selectItemGroups",
+        "description": "UISelectItemGroups is a component that may be nested inside a UISelectMany or UISelectOne component, and causes the addition of one or more SelectItemGroup of one or more SelectItem instances to the list of available options in the parent component. This component accepts only children of type UISelectItems or UISelectItem.",
+        "attribute": [
+          {
+            "description": "Component identifier of the UISelectItemGroups component to be created.",
+            "name": "id",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Value binding expression to a backing bean property bound to the component instance for the UIComponent created by this tag.",
+            "name": "binding",
+            "type": "jakarta.faces.component.UIComponent"
+          },
+          {
+            "description": "Value expression pointing at any array or Iterable. The member elements may be instances of any type which is acceptable by the value attribute of any nested UISelectItems or UISelectItem component.",
+            "name": "value",
+            "type": "java.lang.Object"
+          },
+          {
+            "description": "Expose the currently iterated member element from the value attribute under this request scoped key, so that it may be referred to in EL for the value of other attributes of any nested component.",
+            "name": "var",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Label to be displayed to the user for this option group.",
+            "name": "itemLabel",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Flag indicating whether the option group created by this component is disabled. Expressions must evaluate to a boolean. Default value is false.",
+            "name": "itemDisabled",
+            "type": "java.lang.Boolean"
           }
         ]
       },
       {
         "name": "setPropertyActionListener",
-        "description": "Register an ActionListener instance on the UIComponent\n            associated with the closest parent UIComponent tag.\n            This actionListener will cause the value given by the \"value\"\n            attribute to be set into the ValueExpression given by the \"target\"\n            attribute. The implementation of this tag creates a special\n            ActionListener instance and registers it on\n            the\n            ActionSource associated with our most\n            immediate surrounding\n            instance of a tag whose implementation class is a subclass of\n            UIComponentTag. This tag creates no output\n            to the page\n            currently being created. The ActionListener instance\n            created and installed by\n            this tag has the following behavior and contract.",
+        "description": "Register an ActionListener instance on the UIComponent associated with the closest parent UIComponent tag. This actionListener will cause the value given by the \"value\" attribute to be set into the ValueExpression given by the \"target\" attribute. The implementation of this tag creates a special ActionListener instance and registers it on the ActionSource associated with our most immediate surrounding instance of a tag whose implementation class is a subclass of UIComponentTag. This tag creates no output to the page currently being created. The ActionListener instance created and installed by this tag has the following behavior and contract.  Only create and register the ActionListener instance the first time the component for this tag is created The \"target\" and \"value\" tag attributes are ValueExpression instances and are stored unevaluated as instance variables of the listener. When the listener executes, perform the following:  Call getValue() on the \"value\" ValueExpression.   If value of the \"value\" expression is null, call setValue() on the \"target\" ValueExpression with the null value.   If the value of the \"value\" expression is not null, call getType() on the \"value\" and \"target\" ValueExpressions to determine their property types.   Coerce the value of the \"value\" expression to the \"target\" expression value type following the Expression Language coercion rules. Call setValue() on the \"target\" ValueExpression with the resulting value.   If either coercion or the execution of setValue() fails throw an AbortProcessingException.",
         "attribute": [
           {
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested.",
             "name": "for",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "If present, this attribute\n                refers\n                to the value of one of the exposed attached objects within the\n                composite component inside of which this tag is nested."
+            "type": "java.lang.String"
           },
           {
-            "name": "value",
-            "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "ValueExpression to be stored as the value of the target\n                attribute."
-          },
-          {
+            "description": "ValueExpression that is the destination of the value attribute.",
             "name": "target",
             "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "ValueExpression that is the destination of the value\n                attribute."
+            "type": "java.lang.String"
+          },
+          {
+            "description": "ValueExpression to be stored as the value of the target attribute.",
+            "name": "value",
+            "required": "true",
+            "type": "java.lang.String"
           }
         ]
       },
       {
         "name": "subview",
-        "description": "Naming Container tag for all Jakarta Faces core and\n            component tags. It is particularly useful when a nested section included via\n            <ui:include> or any tag that dynamically includes another\n            page is included more than once, potentially causing duplicate component IDs.\n            Each of those nested sections can then be wrapped in its own <f:subview>\n            with each an unique id.",
+        "description": "Naming Container tag for all Jakarta Faces core and component tags. It is particularly useful when a nested section included via <ui:include> or any tag that dynamically includes another page is included more than once, potentially causing duplicate component IDs. Each of those nested sections can then be wrapped in its own <f:subview> with each an unique id.",
         "attribute": [
           {
+            "description": "Value binding expression to a backing bean property bound to the component instance for the UIComponent created by this tag.",
             "name": "binding",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.component.UIComponent)",
-            "description": "Value binding expression to a backing bean\n                property bound to the component instance for\n                the UIComponent created by this tag."
+            "type": "jakarta.faces.component.UIComponent"
           },
           {
-            "name": "rendered",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "Flag indicating whether this component (and its\n                children) should be rendered. Expressions must\n                evaluate to a boolean."
-          },
-          {
+            "description": "Component identifier of the UINamingContainer component to be created.",
             "name": "id",
             "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Component identifier of the UINamingContainer\n                component to be created."
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Flag indicating whether this component (and its children) should be rendered. Expressions must evaluate to a boolean.",
+            "name": "rendered",
+            "type": "java.lang.Boolean"
           }
         ]
       },
       {
         "name": "validateBean",
-        "description": "A validator that\n            delegates the validation of the local value to the Bean\n            Validation API. The validationGroups attribute serves as a\n            filter that instructs the Bean Validation API which\n            contraints to enforce. If there are any constraint\n            violations reported by Bean Validation, the value is\n            considered invalid.  An\n            instance of this validator can participate in class-level\n            validation provided the preconditions mentioned in\n            <f:validateWholeBean /> are met.  Please\n            see the documentation for <f:validateWholeBean\n            /> and \n            jakarta.faces.validator.BeanValidator.validate() for \n            the specification and usage example.",
+        "description": "A validator that delegates the validation of the local value to the Bean Validation API. The validationGroups attribute serves as a filter that instructs the Bean Validation API which contraints to enforce. If there are any constraint violations reported by Bean Validation, the value is considered invalid. An instance of this validator can participate in class-level validation provided the preconditions mentioned in <f:validateWholeBean /> are met. Please see the documentation for <f:validateWholeBean /> and jakarta.faces.validator.BeanValidator.validate() for the specification and usage example.",
         "attribute": [
           {
+            "description": "A ValueExpression that evaluates to an instance of BeanValidator.",
             "name": "binding",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.validator.BeanValidator)",
-            "description": "A ValueExpression that evaluates to an instance of\n                BeanValidator."
+            "type": "jakarta.faces.validator.BeanValidator"
           },
           {
+            "description": "A boolean value enabling page level determination of whether or not this validator is enabled on the enclosing component.",
+            "name": "disabled",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested.",
             "name": "for",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "If present, this attribute\n                refers\n                to the value of one of the exposed attached objects within the\n                composite component inside of which this tag is nested."
+            "type": "java.lang.String"
           },
           {
-            "name": "disabled",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "A boolean value\n                enabling page level determination of whether or not this\n                validator is enabled on the enclosing component."
-          },
-          {
+            "description": "A comma-separated list of validation groups. A validation group is a fully-qualified class name.",
             "name": "validationGroups",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "A comma-separated list of validation groups. A validation group\n                is a fully-qualified class name."
+            "type": "java.lang.String"
           }
         ]
       },
       {
         "name": "validateDoubleRange",
-        "description": "Register a DoubleRangeValidator instance on the\n            UIComponent associated with the closest parent\n            UIComponent tag.",
+        "description": "Register a DoubleRangeValidator instance on the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
+            "description": "A ValueExpression that evaluates to an instance of DoubleRangeValidator.",
             "name": "binding",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.validator.DoubleRangeValidator)",
-            "description": "A ValueExpression that evaluates to an instance of\n                DoubleRangeValidator."
+            "type": "jakarta.faces.validator.DoubleRangeValidator"
           },
           {
+            "description": "A boolean value enabling page level determination of whether or not this validator is enabled on the enclosing component.",
+            "name": "disabled",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested.",
             "name": "for",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "If present, this attribute\n                refers\n                to the value of one of the exposed attached objects within the\n                composite component inside of which this tag is nested."
+            "type": "java.lang.String"
           },
           {
-            "name": "minimum",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Double)",
-            "description": "Minimum value allowed for this component."
-          },
-          {
-            "name": "disabled",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "A boolean value\n                enabling page level determination of whether or not this\n                validator is enabled on the enclosing component."
-          },
-          {
+            "description": "Maximum value allowed for this component.",
             "name": "maximum",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Double)",
-            "description": "Maximum value allowed for this component."
+            "type": "java.lang.Double"
+          },
+          {
+            "description": "Minimum value allowed for this component.",
+            "name": "minimum",
+            "type": "java.lang.Double"
           }
         ]
       },
       {
         "name": "validateLength",
-        "description": "Register a LengthValidator instance on the\n            UIComponent associated with the closest parent\n            UIComponent tag.",
+        "description": "Register a LengthValidator instance on the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
+            "description": "A ValueExpression that evaluates to an instance of LengthValidator.",
             "name": "binding",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.validator.LengthValidator)",
-            "description": "A ValueExpression that evaluates to an instance of\n                LengthValidator."
+            "type": "jakarta.faces.validator.LengthValidator"
           },
           {
+            "description": "A boolean value enabling page level determination of whether or not this validator is enabled on the enclosing component.",
+            "name": "disabled",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested.",
             "name": "for",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "If present, this attribute\n                refers\n                to the value of one of the exposed attached objects within the\n                composite component inside of which this tag is nested."
+            "type": "java.lang.String"
           },
           {
-            "name": "minimum",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Integer)",
-            "description": "Minimum length allowed for this component."
-          },
-          {
-            "name": "disabled",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "A boolean value\n                enabling page level determination of whether or not this\n                validator is enabled on the enclosing component."
-          },
-          {
+            "description": "Maximum length allowed for this component.",
             "name": "maximum",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Integer)",
-            "description": "Maximum length allowed for this component."
+            "type": "java.lang.Integer"
+          },
+          {
+            "description": "Minimum length allowed for this component.",
+            "name": "minimum",
+            "type": "java.lang.Integer"
           }
         ]
       },
       {
         "name": "validateLongRange",
-        "description": "Register a LongRangeValidator instance on the\n            UIComponent associated with the closest parent\n            UIComponent tag.",
+        "description": "Register a LongRangeValidator instance on the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
+            "description": "A ValueExpression that evaluates to an instance of LongRangeValidator.",
             "name": "binding",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.validator.LongRangeValidator)",
-            "description": "A ValueExpression that evaluates to an instance of\n                LongRangeValidator."
+            "type": "jakarta.faces.validator.LongRangeValidator"
           },
           {
+            "description": "A boolean value enabling page level determination of whether or not this validator is enabled on the enclosing component.",
+            "name": "disabled",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested.",
             "name": "for",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "If present, this attribute\n                refers\n                to the value of one of the exposed attached objects within the\n                composite component inside of which this tag is nested."
+            "type": "java.lang.String"
           },
           {
-            "name": "minimum",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Long)",
-            "description": "Minimum value allowed for this component."
-          },
-          {
-            "name": "disabled",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "A boolean value\n                enabling page level determination of whether or not this\n                validator is enabled on the enclosing component."
-          },
-          {
+            "description": "Maximum value allowed for this component.",
             "name": "maximum",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Long)",
-            "description": "Maximum value allowed for this component."
+            "type": "java.lang.Long"
+          },
+          {
+            "description": "Minimum value allowed for this component.",
+            "name": "minimum",
+            "type": "java.lang.Long"
           }
         ]
       },
       {
         "name": "validateRegex",
-        "description": "A validator that uses the pattern attribute to validate the\n            wrapping component. The entire pattern is matched against\n            the String value of the component. If it matches, it's\n            valid.",
+        "description": "A validator that uses the pattern attribute to validate the wrapping component. The entire pattern is matched against the String value of the component. If it matches, it's valid.",
         "attribute": [
           {
+            "description": "A ValueExpression that evaluates to an instance of RegexValidator.",
             "name": "binding",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.validator.RegexValidator)",
-            "description": "A ValueExpression that evaluates to an instance of\n                RegexValidator."
+            "type": "jakarta.faces.validator.RegexValidator"
           },
           {
-            "name": "disabled",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "A boolean value\n                enabling page level determination of whether or not this\n                validator is enabled on the enclosing component."
-          },
-          {
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested.",
             "name": "for",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "If present, this attribute\n                refers\n                to the value of one of the exposed attached objects within the\n                composite component inside of which this tag is nested."
+            "type": "java.lang.String"
           },
           {
+            "description": "A boolean value enabling page level determination of whether or not this validator is enabled on the enclosing component.",
+            "name": "disabled",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "A regular expression pattern. Remember that, like in all Java strings, backslash must be escaped with another backslash.",
             "name": "pattern",
             "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "A regular expression pattern. Remember that, like in\n                all Java strings, backslash must be escaped with another\n                backslash."
+            "type": "java.lang.String"
           }
         ]
       },
       {
         "name": "validateRequired",
-        "description": "A validator that enforces\n            the presence of a value. It has the same affect as setting the\n            required attribute on a UIInput to true.",
+        "description": "A validator that enforces the presence of a value. It has the same affect as setting the required attribute on a UIInput to true.",
         "attribute": [
           {
+            "description": "A ValueExpression that evaluates to an instance of RequiredValidator.",
             "name": "binding",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.validator.RequiredValidator)",
-            "description": "A ValueExpression that evaluates to an instance of\n                RequiredValidator."
+            "type": "jakarta.faces.validator.RequiredValidator"
           },
           {
+            "description": "A boolean value enabling page level determination of whether or not this validator is enabled on the enclosing component.",
+            "name": "disabled",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested.",
             "name": "for",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "If present, this attribute\n                refers\n                to the value of one of the exposed attached objects within the\n                composite component inside of which this tag is nested."
-          },
-          {
-            "name": "disabled",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "A boolean value\n                enabling page level determination of whether or not this\n                validator is enabled on the enclosing component."
+            "type": "java.lang.String"
           }
         ]
       },
       {
         "name": "validateWholeBean",
-        "description": "Support multi-field validation\n            by enabling class-level bean validation on CDI based backing\n            beans.  This feature causes a temporary copy of the bean\n            referenced by the value attribute, for the sole\n            purpose of populating the bean with field values already\n            validated by <f:validateBean /> and then\n            performing class-level validation on the copy.  Regardless\n            of the result of the class-level validation, the copy is\n            discarded.  This feature must explicitly be enabled by\n            setting the application parameter specified in the javadoc\n            for the symbolic constant\n            jakarta.faces.validator.BeanValidator.ENABLE_VALIDATE_WHOLE_BEAN_PARAM_NAME.\n            If this parameter is not set, or is set to false, this tag\n            must be a no-op.  A non-normative example follows the\n            specification of the feature. At a high level, the feature provides for\n            a UIInput subclass that maintains its own\n            special private Validator that uses information\n            from one or more <f:validateBean />s to\n            perform class-level bean validation.  For discussion, this\n            special Validator is called\n            the wholeBeanValidator. This tag must be backed by a UIInput\n            component with the following specializations. Override getSubmittedValue() to return a\n            non-null non empty String.  This\n            allows UIInput.validate() to\n            call wholeBeanValidator.validate(). Override setConverter() to be a no-op.\n        It does not make sense to allow a converter to be\n        installed. Override addValidator() to be a no-op\n        unless the argument is an instance\n        of wholeBeanValidator.  It does not make sense to\n        allow additional validators to be installed. Override validate() to take the\n            following actions. If the feature is not enabled, return\n            immediately. If the wholeBeanValidator has not yet\n            been installed, instantiate and pass it to \n                this.addValidator(). Call super.validate(). The wholeBeanValidator must have\n            a validate() method that performs the following\n            actions.  Due to the above specification, this method will\n            only ever be passed the special UIInput\n            component. Resolve the value of the component to\n            its Object.  Assume that\n            this value is the bean whose properties are\n            intended to be populated by components whose values are each\n            validated by <f:validateBean /> tags.\n            For discussion, this bean is called the candidate\n            bean and the properties and their respective values are\n            called the candidate values.  If the candidate\n            bean cannot be referenced, return immediately\n            from validate().  Use the information recorded\n            by each of those <f:validateBean /> tags\n            to ensure that none of the candidate values are\n            invalid.  If any of them are invalid, return immediately\n            from validate().  This ensures class-level\n            validation is only performed on an instance whose fields are\n            all individually valid. Otherwise it can be assumed that all field-level\n            validations for this class-level validation have passed. Class-level bean validation must operate on a\n            sufficiently populated bean instance.  This differs from Faces\n            field-level validation, which prevents beans from being\n            populated with invalid values.  To accomodate this\n            difference, the candidate bean must be copied,\n            populated with the already-validated candidate\n            values, and then subjected to class-level validation.\n            The copying must proceed in the following order. Invoke the newInstance() method on the\n            bean's Class.  If this throws\n            any Exception, swallow it and\n            continue. If the bean implements Serializable, use\n            that to copy the bean instance. Otherwise, if the bean\n            implements Cloneable, clone the bean\n            instance. Otherwise, if the bean has a copy constructor, use\n            that to copy the bean instance. If none of these techniques yields a copy,\n            throw FacesException. Populate the copied bean with the candidate\n            values. Obtain a reference to\n            a jakarta.validation.Validator instance using the\n            same steps described in the javadoc\n            for jakarta.faces.validator.BeanValidator.validate().\n            Let the instance be called beanValidator for\n            discussion. Obtain the value of the validationGroups\n            attribute using the same steps described in the javadoc\n            for jakarta.faces.validator.BeanValidator.validate().\n            If this value is not present or not valid,\n            throw FacesException. Call the validate method on\n            beanValidator, passing the populated copied bean\n            and the validation groups as arguments.  The copied bean can\n            be discarded at this point. If the\n            returned Set<ConstraintViolation> is\n            non-empty, for each element in the Set, create\n            a FacesMessage where the summary and detail are\n            the return from\n            calling ConstraintViolation.getMessage().\n            Capture all such FacesMessage instances into\n            a Collection and pass them\n            to ValidatorException.  Using information\n            recorded by the <f:validateBean />\n            tag(s), call setValid(false) on all of the\n            components whose values contributed to this class-level\n            validation.  This is essential to prevent the invalid value\n            from being set into the model during the update model values\n            phase.  Finally, throw the exception. This tag must be placed in the component tree after all\n            of the fields that are to be included in the multi-field\n            validation.  If this precondition is not met, the results\n            of applying this tag are unspecified. This tag must be used in concert\n            with <f:validateBean /> and Bean\n            Validation. Here is a brief example of the common case of\n            ensuring two password fields are individually valid and also\n            both the same.  The feature requires the use of\n            the validationGroups attribute on all of\n            the <f:validateBean /> tags and\n            the <f:validateWholeBean /> tag. First, the ConstraintValidator\n            implementation. Note that a PasswordHolder instance is\n            passed to the isValid() method.  This method\n            will only be called if the individual properties of\n            the PasswordHolder are valid.  This fact allows\n            the isValid() method to inspect the properties\n            and perform effective class-level validtion. Next, the Constraint. Now the backing bean constrained by\n            this Constraint.  Note the use\n            of groups.  Note the fact that the bean\n            implements Cloneable. Finally, the Facelets view.",
+        "description": "Support multi-field validation by enabling class-level bean validation on CDI based backing beans. This feature causes a temporary copy of the bean referenced by the value attribute, for the sole purpose of populating the bean with field values already validated by <f:validateBean /> and then performing class-level validation on the copy. Regardless of the result of the class-level validation, the copy is discarded. This feature must explicitly be enabled by setting the application parameter specified in the javadoc for the symbolic constant jakarta.faces.validator.BeanValidator.ENABLE_VALIDATE_WHOLE_BEAN_PARAM_NAME. If this parameter is not set, or is set to false, this tag must be a no-op. A non-normative example follows the specification of the feature.  At a high level, the feature provides for a UIInput subclass that maintains its own special private Validator that uses information from one or more <f:validateBean />s to perform class-level bean validation. For discussion, this special Validator is called the wholeBeanValidator. This tag must be backed by a UIInput component with the following specializations.  Override getSubmittedValue() to return a non-null non empty String. This allows UIInput.validate() to call wholeBeanValidator.validate(). Override setConverter() to be a no-op. It does not make sense to allow a converter to be installed. Override addValidator() to be a no-op unless the argument is an instance of wholeBeanValidator. It does not make sense to allow additional validators to be installed. Override validate() to take the following actions.  If the feature is not enabled, return immediately. If the wholeBeanValidator has not yet been installed, instantiate and pass it to this.addValidator(). Call super.validate().    The wholeBeanValidator must have a validate() method that performs the following actions. Due to the above specification, this method will only ever be passed the special UIInput component.  Resolve the value of the component to its Object. Assume that this value is the bean whose properties are intended to be populated by components whose values are each validated by <f:validateBean /> tags. For discussion, this bean is called the candidate bean and the properties and their respective values are called the candidate values. If the candidate bean cannot be referenced, return immediately from validate(). Use the information recorded by each of those <f:validateBean /> tags to ensure that none of the candidate values are invalid. If any of them are invalid, return immediately from validate(). This ensures class-level validation is only performed on an instance whose fields are all individually valid. Otherwise it can be assumed that all field-level validations for this class-level validation have passed. Class-level bean validation must operate on a sufficiently populated bean instance. This differs from Faces field-level validation, which prevents beans from being populated with invalid values. To accomodate this difference, the candidate bean must be copied, populated with the already-validated candidate values, and then subjected to class-level validation. The copying must proceed in the following order.  Invoke the newInstance() method on the bean's Class. If this throws any Exception, swallow it and continue. If the bean implements Serializable, use that to copy the bean instance. Otherwise, if the bean implements Cloneable, clone the bean instance. Otherwise, if the bean has a copy constructor, use that to copy the bean instance. If none of these techniques yields a copy, throw FacesException.  Populate the copied bean with the candidate values. Obtain a reference to a jakarta.validation.Validator instance using the same steps described in the javadoc for jakarta.faces.validator.BeanValidator.validate(). Let the instance be called beanValidator for discussion. Obtain the value of the validationGroups attribute using the same steps described in the javadoc for jakarta.faces.validator.BeanValidator.validate(). If this value is not present or not valid, throw FacesException. Call the validate method on beanValidator, passing the populated copied bean and the validation groups as arguments. The copied bean can be discarded at this point. If the returned Set<ConstraintViolation> is non-empty, for each element in the Set, create a FacesMessage where the summary and detail are the return from calling ConstraintViolation.getMessage(). Capture all such FacesMessage instances into a Collection and pass them to ValidatorException. Using information recorded by the <f:validateBean /> tag(s), call setValid(false) on all of the components whose values contributed to this class-level validation. This is essential to prevent the invalid value from being set into the model during the update model values phase. Finally, throw the exception.  This tag must be placed in the component tree after all of the fields that are to be included in the multi-field validation. If this precondition is not met, the results of applying this tag are unspecified. This tag must be used in concert with <f:validateBean /> and Bean Validation. Here is a brief example of the common case of ensuring two password fields are individually valid and also both the same. The feature requires the use of the validationGroups attribute on all of the <f:validateBean /> tags and the <f:validateWholeBean /> tag. First, the ConstraintValidator implementation. public class PasswordValidator implements ConstraintValidator<Password, PasswordHolder> { @Override public void initialize(Password constraintAnnotation) { } @Override public boolean isValid(PasswordHolder value, ConstraintValidatorContext context) { boolean result; result = value.getPassword1().equals(value.getPassword2()); return result; } } Note that a PasswordHolder instance is passed to the isValid() method. This method will only be called if the individual properties of the PasswordHolder are valid. This fact allows the isValid() method to inspect the properties and perform effective class-level validtion. Next, the Constraint. @Constraint(validatedBy=PasswordValidator.class)@Target(TYPE)@Retention(RUNTIME)@interface Password { String message() default \"Password fields must match\"; Class[] groups() default {}; Class[] payload() default {};} Now the backing bean constrained by this Constraint. Note the use of groups. Note the fact that the bean implements Cloneable. @Named@RequestScoped@Password(groups = PasswordValidationGroup.class)public class BackingBean implements PasswordHolder, Cloneable { private String password1; private String password2; public BackingBean() { password1=\"\"; password2=\"\"; } @Override protected Object clone() throws CloneNotSupportedException { BackingBean other = (BackingBean) super.clone(); other.setPassword1(this.getPassword1()); other.setPassword2(this.getPassword2()); return other; } @NotNull(groups=PasswordValidationGroup.class) @Size(max=16, min=8, message=\"Password must be between 8 and 16 characters long\", groups = PasswordValidationGroup.class) @Override public String getPassword1() { return password1; } public void setPassword1(String password1) { this.password1 = password1; } @NotNull(groups=PasswordValidationGroup.class) @Size(max=16, min=8, message=\"Password must be between 8 and 16 characters long\", groups = PasswordValidationGroup.class) @Override public String getPassword2() { return password2; } public void setPassword2(String password2) { this.password2 = password2; } } Finally, the Facelets view.<h:panelGrid columns=\"2\"> <h:outputText value=\"Password\" /> <h:inputSecret id=\"password1\" value='#{backingBean.password1}'> <f:validateBean validationGroups=\"PasswordValidationGroup\" /> </h:inputSecret> <h:outputText value=\"Password again\" /> <h:inputSecret id=\"password2\" value='#{backingBean.password2}'> <f:validateBean validationGroups=\"PasswordValidationGroup\" /> </h:inputSecret> </h:panelGrid> <f:validateWholeBean value='#{backingBean}' validationGroups=\"PasswordValidationGroup\" />",
         "attribute": [
           {
+            "description": "A boolean value enabling or disabling this validation component.",
             "name": "disabled",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "A boolean value enabling or\n                disabling this validation component."
+            "type": "java.lang.Boolean"
           },
           {
-            "name": "validationGroups",
-            "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "A comma-separated list of\n                validation groups. A validation group is a\n                fully-qualified class name."
-          },
-          {
+            "description": "Component identifier of the UIInput component to be created.",
             "name": "id",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Component identifier of the\n                UIInput component to be created."
+            "type": "java.lang.String"
           },
           {
+            "description": "A comma-separated list of validation groups. A validation group is a fully-qualified class name.",
+            "name": "validationGroups",
+            "required": "true",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "A ValueExpression referencing the bean to be validated.",
             "name": "value",
             "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Object)",
-            "description": "A ValueExpression referencing the bean to be validated."
+            "type": "java.lang.Object"
           }
         ]
       },
       {
         "name": "validator",
-        "description": "Register\n            a named\n            Validator instance on the UIComponent associated with the\n            closest parent UIComponent tag. Usage outside of an EditableValueHolder\n            parent If this element is nested within a\n            UIComponent tag that has other\n            UIComponent children, the validator will be\n            automatically added to all the child components as well as\n            this one. The implementation must ensure this occurs even if\n            the parent of this element is not an instance of\n            EditableValueHolder.",
+        "description": "Register a named Validator instance on the UIComponent associated with the closest parent UIComponent tag.  Usage outside of an EditableValueHolder parent If this element is nested within a UIComponent tag that has other UIComponent children, the validator will be automatically added to all the child components as well as this one. The implementation must ensure this occurs even if the parent of this element is not an instance of EditableValueHolder.",
         "attribute": [
           {
+            "description": "A ValueExpression that evaluates to an object that implements the jakarta.faces.validator.Validator interface.",
             "name": "binding",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.validator.Validator)",
-            "description": "A ValueExpression that evaluates to an object that implements\n                the jakarta.faces.validator.Validator interface."
+            "type": "jakarta.faces.validator.Validator"
           },
           {
+            "description": "A boolean value enabling page level determination of whether or not this validator is enabled on the enclosing component.",
+            "name": "disabled",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested.",
             "name": "for",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "If present, this attribute\n                refers\n                to the value of one of the exposed attached objects within the\n                composite component inside of which this tag is nested."
+            "type": "java.lang.String"
           },
           {
-            "name": "disabled",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "A boolean value\n                enabling page level determination of whether or not this\n                validator is enabled on the enclosing component."
-          },
-          {
+            "description": "Validator identifier of the Validator to be created and registered.",
             "name": "validatorId",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Validator identifier of the Validator\n                to be created and registered."
+            "type": "java.lang.String"
           }
         ]
       },
       {
         "name": "valueChangeListener",
-        "description": "Register a ValueChangeListener instance on the UIComponent\n            associated with the closest parent UIComponent tag.",
+        "description": "Register a ValueChangeListener instance on the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
+            "description": "Value binding expression that evaluates to an object that implements jakarta.faces.event.ValueChangeListener.",
             "name": "binding",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.event.ValueChangeListener)",
-            "description": "Value binding expression that evaluates to an object that\n                implements jakarta.faces.event.ValueChangeListener."
+            "type": "jakarta.faces.event.ValueChangeListener"
           },
           {
-            "name": "type",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Fully qualified Java class name of a\n                ValueChangeListener to be created and registered."
-          },
-          {
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested.",
             "name": "for",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "If present, this attribute\n                refers\n                to the value of one of the exposed attached objects within the\n                composite component inside of which this tag is nested."
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Fully qualified Java class name of a ValueChangeListener to be created and registered.",
+            "name": "type",
+            "type": "java.lang.String"
           }
         ]
       },
       {
         "name": "view",
-        "description": "Container for all Jakarta Faces\n            core and component tags used on a\n            page.",
+        "description": "Container for all Jakarta Faces core and component tags used on a page.",
         "attribute": [
           {
+            "description": "MethodBinding pointing to a method that takes a jakarta.faces.event.PhaseEvent and returns void. This method will be called after every phase except for restore view on an initial request.",
             "name": "afterPhase",
             "required": "false",
-            "type": "jakarta.el.MethodExpression\n                                \n                                (signature must match void afterPhase(jakarta.faces.event.PhaseEvent)\n            )",
-            "description": "MethodBinding pointing to a method that takes a\n                jakarta.faces.event.PhaseEvent and returns void. This\n                method will be called after every phase except for\n                restore view on an initial request."
+            "method-signature": "void afterPhase(jakarta.faces.event.PhaseEvent)"
           },
           {
-            "name": "contentType",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Specifies the\n                content-type of the response."
-          },
-          {
-            "name": "encoding",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Specifies the\n            character encoding that should be used for the\n            response."
-          },
-          {
-            "name": "renderKitId",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Identifier for the RenderKit to use for\n                rendering this page."
-          },
-          {
+            "description": "MethodBinding pointing to a method that takes a jakarta.faces.event.PhaseEvent and returns void. This method will be called before every phase except for restore view.",
             "name": "beforePhase",
             "required": "false",
-            "type": "jakarta.el.MethodExpression\n                                \n                                (signature must match void beforePhase(jakarta.faces.event.PhaseEvent)\n            )",
-            "description": "MethodBinding pointing to a method that takes a\n                jakarta.faces.event.PhaseEvent and returns void. This method\n                will be called before every phase except for restore view."
+            "method-signature": "void beforePhase(jakarta.faces.event.PhaseEvent)"
           },
           {
+            "description": "Specifies the content-type of the response.",
+            "name": "contentType",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "A comma separated list of resource library contracts that may be used from within the Facelets chain. If this attribute is present, it must only be on the outer-most file in the chain of files that started ultimately with a call to ViewDeclarationLanguage.createView(). Any use of this attribute on a non-outer-most file is undefined. If this attribute exists on the tag, empty or not, the tag handler must create a List<String> for the value of the attribute and unconditionally call FacesContext.setRresourceLibraryContracts() passing that list value.",
             "name": "contracts",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "A comma separated list of\n          resource library contracts that may be used from within\n          the Facelets chain.  If this attribute is present, it\n          must only be on the outer-most file in the chain of\n          files that started ultimately with a call to\n          ViewDeclarationLanguage.createView().  Any\n          use of this attribute on a non-outer-most file is undefined.\n          \n          If this attribute exists on the tag,\n          empty or not, the tag handler must create a\n          List<String> for the value of the attribute and\n          unconditionally call\n          FacesContext.setRresourceLibraryContracts() passing\n          that list value."
+            "type": "java.lang.String"
           },
           {
-            "name": "locale",
+            "description": "Specifies the character encoding that should be used for the response.",
+            "name": "encoding",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Object)",
-            "description": "Locale to use for localizing this page. Expressions\n                must evaluate to a java.util.Locale or to a String\n                that is converted to a Locale."
+            "type": "java.lang.String"
           },
           {
+            "description": "Locale to use for localizing this page. Expressions must evaluate to a java.util.Locale or to a String that is converted to a Locale.",
+            "name": "locale",
+            "type": "java.lang.Object"
+          },
+          {
+            "description": "Identifier for the RenderKit to use for rendering this page.",
+            "name": "renderKitId",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "If true, this view must not participate in state saving or restoring. Note that transient views may not be used with @ViewScoped managed beans. The implementation must call setTransient() on the UIViewRoot, passing the value of the attribute as specified in the markup.",
             "name": "transient",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "If\n                true, this view must not participate in\n                state saving or restoring.  Note that transient views\n                may not be used with @ViewScoped managed\n                beans.  The implementation must call\n                setTransient() on the\n                UIViewRoot, passing the value of the\n                attribute as specified in the markup."
+            "type": "java.lang.Boolean"
           }
         ]
       },
       {
         "name": "viewAction",
-        "description": "This action component specifies\n            an application-specific command (or action), using an EL\n            method expression, to be invoked during one of the Faces\n            lifecycle phases, by default Invoke Application.",
+        "description": "This action component specifies an application-specific command (or action), using an EL method expression, to be invoked during one of the Faces lifecycle phases, by default Invoke Application.",
         "attribute": [
           {
+            "description": "MethodExpression representing the application action to invoke when this component is activated by the user. The expression must evaluate to a public method that takes no parameters, and returns an Object (the toString() of which is called to derive the logical outcome) which is passed to the NavigationHandler for this application.",
             "name": "action",
             "required": "true",
-            "type": "jakarta.el.MethodExpression\n                                \n                                (signature must match public \n                java.lang.Object action()\n            )",
-            "description": "MethodExpression representing the application action\n            to invoke when this component is activated by the user. The\n            expression must evaluate to a public method that takes no\n            parameters, and returns an Object (the toString() of which\n            is called to derive the logical outcome) which is passed to\n            the NavigationHandler for this application."
+            "method-signature": "public java.lang.Object action()"
           },
           {
-            "name": "immediate",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "Flag indicating that, if this component is activated\n                by the user, notifications should be delivered to\n                interested listeners and actions immediately (that is,\n                during Apply Request Values phase) rather than waiting\n                until Invoke Application phase."
-          },
-          {
-            "name": "phase",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Specifies the phase in which the action invocation\n                should occur using the name of the phase constant in the\n                PhaseId class (the case does not matter). The value must\n                be one of APPLY_REQUEST_VALUES, PROCESS_VALIDATIONS,\n                UPDATE_MODEL_VALUES, or INVOKE_APPLICATION. The default\n                is INVOKE_APPLICATION."
-          },
-          {
+            "description": "MethodExpression representing an action listener method that will be notified when this component is activated by the user. The expression must evaluate to a public method that takes an ActionEvent parameter, with a return type of void, or to a public method that takes no arguments with a return type of void. In the latter case, the method has no way of easily knowing where the event came from, but this can be useful in cases where a notification is needed that \"some action happened\".",
             "name": "actionListener",
             "required": "false",
-            "type": "jakarta.el.MethodExpression\n                                \n                                (signature must match public void\n                actionListener(jakarta.faces.event.ActionEvent)\n            )",
-            "description": "MethodExpression representing an action listener method that\n                will be notified when this component is activated by the user.\n                The expression must evaluate to a public method that takes an\n                ActionEvent parameter, with a return type of void, or to a public method that takes no\n                arguments with a return type of void.  In the latter case, the\n                method has no way of easily knowing where the event came from,\n                but this can be useful in cases where a notification is needed\n                that \"some action happened\"."
+            "method-signature": "public void actionListener(jakarta.faces.event.ActionEvent)"
           },
           {
+            "description": "Flag indicating that, if this component is activated by the user, notifications should be delivered to interested listeners and actions immediately (that is, during Apply Request Values phase) rather than waiting until Invoke Application phase.",
+            "name": "immediate",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "View actions are most commonly used on the initial view request. Therefore, view actions do not operate on postback, by default. This attribute enables a view action to operate on postback.",
             "name": "onPostback",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "View actions are most commonly used on the initial\n            view request.  Therefore, view actions do not operate on\n            postback, by default.  This attribute enables a view action\n            to operate on postback."
+            "type": "java.lang.Boolean"
           },
           {
+            "description": "Specifies the phase in which the action invocation should occur using the name of the phase constant in the PhaseId class (the case does not matter). The value must be one of APPLY_REQUEST_VALUES, PROCESS_VALIDATIONS, UPDATE_MODEL_VALUES, or INVOKE_APPLICATION. The default is INVOKE_APPLICATION.",
+            "name": "phase",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Like all children of <f:metadata>, a view action has no visual representation in the view. This attribute has exactly the same effect on a view action as the rendered attribute has on a visual component. Specifically, if the value of this attribute evaluates to false the component has no effect.",
             "name": "rendered",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "Like all children of <f:metadata>,\n            a view action has no visual representation in the view.\n            This attribute has exactly the same effect on a view action\n            as the rendered attribute has on a visual\n            component.  Specifically, if the value of this attribute\n            evaluates to false the component has no\n            effect."
+            "type": "java.lang.Boolean"
           }
         ]
       },
       {
         "name": "viewParam",
-        "description": "Used inside of the\n            metadata facet of a view, this tag causes a UIViewParameter\n            to be attached as metadata for the current view.  Because\n            UIViewParameter extends UIInput\n            all of the attributes and nested child content for any\n            UIInput tags are valid on this tag as well.",
+        "description": "Used inside of the metadata facet of a view, this tag causes a UIViewParameter to be attached as metadata for the current view. Because UIViewParameter extends UIInput all of the attributes and nested child content for any UIInput tags are valid on this tag as well.",
         "attribute": [
           {
+            "description": "The ValueExpression linking this component to a property in a backing bean.",
             "name": "binding",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.component.UIComponent)",
-            "description": "The ValueExpression linking this component to a property in a\n                backing bean."
+            "type": "jakarta.faces.component.UIComponent"
           },
           {
-            "name": "converterMessage",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "A ValueExpression enabled attribute that, if present, will be\n                used as the text of the converter message, replacing any message\n                that comes from the converter."
-          },
-          {
-            "name": "id",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "The component identifier for this component. This value must be\n                unique within the closest parent component that is a naming\n                container."
-          },
-          {
-            "name": "required",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to boolean)",
-            "description": "Flag indicating that the user is required to provide a submitted\n                value for this input component."
-          },
-          {
-            "name": "validator",
-            "required": "false",
-            "type": "jakarta.el.MethodExpression\n                                \n                                (signature must match void validate(jakarta.faces.context.FacesContext,\n                jakarta.faces.component.UIComponent, java.lang.Object)\n            )",
-            "description": "MethodExpression representing a validator method that will be\n                called\n                during Process Validations to perform correctness checks on the\n                value of this component. The expression must evaluate to a\n                public\n                method that takes FacesContext, UIComponent, and Object\n                parameters,\n                with a return type of void."
-          },
-          {
-            "name": "value",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Object)",
-            "description": "A ValueExpression to which the value of the request parameter, as\n                determined by the name attribute, is bound. The resolved value of this\n                expression is used when encoding the view parameter into a bookmarkable link or\n                redirect URL with view parameter encoding enabled. If this attribute is omitted,\n                the value of the request parameter will instead be the local value of the\n                UIViewParameter."
-          },
-          {
-            "name": "maxlength",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to int)",
-            "description": "The maximum number of characters that may\n                be entered in this field."
-          },
-          {
+            "description": "Converter instance registered with this component.",
             "name": "converter",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.convert.Converter)",
-            "description": "Converter instance registered with this component."
+            "type": "jakarta.faces.convert.Converter"
           },
           {
+            "description": "A ValueExpression enabled attribute that, if present, will be used as the text of the converter message, replacing any message that comes from the converter.",
+            "name": "converterMessage",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested.",
             "name": "for",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "If present, this\n                attribute refers to the value of one of the exposed\n                attached objects within the composite component inside\n                of which this tag is nested."
+            "type": "java.lang.String"
           },
           {
+            "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
+            "name": "id",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "The name of the request parameter from which the value for this component is retrieved on an initial request or to override the stored value on a postback.",
             "name": "name",
             "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "The name\n                of the request parameter from which the value for this\n                component is retrieved on an initial request or to\n                override the stored value on a postback."
+            "type": "java.lang.String"
           },
           {
+            "description": "Flag indicating that the user is required to provide a submitted value for this input component.",
+            "name": "required",
+            "required": "false",
+            "type": "boolean"
+          },
+          {
+            "description": "A ValueExpression enabled attribute that, if present, will be used as the text of the validation message for the \"required\" facility, if the \"required\" facility is used.",
             "name": "requiredMessage",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "A ValueExpression enabled attribute that, if present, will be\n                used as the text of the validation message for the \"required\"\n                facility, if the \"required\" facility is used."
+            "type": "java.lang.String"
           },
           {
+            "description": "MethodExpression representing a validator method that will be called during Process Validations to perform correctness checks on the value of this component. The expression must evaluate to a public method that takes FacesContext, UIComponent, and Object parameters, with a return type of void.",
+            "name": "validator",
+            "required": "false",
+            "method-signature": "void validate(jakarta.faces.context.FacesContext, jakarta.faces.component.UIComponent, java.lang.Object)"
+          },
+          {
+            "description": "A ValueExpression enabled attribute that, if present, will be used as the text of the validator message, replacing any message that comes from the validator.",
             "name": "validatorMessage",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "A ValueExpression enabled attribute that, if present, will be\n                used as the text of the validator message, replacing any\n                message that comes from the validator."
+            "type": "java.lang.String"
           },
           {
+            "description": "A ValueExpression to which the value of the request parameter, as determined by the name attribute, is bound. The resolved value of this expression is used when encoding the view parameter into a bookmarkable link or redirect URL with view parameter encoding enabled. If this attribute is omitted, the value of the request parameter will instead be the local value of the UIViewParameter.",
+            "name": "value",
+            "required": "false",
+            "type": "java.lang.Object"
+          },
+          {
+            "description": "MethodExpression representing a value change listener method that will be notified when a new value has been set for this input component. The expression must evaluate to a public method that takes a ValueChangeEvent parameter, with a return type of void, or to a public method that takes no arguments with a return type of void. In the latter case, the method has no way of easily knowing what the new value is, but this can be useful in cases where a notification is needed that \"this value changed\".",
             "name": "valueChangeListener",
             "required": "false",
-            "type": "jakarta.el.MethodExpression\n                                \n                                (signature must match void\n                valueChange(jakarta.faces.event.ValueChangeEvent)\n            )",
-            "description": "MethodExpression representing a value change listener method\n                that will be notified when a new value has been set for this\n                input component. The expression must evaluate to a public\n                method that takes a ValueChangeEvent\n                parameter,\n                with a return type of void, or\n                to a public method that takes no arguments with a return type\n                of void. In the latter case, the method has no way of easily\n                knowing what the new value is, but this can be useful in cases\n                where a notification is needed that \"this value\n                changed\"."
+            "method-signature": "void valueChange(jakarta.faces.event.ValueChangeEvent)"
+          },
+          {
+            "description": "The maximum number of characters that may be entered in this field.",
+            "name": "maxlength",
+            "required": "false",
+            "type": "int"
           }
         ]
       },
       {
         "name": "websocket",
-        "description": "Registers a websocket push\n        connection in client side by rendering the necessary scripts.\n        Push messages can be sent from server side via\n        jakarta.faces.push.PushContext interface.  See also\n        jakarta.faces.push.Push API documentation for an\n        elaborate instruction on how to use\n        <f:websocket>.",
+        "description": "Registers a websocket push connection in client side by rendering the necessary scripts. Push messages can be sent from server side via jakarta.faces.push.PushContext interface. See also jakarta.faces.push.Push API documentation for an elaborate instruction on how to use <f:websocket>.",
         "attribute": [
           {
+            "description": "Value binding expression to a backing bean property bound to the component instance for the UIComponent created by this tag.",
             "name": "binding",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to jakarta.faces.component.UIComponent)",
-            "description": "Value binding expression to a backing bean property bound to the component instance for the UIComponent created by this tag."
+            "type": "jakarta.faces.component.UIComponent"
           },
           {
-            "name": "channel",
-            "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "The name of the websocket channel.\n                    It may not be an EL expression and it may only contain alphanumeric characters, hyphens, underscores and periods.\n                    All open websockets on the same channel name will receive the same push notification from the server."
-          },
-          {
-            "name": "user",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.io.Serializable)",
-            "description": "The user identifier of the websocket channel, so that user-targeted push messages can be sent.\n                    It must implement Serializable and preferably have low memory footprint.\n                    Suggestion: use #{request.remoteUser} or #{someLoggedInUser.id}.\n                    All open websockets on the same channel and user will receive the same push message from the server."
-          },
-          {
-            "name": "onmessage",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "The JavaScript event handler function that is invoked when a push message is received from the server.\n                    The function will be invoked with three arguments: the push message, the channel name and the raw MessageEvent itself."
-          },
-          {
-            "name": "onclose",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "The JavaScript event handler function that is invoked when the websocket is closed and will not anymore attempt to reconnect.\n                    The function will be invoked with three arguments: the close reason code, the channel name and the raw CloseEvent itself.\n                    Note that this will also be invoked when the close is caused by an error and that you can inspect the close reason code if an actual connection error occurred and which one (i.e. when the code is not 1000 or 1008).\n                    See also \n                    RFC 6455 section 7.4.1 \n                    and\n                    CloseCodes\n                    API for an elaborate list of all close codes."
-          },
-          {
-            "name": "rendered",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "Whether to render the websocket scripts or not.\n                    Defaults to true.\n                    This attribute is implicitly re-evaluated on every ajax request by a PreRenderViewEvent listener on the UIViewRoot.\n                    If the value changes to false while the websocket is already opened, then the websocket will implicitly be closed."
-          },
-          {
+            "description": "Component identifier of the UIWebsocket component to be created.",
             "name": "id",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Component identifier of the UIWebsocket component to be created."
+            "type": "java.lang.String"
           },
           {
+            "description": "The name of the websocket channel. It may not be an EL expression and it may only contain alphanumeric characters, hyphens, underscores and periods. All open websockets on the same channel name will receive the same push notification from the server.",
+            "name": "channel",
+            "required": "true",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "The scope of the websocket channel. It may not be an EL expression and allowed values are application, session and view, case insensitive. When the value is application, then all channels with the same name throughout the application will receive the same push message. When the value is session, then only the channels with the same name in the current user session will receive the same push message. When the value is view, then only the channel in the current view will receive the push message. The default scope is application. When the user attribute is specified, then the default scope is session.",
             "name": "scope",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "The scope of the websocket channel.\n                    It may not be an EL expression and allowed values are application, session and view, case insensitive.\n                    When the value is application, then all channels with the same name throughout the application will receive the same push message.\n                    When the value is session, then only the channels with the same name in the current user session will receive the same push message.\n                    When the value is view, then only the channel in the current view will receive the push message.\n                    The default scope is application.\n                    When the user attribute is specified, then the default scope is session."
+            "type": "java.lang.String"
           },
           {
+            "description": "The user identifier of the websocket channel, so that user-targeted push messages can be sent. It must implement Serializable and preferably have low memory footprint. Suggestion: use #{request.remoteUser} or #{someLoggedInUser.id}. All open websockets on the same channel and user will receive the same push message from the server.",
+            "name": "user",
+            "required": "false",
+            "type": "java.io.Serializable"
+          },
+          {
+            "description": "The JavaScript event handler function that is invoked when the websocket is opened. The function will be invoked with one argument: the channel name.",
             "name": "onopen",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "The JavaScript event handler function that is invoked when the websocket is opened.\n                    The function will be invoked with one argument: the channel name."
+            "type": "java.lang.String"
           },
           {
+            "description": "The JavaScript event handler function that is invoked when a push message is received from the server. The function will be invoked with three arguments: the push message, the channel name and the raw MessageEvent itself.",
+            "name": "onmessage",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "The JavaScript event handler function that is invoked when a connection error has occurred and the websocket will attempt to reconnect. The function will be invoked with three arguments: the error reason code, the channel name and the raw CloseEvent itself. Note that this will not be invoked on final close of the websocket, even when the final close is caused by an error. See also RFC 6455 section 7.4.1 and CloseCodes API for an elaborate list of all close codes.",
             "name": "onerror",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "The JavaScript event handler function that is invoked when a connection error has occurred and the websocket will attempt to reconnect.\n                    The function will be invoked with three arguments: the error reason code, the channel name and the raw CloseEvent itself.\n                    Note that this will not be invoked on final close of the websocket, even when the final close is caused by an error.\n                    See also \n                    RFC 6455 section 7.4.1 \n                    and\n                    CloseCodes\n                    API for an elaborate list of all close codes."
+            "type": "java.lang.String"
           },
           {
+            "description": "The JavaScript event handler function that is invoked when the websocket is closed and will not anymore attempt to reconnect. The function will be invoked with three arguments: the close reason code, the channel name and the raw CloseEvent itself. Note that this will also be invoked when the close is caused by an error and that you can inspect the close reason code if an actual connection error occurred and which one (i.e. when the code is not 1000 or 1008). See also RFC 6455 section 7.4.1 and CloseCodes API for an elaborate list of all close codes.",
+            "name": "onclose",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Whether to (auto)connect the websocket or not. Defaults to true. It's interpreted as a JavaScript instruction whether to open or close the websocket push connection. This attribute is implicitly re-evaluated on every ajax request by a PreRenderViewEvent listener on the UIViewRoot. You can also explicitly set it to false and then manually control in JavaScript by faces.push.open(clientId) and faces.push.close(clientId).",
             "name": "connected",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.Boolean)",
-            "description": "Whether to (auto)connect the websocket or not.\n                    Defaults to true.\n                    It's interpreted as a JavaScript instruction whether to open or close the websocket push connection.\n                    This attribute is implicitly re-evaluated on every ajax request by a PreRenderViewEvent listener on the UIViewRoot.\n                    You can also explicitly set it to false and then manually control in JavaScript by faces.push.open(clientId) and faces.push.close(clientId)."
-          }
-        ]
-      },
-      {
-        "name": "tps://jakarta.ee/specifications/faces/4.0/vdldoc/faces/element",
-        "description": "Markup element\n     that causes a component of component-family:\n     jakarta.faces.Panel with renderer-type:\n     jakarta.faces.passthrough.Element to be inserted in the tree.\n     This element is primarily intended to be used by the default\n     TagDecorator, when no match is found as described in\n     the javadoc for that class.  The component that backs this element\n     must implement\n     jakarta.faces.component.behavior.ClientBehaviorHolder\n     and return \"click\" from its getDefaultEventName()\n     method.  The list of events returned from its\n     getEventNames() method must include the \"on*\"\n     attributes below, ommitting the leading \"on\".",
-        "attribute": [
-          {
-            "name": "elementName",
-            "required": "true",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "This attribute must be in the\n         jakarta.faces.passthrough namespace and\n         its value must be set into the component's pass through\n         attributes map under the key given by the value of the symbolic\n         constant\n         jakarta.faces.render.Renderer.PASSTHROUGH_RENDERER_LOCALNAME_KEY."
+            "type": "java.lang.Boolean"
           },
           {
-            "name": "ondblclick",
+            "description": "Whether to render the websocket scripts or not. Defaults to true. This attribute is implicitly re-evaluated on every ajax request by a PreRenderViewEvent listener on the UIViewRoot. If the value changes to false while the websocket is already opened, then the websocket will implicitly be closed.",
+            "name": "rendered",
             "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Javascript code executed when a pointer button is\n          double clicked over this element."
-          },
-          {
-            "name": "onmouseup",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Javascript code executed when a pointer button is\n          released over this element."
-          },
-          {
-            "name": "onmousemove",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Javascript code executed when a pointer button is\n          moved within this element."
-          },
-          {
-            "name": "onkeypress",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Javascript code executed when a key is\n          pressed and released over this element."
-          },
-          {
-            "name": "onkeyup",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Javascript code executed when a key is\n          released over this element."
-          },
-          {
-            "name": "onclick",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Javascript code executed when a pointer button is\n          clicked over this element."
-          },
-          {
-            "name": "onmousedown",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Javascript code executed when a pointer button is\n          pressed down over this element."
-          },
-          {
-            "name": "onmouseover",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Javascript code executed when a pointer button is\n          moved onto this element."
-          },
-          {
-            "name": "onmouseout",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Javascript code executed when a pointer button is\n          moved away from this element."
-          },
-          {
-            "name": "onkeydown",
-            "required": "false",
-            "type": "jakarta.el.ValueExpression\n                                \n                                (must evaluate to java.lang.String)",
-            "description": "Javascript code executed when a key is\n          pressed down over this element."
+            "type": "java.lang.Boolean"
           }
         ]
       }
