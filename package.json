@@ -1,7 +1,7 @@
 {
   "name": "faces-intellisense",
-  "displayName": "Faces Intellisense",
-  "description": "Faces Intellisense",
+  "displayName": "Jakarta Faces Intellisense",
+  "description": "Jakarta Faces Intellisense provides components completion in the HTML, XHTML and Jakarta Faces. Based on the official Tag Library definitions.",
   "version": "2.0.0",
   "publisher": "melloware",
   "license": "MIT",
