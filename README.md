@@ -15,9 +15,8 @@ A Visual Studio Code extension that provides diferentes components completion in
 * Primefaces Extensions (10.x, 11.x, 12.x, 13.x, 14.x)
 * OmniFaces (3.x, 4.x)
 * RichFaces (4.5.x)
-* JSF (2.1, 2.2)
-* Java Server Faces (2.3, 3.0)
-* Jakarta Faces 4.0
+* JSF (2.1, 2.2, 2.3)
+* Jakarta Faces (4.0, 5.0)
 
 
 ![](https://github.com/primefaces-extensions/faces-intellisense/blob/main/images/demo-animated.gif)
