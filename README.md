@@ -77,10 +77,6 @@ A Visual Studio Code extension that provides diferentes components completion in
 It's possible to specify which language modes will have autocompletion. There are five settings for this feature:
 * `faces-intellisense.languages` is for language modes based on HTML.
 
-
-## Contributions
-You can request new features and contribute to the extension development on its [repository on GitHub](https://github.com/primefaces-extensions/faces-intellisense/issues). Look for an issue you're interested in working on, comment on it to let me know you're working on it and submit your pull request! :D
-
 ## What's new
 
 Check out the [changelog](https://github.com/primefaces-extensions/faces-intellisense/blob/main/CHANGELOG.md) for the current and previous updates.
@@ -94,6 +90,19 @@ The extension supports a few user settings, changes to these settings will be au
 
 ![](https://github.com/primefaces-extensions/faces-intellisense/blob/main/images/cache1-animated.gif)
 ![](https://github.com/primefaces-extensions/faces-intellisense/blob/main/images/cache2-animated.gif)
+
+## Generate Tag Libraries
+
+To generate or update tag libraries you can do the following:
+
+1. Navigate to `\generator`.
+2. Run `npm install`
+3. Run `npm run start` to generate new code.
+
+To add a new library or update just edit `\generator\src\index.ts` and run `npm run start`.
+
+## Contributions
+You can request new features and contribute to the extension development on its [repository on GitHub](https://github.com/primefaces-extensions/faces-intellisense/issues). Look for an issue you're interested in working on, comment on it to let me know you're working on it and submit your pull request! :D
 
 ## Contributors ✨
 
