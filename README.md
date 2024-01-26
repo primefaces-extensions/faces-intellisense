@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/primefaces-extensions/faces-intellisense/main/images/jakarta.svg" height="70"><img src="https://raw.githubusercontent.com/primefaces-extensions/faces-intellisense/main/images/plus-sign.svg" height="70" ><img src="https://raw.githubusercontent.com/primefaces-extensions/faces-intellisense/main/images/vscode.svg" height="70" >
+<img src="https://raw.githubusercontent.com/primefaces-extensions/faces-intellisense/main/images/jakarta.svg" height="90"><img src="https://raw.githubusercontent.com/primefaces-extensions/faces-intellisense/main/images/plus-sign.svg" height="70" ><img src="https://raw.githubusercontent.com/primefaces-extensions/faces-intellisense/main/images/vscode.svg" height="70" >
 
 
 # Intellisense for Jakarta Faces
