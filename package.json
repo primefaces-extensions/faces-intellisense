@@ -2,7 +2,7 @@
   "name": "faces-intellisense",
   "displayName": "Jakarta Faces Intellisense",
   "description": "Jakarta Faces Intellisense provides components completion in the HTML, XHTML and Jakarta Faces. Based on the official Tag Library definitions.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "publisher": "FlipWarthog",
   "license": "MIT",
   "engines": {
@@ -125,16 +125,16 @@
     "@types/glob": "8.1.0",
     "@types/lodash": "^4.14.202",
     "@types/mocha": "^10.0.6",
-    "@types/node": "20.11.6",
+    "@types/node": "20.11.19",
     "@types/verror": "^1.10.9",
-    "@types/vscode": "^1.85.0",
+    "@types/vscode": "^1.86.0",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
     "@vscode/test-electron": "^2.3.9",
     "@vscode/vsce": "^2.23.0",
     "eslint": "^8.56.0",
     "glob": "8.1.0",
-    "mocha": "^10.2.0",
+    "mocha": "^10.3.0",
     "typescript": "^4.9.5"
   },
   "dependencies": {

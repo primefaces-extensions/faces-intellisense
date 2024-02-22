@@ -112,10 +112,10 @@
   resolved "https://registry.npmjs.org/@types/mocha/-/mocha-10.0.6.tgz"
   integrity sha512-dJvrYWxP/UcXm36Qn36fxhUKu8A/xMRXVT2cliFF1Z7UA9liG5Psj3ezNSZw+5puH2czDXRLcXQxf8JbJt0ejg==
 
-"@types/node@*", "@types/node@20.11.6":
-  version "20.11.6"
-  resolved "https://registry.npmjs.org/@types/node/-/node-20.11.6.tgz"
-  integrity sha512-+EOokTnksGVgip2PbYbr3xnR7kZigh4LbybAfBAw5BpnQ+FqBYUsvCEjYd70IXKlbohQ64mzEYmMtlWUY8q//Q==
+"@types/node@*", "@types/node@20.11.19":
+  version "20.11.19"
+  resolved "https://registry.npmjs.org/@types/node/-/node-20.11.19.tgz"
+  integrity sha512-7xMnVEcZFu0DikYjWOlRq7NTPETrm7teqUT2WkQjrTIkEgUyyGdWsj/Zg8bEJt5TNklzbPD1X3fqfsHw3SpapQ==
   dependencies:
     undici-types "~5.26.4"
 
@@ -129,10 +129,10 @@
   resolved "https://registry.npmjs.org/@types/verror/-/verror-1.10.9.tgz"
   integrity sha512-MLx9Z+9lGzwEuW16ubGeNkpBDE84RpB/NyGgg6z2BTpWzKkGU451cAY3UkUzZEp72RHF585oJ3V8JVNqIplcAQ==
 
-"@types/vscode@^1.85.0":
-  version "1.85.0"
-  resolved "https://registry.npmjs.org/@types/vscode/-/vscode-1.85.0.tgz"
-  integrity sha512-CF/RBon/GXwdfmnjZj0WTUMZN5H6YITOfBCP4iEZlOtVQXuzw6t7Le7+cR+7JzdMrnlm7Mfp49Oj2TuSXIWo3g==
+"@types/vscode@^1.86.0":
+  version "1.86.0"
+  resolved "https://registry.npmjs.org/@types/vscode/-/vscode-1.86.0.tgz"
+  integrity sha512-DnIXf2ftWv+9LWOB5OJeIeaLigLHF7fdXF6atfc7X5g2w/wVZBgk0amP7b+ub5xAuW1q7qP5YcFvOcit/DtyCQ==
 
 "@typescript-eslint/eslint-plugin@^6.19.1":
   version "6.19.1"
@@ -977,18 +977,6 @@ glob@^7.1.3:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-glob@7.2.0:
-  version "7.2.0"
-  resolved "https://registry.npmjs.org/glob/-/glob-7.2.0.tgz"
-  integrity sha512-lmLf6gtyrPq8tTjSmrO94wBeQbFR3HbLHbuyD69wuyQkImp2hWqMGB47OX65FBkPffO641IP9jWa1z4ivqG26Q==
-  dependencies:
-    fs.realpath "^1.0.0"
-    inflight "^1.0.4"
-    inherits "2"
-    minimatch "^3.0.4"
-    once "^1.3.0"
-    path-is-absolute "^1.0.0"
-
 glob@8.1.0:
   version "8.1.0"
   resolved "https://registry.npmjs.org/glob/-/glob-8.1.0.tgz"
@@ -1359,10 +1347,10 @@ mkdirp-classic@^0.5.2, mkdirp-classic@^0.5.3:
   resolved "https://registry.npmjs.org/mkdirp-classic/-/mkdirp-classic-0.5.3.tgz"
   integrity sha512-gKLcREMhtuZRwRAfqP3RFW+TK4JqApVBtOIftVgjuABpAtpxhPGaDcfvbhNvD0B8iD1oUr/txX35NjcaY6Ns/A==
 
-mocha@^10.2.0:
-  version "10.2.0"
-  resolved "https://registry.npmjs.org/mocha/-/mocha-10.2.0.tgz"
-  integrity sha512-IDY7fl/BecMwFHzoqF2sg/SHHANeBoMMXFlS9r0OXKDssYE1M5O43wUY/9BVPeIvfH2zmEbBfseqN9gBQZzXkg==
+mocha@^10.3.0:
+  version "10.3.0"
+  resolved "https://registry.npmjs.org/mocha/-/mocha-10.3.0.tgz"
+  integrity sha512-uF2XJs+7xSLsrmIvn37i/wnc91nw7XjOQB8ccyx5aEgdnohr7n+rEiZP23WkCYHjilR6+EboEnbq/ZQDz4LSbg==
   dependencies:
     ansi-colors "4.1.1"
     browser-stdout "1.3.1"
@@ -1371,13 +1359,12 @@ mocha@^10.2.0:
     diff "5.0.0"
     escape-string-regexp "4.0.0"
     find-up "5.0.0"
-    glob "7.2.0"
+    glob "8.1.0"
     he "1.2.0"
     js-yaml "4.1.0"
     log-symbols "4.1.0"
     minimatch "5.0.1"
     ms "2.1.3"
-    nanoid "3.3.3"
     serialize-javascript "6.0.0"
     strip-json-comments "3.1.1"
     supports-color "8.1.1"
@@ -1400,11 +1387,6 @@ mute-stream@~0.0.4:
   version "0.0.8"
   resolved "https://registry.npmjs.org/mute-stream/-/mute-stream-0.0.8.tgz"
   integrity sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==
-
-nanoid@3.3.3:
-  version "3.3.3"
-  resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.3.3.tgz"
-  integrity sha512-p1sjXuopFs0xg+fPASzQ28agW1oHD7xDsd9Xkf3T15H3c/cifrFHVwrh74PdoklAPi+i7MdRsE47vm2r6JoB+w==
 
 napi-build-utils@^1.0.1:
   version "1.0.2"
