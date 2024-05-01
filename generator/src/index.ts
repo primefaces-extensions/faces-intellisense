@@ -25,7 +25,7 @@ const tagLibsFromXml = [
       },
       {
         version: "14.0.0",
-        url: "https://raw.githubusercontent.com/primefaces-extensions/primefaces-extensions/master/core/src/main/resources/META-INF/primefaces-extensions.taglib.xml",
+         url: "https://raw.githubusercontent.com/primefaces-extensions/primefaces-extensions/14.0.0/core/src/main/resources/META-INF/primefaces-extensions.taglib.xml",
       },
     ],
   },
@@ -55,7 +55,7 @@ const tagLibsFromXml = [
       },
       {
         version: "14.0.0",
-        url: "https://raw.githubusercontent.com/primefaces/primefaces/master/primefaces/src/main/resources/META-INF/primefaces-p.taglib.xml",
+       url: "https://raw.githubusercontent.com/primefaces/primefaces/14.0.0/primefaces/src/main/resources/META-INF/primefaces-p.taglib.xml",
       },
     ],
   },

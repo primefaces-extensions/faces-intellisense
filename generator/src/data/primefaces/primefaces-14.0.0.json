@@ -6,7 +6,7 @@
         "description": "",
         "attribute": [
           {
-            "description": "Regular expression for accepted file types, e.g. /(\\.|\\/)(gif|jpe?g|png)$/",
+            "description": "Regular expression for accepted file types, e.g., /(\\.|\\/)(gif|jpeg|jpg|png)$/",
             "name": "allowTypes",
             "required": "false",
             "type": "java.lang.String"
@@ -1328,6 +1328,12 @@
           {
             "description": "Highlights the first suggested item automatically. Default is true.",
             "name": "autoHighlight",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Should the empty message be displayed when no items are found? Default is true.",
+            "name": "showEmptyMessage",
             "required": "false",
             "type": "java.lang.Boolean"
           },
@@ -5034,6 +5040,12 @@
             "type": "java.lang.Boolean"
           },
           {
+            "description": "When set to true this button is only enabled after successful client side validation. Used together with p:clientValidator on all relevant input-components.",
+            "name": "enabledByValidateClient",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
             "description": "Selector to use when partial submit is on, default is \":input\" to select all descendant inputs of a partially processed components.",
             "name": "partialSubmitFilter",
             "required": "false",
@@ -5692,6 +5704,12 @@
             "name": "responsive",
             "required": "false",
             "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Name of collection iterator which will be the value of DashboardWidget.getValue().",
+            "name": "var",
+            "required": "false",
+            "type": "java.lang.String"
           }
         ]
       },
@@ -5784,7 +5802,7 @@
             "type": "java.lang.Integer"
           },
           {
-            "description": "Position of the paginator. Default is both.",
+            "description": "Paginator can be positioned at the \"top,\" \"bottom,\" or \"both.\" Default setting is \"both.\"",
             "name": "paginatorPosition",
             "required": "false",
             "type": "java.lang.String"
@@ -6360,7 +6378,7 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "Client side event to invoke datatable filtering for input fields. Default is keyup.",
+            "description": "Client side event to invoke filtering. If \"enter\" it will only filter after ENTER key is pressed. Default is keyup.",
             "name": "filterEvent",
             "required": "false",
             "type": "java.lang.String"
@@ -7968,19 +7986,19 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Regular expression for accepted file types, e.g. /(\\.|\\/)(gif|jpe?g|png)$/",
+            "description": "Regular expression for accepted file types, e.g., /(\\.|\\/)(gif|jpeg|jpg|png)$/",
             "name": "allowTypes",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Maximum number of files to be uploaded.",
+            "description": "Maximum number of files to be uploaded. Deprecated please attach 'p:validateFile'.",
             "name": "fileLimit",
             "required": "false",
             "type": "java.lang.Integer"
           },
           {
-            "description": "Individual file size limit in bytes. Default is unlimited.",
+            "description": "Individual file size limit in bytes. Default is unlimited. Deprecated please attach 'p:validateFile'.",
             "name": "sizeLimit",
             "required": "false",
             "type": "java.lang.Long"
@@ -8070,7 +8088,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Message template to use when displaying file validation errors. Default is \"{name} {size}\".",
+            "description": "Message template to use when displaying file in simple upload mode and some client side validation messages in advanced mode. Default is \"{name} {size}\".",
             "name": "messageTemplate",
             "required": "false",
             "type": "java.lang.String"
@@ -8496,7 +8514,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Type of the map. Required.",
+            "description": "There are four types of maps available: roadmap, satellite, hybrid, and terrain. Required.",
             "name": "type",
             "required": "true",
             "type": "java.lang.String"
@@ -12808,6 +12826,12 @@
             "name": "orientation",
             "required": "false",
             "type": "java.lang.String"
+          },
+          {
+            "description": "Defines text direction, valid values are \"ltr\" (default) and \"rtl\".",
+            "name": "dir",
+            "required": "false",
+            "type": "java.lang.String"
           }
         ]
       },
@@ -15642,7 +15666,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Client side event to invoke picklist filtering for input fields. Default is keyup.",
+            "description": "Client side event to invoke filtering. If \"enter\" it will only filter after ENTER key is pressed. Default is keyup.",
             "name": "filterEvent",
             "required": "false",
             "type": "java.lang.String"
@@ -15734,6 +15758,18 @@
           {
             "description": "Javascript handler to execute when ajax request is completed.",
             "name": "oncomplete",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when the poller is activated. Return false to prevent poller from starting.",
+            "name": "onactivated",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when the poller is deactivated. Return false to prevent poller from stopping.",
+            "name": "ondeactivated",
             "required": "false",
             "type": "java.lang.String"
           },
@@ -15932,6 +15968,12 @@
           {
             "description": "Defines the mode of the progress, valid values are \"determinate\" and \"indeterminate\".",
             "name": "mode",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Severity type of the progressBar.",
+            "name": "severity",
             "required": "false",
             "type": "java.lang.String"
           }
@@ -22254,6 +22296,18 @@
             "type": "java.lang.String"
           },
           {
+            "description": "Client side event to invoke filtering. If \"enter\" it will only filter after ENTER key is pressed. Default is keyup.",
+            "name": "filterEvent",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Delay to wait in milliseconds before sending each filter query. Default is 300.",
+            "name": "filterDelay",
+            "required": "false",
+            "type": "java.lang.Integer"
+          },
+          {
             "description": "Disables tree.",
             "name": "disabled",
             "required": "false",
@@ -22266,10 +22320,16 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "When enabled, the copy of the selected nodes can be dropped from a tree to another tree using Shift key.",
+            "description": "When enabled and dropMode='move', the copy of the selected nodes can be dropped from a tree to another tree using Shift key.",
             "name": "dropCopyNode",
             "required": "false",
             "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Whether to 'move' or 'copy' the node on drop. Default is 'move'.",
+            "name": "dropMode",
+            "required": "false",
+            "type": "java.lang.String"
           },
           {
             "description": "Method returning whether the dragged node(s) can be dropped on the dropped node.",
@@ -22632,7 +22692,7 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "Client side event to invoke treetable filtering for input fields. Default is keyup.",
+            "description": "Client side event to invoke filtering. If \"enter\" it will only filter after ENTER key is pressed. Default is keyup.",
             "name": "filterEvent",
             "required": "false",
             "type": "java.lang.String"
@@ -23192,7 +23252,7 @@
           {
             "description": "JSON value of the chart.",
             "name": "value",
-            "required": "true",
+            "required": "false",
             "type": "java.lang.String"
           },
           {
@@ -23214,7 +23274,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Name of javascript function to extend the options of the underlying fullcalendar plugin.",
+            "description": "Name of javascript function to extend the options of the underlying Chart.js plugin.",
             "name": "extender",
             "required": "false",
             "type": "java.lang.String"
@@ -24258,6 +24318,12 @@
             "type": "java.lang.Boolean"
           },
           {
+            "description": "Whether to hide the overlay on date selection is completed when selectionMode is range. Default is false.",
+            "name": "hideOnRangeSelection",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
             "description": "Maximum number of selectable dates in multiple mode. Default is java.lang.Integer.MAX_VALUE.",
             "name": "maxDateCount",
             "required": "false",
@@ -25002,6 +25068,12 @@
             "type": "java.lang.Integer"
           },
           {
+            "description": "Step size when pressing arrow keys to resize panel. Default is 5.",
+            "name": "step",
+            "required": "false",
+            "type": "java.lang.Integer"
+          },
+          {
             "description": "Storage identifier of a stateful Splitter.",
             "name": "stateKey",
             "required": "false",
@@ -25076,6 +25148,24 @@
           {
             "description": "Style class of the component.",
             "name": "styleClass",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Position in the tabbing order.",
+            "name": "tabindex",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Splitter handle ARIA label for screenreader support.",
+            "name": "ariaLabel",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Establishes relationships between the splitter and panel label element IDs.",
+            "name": "ariaLabelledBy",
             "required": "false",
             "type": "java.lang.String"
           }
