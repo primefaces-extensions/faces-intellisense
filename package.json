@@ -65,7 +65,7 @@
               "primefaces-13.0.0",
               "primefaces-14.0.0"
             ],
-            "default": "primefaces-13.0.0",
+            "default": "primefaces-14.0.0",
             "description": "PrimeFaces Version. (Restart Required)."
           },
           "faces-intellisense.primeExtVersion": {
@@ -76,7 +76,7 @@
               "primefaces-extensions-13.0.0",
               "primefaces-extensions-14.0.0"
             ],
-            "default": "primefaces-extensions-13.0.0",
+            "default": "primefaces-extensions-14.0.0",
             "description": "PrimeFaces Extensions Version. (Restart Required)."
           },
           "faces-intellisense.omniVersion": {
