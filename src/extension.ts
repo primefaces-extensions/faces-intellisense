@@ -52,19 +52,19 @@ const supportedXmlNamespaces: XmlNamespace[] = [
   },
   {
     id: "o",
-    urls: ["http://omnifaces.org/ui"],
+    urls: ["http://omnifaces.org/ui", "omnifaces.ui"],
     dataFilename: workspace.getConfiguration().get<string>(Configuration.omniVersion) ?? "",
     uniqueDefinitions: [],
   },
   {
     id: "p",
-    urls: ["http://primefaces.org/ui"],
+    urls: ["http://primefaces.org/ui", "primefaces"],
     dataFilename: workspace.getConfiguration().get<string>(Configuration.primeVersion) ?? "",
     uniqueDefinitions: [],
   },
   {
     id: "pe",
-    urls: ["http://primefaces.org/ui/extensions"],
+    urls: ["http://primefaces.org/ui/extensions", "primefaces.extensions"],
     dataFilename: workspace.getConfiguration().get<string>(Configuration.primeExtVersion) ?? "",
     uniqueDefinitions: [],
   },
