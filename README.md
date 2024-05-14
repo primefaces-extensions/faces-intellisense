@@ -38,9 +38,9 @@ A Visual Studio Code extension that provides component completion in the HTML, X
     * JSTL Core -> `http://xmlns.jcp.org/jsp/jstl/core` or `jakarta.tags.core`
     * Composite Components -> `http://java.sun.com/jsf/composite` or `http://xmlns.jcp.org/jsf/composite` or `jakarta.faces.composite`
     * Facelets Templating -> `http://java.sun.com/jsf/facelets` or `http://xmlns.jcp.org/jsf/facelets` or `jakarta.faces.facelets`
-    * PrimeFaces -> `http://primefaces.org/ui`
-    * PrimeFaces Extensions -> `http://primefaces.org/ui/extensions`
-    * OmniFaces -> `http://omnifaces.org/ui`
+    * PrimeFaces -> `http://primefaces.org/ui` or `primefaces`
+    * PrimeFaces Extensions -> `http://primefaces.org/ui/extensions` or `primefaces.extensions`
+    * OmniFaces -> `http://omnifaces.org/ui` or `omnifaces.ui`
     * RichFaces -> `http://richfaces.org/rich`
     * RichFaces A4J -> `http://richfaces.org/a4j`
 
