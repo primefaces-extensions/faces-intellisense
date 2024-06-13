@@ -2,6 +2,7 @@
 	"compilerOptions": {
 		"module": "commonjs",
 		"target": "ES2020",
+		"moduleResolution": "node16",
 		"outDir": "out",
 		"lib": [
 			"ES2020"
