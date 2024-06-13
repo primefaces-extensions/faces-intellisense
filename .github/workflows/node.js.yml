@@ -21,12 +21,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Enable Corepack
-      run: corepack enable
-    - name: Use Yarn Berry (3.x)
-      run: corepack prepare yarn@3.5.0 --activate
-    - name: Install dependencies
-      run: yarn install
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
