@@ -136,6 +136,12 @@
             "name": "monitorKey",
             "required": "false",
             "type": "java.lang.String"
+          },
+          {
+            "description": "Controls the 'no-store' attribute on the cache control header. Default false is to include 'no-store'.",
+            "name": "store",
+            "required": "false",
+            "type": "java.lang.Boolean"
           }
         ]
       },

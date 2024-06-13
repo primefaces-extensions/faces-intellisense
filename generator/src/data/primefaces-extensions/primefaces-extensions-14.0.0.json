@@ -4856,6 +4856,12 @@
             "name": "value",
             "required": "false",
             "type": "java.lang.Object"
+          },
+          {
+            "description": "Flag to control using system fonts or font loaded in document. If your PDF does not render correctly try setting this flag to false. Default is true.",
+            "name": "disableFontFace",
+            "required": "false",
+            "type": "java.lang.Boolean"
           }
         ]
       },
@@ -6993,12 +6999,6 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Add a search input to the top of the dropdown, so users can filter the displayed countries. Defaul false.",
-            "name": "countrySearch",
-            "required": "false",
-            "type": "boolean"
-          },
-          {
             "description": "Allow users to enter national numbers (and not have to think about international dial codes).Formatting, JS validation and placeholders still work. Defaults is true.",
             "name": "nationalMode",
             "required": "false",
@@ -8314,6 +8314,84 @@
             "name": "onafterampmselect",
             "required": "false",
             "type": "java.lang.String"
+          }
+        ]
+      },
+      {
+        "name": "osmap",
+        "description": "Open Street Map using leaflet https://leafletjs.com/",
+        "attribute": [
+          {
+            "description": "Name of the client side widget.",
+            "name": "widgetVar",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "An org.primefaces.model.MapModel instance.",
+            "name": "model",
+            "required": "false",
+            "type": "org.primefaces.model.map.MapModel"
+          },
+          {
+            "description": "Inline style of the map container.",
+            "name": "style",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Style class of the map container.",
+            "name": "styleClass",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Center point of the map. Required.",
+            "name": "center",
+            "required": "true",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Defines the initial zoom level. Default is 8.",
+            "name": "zoom",
+            "required": "true",
+            "type": "java.lang.Integer"
+          },
+          {
+            "description": "Display zoom control on a map. Default is true.",
+            "name": "zoomControl",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "When using OpenStreetMap data, you are required to provide credit and display copyright notice.",
+            "name": "attribution",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Url of a custom tile provider.",
+            "name": "tileUrl",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Defines draggability of map. Default is true.",
+            "name": "draggable",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Javascript callback to execute when a point on map is clicked.",
+            "name": "onPointClick",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Controls scrollwheel zooming on the map. Default is true.",
+            "name": "scrollWheel",
+            "required": "false",
+            "type": "java.lang.Boolean"
           }
         ]
       },

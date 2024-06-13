@@ -6636,6 +6636,12 @@
             "type": "java.lang.String"
           },
           {
+            "description": "Enables cell navigation with the keyboard for WCAG and screen reader compliance. Default is true.",
+            "name": "cellNavigation",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
             "description": "Loads data on demand as the scrollbar gets close to the bottom. Default is false.",
             "name": "virtualScroll",
             "required": "false",
