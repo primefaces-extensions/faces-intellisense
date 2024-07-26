@@ -1,6 +1,6 @@
 import * as _ from "lodash";
 import * as VError from "verror";
-import { commands, CompletionItem, CompletionItemKind, Disposable, ExtensionContext, languages, Position, Range, TextDocument, window, workspace } from "vscode";
+import { CompletionItem, CompletionItemKind, Disposable, ExtensionContext, Hover, MarkdownString, Position, Range, TextDocument, commands, languages, window, workspace } from "vscode";
 import { ComponentDefinition, XmlNamespace } from "./common";
 import Notifier from "./notifier";
 import ParseEngineGateway from "./parse-engine-gateway";
@@ -366,12 +366,49 @@ const registerComponentProviders = (disposables: Disposable[]) =>
     ?.get<string[]>(Configuration.languages)
     ?.forEach((extension) => {
       disposables.push(registerCompletionProvider(extension));
+      disposables.push(registerHoverProvider(extension));
     });
 
 function unregisterProviders(disposables: Disposable[]) {
   disposables.forEach((disposable) => disposable.dispose());
   disposables.length = 0;
 }
+
+/**
+ * Register Hover Provider
+ *
+ * @param languageSelector
+ */
+const registerHoverProvider = (languageSelector: string) =>
+  languages.registerHoverProvider(languageSelector, {
+    provideHover(document: TextDocument, position: Position): Hover | null {
+      const wordRange = document.getWordRangeAtPosition(position, /<(\w+:)?\w+/);
+      if (!wordRange) {
+        return null;
+      }
+
+      const word = document.getText(wordRange);
+      const xmlnsPrefix = word.includes(":") ? word.split(":")[0] : "";
+      aliasFromDocument(document, position);
+      const xmlns = supportedXmlNamespaces.find((xmlns) => xmlns.aliasInDoc === `<${xmlnsPrefix}:`);
+
+      if (!xmlns) {
+        return null;
+      }
+
+      const componentName = word.includes(":") ? word.split(":")[1] : word;
+      const componentItem = xmlns.uniqueDefinitions.find((definition) => definition.component.name === componentName);
+
+      if (componentItem) {
+        const contents = new MarkdownString();
+        contents.appendMarkdown(`**${componentItem.component.name}**\n\n`);
+        contents.appendMarkdown(componentItem.component.description);
+        return new Hover(contents);
+      }
+
+      return null;
+    },
+  });
 
 export async function activate(context: ExtensionContext): Promise<void> {
   const disposables: Disposable[] = [];
