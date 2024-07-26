@@ -403,7 +403,9 @@ const registerHoverProvider = (languageSelector: string) =>
         const contents = new MarkdownString();
         contents.appendMarkdown(`**${componentItem.component.name}**\n\n`);
         contents.appendMarkdown(componentItem.component.description);
-        return new Hover(contents);
+        contents.isTrusted = true;
+        contents.supportHtml = true;
+        return new Hover(contents, new Range(position, position));
       }
 
       return null;
