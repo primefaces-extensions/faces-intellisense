@@ -39,7 +39,7 @@
     "commands": [
       {
         "command": "faces-intellisense.cache",
-        "title": "Faces Cache"
+        "title": "Jakarta Faces Intellisense: Clear Cache"
       }
     ],
     "configuration": [
@@ -138,6 +138,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "faces-intellisense": "file:",
     "lodash": "4.17.21",
     "verror": "1.10.1"
   },
