@@ -282,7 +282,7 @@ function registerHoverProvider(languageSelector: string): Disposable {
     return languages.registerHoverProvider(languageSelector, {
         provideHover(document: TextDocument, position: Position): Hover | null {
             _output.appendLine(`In hover, position is ${position.line}:${position.character}`);
-            const wordRange: Range | undefined = document.getWordRangeAtPosition(position, /<(\w+:)?\w+/);
+            const wordRange: Range | undefined = document.getWordRangeAtPosition(position, /(\w+:\w+)|\w+[=]/);
             if (!wordRange) {
                 _output.appendLine('!wordRange');
                 return null;
@@ -290,36 +290,55 @@ function registerHoverProvider(languageSelector: string): Disposable {
 
             let word = document.getText(wordRange);
             _output.appendLine(`Word: ${word}`);
-            if (word.startsWith('<')) {
-                word = word.substring(1, word.length);
-            }
-            _output.appendLine(`Updated word: ${word}`);
-            const xmlnsPrefix = word.includes(':') ? word.split(':')[0] : '';
+
             aliasFromDocument(document, position);
-            const xmlns = supportedXmlNamespaces.find((xmlns) => xmlns.aliasInDoc === xmlnsPrefix);
 
-            if (!xmlns) {
-                _output.appendLine('!xmlns');
-                return null;
-            }
+            if (word.includes(':')) {
+                const xmlnsPrefix = '<' + word.split(':')[0] + ':';
+                const componentName = word.split(':')[1];
+                const xmlns = supportedXmlNamespaces.find((xmlns) => xmlns.aliasInDoc === xmlnsPrefix);
+                if (!xmlns) {
+                    return null;
+                }
 
-            _output.appendLine(`xmlns: ${xmlns.id}`);
+                const componentItem = xmlns.uniqueDefinitions.filter((definition) => definition.component.name === componentName).find(() => true);
+                if (!componentItem) {
+                    return null;
+                }
 
-            const componentName = word.includes(':') ? word.split(':')[1] : word;
-            const componentItem = xmlns.uniqueDefinitions.find((definition) => definition.component.name === componentName);
-
-            if (componentItem) {
-                _output.appendLine('In componentItem, returning Hover');
                 const contents = new MarkdownString();
                 contents.appendMarkdown(`**${componentItem.component.name}**\n\n`);
                 contents.appendMarkdown(componentItem.component.description);
                 contents.isTrusted = true;
                 contents.supportHtml = true;
                 return new Hover(contents, new Range(position, position));
+            } else {
+                word = word.substring(0, word.length - 1);
+
+                const componentInfo: Map<string, string> = getComponentInformation(document, position);
+                const xmlnsPrefix = componentInfo.get('xmlnsPrefix') ? '<' + componentInfo.get('xmlnsPrefix') + ':' : '';
+                const componentName = componentInfo.get('componentName');
+                const xmlns = supportedXmlNamespaces.find((xmlns) => xmlns.aliasInDoc === xmlnsPrefix);
+                if (!xmlns) {
+                    return null;
+                }
+
+                const componentItem = xmlns.uniqueDefinitions.filter((definition) => definition.component.name === componentName).find(() => true);
+                if (componentItem === undefined) {
+                    return null;
+                }
+
+                _output.appendLine(`Found: ${xmlnsPrefix}, ${componentName}`);
+                const attr = componentItem.component.attributes.filter((attribute) => attribute.name == word)[0];
+
+                const contents = new MarkdownString();
+                contents.appendMarkdown(`**${attr.name}**\n\n`);
+                contents.appendMarkdown(attr.description);
+                contents.isTrusted = true;
+                contents.supportHtml = true;
+                return new Hover(contents, new Range(position, position));
             }
 
-            _output.appendLine('End of closure, returning null');
-            return null;
         }
     });
 }
