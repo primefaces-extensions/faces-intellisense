@@ -39,7 +39,7 @@
     "commands": [
       {
         "command": "faces-intellisense.cache",
-        "title": "Faces Cache"
+        "title": "Jakarta Faces Intellisense: Clear Cache"
       }
     ],
     "configuration": [
