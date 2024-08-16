@@ -2,7 +2,7 @@
   "name": "faces-intellisense",
   "displayName": "Jakarta Faces Intellisense",
   "description": "Jakarta Faces Intellisense provides components completion in the HTML, XHTML and Jakarta Faces. Based on the official Tag Library definitions.",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "publisher": "FlipWarthog",
   "license": "MIT",
   "engines": {
