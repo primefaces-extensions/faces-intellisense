@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import * as VError from 'verror';
-import { CompletionItem, CompletionItemKind, Disposable, ExtensionContext, Hover, MarkdownString, Position, Range, TextDocument, commands, languages, window, workspace, OutputChannel } from 'vscode';
+import { CompletionItem, CompletionItemKind, Disposable, ExtensionContext, Hover, MarkdownString, OutputChannel, Position, Range, TextDocument, commands, languages, window, workspace } from 'vscode';
 import { ComponentDefinition, XmlNamespace } from './common';
 import Notifier from './notifier';
 import ParseEngineGateway from './parse-engine-gateway';
@@ -87,11 +87,21 @@ const supportedXmlNamespaces: XmlNamespace[] = [
     }
 ];
 
+/**
+ * Activates the extension.
+ * @param {ExtensionContext} context - The extension context.
+ * @returns {Promise<void>} A promise that resolves when the activation is complete.
+ */
 export async function activate(context: ExtensionContext): Promise<void> {
     const disposables: Disposable[] = [];
     _output = window.createOutputChannel('faces-intellisense');
     context.subscriptions.push(_output);
     _output.appendLine('Activating extension!');
+
+    /**
+     * Handles configuration changes.
+     * @param {ConfigurationChangeEvent} e - The configuration change event.
+     */
     workspace.onDidChangeConfiguration(
         async (e) => {
             try {
@@ -111,6 +121,9 @@ export async function activate(context: ExtensionContext): Promise<void> {
 
     context.subscriptions.push(...disposables);
 
+    /**
+     * Registers the cache command.
+     */
     context.subscriptions.push(
         commands.registerCommand(Command.cache, async () => {
             if (caching) {
@@ -130,6 +143,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
     );
     registerComponentProviders(htmlDisposables);
 
+    // Initial caching
     caching = true;
     try {
         await cache();
@@ -142,12 +156,18 @@ export async function activate(context: ExtensionContext): Promise<void> {
     }
 }
 
+/**
+ * Deactivates the extension.
+ */
 export function deactivate(): void {
     unregisterComponentProviders(htmlDisposables);
 }
 
 /**
- * Method for clearing cache
+ * Clears the cache for all supported XML namespaces.
+ * @async
+ * @returns {Promise<void>}
+ * @throws {VError} If clearing the cache fails.
  */
 async function cache(): Promise<void> {
     try {
@@ -160,6 +180,10 @@ async function cache(): Promise<void> {
     }
 }
 
+/**
+ * Registers component providers for all configured languages.
+ * @param {Disposable[]} disposables - Array to store disposable objects.
+ */
 function registerComponentProviders(disposables: Disposable[]) {
     workspace
         .getConfiguration()
@@ -170,24 +194,35 @@ function registerComponentProviders(disposables: Disposable[]) {
         });
 }
 
+/**
+ * Unregisters all component providers.
+ * @param {Disposable[]} disposables - Array of disposable objects to be disposed.
+ */
 function unregisterComponentProviders(disposables: Disposable[]) {
     disposables.forEach((disposable) => disposable.dispose());
     disposables.length = 0;
 }
 
 /**
- * Main method
+ * Registers a completion provider for the specified language.
  *
- * @param languageSelector
- * @param classPrefix
- * @returns
+ * @param {string} languageSelector - The language identifier to register the completion provider for.
+ * @param {string} [classPrefix=''] - Optional prefix to add to the completion class names.
+ * @returns {Disposable} A disposable object that can be used to unregister the completion provider.
  */
 function registerCompletionProvider(languageSelector: string, classPrefix = ''): Disposable {
     return languages.registerCompletionItemProvider(
         languageSelector,
         {
+            /**
+             * Provides completion items for the given position in the document.
+             *
+             * @param {TextDocument} document - The document in which the completion was invoked.
+             * @param {Position} position - The position at which the completion was invoked.
+             * @returns {CompletionItem[]} An array of completion items.
+             */
             provideCompletionItems(document: TextDocument, position: Position): CompletionItem[] {
-                _output.appendLine(`In autocomplete, position is ${position.line}:${position.character}`);
+                //_output.appendLine(`In autocomplete, position is ${position.line}:${position.character}`);
                 const start: Position = new Position(position.line, 0);
                 const range: Range = new Range(start, position);
                 const text: string = document.getText(range);
@@ -274,22 +309,30 @@ function registerCompletionProvider(languageSelector: string, classPrefix = ''):
 }
 
 /**
- * Register Hover Provider
+ * Registers a hover provider for the specified language.
  *
- * @param languageSelector
+ * @param {string} languageSelector - The language identifier to register the hover provider for.
+ * @returns {Disposable} A disposable object that can be used to unregister the hover provider.
  */
 function registerHoverProvider(languageSelector: string): Disposable {
     return languages.registerHoverProvider(languageSelector, {
+        /**
+         * Provides hover information for the given position in the document.
+         *
+         * @param {TextDocument} document - The document in which the hover was invoked.
+         * @param {Position} position - The position at which the hover was invoked.
+         * @returns {Hover | null} A Hover object containing the hover information, or null if no information is available.
+         */
         provideHover(document: TextDocument, position: Position): Hover | null {
-            _output.appendLine(`In hover, position is ${position.line}:${position.character}`);
+            //_output.appendLine(`In hover, position is ${position.line}:${position.character}`);
             const wordRange: Range | undefined = document.getWordRangeAtPosition(position, /(\w+:\w+)|\w+[=]/);
             if (!wordRange) {
-                _output.appendLine('!wordRange');
+                //_output.appendLine('!wordRange');
                 return null;
             }
 
             let word = document.getText(wordRange);
-            _output.appendLine(`Word: ${word}`);
+            //_output.appendLine(`Word: ${word}`);
 
             aliasFromDocument(document, position);
 
@@ -327,28 +370,26 @@ function registerHoverProvider(languageSelector: string): Disposable {
                     return null;
                 }
 
-                _output.appendLine(`Found: ${xmlnsPrefix}, ${componentName}`);
+                //_output.appendLine(`Found: ${xmlnsPrefix}, ${componentName}`);
                 const attr = componentItem.component.attributes.filter((attribute) => attribute.name == word)[0];
 
                 const contents = new MarkdownString();
-                contents.appendMarkdown(attr.description + "\n\n");
+                contents.appendMarkdown(attr.description + '\n\n');
                 contents.appendMarkdown(`Required: ${attr.required}\n\n`);
                 contents.appendMarkdown(`Type: ${attr.type}\n\n`);
                 contents.isTrusted = true;
                 contents.supportHtml = true;
                 return new Hover(contents, new Range(position, position));
             }
-
         }
     });
 }
 
 /**
- * Get all the xmlns prefixes used in the document
- * and register them in each of the supportedXmlNamespaces.
+ * Get all the xmlns prefixes used in the document and register them in each of the supportedXmlNamespaces.
  *
- * @param document
- * @param position
+ * @param {TextDocument} document - The document to analyze.
+ * @param {Position} position - The current position in the document.
  */
 function aliasFromDocument(document: TextDocument, position: Position) {
     const start: Position = new Position(0, 0);
@@ -367,11 +408,11 @@ function aliasFromDocument(document: TextDocument, position: Position) {
 }
 
 /**
- * Get the prefix used in the xmlns.
+ * Extracts the XML namespace alias from the given text.
  *
- * @param allText
- * @param xmlnsTag
- * @returns
+ * @param {string} allText - The full text to search within.
+ * @param {string} xmlnsTag - The XML namespace tag to find.
+ * @returns {string} The extracted XML namespace alias, prefixed with '<' and suffixed with ':'.
  */
 function getXmlnsAlias(allText: string, xmlnsTag: string): string {
     let tag: string = '';
@@ -386,7 +427,8 @@ function getXmlnsAlias(allText: string, xmlnsTag: string): string {
  * Load all taglib content from xmlns (components and attributes).
  * Loading is only done if the elements have not been loaded previously.
  *
- * @param xmlns
+ * @param {XmlNamespace} xmlns - The XML namespace object to load content for.
+ * @throws {VError} If there's an error parsing documents or caching component definitions.
  */
 function loadAllXmlnsContent(xmlns: XmlNamespace): void {
     if (xmlns && xmlns?.uniqueDefinitions.length < 1) {
@@ -415,12 +457,14 @@ function loadAllXmlnsContent(xmlns: XmlNamespace): void {
 }
 
 /**
- * Gets the name of the component, the attribute and
- * possible attributes already used in it.
+ * Gets the name of the component, the attribute and possible attributes already used in it.
  *
- * @param document
- * @param position
- * @returns
+ * @param {TextDocument} document - The text document to analyze.
+ * @param {Position} position - The current position in the document.
+ * @returns {Map<string, string>} A map containing component information:
+ *   - 'xmlnsPrefix': The XML namespace prefix.
+ *   - 'componentName': The name of the component.
+ *   - 'attributes': A string of pipe-separated attribute names already used in the component.
  */
 function getComponentInformation(document: TextDocument, position: Position): Map<string, string> {
     const componentInfo = new Map<string, string>();
@@ -472,10 +516,10 @@ function getComponentInformation(document: TextDocument, position: Position): Ma
 }
 
 /**
- * Determines if I am positioned on an attribute.
+ * Determines if the cursor is positioned within an attribute value.
  *
- * @param text
- * @returns
+ * @param {string} text - The text to analyze.
+ * @returns {boolean} True if the cursor is within an attribute value, false otherwise.
  */
 export function inAttribute(text: string): boolean {
     let character: string = '';
@@ -492,6 +536,11 @@ export function inAttribute(text: string): boolean {
     return false;
 }
 
+/**
+ * Determines if the current Faces version is Jakarta.
+ *
+ * @returns {boolean} True if the Faces version is Jakarta, false otherwise.
+ */
 function isJakartaVersion(): boolean {
     const faces: string = workspace.getConfiguration().get<string>(Configuration.facesVersion) || '';
     if (faces === 'java-server-faces(1.0 - 2.2)' || faces === 'jakarta-server-faces(2.3 - 3.0)') {
@@ -500,6 +549,12 @@ function isJakartaVersion(): boolean {
     return true;
 }
 
+/**
+ * Generates a RichFaces subtag with version information.
+ *
+ * @param {string} subtag - The base subtag to be appended with version information.
+ * @returns {string} The complete RichFaces subtag with version.
+ */
 function richFacesSubTag(subtag: string): string {
     const rich: string = workspace.getConfiguration().get<string>(Configuration.richVersion) || '';
     const vers = rich.substring(rich.lastIndexOf('-'));
