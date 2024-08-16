@@ -222,7 +222,7 @@ function registerCompletionProvider(languageSelector: string, classPrefix = ''):
              * @returns {CompletionItem[]} An array of completion items.
              */
             provideCompletionItems(document: TextDocument, position: Position): CompletionItem[] {
-                _output.appendLine(`In autocomplete, position is ${position.line}:${position.character}`);
+                //_output.appendLine(`In autocomplete, position is ${position.line}:${position.character}`);
                 const start: Position = new Position(position.line, 0);
                 const range: Range = new Range(start, position);
                 const text: string = document.getText(range);
@@ -324,15 +324,15 @@ function registerHoverProvider(languageSelector: string): Disposable {
          * @returns {Hover | null} A Hover object containing the hover information, or null if no information is available.
          */
         provideHover(document: TextDocument, position: Position): Hover | null {
-            _output.appendLine(`In hover, position is ${position.line}:${position.character}`);
+            //_output.appendLine(`In hover, position is ${position.line}:${position.character}`);
             const wordRange: Range | undefined = document.getWordRangeAtPosition(position, /(\w+:\w+)|\w+[=]/);
             if (!wordRange) {
-                _output.appendLine('!wordRange');
+                //_output.appendLine('!wordRange');
                 return null;
             }
 
             let word = document.getText(wordRange);
-            _output.appendLine(`Word: ${word}`);
+            //_output.appendLine(`Word: ${word}`);
 
             aliasFromDocument(document, position);
 
@@ -370,7 +370,7 @@ function registerHoverProvider(languageSelector: string): Disposable {
                     return null;
                 }
 
-                _output.appendLine(`Found: ${xmlnsPrefix}, ${componentName}`);
+                //_output.appendLine(`Found: ${xmlnsPrefix}, ${componentName}`);
                 const attr = componentItem.component.attributes.filter((attribute) => attribute.name == word)[0];
 
                 const contents = new MarkdownString();
