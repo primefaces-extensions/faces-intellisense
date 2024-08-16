@@ -16,6 +16,5 @@ You can request new features and contribute to the extension development on its 
 Check out the [changelog](https://github.com/leosj29/taglibs-faces-generator/blob/master/CHANGELOG.md) for the current and previous updates.
 
 ## Usage
-1. `yarn`.
-2. `yarn build`.
-3. `yarn run start`.
+1. `npm install`.
+2. `npm run start`.
