@@ -431,28 +431,30 @@ function getXmlnsAlias(allText: string, xmlnsTag: string): string {
  * @throws {VError} If there's an error parsing documents or caching component definitions.
  */
 function loadAllXmlnsContent(xmlns: XmlNamespace): void {
-    if (xmlns && xmlns?.uniqueDefinitions.length < 1) {
+    if (!xmlns || xmlns.uniqueDefinitions.length > 0) {
+        return;
+    }
+
+    try {
+        let uniqueComponentDefinition: ComponentDefinition[] = [];
+        const componentDefinitions: ComponentDefinition[] = [];
+        const failedLogs = '';
+        const failedLogsCount = 0;
         try {
-            let uniqueComponentDefinition: ComponentDefinition[] = [];
-            const componentDefinitions: ComponentDefinition[] = [];
-            const failedLogs = '';
-            const failedLogsCount = 0;
-            try {
-                Array.prototype.push.apply(componentDefinitions, ParseEngineGateway.callParser(xmlns.dataFilename));
-            } catch (err) {
-                notifier.notify('alert', 'Failed to cache the components in the workspace (click for another attempt)');
-                throw new VError('err', 'Failed to parse the documents');
-            }
-            uniqueComponentDefinition = _.uniqBy(componentDefinitions, (def) => def.component.name);
-            if (failedLogsCount > 0) {
-                console.log(failedLogsCount, 'failed attempts to parse. List of the documents:');
-                console.log(failedLogs);
-            }
-            xmlns.uniqueDefinitions = uniqueComponentDefinition;
+            Array.prototype.push.apply(componentDefinitions, ParseEngineGateway.callParser(xmlns.dataFilename));
         } catch (err) {
             notifier.notify('alert', 'Failed to cache the components in the workspace (click for another attempt)');
-            throw new VError('err', 'Failed to cache the component definitions during the iterations over the documents that were found');
+            throw new VError('err', 'Failed to parse the documents');
         }
+        uniqueComponentDefinition = _.uniqBy(componentDefinitions, (def) => def.component.name);
+        if (failedLogsCount > 0) {
+            console.log(failedLogsCount, 'failed attempts to parse. List of the documents:');
+            console.log(failedLogs);
+        }
+        xmlns.uniqueDefinitions = uniqueComponentDefinition;
+    } catch (err) {
+        notifier.notify('alert', 'Failed to cache the components in the workspace (click for another attempt)');
+        throw new VError('err', 'Failed to cache the component definitions during the iterations over the documents that were found');
     }
 }
 
@@ -522,18 +524,9 @@ function getComponentInformation(document: TextDocument, position: Position): Ma
  * @returns {boolean} True if the cursor is within an attribute value, false otherwise.
  */
 export function inAttribute(text: string): boolean {
-    let character: string = '';
-    let index: number = text.lastIndexOf('"');
-    if (index === -1) {
-        index = text.lastIndexOf("'");
-    }
-    if (index !== -1) {
-        character = text.substring(index - 1, index);
-        if (character === '=') {
-            return true;
-        }
-    }
-    return false;
+    const doubleQuoteIndex = text.lastIndexOf('"');
+    const index = doubleQuoteIndex !== -1 ? doubleQuoteIndex : text.lastIndexOf("'");
+    return index !== -1 && text.charAt(index - 1) === '=';
 }
 
 /**
@@ -542,11 +535,8 @@ export function inAttribute(text: string): boolean {
  * @returns {boolean} True if the Faces version is Jakarta, false otherwise.
  */
 function isJakartaVersion(): boolean {
-    const faces: string = workspace.getConfiguration().get<string>(Configuration.facesVersion) || '';
-    if (faces === 'java-server-faces(1.0 - 2.2)' || faces === 'jakarta-server-faces(2.3 - 3.0)') {
-        return false;
-    }
-    return true;
+    const faces = workspace.getConfiguration().get<string>(Configuration.facesVersion) || '';
+    return faces !== 'java-server-faces(1.0 - 2.2)' && faces !== 'jakarta-server-faces(2.3 - 3.0)';
 }
 
 /**
