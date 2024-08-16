@@ -8,6 +8,7 @@
 [![Version](https://vsmarketplacebadges.dev/version/FlipWarthog.faces-intellisense.svg?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=FlipWarthog.faces-intellisense)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![Installs](https://vsmarketplacebadges.dev/installs-short/FlipWarthog.faces-intellisense.svg?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=FlipWarthog.faces-intellisense)
+[![Discord Chat](https://img.shields.io/discord/557940238991753223.svg?color=7289da&label=chat&logo=discord&style=for-the-badge)](https://discord.gg/gzKFYnpmCY)
 
 A Visual Studio Code extension that provides component completion in the HTML, XHTML and JSF. Based on the official Taglib definitions.
 
