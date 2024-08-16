@@ -1010,7 +1010,7 @@
       },
       {
         "name": "selectItem",
-        "description": "",
+        "description": "Add a child UISelectItem component to the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
             "name": "binding",
