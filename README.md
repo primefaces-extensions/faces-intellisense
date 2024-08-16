@@ -4,11 +4,12 @@
 # VS Code Intellisense for Jakarta Faces
 </div>
 
-A Visual Studio Code extension that provides component completion in the HTML, XHTML and JSF. Based on the official Taglib definitions.
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+[![Version](https://vsmarketplacebadges.dev/version/FlipWarthog.faces-intellisense.svg?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=FlipWarthog.faces-intellisense)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Installs](https://vsmarketplacebadges.dev/installs-short/FlipWarthog.faces-intellisense.svg?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=FlipWarthog.faces-intellisense)
+
+A Visual Studio Code extension that provides component completion in the HTML, XHTML and JSF. Based on the official Taglib definitions.
 
 # Taglib supported for
 * Primefaces (8.x, 10.x, 11.x, 12.x, 13.x, 14.x)
