@@ -1124,8 +1124,7 @@
           {
             "description": "Name of a request-scope attribute under which the model data for the row selected by the current value of the \"rowIndex\" property (i.e. also the current value of the \"rowData\" property) will be exposed.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Name or code of the background color for this table.",
