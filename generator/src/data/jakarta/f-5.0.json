@@ -509,8 +509,7 @@
           {
             "description": "Expose the value from the value attribute under this request scoped key so that it may be referred to in EL for the value of other attributes.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           }
         ]
       },
@@ -556,8 +555,7 @@
           },
           {
             "description": "Expose the currently iterated member element from the value attribute under this request scoped key, so that it may be referred to in EL for the value of other attributes of any nested component.",
-            "name": "var",
-            "type": "java.lang.String"
+            "name": "var"
           },
           {
             "description": "Label to be displayed to the user for this option group.",
@@ -1069,14 +1067,12 @@
           {
             "description": "The name of the websocket channel. It may not be an EL expression and it may only contain alphanumeric characters, hyphens, underscores and periods. All open websockets on the same channel name will receive the same push notification from the server.",
             "name": "channel",
-            "required": "true",
-            "type": "java.lang.String"
+            "required": "true"
           },
           {
             "description": "The scope of the websocket channel. It may not be an EL expression and allowed values are application, session and view, case insensitive. When the value is application, then all channels with the same name throughout the application will receive the same push message. When the value is session, then only the channels with the same name in the current user session will receive the same push message. When the value is view, then only the channel in the current view will receive the push message. The default scope is application. When the user attribute is specified, then the default scope is session.",
             "name": "scope",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "The user identifier of the websocket channel, so that user-targeted push messages can be sent. It must implement Serializable and preferably have low memory footprint. Suggestion: use #{request.remoteUser} or #{someLoggedInUser.id}. All open websockets on the same channel and user will receive the same push message from the server.",

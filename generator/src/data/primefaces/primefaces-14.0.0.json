@@ -13110,7 +13110,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Appends the overlay to the element defined by search expression. Defaults to document body.",
+            "description": "Appends the overlay to the element defined by search expression. Defaults to the document body.",
             "name": "appendTo",
             "required": "false",
             "type": "java.lang.String"
