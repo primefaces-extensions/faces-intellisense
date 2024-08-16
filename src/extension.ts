@@ -374,7 +374,7 @@ function registerHoverProvider(languageSelector: string): Disposable {
                 const attr = componentItem.component.attributes.filter((attribute) => attribute.name == word)[0];
 
                 const contents = new MarkdownString();
-                contents.appendMarkdown(`**${attr.name}:** ${attr.description}` + '\n\n');
+                contents.appendMarkdown(`**${attr.name}:** ${attr.description}\n\n`);
                 contents.appendMarkdown(`**Required:** ${attr.required}\n\n`);
                 contents.appendMarkdown(`**Type:** ${attr.type}\n\n`);
                 contents.isTrusted = true;
