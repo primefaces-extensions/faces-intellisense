@@ -22,15 +22,6 @@ A Visual Studio Code extension that provides component completion in the HTML, X
 ![](https://raw.githubusercontent.com/primefaces-extensions/faces-intellisense/main/images/demo-animated.gif)
 
 ## Features
-* Gives you autocompletion for Html Basic components (<h:).
-* Gives you autocompletion for Faces Core components (<f:).
-* Gives you autocompletion for Facelets Templating components (<ui:).
-* Gives you autocompletion for JSTL core components (<c:).
-* Gives you autocompletion for Composite components (<cc:).
-* Gives you autocompletion for PrimeFaces components (<p:).
-* Gives you autocompletion for PrimeFaces Extensions (<pe:).
-* Gives you autocompletion for OmniFaces (<o:).
-* Gives you autocompletion for RichFaces components (<r:) and (<a4j:).
 
 * Automatic detection of xmlns (You must include the namespace mandatory).   
     * Html Basic -> `http://java.sun.com/jsf/html` or `http://xmlns.jcp.org/jsf/html` or `jakarta.faces.html`
