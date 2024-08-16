@@ -324,63 +324,55 @@ function registerHoverProvider(languageSelector: string): Disposable {
          * @returns {Hover | null} A Hover object containing the hover information, or null if no information is available.
          */
         provideHover(document: TextDocument, position: Position): Hover | null {
-            //_output.appendLine(`In hover, position is ${position.line}:${position.character}`);
             const wordRange: Range | undefined = document.getWordRangeAtPosition(position, /(\w+:\w+)|\w+[=]/);
             if (!wordRange) {
-                //_output.appendLine('!wordRange');
                 return null;
             }
 
-            let word = document.getText(wordRange);
-            //_output.appendLine(`Word: ${word}`);
-
+            const word = document.getText(wordRange);
             aliasFromDocument(document, position);
 
+            let xmlnsPrefix: string,
+                componentName: string,
+                attributeName: string | null = null;
+
             if (word.includes(':')) {
-                const xmlnsPrefix = '<' + word.split(':')[0] + ':';
-                const componentName = word.split(':')[1];
-                const xmlns = supportedXmlNamespaces.find((xmlns) => xmlns.aliasInDoc === xmlnsPrefix);
-                if (!xmlns) {
-                    return null;
-                }
-
-                const componentItem = xmlns.uniqueDefinitions.filter((definition) => definition.component.name === componentName).find(() => true);
-                if (!componentItem) {
-                    return null;
-                }
-
-                const contents = new MarkdownString();
-                contents.appendMarkdown(`**${componentName}:** ${componentItem.component.description}`);
-                contents.isTrusted = true;
-                contents.supportHtml = true;
-                return new Hover(contents, new Range(position, position));
+                [xmlnsPrefix, componentName] = word.split(':');
+                xmlnsPrefix = '<' + xmlnsPrefix + ':';
             } else {
-                word = word.substring(0, word.length - 1);
-
+                attributeName = word.substring(0, word.length - 1);
                 const componentInfo: Map<string, string> = getComponentInformation(document, position);
-                const xmlnsPrefix = componentInfo.get('xmlnsPrefix') ? '<' + componentInfo.get('xmlnsPrefix') + ':' : '';
-                const componentName = componentInfo.get('componentName');
-                const xmlns = supportedXmlNamespaces.find((xmlns) => xmlns.aliasInDoc === xmlnsPrefix);
-                if (!xmlns) {
+                xmlnsPrefix = componentInfo.get('xmlnsPrefix') ? '<' + componentInfo.get('xmlnsPrefix') + ':' : '';
+                componentName = componentInfo.get('componentName') || '';
+            }
+
+            const xmlns = supportedXmlNamespaces.find((xmlns) => xmlns.aliasInDoc === xmlnsPrefix);
+            if (!xmlns) {
+                return null;
+            }
+
+            const componentItem = xmlns.uniqueDefinitions.find((definition) => definition.component.name === componentName);
+            if (!componentItem) {
+                return null;
+            }
+
+            const contents = new MarkdownString();
+            contents.isTrusted = true;
+            contents.supportHtml = true;
+
+            if (attributeName) {
+                const attr = componentItem.component.attributes.find((attribute) => attribute.name === attributeName);
+                if (!attr) {
                     return null;
                 }
-
-                const componentItem = xmlns.uniqueDefinitions.filter((definition) => definition.component.name === componentName).find(() => true);
-                if (componentItem === undefined) {
-                    return null;
-                }
-
-                //_output.appendLine(`Found: ${xmlnsPrefix}, ${componentName}`);
-                const attr = componentItem.component.attributes.filter((attribute) => attribute.name == word)[0];
-
-                const contents = new MarkdownString();
                 contents.appendMarkdown(`**${attr.name}:** ${attr.description}\n\n`);
                 contents.appendMarkdown(`**Required:** ${attr.required}\n\n`);
                 contents.appendMarkdown(`**Type:** ${attr.type}\n\n`);
-                contents.isTrusted = true;
-                contents.supportHtml = true;
-                return new Hover(contents, new Range(position, position));
+            } else {
+                contents.appendMarkdown(`**${componentName}:** ${componentItem.component.description}`);
             }
+
+            return new Hover(contents, new Range(position, position));
         }
     });
 }
