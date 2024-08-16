@@ -18291,7 +18291,7 @@
       },
       {
         "name": "selectOneMenu",
-        "description": "\n            \n        ",
+        "description": "SelectOneMenu is an extended version of the standard Faces SelectOneMenu.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
