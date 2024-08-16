@@ -350,7 +350,7 @@ function registerHoverProvider(languageSelector: string): Disposable {
                 }
 
                 const contents = new MarkdownString();
-                contents.appendMarkdown(componentItem.component.description);
+                contents.appendMarkdown(`**${componentName}:** ${componentItem.component.description}`);
                 contents.isTrusted = true;
                 contents.supportHtml = true;
                 return new Hover(contents, new Range(position, position));
@@ -374,9 +374,9 @@ function registerHoverProvider(languageSelector: string): Disposable {
                 const attr = componentItem.component.attributes.filter((attribute) => attribute.name == word)[0];
 
                 const contents = new MarkdownString();
-                contents.appendMarkdown(attr.description + '\n\n');
-                contents.appendMarkdown(`Required: ${attr.required}\n\n`);
-                contents.appendMarkdown(`Type: ${attr.type}\n\n`);
+                contents.appendMarkdown(`**${attr.name}:** ${attr.description}\n\n`);
+                contents.appendMarkdown(`**Required:** ${attr.required}\n\n`);
+                contents.appendMarkdown(`**Type:** ${attr.type}\n\n`);
                 contents.isTrusted = true;
                 contents.supportHtml = true;
                 return new Hover(contents, new Range(position, position));
