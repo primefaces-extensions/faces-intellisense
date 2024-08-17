@@ -247,7 +247,7 @@ function registerCompletionProvider(languageSelector: string, classPrefix = ''):
                         .filter((definition) => autoSearch === '' || definition.component.name.startsWith(autoSearch))
                         .map((definition) => {
                             const completionItem = new CompletionItem(definition.component.name, CompletionItemKind.Property);
-                            completionItem.documentation = definition.component.description;
+                            completionItem.documentation = definition.component.description || '???Missing description???';
                             const completionClassName = `${classPrefix}${definition.component.name}`;
                             completionItem.filterText = completionClassName;
                             completionItem.insertText = completionClassName;
@@ -273,16 +273,16 @@ function registerCompletionProvider(languageSelector: string, classPrefix = ''):
                             }
 
                             const completionItems = componentItem.component.attributes.map((definition) => {
-                                let text: string = '';
-                                text = text + definition.description + '\n';
-                                text = text + 'Required: ' + definition.required + '\n';
-                                text = text + 'Type: ' + definition.type + '\n';
-                                const completionItem = new CompletionItem(definition.name, CompletionItemKind.Property);
-                                completionItem.documentation = text;
-                                const completionClassName = `${classPrefix}${definition.name}`;
+                                const { description = '???Missing description???', required, type, name } = definition;
+                                const documentationText = [description, `Required: ${required}`, `Type: ${type}`].join('\n');
+
+                                const completionClassName = `${classPrefix}${name}`;
+                                const completionItem = new CompletionItem(name, CompletionItemKind.Property);
+
+                                completionItem.documentation = documentationText;
                                 completionItem.filterText = completionClassName;
-                                completionItem.insertText = completionClassName + '=""';
-                                completionItem.detail = 'XMLNS: ' + xmlns?.dataFilename.toUpperCase();
+                                completionItem.insertText = `${completionClassName}=""`;
+                                completionItem.detail = `XMLNS: ${xmlns?.dataFilename.toUpperCase()}`;
                                 return completionItem;
                             });
 
@@ -365,7 +365,8 @@ function registerHoverProvider(languageSelector: string): Disposable {
                 if (!attr) {
                     return null;
                 }
-                contents.appendMarkdown(`**${attr.name}:** ${attr.description}\n\n`);
+                const description = attr.description || '???Missing description???';
+                contents.appendMarkdown(`**${attr.name}:** ${description}\n\n`);
                 contents.appendMarkdown(`**Required:** ${attr.required}\n\n`);
                 contents.appendMarkdown(`**Type:** ${attr.type}\n\n`);
             } else {
