@@ -6,7 +6,7 @@
         "description": "",
         "attribute": [
           {
-            "description": "Regular expression for accepted file types, e.g. /(\\.|\\/)(gif|jpe?g|png)$/",
+            "description": "Regular expression for accepted file types, e.g., /(\\.|\\/)(gif|jpeg|jpg|png)$/",
             "name": "allowTypes",
             "required": "false",
             "type": "java.lang.String"
@@ -609,7 +609,7 @@
       },
       {
         "name": "ajaxExceptionHandler",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -1254,7 +1254,7 @@
             "type": "java.lang.Integer"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "dropdown",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -1272,7 +1272,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "multiple",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -1328,6 +1328,12 @@
           {
             "description": "Highlights the first suggested item automatically. Default is true.",
             "name": "autoHighlight",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Should the empty message be displayed when no items are found? Default is true.",
+            "name": "showEmptyMessage",
             "required": "false",
             "type": "java.lang.Boolean"
           },
@@ -3063,7 +3069,7 @@
       },
       {
         "name": "checkbox",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -3609,7 +3615,7 @@
       },
       {
         "name": "colorPicker",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -4371,7 +4377,7 @@
       },
       {
         "name": "columns",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -4392,13 +4398,13 @@
             "type": "javax.faces.component.UIComponent"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "value",
             "required": "false",
             "type": "java.lang.Object"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "var",
             "required": "true",
             "type": "java.lang.String"
@@ -5030,6 +5036,12 @@
           {
             "description": "When set to true client side validation is enabled, global setting is required to be enabled as a prerequisite.",
             "name": "validateClient",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "When set to true this button is only enabled after successful client side validation. Used together with p:clientValidator on all relevant input-components.",
+            "name": "enabledByValidateClient",
             "required": "false",
             "type": "java.lang.Boolean"
           },
@@ -5692,6 +5704,12 @@
             "name": "responsive",
             "required": "false",
             "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Name of collection iterator which will be the value of DashboardWidget.getValue().",
+            "name": "var",
+            "required": "false",
+            "type": "java.lang.String"
           }
         ]
       },
@@ -5784,7 +5802,7 @@
             "type": "java.lang.Integer"
           },
           {
-            "description": "Position of the paginator. Default is both.",
+            "description": "Paginator can be positioned at the \"top,\" \"bottom,\" or \"both.\" Default setting is \"both.\"",
             "name": "paginatorPosition",
             "required": "false",
             "type": "java.lang.String"
@@ -6348,7 +6366,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "scrollRows",
             "required": "false",
             "type": "java.lang.Integer"
@@ -6360,7 +6378,7 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "Client side event to invoke datatable filtering for input fields. Default is keyup.",
+            "description": "Client side event to invoke filtering. If \"enter\" it will only filter after ENTER key is pressed. Default is keyup.",
             "name": "filterEvent",
             "required": "false",
             "type": "java.lang.String"
@@ -6618,6 +6636,12 @@
             "type": "java.lang.String"
           },
           {
+            "description": "Enables cell navigation with the keyboard for WCAG and screen reader compliance. Default is true.",
+            "name": "cellNavigation",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
             "description": "Loads data on demand as the scrollbar gets close to the bottom. Default is false.",
             "name": "virtualScroll",
             "required": "false",
@@ -6852,13 +6876,13 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "gridIcon",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "listIcon",
             "required": "false",
             "type": "java.lang.String"
@@ -6999,7 +7023,7 @@
       },
       {
         "name": "diagram",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -7371,7 +7395,7 @@
       },
       {
         "name": "draggable",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -7404,7 +7428,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "dragOnly",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -7545,7 +7569,7 @@
       },
       {
         "name": "droppable",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -7968,19 +7992,19 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Regular expression for accepted file types, e.g. /(\\.|\\/)(gif|jpe?g|png)$/",
+            "description": "Regular expression for accepted file types, e.g., /(\\.|\\/)(gif|jpeg|jpg|png)$/",
             "name": "allowTypes",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Maximum number of files to be uploaded.",
+            "description": "Maximum number of files to be uploaded. Deprecated please attach 'p:validateFile'.",
             "name": "fileLimit",
             "required": "false",
             "type": "java.lang.Integer"
           },
           {
-            "description": "Individual file size limit in bytes. Default is unlimited.",
+            "description": "Individual file size limit in bytes. Default is unlimited. Deprecated please attach 'p:validateFile'.",
             "name": "sizeLimit",
             "required": "false",
             "type": "java.lang.Long"
@@ -8070,7 +8094,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Message template to use when displaying file validation errors. Default is \"{name} {size}\".",
+            "description": "Message template to use when displaying file in simple upload mode and some client side validation messages in advanced mode. Default is \"{name} {size}\".",
             "name": "messageTemplate",
             "required": "false",
             "type": "java.lang.String"
@@ -8100,19 +8124,19 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "chooseIcon",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "uploadIcon",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "cancelIcon",
             "required": "false",
             "type": "java.lang.String"
@@ -8496,7 +8520,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Type of the map. Required.",
+            "description": "There are four types of maps available: roadmap, satellite, hybrid, and terrain. Required.",
             "name": "type",
             "required": "true",
             "type": "java.lang.String"
@@ -11943,7 +11967,7 @@
       },
       {
         "name": "knob",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -12102,7 +12126,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "onchange",
             "required": "false",
             "type": "java.lang.String"
@@ -12123,7 +12147,7 @@
       },
       {
         "name": "lifecycle",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -12808,6 +12832,12 @@
             "name": "orientation",
             "required": "false",
             "type": "java.lang.String"
+          },
+          {
+            "description": "Defines text direction, valid values are \"ltr\" (default) and \"rtl\".",
+            "name": "dir",
+            "required": "false",
+            "type": "java.lang.String"
           }
         ]
       },
@@ -13080,7 +13110,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Appends the overlay to the element defined by search expression. Defaults to document body.",
+            "description": "Appends the overlay to the element defined by search expression. Defaults to the document body.",
             "name": "appendTo",
             "required": "false",
             "type": "java.lang.String"
@@ -13842,7 +13872,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "autoDisplay",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -14019,7 +14049,7 @@
       },
       {
         "name": "organigram",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -14097,7 +14127,7 @@
       },
       {
         "name": "organigramNode",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -15642,7 +15672,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Client side event to invoke picklist filtering for input fields. Default is keyup.",
+            "description": "Client side event to invoke filtering. If \"enter\" it will only filter after ENTER key is pressed. Default is keyup.",
             "name": "filterEvent",
             "required": "false",
             "type": "java.lang.String"
@@ -15734,6 +15764,18 @@
           {
             "description": "Javascript handler to execute when ajax request is completed.",
             "name": "oncomplete",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when the poller is activated. Return false to prevent poller from starting.",
+            "name": "onactivated",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when the poller is deactivated. Return false to prevent poller from stopping.",
+            "name": "ondeactivated",
             "required": "false",
             "type": "java.lang.String"
           },
@@ -15934,12 +15976,18 @@
             "name": "mode",
             "required": "false",
             "type": "java.lang.String"
+          },
+          {
+            "description": "Severity type of the progressBar.",
+            "name": "severity",
+            "required": "false",
+            "type": "java.lang.String"
           }
         ]
       },
       {
         "name": "radioButton",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -16863,7 +16911,7 @@
       },
       {
         "name": "scrollPanel",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -16890,19 +16938,19 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "style",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "mode",
             "required": "false",
             "type": "java.lang.String"
@@ -16911,7 +16959,7 @@
       },
       {
         "name": "selectBooleanButton",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -16992,31 +17040,31 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "disabled",
             "required": "false",
             "type": "boolean"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "label",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "onchange",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "style",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
@@ -17079,7 +17127,7 @@
       },
       {
         "name": "selectBooleanCheckbox",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -17160,31 +17208,31 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "disabled",
             "required": "false",
             "type": "boolean"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "label",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "onchange",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "style",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
@@ -17235,7 +17283,7 @@
       },
       {
         "name": "selectCheckboxMenu",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -17316,31 +17364,31 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "disabled",
             "required": "false",
             "type": "java.lang.Boolean"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "label",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "onchange",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "style",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
@@ -17436,7 +17484,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "multiple",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -17484,7 +17532,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Optional attribute that is a literal string that is the fully qualified class name of a concrete class that implements java.util.Collection , or an EL expression that evaluates to either 1. such a String, or 2. the Class object itself.",
+            "description": "Optional attribute that is a literal string that is the fully qualified class name of a concrete class that implements java.util.Collection, or an EL expression that evaluates to either 1. such a String, or 2. the Class object itself.",
             "name": "collectionType",
             "required": "false",
             "type": "java.lang.String"
@@ -17493,7 +17541,7 @@
       },
       {
         "name": "selectManyButton",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -17574,31 +17622,31 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "disabled",
             "required": "false",
             "type": "java.lang.Boolean"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "label",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "onchange",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "style",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
@@ -17619,7 +17667,7 @@
       },
       {
         "name": "selectManyCheckbox",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -17730,25 +17778,25 @@
             "type": "java.lang.Integer"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "onchange",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "style",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "tabindex",
             "required": "false",
             "type": "java.lang.String"
@@ -17760,7 +17808,7 @@
             "type": "boolean"
           },
           {
-            "description": "Optional attribute that is a literal string that is the fully qualified class name of a concrete class that implements java.util.Collection , or an EL expression that evaluates to either 1. such a String, or 2. the Class object itself.",
+            "description": "Optional attribute that is a literal string that is the fully qualified class name of a concrete class that implements java.util.Collection, or an EL expression that evaluates to either 1. such a String, or 2. the Class object itself.",
             "name": "collectionType",
             "required": "false",
             "type": "java.lang.String"
@@ -17769,7 +17817,7 @@
       },
       {
         "name": "selectManyMenu",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -17850,43 +17898,43 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "disabled",
             "required": "false",
             "type": "boolean"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "label",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "onchange",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "onclick",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "ondblclick",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "style",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
@@ -17958,7 +18006,7 @@
             "type": "boolean"
           },
           {
-            "description": "Optional attribute that is a literal string that is the fully qualified class name of a concrete class that implements java.util.Collection , or an EL expression that evaluates to either 1. such a String, or 2. the Class object itself.",
+            "description": "Optional attribute that is a literal string that is the fully qualified class name of a concrete class that implements java.util.Collection, or an EL expression that evaluates to either 1. such a String, or 2. the Class object itself.",
             "name": "collectionType",
             "required": "false",
             "type": "java.lang.String"
@@ -17967,7 +18015,7 @@
       },
       {
         "name": "selectOneButton",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -18048,31 +18096,31 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "disabled",
             "required": "false",
             "type": "java.lang.Boolean"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "label",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "onchange",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "style",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
@@ -18099,7 +18147,7 @@
       },
       {
         "name": "selectOneListbox",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -18180,43 +18228,43 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "disabled",
             "required": "false",
             "type": "boolean"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "label",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "onchange",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "onclick",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "ondblclick",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "style",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
@@ -18360,7 +18408,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "disabled",
             "required": "false",
             "type": "boolean"
@@ -18384,19 +18432,19 @@
             "type": "boolean"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "onchange",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "style",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
@@ -18414,7 +18462,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "var",
             "required": "false",
             "type": "java.lang.String"
@@ -18426,25 +18474,25 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "tabindex",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "editable",
             "required": "false",
             "type": "java.lang.Boolean"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "onkeydown",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "onkeyup",
             "required": "false",
             "type": "java.lang.String"
@@ -18567,7 +18615,7 @@
       },
       {
         "name": "selectOneRadio",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -18678,25 +18726,25 @@
             "type": "java.lang.Integer"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "onchange",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "onclick",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "style",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
@@ -18834,7 +18882,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "fullScreen",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -19034,6 +19082,42 @@
           {
             "description": "Write-only value used to pass the value in base64 to backing bean.",
             "name": "base64Value",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "The typed text of this signature if the user chose to type instead of draw the signature.",
+            "name": "textValue",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Position of the element in the tabbing order. Default to \"0\".",
+            "name": "tabindex",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Position of the element in the tabbing order.",
+            "name": "tabindex",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "The aria-label attribute is used to define a string that labels the current element for accessibility.",
+            "name": "ariaLabel",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Font size for typing in a signature. Default is 40.",
+            "name": "fontSize",
+            "required": "false",
+            "type": "java.lang.Integer"
+          },
+          {
+            "description": "Font family for typing in a signature. Default is \"Brush Script MT, cursive\"",
+            "name": "fontFamily",
             "required": "false",
             "type": "java.lang.String"
           }
@@ -20262,7 +20346,7 @@
             "type": "java.lang.Integer"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "expanded",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -20883,7 +20967,7 @@
       },
       {
         "name": "tagCloud",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -20910,19 +20994,19 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "model",
             "required": "true",
             "type": "org.primefaces.model.tagcloud.TagCloudModel"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "style",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
@@ -22044,7 +22128,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "delegate",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -22254,6 +22338,18 @@
             "type": "java.lang.String"
           },
           {
+            "description": "Client side event to invoke filtering. If \"enter\" it will only filter after ENTER key is pressed. Default is keyup.",
+            "name": "filterEvent",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Delay to wait in milliseconds before sending each filter query. Default is 300.",
+            "name": "filterDelay",
+            "required": "false",
+            "type": "java.lang.Integer"
+          },
+          {
             "description": "Disables tree.",
             "name": "disabled",
             "required": "false",
@@ -22266,10 +22362,16 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "When enabled, the copy of the selected nodes can be dropped from a tree to another tree using Shift key.",
+            "description": "When enabled and dropMode='move', the copy of the selected nodes can be dropped from a tree to another tree using Shift key.",
             "name": "dropCopyNode",
             "required": "false",
             "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Whether to 'move' or 'copy' the node on drop. Default is 'move'.",
+            "name": "dropMode",
+            "required": "false",
+            "type": "java.lang.String"
           },
           {
             "description": "Method returning whether the dragged node(s) can be dropped on the dropped node.",
@@ -22326,19 +22428,19 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "icon",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "expandedIcon",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "collapsedIcon",
             "required": "false",
             "type": "java.lang.String"
@@ -22380,13 +22482,13 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "value",
             "required": "true",
             "type": "org.primefaces.model.TreeNode"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "var",
             "required": "false",
             "type": "java.lang.String"
@@ -22632,7 +22734,7 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "Client side event to invoke treetable filtering for input fields. Default is keyup.",
+            "description": "Client side event to invoke filtering. If \"enter\" it will only filter after ENTER key is pressed. Default is keyup.",
             "name": "filterEvent",
             "required": "false",
             "type": "java.lang.String"
@@ -23192,7 +23294,7 @@
           {
             "description": "JSON value of the chart.",
             "name": "value",
-            "required": "true",
+            "required": "false",
             "type": "java.lang.String"
           },
           {
@@ -23208,13 +23310,25 @@
             "type": "java.lang.String"
           },
           {
+            "description": "Inline style of the canvas element.",
+            "name": "canvasStyle",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Style class of the canvas element.",
+            "name": "canvasStyleClass",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
             "description": "The aria-label attribute is used to define a string that labels the current element for accessibility.",
             "name": "ariaLabel",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Name of javascript function to extend the options of the underlying fullcalendar plugin.",
+            "description": "Name of javascript function to extend the options of the underlying Chart.js plugin.",
             "name": "extender",
             "required": "false",
             "type": "java.lang.String"
@@ -23223,7 +23337,7 @@
       },
       {
         "name": "barChart",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -23277,7 +23391,7 @@
       },
       {
         "name": "bubbleChart",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -23331,7 +23445,7 @@
       },
       {
         "name": "donutChart",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -23385,7 +23499,7 @@
       },
       {
         "name": "lineChart",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -23493,7 +23607,7 @@
       },
       {
         "name": "pieChart",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -23547,7 +23661,7 @@
       },
       {
         "name": "polarAreaChart",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -23601,7 +23715,7 @@
       },
       {
         "name": "radarChart",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -24102,7 +24216,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "The range of years displayed in the year drop-down in (nnnn:nnnn) format such as (2000:2020).",
+            "description": "The range of years allowed in the year input in (nnnn:nnnn) format such as (1974:2020). Default value is \"displayed_date - 1000 : displayed_date + 1000\"..",
             "name": "yearRange",
             "required": "false",
             "type": "java.lang.String"
@@ -24258,6 +24372,12 @@
             "type": "java.lang.Boolean"
           },
           {
+            "description": "Whether to hide the overlay on date selection is completed when selectionMode is range. Default is false.",
+            "name": "hideOnRangeSelection",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
             "description": "Maximum number of selectable dates in multiple mode. Default is java.lang.Integer.MAX_VALUE.",
             "name": "maxDateCount",
             "required": "false",
@@ -24326,6 +24446,12 @@
           {
             "description": "List with weekday numbers that should be disabled (not selectable).",
             "name": "disabledDays",
+            "required": "false",
+            "type": "java.util.List"
+          },
+          {
+            "description": "List with dates that should be enabled, the others will be disabled (not selectable).",
+            "name": "enabledDates",
             "required": "false",
             "type": "java.util.List"
           },
@@ -24417,7 +24543,7 @@
       },
       {
         "name": "avatar",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -24519,7 +24645,7 @@
       },
       {
         "name": "avatarGroup",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -24555,7 +24681,7 @@
       },
       {
         "name": "badge",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -24633,7 +24759,7 @@
       },
       {
         "name": "chip",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -24705,7 +24831,7 @@
       },
       {
         "name": "tag",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -24771,7 +24897,7 @@
       },
       {
         "name": "skeleton",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -24837,7 +24963,7 @@
       },
       {
         "name": "divider",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -24897,7 +25023,7 @@
       },
       {
         "name": "scrollTop",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -24963,7 +25089,7 @@
       },
       {
         "name": "splitter",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -25002,6 +25128,12 @@
             "type": "java.lang.Integer"
           },
           {
+            "description": "Step size when pressing arrow keys to resize panel. Default is 5.",
+            "name": "step",
+            "required": "false",
+            "type": "java.lang.Integer"
+          },
+          {
             "description": "Storage identifier of a stateful Splitter.",
             "name": "stateKey",
             "required": "false",
@@ -25035,7 +25167,7 @@
       },
       {
         "name": "splitterPanel",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -25078,12 +25210,30 @@
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
+          },
+          {
+            "description": "Position in the tabbing order.",
+            "name": "tabindex",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Splitter handle ARIA label for screenreader support.",
+            "name": "ariaLabel",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Establishes relationships between the splitter and panel label element IDs.",
+            "name": "ariaLabelledBy",
+            "required": "false",
+            "type": "java.lang.String"
           }
         ]
       },
       {
         "name": "card",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
