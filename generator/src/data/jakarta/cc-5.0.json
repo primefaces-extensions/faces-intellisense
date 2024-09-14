@@ -152,11 +152,6 @@
         ]
       },
       {
-        "name": "extension",
-        "description": "The use of this tag has been deprecated in Faces 4.1, without replacement, and is subject to be removed in Faces 5.0. The reason is that the JSR-276 went dormant and therefore this tag has never been of use.",
-        "attribute": []
-      },
-      {
         "name": "facet",
         "description": "Declares that this composite component supports a facet with the name given by the value of the \"name\" attribute.  Please see <cc:interface> for a usage example.",
         "attribute": [

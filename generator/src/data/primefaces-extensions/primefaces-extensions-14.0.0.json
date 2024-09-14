@@ -3,7 +3,7 @@
     "component": [
       {
         "name": "convertJson",
-        "description": "",
+        "description": "Converter to convert JSON.",
         "attribute": {
           "description": "Data type of the value object (optional). Any primitive type, array, non-generic or generic type is supported. Data type is sometimes required to convert a value to a JSON representation. All data types should be fully qualified. Default is null.",
           "name": "type",
@@ -13,7 +13,7 @@
       },
       {
         "name": "convertLocale",
-        "description": "",
+        "description": "Converter to convert an ISO Locale.",
         "attribute": {
           "description": "Character which will be used to separate the country and language. Default is '_'.",
           "name": "separator",
@@ -23,7 +23,7 @@
       },
       {
         "name": "sanitizer",
-        "description": "",
+        "description": "Converter to sanitize HTML with an OWASP PolicyFactory.",
         "attribute": [
           {
             "description": "Run input through OWASP HTML Decoder. Default is 'true'.",
@@ -41,7 +41,7 @@
       },
       {
         "name": "javascript",
-        "description": "",
+        "description": "Behavior to intercept a Javascript event to prevent the AJAX from firing.",
         "attribute": [
           {
             "description": "The javascript which should be executed.",
@@ -216,6 +216,12 @@
             "name": "disabled",
             "required": "false",
             "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Sets a placeholder for the editor. If set, the placeholder is shown if the editor is empty.",
+            "name": "placeholder",
+            "required": "false",
+            "type": "java.lang.String"
           },
           {
             "description": "The tab index to assign to the editor. If not given, no tab index will be assigned.",
@@ -463,6 +469,12 @@
             "type": "java.lang.Boolean"
           },
           {
+            "description": "Sets a placeholder for the editor. If set, the placeholder is shown if the editor is empty.",
+            "name": "placeholder",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
             "description": "The tab index to assign to the editor. If not given, no tab index will be assigned.",
             "name": "tabindex",
             "required": "false",
@@ -689,6 +701,12 @@
             "name": "value",
             "required": "false",
             "type": "org.primefaces.extensions.model.monacoeditor.MonacoDiffEditorModel"
+          },
+          {
+            "description": "Sets a placeholder for the editor. If set, the placeholder is shown if the editor is empty.",
+            "name": "placeholder",
+            "required": "false",
+            "type": "java.lang.String"
           },
           {
             "description": "Defines if the modified editor is readonly. This option makes the UI not editable, but still accepts values that are submitted (e.g. when the editor value was changed via JavaScript). Use disabled if submitted values should not be accepted.",
@@ -1090,6 +1108,12 @@
             "name": "converter",
             "required": "false",
             "type": "javax.faces.convert.Converter"
+          },
+          {
+            "description": "Sets a placeholder for the editor. If set, the placeholder is shown if the editor is empty.",
+            "name": "placeholder",
+            "required": "false",
+            "type": "java.lang.String"
           },
           {
             "description": "Marks component as required.",
@@ -2361,7 +2385,7 @@
       },
       {
         "name": "fuzzySearch",
-        "description": "\"Fast SublimeText-like fuzzy search for JavaScript.\"",
+        "description": "Fast SublimeText-like fuzzy search for JavaScript.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -2517,7 +2541,7 @@
       },
       {
         "name": "head",
-        "description": "",
+        "description": "Custom HTML head renderer.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a naming container.",
@@ -3595,7 +3619,7 @@
       },
       {
         "name": "masterDetailLevel",
-        "description": "",
+        "description": "A single level for the Master Detail component.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a naming container.",
@@ -3643,7 +3667,7 @@
       },
       {
         "name": "selectDetailLevel",
-        "description": "",
+        "description": "Tag handler for selecting a master detail level.",
         "attribute": [
           {
             "description": "Context value passing to the level to be navigated. Value defined here is accessible by contextVar in MasterDetailLevel. Default is none.",
@@ -3691,7 +3715,7 @@
       },
       {
         "name": "blockUI",
-        "description": "blockUI blocks any piece of page during various Ajax calls.",
+        "description": "BlockUI blocks any piece of page during various Ajax calls.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -4273,7 +4297,7 @@
       },
       {
         "name": "triStateManyCheckbox",
-        "description": "",
+        "description": "Tri-State multiple checkbox component.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -4715,19 +4739,19 @@
           },
           {
             "description": "Label size percentage. Default value is 0.1",
-            "name": "mSize",
+            "name": "labelSize",
             "required": "false",
             "type": "java.lang.Double"
           },
           {
             "description": "Label relative Y position. Default value is 0.5",
-            "name": "mPosX",
+            "name": "labelPosX",
             "required": "false",
             "type": "java.lang.Double"
           },
           {
             "description": "Label relative Y position. Default value is 0.5",
-            "name": "mPosY",
+            "name": "labelPosY",
             "required": "false",
             "type": "java.lang.Double"
           },
@@ -4747,7 +4771,7 @@
       },
       {
         "name": "documentViewer",
-        "description": "",
+        "description": "PDF Viewer based on Mozilla PDF.js to display PDF documents in browser.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -7564,7 +7588,7 @@
       },
       {
         "name": "saveCookiePolicy",
-        "description": "",
+        "description": "Tag Handler for saving a cookie policy.",
         "attribute": [
           {
             "description": "The cookie policy to be saved.",

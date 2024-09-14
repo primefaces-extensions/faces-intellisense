@@ -42,7 +42,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "A String or ValueExpression (that evalulates to a String) identifying the type of event the Ajax action will apply to. If specified, it must be one of the events supported by the component the Ajax behavior is being applied to. For HTML components this would be the set of supported DOM events for the component, plus \"action\" for Faces ActionSource components and \"valueChange\" for Faces EditableValueHolder components. If not specified, the default event is determined for the component. The DOM event name is the actual DOM event name (for example: \"click\") as opposed to (for example: \"onclick\").",
+            "description": "A String or ValueExpression (that evalulates to a String) identifying the type of event the Ajax action will apply to. If specified, it must be one of the events supported by the component the Ajax behavior is being applied to as per ClientBehaviorHolder#getEventNames(). For HTML components this would be the set of supported DOM events for the component, plus \"action\" for Faces ActionSource components and \"valueChange\" for Faces EditableValueHolder components. If not specified, the default event is determined for the component via ClientBehaviorHolder#getDefaultEventName(). The DOM event name is the actual DOM event name (for example: \"click\") as opposed to (for example: \"onclick\").",
             "name": "event",
             "required": "false",
             "type": "java.lang.String"
@@ -1115,6 +1115,24 @@
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
+          }
+        ]
+      },
+      {
+        "name": "resetValues",
+        "description": "Reset specific input values. Interpret the value of the render attribute as a space separated list of client identifiers suitable for passing directly to UIViewRoot.resetValues(). The implementation must cause an ActionListener to be attached to the ActionSource component in which this tag is nested that calls UIViewRoot.resetValues() passing the value of the render attribute as the argument.",
+        "attribute": [
+          {
+            "description": "Evaluates to Collection<String>. The clientIds of components that will be passed to UIViewRoot.resetValues(). The identifiers must be space delimited.",
+            "name": "render",
+            "required": "true",
+            "type": "java.util.Collection"
+          },
+          {
+            "description": "If present, this attribute refers to the value of one of the exposed attached objects within the composite component inside of which this tag is nested.",
+            "name": "for",
+            "required": "false",
+            "type": "java.lang.String"
           }
         ]
       }
