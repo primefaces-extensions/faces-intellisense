@@ -1,3 +1,4 @@
+import * as fromvdl from './util/from-vdl';
 import * as fromxml from './util/from-xml';
 
 // All taglibs (with different versions) from XML file
@@ -124,6 +125,26 @@ const tagLibsFromXml = [
     }
 ];
 
+// All taglibs (with different versions) from VLD file
+const tagLibsFromVld = [
+    {
+        folder: 'jakarta',
+        versions: [
+            {
+                version: '4.1',
+                url: 'https://jakarta.ee/specifications/faces/4.1/vdldoc/'
+            },
+        ],
+        subtags: [
+            { filename: 'c', type: 'c', urls: [] },
+            { filename: 'cc', type: 'cc', urls: [] },
+            { filename: 'f', type: 'f', urls: [] },
+            { filename: 'h', type: 'h', urls: [] },
+            { filename: 'ui', type: 'ui', urls: [] }
+        ]
+    },
+];
+
 const createFromXml = () => {
     tagLibsFromXml.forEach((tab) => {
         const folder = tab.folder;
@@ -136,4 +157,17 @@ const createFromXml = () => {
     });
 };
 
+const createFromVld = () => {
+    tagLibsFromVld.forEach(tab => {
+        const folder = tab.folder;
+        const subtags = tab.subtags;
+        tab.versions.forEach(ver => {
+            const version = ver.version;
+            const url = ver.url;
+            fromvdl.execute(folder, url, version, subtags);
+        });
+    });
+};
+
 createFromXml();
+createFromVld();

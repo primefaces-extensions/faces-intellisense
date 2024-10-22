@@ -5,6 +5,7 @@ import { Tag } from '../model/tag';
 import { clearJson } from './clear-json';
 
 const getAllUrlTags = async (url: string, tags: any[]) => {
+    const baseUrl = new URL(url).origin;
     const response = await axios.get(url + 'alltags-frame.html', { headers: { 'Content-Type': 'text/plain' } });
     const dom = new JSDOM(response.data);
     dom.window.document.querySelectorAll(`a[target='tagFrame']`).forEach((a) => {
@@ -14,7 +15,7 @@ const getAllUrlTags = async (url: string, tags: any[]) => {
         if (!comp?.includes('.fn.')) {
             tags.forEach((element, index) => {
                 if (element.type === alias) {
-                    tags[index].urls.push(`${url}${comp}`);
+                    tags[index].urls.push(`${baseUrl}${comp}`);
                 }
             });
         }
@@ -75,9 +76,11 @@ const clearValue = (value: string): string => {
 export const execute = async (folder: string, url: string, version: string, tags: any[]) => {
     const urlTags: any = await getAllUrlTags(url, tags);
     for (const urlTag of urlTags) {
+	console.log(urlTag);
         const finalTags: Tag[] = [];
         console.log(`Generating file: ${urlTag.type}-${version}`);
         for (const tag of urlTag.urls) {
+		     
             const tagInfo = await getTagInfo(urlTag.type, tag);
             finalTags.push(tagInfo);
         }

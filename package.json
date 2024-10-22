@@ -98,7 +98,9 @@
             "enum": [
               "java-server-faces(1.0 - 2.2)",
               "jakarta-server-faces(2.3 - 3.0)",
-              "jakarta-faces-4.0"
+              "jakarta-faces-4.0",
+              "jakarta-faces-4.1",
+              "jakarta-faces-5.0"
             ],
             "default": "jakarta-server-faces(2.3 - 3.0)",
             "description": "Faces Version. (Restart Required)."
