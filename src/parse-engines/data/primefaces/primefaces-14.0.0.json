@@ -17364,31 +17364,31 @@
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "Disables the component when set to true.",
             "name": "disabled",
             "required": "false",
             "type": "java.lang.Boolean"
           },
           {
-            "description": "",
+            "description": "User presentable name of the component.",
             "name": "label",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "Client side callback to execute when value changes.",
             "name": "onchange",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "Inline style of the component.",
             "name": "style",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "Style class of the component.",
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
@@ -17506,6 +17506,12 @@
             "name": "emptyLabel",
             "required": "false",
             "type": "java.lang.String"
+          },
+          {
+            "description": "Label to be shown in updateLabel mode when one or more items are selected. If not set the label is shown.",
+            "name": "selectedLabel",
+            "required": "false",
+            "type": "java.lang.Boolean"
           },
           {
             "description": "Label to be shown in updateLabel mode when one or more items are selected. If not set the label is shown.",
@@ -18408,8 +18414,14 @@
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "Flag indicating whether the component should be disabled.",
             "name": "disabled",
+            "required": "false",
+            "type": "boolean"
+          },
+          {
+            "description": "Flag indicating that this input element will prevent changes by the user.",
+            "name": "readonly",
             "required": "false",
             "type": "boolean"
           },
@@ -18432,19 +18444,19 @@
             "type": "boolean"
           },
           {
-            "description": "",
+            "description": "Client side callback to execute when the value changes.",
             "name": "onchange",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "Inline style of the component.",
             "name": "style",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "Style class of the component.",
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
@@ -18474,25 +18486,25 @@
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "Position of the element in the tabbing order.",
             "name": "tabindex",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "When true, allows the user to edit the dropdown value by typing directly into the input field.",
             "name": "editable",
             "required": "false",
             "type": "java.lang.Boolean"
           },
           {
-            "description": "",
+            "description": "Client side callback to execute when a key is pressed down.",
             "name": "onkeydown",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "Client side callback to execute when a key is released.",
             "name": "onkeyup",
             "required": "false",
             "type": "java.lang.String"

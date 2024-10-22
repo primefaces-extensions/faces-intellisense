@@ -24,7 +24,7 @@ const tagLibsFromXml = [
             },
             {
                 version: '14.0.0',
-                url: 'https://raw.githubusercontent.com/primefaces-extensions/primefaces-extensions/14.0.5/core/src/main/resources/META-INF/primefaces-extensions.taglib.xml'
+                url: 'https://raw.githubusercontent.com/primefaces-extensions/primefaces-extensions/14.0.6/core/src/main/resources/META-INF/primefaces-extensions.taglib.xml'
             }
         ]
     },
@@ -54,7 +54,7 @@ const tagLibsFromXml = [
             },
             {
                 version: '14.0.0',
-                url: 'https://raw.githubusercontent.com/primefaces/primefaces/14.0.5/primefaces/src/main/resources/META-INF/primefaces.taglib.xml'
+                url: 'https://raw.githubusercontent.com/primefaces/primefaces/14.0.6/primefaces/src/main/resources/META-INF/primefaces.taglib.xml'
             }
         ]
     },
@@ -79,10 +79,6 @@ const tagLibsFromXml = [
             {
                 version: '4.0',
                 url: 'https://raw.githubusercontent.com/eclipse-ee4j/mojarra/4.0/impl/src/main/resources/com/sun/faces/metadata/taglib/tags.core.taglib.xml'
-            },
-            {
-                version: '5.0',
-                url: 'https://raw.githubusercontent.com/eclipse-ee4j/mojarra/master/impl/src/main/resources/com/sun/faces/metadata/taglib/tags.core.taglib.xml'
             }
         ]
     },
@@ -93,10 +89,6 @@ const tagLibsFromXml = [
             {
                 version: '4.0',
                 url: 'https://raw.githubusercontent.com/eclipse-ee4j/mojarra/4.0/impl/src/main/resources/com/sun/faces/metadata/taglib/faces.core.taglib.xml'
-            },
-            {
-                version: '5.0',
-                url: 'https://raw.githubusercontent.com/eclipse-ee4j/mojarra/master/impl/src/main/resources/com/sun/faces/metadata/taglib/faces.core.taglib.xml'
             }
         ]
     },
@@ -107,10 +99,6 @@ const tagLibsFromXml = [
             {
                 version: '4.0',
                 url: 'https://raw.githubusercontent.com/eclipse-ee4j/mojarra/4.0/impl/src/main/resources/com/sun/faces/metadata/taglib/faces.facelets.taglib.xml'
-            },
-            {
-                version: '5.0',
-                url: 'https://raw.githubusercontent.com/eclipse-ee4j/mojarra/master/impl/src/main/resources/com/sun/faces/metadata/taglib/faces.facelets.taglib.xml'
             }
         ]
     },
@@ -121,10 +109,6 @@ const tagLibsFromXml = [
             {
                 version: '4.0',
                 url: 'https://raw.githubusercontent.com/eclipse-ee4j/mojarra/4.0/impl/src/main/resources/com/sun/faces/metadata/taglib/faces.composite.taglib.xml'
-            },
-            {
-                version: '5.0',
-                url: 'https://raw.githubusercontent.com/eclipse-ee4j/mojarra/master/impl/src/main/resources/com/sun/faces/metadata/taglib/faces.composite.taglib.xml'
             }
         ]
     },
@@ -135,10 +119,6 @@ const tagLibsFromXml = [
             {
                 version: '4.0',
                 url: 'https://raw.githubusercontent.com/eclipse-ee4j/mojarra/4.0/impl/src/main/resources/com/sun/faces/metadata/taglib/faces.html.taglib.xml'
-            },
-            {
-                version: '5.0',
-                url: 'https://raw.githubusercontent.com/eclipse-ee4j/mojarra/master/impl/src/main/resources/com/sun/faces/metadata/taglib/faces.html.taglib.xml'
             }
         ]
     }
