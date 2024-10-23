@@ -13,7 +13,7 @@
       },
       {
         "name": "choose",
-        "description": "Simple conditional tag that establishes a context for mutually exclusive conditional operations, marked by  and",
+        "description": "Simple conditional tag that establishes a context for mutually exclusive conditional operations, marked by and",
         "attribute": []
       },
       {
@@ -84,12 +84,12 @@
       },
       {
         "name": "otherwise",
-        "description": "Subtag of  that follows  tags and runs only if all of the prior conditions evaluated to 'false'",
+        "description": "Subtag of that follows tags and runs only if all of the prior conditions evaluated to 'false'",
         "attribute": []
       },
       {
         "name": "set",
-        "description": "Sets the result of an expression evaluation based on the value of the attributes. If \"scope\" the is present, but has a zero length or is equal to the string \"page\", TagException is thrown with an informative error message, ensuring page location information is saved. This handler operates in one of two ways.  The user has set \"var\", \"value\" and (optionally) \"scope\" attributes. The user has set \"target\", \"property\", and \"value\" attributes.  The first case takes precedence over the second.",
+        "description": "Sets the result of an expression evaluation based on the value of the attributes. If \"scope\" the is present, but has a zero length or is equal to the string \"page\", TagException is thrown with an informative error message, ensuring page location information is saved. This handler operates in one of two ways. The user has set \"var\", \"value\" and (optionally) \"scope\" attributes. The user has set \"target\", \"property\", and \"value\" attributes. The first case takes precedence over the second.",
         "attribute": [
           {
             "description": "Name of the exported scoped variable to hold the value specified in the action. The type of the scoped variable is whatever type the value expression evaluates to.",

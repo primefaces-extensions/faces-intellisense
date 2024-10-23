@@ -34,11 +34,11 @@ const getTagInfo = async (type: string, url: string) => {
         .forEach((p) => {
             tag_description = tag_description + ' ' + p.textContent;
         });
-    const tag_attribute = getAttibutes(dom.window.document.querySelectorAll('tr.rowColor'), dom.window.document.querySelectorAll('tr.altColor'));
+    const tag_attribute = getAttributes(dom.window.document.querySelectorAll('tr.rowColor'), dom.window.document.querySelectorAll('tr.altColor'));
     return new Tag(clearValue(tag_name), clearValue(tag_description), tag_attribute);
 };
 
-const getAttibutes = (node: NodeListOf<Element>, node2: NodeListOf<Element>): any[] => {
+const getAttributes = (node: NodeListOf<Element>, node2: NodeListOf<Element>): any[] => {
     const attributes: any[] = [];
     node.forEach((tr) => {
         const attr = tr.querySelectorAll('td');
@@ -69,6 +69,9 @@ const createAttr: any = (attr: any) => {
 };
 
 const clearValue = (value: string): string => {
+    value = value.replace(/<[^>]*>/g, ''); // strip HTML tags
+    value = value.replace(/[\n\t]/g, ''); // strip new lines and tabs
+    value = value.replace(/\s+/g, ' '); // strip multiple spaces
     value = value.trim();
     return value;
 };
@@ -76,11 +79,10 @@ const clearValue = (value: string): string => {
 export const execute = async (folder: string, url: string, version: string, tags: any[]) => {
     const urlTags: any = await getAllUrlTags(url, tags);
     for (const urlTag of urlTags) {
-	console.log(urlTag);
+        console.log(urlTag);
         const finalTags: Tag[] = [];
         console.log(`Generating file: ${urlTag.type}-${version}`);
         for (const tag of urlTag.urls) {
-		     
             const tagInfo = await getTagInfo(urlTag.type, tag);
             finalTags.push(tagInfo);
         }

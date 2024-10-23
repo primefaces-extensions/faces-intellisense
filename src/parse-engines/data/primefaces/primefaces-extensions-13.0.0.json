@@ -161,7 +161,7 @@
       },
       {
         "name": "monacoEditor",
-        "description": "A JSF component that wraps the JavaScript libary <a href=\"https://microsoft.github.io/monaco-editor/\">Monaco Editor</a>. This component renders the editor directly into the host page without an iframe. Available client behavior events: <ul> <li>blur - fired when the editor loses focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onDidBlurEditorWidget\">IStandaloneCodeEditor#onDidBlurEditorWidget</a>.</li> <li>change - fired if the content has been changed (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#ondidchangemodelcontent\">IStandaloneCodeEditor#onDidChangeModelContent</a>.</li> <li>focus - fired when the editor gets focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#ondidfocuseditorwidget\">IStandaloneCodeEditor#onDidFocusEditorWidget</a>.</li>, <li>initialized - fired when the editor has become ready (javax.faces.event.AjaxBehaviorEvent). That is, after required resources have been downloaded and the editor was fully created and can now be interacted with by the user.</li> <li>keydown - fired when a key was pressed down on the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onkeydown\">IStandaloneCodeEditor#onKeyDown</a>.</li>, <li>keyup - fired when a key was released on the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onkeyup\">IStandaloneCodeEditor#onKeyUp</a>.</li>, <li>mousedown - fired when a mouse button was pressed down on the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onmousedown\">IStandaloneCodeEditor#onMouseDown</a>.</li>, <li>mousemove - fired when the mouse was moved over the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onmousemove\">IStandaloneCodeEditor#onMouseMove</a>.</li>, <li>mouseup - fired when a mouse button was released down on the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onmouseup\">IStandaloneCodeEditor#onMouseUp</a>.</li>, <li>paste - fired when the text was pasted into the editor (javax.faces.event.AjaxBehaviorEvent),</li>, </ul>",
+        "description": "A JSF component that wraps the JavaScript libary Monaco Editor. This component renders the editor directly into the host page without an iframe. Available client behavior events: blur - fired when the editor loses focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onDidBlurEditorWidget. change - fired if the content has been changed (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onDidChangeModelContent. focus - fired when the editor gets focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onDidFocusEditorWidget., initialized - fired when the editor has become ready (javax.faces.event.AjaxBehaviorEvent). That is, after required resources have been downloaded and the editor was fully created and can now be interacted with by the user. keydown - fired when a key was pressed down on the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onKeyDown., keyup - fired when a key was released on the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onKeyUp., mousedown - fired when a mouse button was pressed down on the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onMouseDown., mousemove - fired when the mouse was moved over the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onMouseMove., mouseup - fired when a mouse button was released down on the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onMouseUp., paste - fired when the text was pasted into the editor (javax.faces.event.AjaxBehaviorEvent),,",
         "attribute": [
           {
             "description": "Unique identifier of the component in a naming container.",
@@ -326,31 +326,31 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Allows you to register custom themes with the editor via Java. This must be a Map<String, org.primefaces.extensions.model.monacoeditor.EditorStandaloneTheme> . It maps between the name of the theme and the styling data for that theme. You can then specify the theme name for the theme option in the editorOptions .",
+            "description": "Allows you to register custom themes with the editor via Java. This must be a Map<String, org.primefaces.extensions.model.monacoeditor.EditorStandaloneTheme>. It maps between the name of the theme and the styling data for that theme. You can then specify the theme name for the theme option in the editorOptions.",
             "name": "customThemes",
             "required": "false",
             "type": "java.lang.Map"
           },
           {
-            "description": "Locale for the user interface. Can be either a java.util.Locale object or a string with the locale code. Built-in languages are \"cs\", \"de\", \"en\", \"es\", \"fr\", \"it\", \"ja\", \"ko\", \"pl\", \"pt_BR\", \"ru\", \"tr\", \"zh_CN\", and \"zh_TW\". To use a custom language or translation, you can specify a language file with custom translations via the option localeUrl .",
+            "description": "Locale for the user interface. Can be either a java.util.Locale object or a string with the locale code. Built-in languages are \"cs\", \"de\", \"en\", \"es\", \"fr\", \"it\", \"ja\", \"ko\", \"pl\", \"pt_BR\", \"ru\", \"tr\", \"zh_CN\", and \"zh_TW\". To use a custom language or translation, you can specify a language file with custom translations via the option localeUrl.",
             "name": "locale",
             "required": "false",
             "type": "java.lang.Object"
           },
           {
-            "description": "For custom language files. If given, this is used instead of the built-in language files. This URL must point to a JavaScript file that, when executed, adds the localization to window.MonacoEnvironment.Locale[\"LOCALE_CODE\"] , where LOCALE_CODE is the value you set for locale . See the language file the widget downloads (when locale is not set to English) for an example and all available messages that need to be translated.",
+            "description": "For custom language files. If given, this is used instead of the built-in language files. This URL must point to a JavaScript file that, when executed, adds the localization to window.MonacoEnvironment.Locale[\"LOCALE_CODE\"], where LOCALE_CODE is the value you set for locale. See the language file the widget downloads (when locale is not set to English) for an example and all available messages that need to be translated.",
             "name": "localeUrl",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": " An extender object to further customize the monaco editor via JavaScript. This can be either: <ul> <li>unset, in which case no further customization is performed</li> <li>or a JavaScript expression that evaluates to an extender object</li> </ul> The extender object may have one or more of the following optional properties: <ul> <li>beforeCreate(editorWidget, options). Called before the monaco editor is created. It is passed the current options object that would be used to initialize the monaco editor. If this callback does not return a value, the options are used as they were passed to the callback. The callback is allowed to modify the passed options object. If the callback returns an options object, that options object is used instead. If it returns a thenable/Promise, the monaco editor is created only once the Promise resolves (successfully). If the Promise resolves with an options object, that options object is used to create the editor. See <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneEditorConstructionOptions.html\">IStandaloneEditorConstructionOptions</a> for all editor options.</li> <li>afterCreate(editorWidget). Called after the editor was created.</li> <li>beforeDestroy(editorWidget). Called before the editor is destroyed, eg. when updating a component via AJAX.</li> <li>afterDestroy(editorWidget). Called after the editor is destroyed, eg. when updating a component via AJAX. Note that editorWidget.getMonaco() now returns undefined.</li> <li>createModel(editorWidget, options). Called when a model needs to retrieved or created. The options contains value (current value that should be set on the model by the extender), url (default URL that was determined for the model), language (requested code language), and editorOptions (monaco editor constructor options). Should return the model. When it returns nothing, the default mechanism for creating a model is used. Note that editorWidget.getMonaco() returns undefined as the monaco editor was not created yet.</li> <li>createEditorOverrideServices(editorWidget, options). Called when the monaco editor is created. May return an object with services that should be overriden. See <a href=\"https://github.com/Microsoft/monaco-editor/issues/935#issuecomment-402174095\">here on github</a> for details on the available services. The options are the editor constructor options that will be used to create the editor, they are readonly and must not be changed.</li> <li>createWorker(editorWidget, moduleId, label). Called when a worker for additional language support needs to be created. By default, monaco editor ships with the workers for JSON, CSS, HTML, and TYPESCRIPT. The label is the name of the language, eg. css or javascript . Must return the worker to be used for the given language. Note that editorWidget.getMonaco() returns undefined as the monaco editor was not created yet.</li> </ul>",
+            "description": "An extender object to further customize the monaco editor via JavaScript. This can be either: unset, in which case no further customization is performed or a JavaScript expression that evaluates to an extender object The extender object may have one or more of the following optional properties: beforeCreate(editorWidget, options). Called before the monaco editor is created. It is passed the current options object that would be used to initialize the monaco editor. If this callback does not return a value, the options are used as they were passed to the callback. The callback is allowed to modify the passed options object. If the callback returns an options object, that options object is used instead. If it returns a thenable/Promise, the monaco editor is created only once the Promise resolves (successfully). If the Promise resolves with an options object, that options object is used to create the editor. See IStandaloneEditorConstructionOptions for all editor options. afterCreate(editorWidget). Called after the editor was created. beforeDestroy(editorWidget). Called before the editor is destroyed, eg. when updating a component via AJAX. afterDestroy(editorWidget). Called after the editor is destroyed, eg. when updating a component via AJAX. Note that editorWidget.getMonaco() now returns undefined. createModel(editorWidget, options). Called when a model needs to retrieved or created. The options contains value (current value that should be set on the model by the extender), url (default URL that was determined for the model), language (requested code language), and editorOptions (monaco editor constructor options). Should return the model. When it returns nothing, the default mechanism for creating a model is used. Note that editorWidget.getMonaco() returns undefined as the monaco editor was not created yet. createEditorOverrideServices(editorWidget, options). Called when the monaco editor is created. May return an object with services that should be overriden. See here on github for details on the available services. The options are the editor constructor options that will be used to create the editor, they are readonly and must not be changed. createWorker(editorWidget, moduleId, label). Called when a worker for additional language support needs to be created. By default, monaco editor ships with the workers for JSON, CSS, HTML, and TYPESCRIPT. The label is the name of the language, eg. css or javascript. Must return the worker to be used for the given language. Note that editorWidget.getMonaco() returns undefined as the monaco editor was not created yet.",
             "name": "extender",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "The monaco editor requires a unique URI for an opened model (i.e. the code currently being edited). This is the scheme (protocol) for that URI. Defaults to inmemory .",
+            "description": "The monaco editor requires a unique URI for an opened model (i.e. the code currently being edited). This is the scheme (protocol) for that URI. Defaults to inmemory.",
             "name": "scheme",
             "required": "false",
             "type": "java.lang.String"
@@ -386,13 +386,13 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Options for the Monaco code editor. This is a simple wrapper around the JavaScript API, see <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditorconstructionoptions.html\">IEditorConstructionOptions</a> The code language can be set via the EditorOptions#setLanguage option.",
+            "description": "Options for the Monaco code editor. This is a simple wrapper around the JavaScript API, see IEditorConstructionOptions The code language can be set via the EditorOptions#setLanguage option.",
             "name": "editorOptions",
             "required": "false",
             "type": "org.primefaces.extensions.model.monacoeditor.EditorOptions"
           },
           {
-            "description": "If true , resizes the editor automatically when the iframe element changes its size. Please note that this makes uses of the <a href=\"https://wicg.github.io/ResizeObserver/\">new ResizeObserver API</a> and <a href=\"https://caniuse.com/#feat=resizeobserver\">works only in newer browers.</a> This widget checks whether ResizeObserver API is available, and when it is not, no resizing is performed. To support resizing for older browsers, search for a ResizeObserver polyfill. If you know when the size of the editor conainer could have changed, you can resize the editor manually via PF(\"editorWidgetVar\").layout() ",
+            "description": "If true, resizes the editor automatically when the iframe element changes its size. Please note that this makes uses of the new ResizeObserver API and works only in newer browers. This widget checks whether ResizeObserver API is available, and when it is not, no resizing is performed. To support resizing for older browsers, search for a ResizeObserver polyfill. If you know when the size of the editor conainer could have changed, you can resize the editor manually via PF(\"editorWidgetVar\").layout()",
             "name": "autoResize",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -406,7 +406,7 @@
       },
       {
         "name": "monacoEditorFramed",
-        "description": "A JSF component that wraps the JavaScript libary <a href=\"https://microsoft.github.io/monaco-editor/\">Monaco Editor</a>. This component renders the editor inside an iframe for improved encapsulation, as the monaco editor library and its settings are window global. This also mean that you cannot get access to the monaco editor instance from the PrimeFaces widget. However, the widget offers a method invokeMonaco(methodName, ...params) that lets you call a method on the monaco editor instance in the iframe -- the method parameters are sent via postMessage . Note, however, that this does not work for methods that takes a non-data object as a parameter or return such an object (i.e. an object that cannot be structurally cloned). Available client behavior events: <ul> <li>blur - fired when the editor loses focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#ondidblureditorwidget\">IStandaloneCodeEditor#onDidBlurEditorWidget</a>.</li> <li>change - fired if the content has been changed (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#ondidchangemodelcontent\">IStandaloneCodeEditor#onDidChangeModelContent</a>.</li> <li>focus - fired when the editor gets focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#ondidfocuseditorwidget\">IStandaloneCodeEditor#onDidFocusEditorWidget</a>.</li>, <li>initialized - fired when the editor has become ready (javax.faces.event.AjaxBehaviorEvent). That is, after required resources have been downloaded and the editor was fully created and can now be interacted with by the user.</li> <li>keydown - fired when a key was pressed down on the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onkeydown\">IStandaloneCodeEditor#onKeyDown</a>.</li>, <li>keyup - fired when a key was released on the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onkeyup\">IStandaloneCodeEditor#onKeyUp</a>.</li>, <li>mousedown - fired when a mouse button was pressed down on the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onmousedown\">IStandaloneCodeEditor#onMouseDown</a>.</li>, <li>mousemove - fired when the mouse was moved over the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onmousemove\">IStandaloneCodeEditor#onMouseMove</a>.</li>, <li>mouseup - fired when a mouse button was released down on the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onmouseup\">IStandaloneCodeEditor#onMouseUp</a>.</li>, <li>paste - fired when the text was pasted into the editor (javax.faces.event.AjaxBehaviorEvent),</li>, </ul>",
+        "description": "A JSF component that wraps the JavaScript libary Monaco Editor. This component renders the editor inside an iframe for improved encapsulation, as the monaco editor library and its settings are window global. This also mean that you cannot get access to the monaco editor instance from the PrimeFaces widget. However, the widget offers a method invokeMonaco(methodName, ...params) that lets you call a method on the monaco editor instance in the iframe -- the method parameters are sent via postMessage. Note, however, that this does not work for methods that takes a non-data object as a parameter or return such an object (i.e. an object that cannot be structurally cloned). Available client behavior events: blur - fired when the editor loses focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onDidBlurEditorWidget. change - fired if the content has been changed (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onDidChangeModelContent. focus - fired when the editor gets focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onDidFocusEditorWidget., initialized - fired when the editor has become ready (javax.faces.event.AjaxBehaviorEvent). That is, after required resources have been downloaded and the editor was fully created and can now be interacted with by the user. keydown - fired when a key was pressed down on the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onKeyDown., keyup - fired when a key was released on the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onKeyUp., mousedown - fired when a mouse button was pressed down on the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onMouseDown., mousemove - fired when the mouse was moved over the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onMouseMove., mouseup - fired when a mouse button was released down on the editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onMouseUp., paste - fired when the text was pasted into the editor (javax.faces.event.AjaxBehaviorEvent),,",
         "attribute": [
           {
             "description": "Unique identifier of the component in a naming container.",
@@ -565,25 +565,25 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Allows you to register custom themes with the editor via Java. This must be a Map<String, org.primefaces.extensions.model.monacoeditor.EditorStandaloneTheme> . It maps between the name of the theme and the styling data for that theme. You can then specify the theme name for the theme option in the editorOptions .",
+            "description": "Allows you to register custom themes with the editor via Java. This must be a Map<String, org.primefaces.extensions.model.monacoeditor.EditorStandaloneTheme>. It maps between the name of the theme and the styling data for that theme. You can then specify the theme name for the theme option in the editorOptions.",
             "name": "customThemes",
             "required": "false",
             "type": "java.lang.Map"
           },
           {
-            "description": "Locale for the user interface. Can be either a java.util.Locale object or a string with the locale code. Built-in languages are \"cs\", \"de\", \"en\", \"es\", \"fr\", \"it\", \"ja\", \"ko\", \"pl\", \"pt_BR\", \"ru\", \"tr\", \"zh_CN\", and \"zh_TW\". To use a custom language or translation, you can specify a language file with custom translations via the option localeUrl .",
+            "description": "Locale for the user interface. Can be either a java.util.Locale object or a string with the locale code. Built-in languages are \"cs\", \"de\", \"en\", \"es\", \"fr\", \"it\", \"ja\", \"ko\", \"pl\", \"pt_BR\", \"ru\", \"tr\", \"zh_CN\", and \"zh_TW\". To use a custom language or translation, you can specify a language file with custom translations via the option localeUrl.",
             "name": "locale",
             "required": "false",
             "type": "java.lang.Object"
           },
           {
-            "description": "For custom language files. If given, this is used instead of the built-in language files. This URL must point to a JavaScript file that, when executed, adds the localization to window.MonacoEnvironment.Locale[\"LOCALE_CODE\"] , where LOCALE_CODE is the value you set for locale . See the language file the widget downloads (when language is not set to English) for an example and all available messages that need to be translated.",
+            "description": "For custom language files. If given, this is used instead of the built-in language files. This URL must point to a JavaScript file that, when executed, adds the localization to window.MonacoEnvironment.Locale[\"LOCALE_CODE\"], where LOCALE_CODE is the value you set for locale. See the language file the widget downloads (when language is not set to English) for an example and all available messages that need to be translated.",
             "name": "localeUrl",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "  An extender object to further customize the monaco editor via JavaScript. This must be a URL to a JavaScript file with the extender. The JavaScript file is loaded inside the iframe context and must (synchronously, i.e. upon its execution) set window.MonacoEnvironment.Extender to the extender object that is to be used.  The extender object may have one or more of the following optional properties: <ul> <li>beforeCreate(monacoContext, options). Called before the monaco editor is created. It is passed the current options object that would be used to initialize the monaco editor. If this callback does not return a value, the options are used as they were passed to the callback. The callback is allowed to modify the passed options object. If the callback returns an options object, that options object is used instead. If it returns a thenable/Promise, the monaco editor is created only once the Promise resolves (successfully). If the Promise resolves with an options object, that options object is used to create the editor. See <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneEditorConstructionOptions.html\">IStandaloneEditorConstructionOptions</a> for all editor options.</li> <li>afterCreate(monacoContext). Called after the editor was created.</li> <li>beforeDestroy(monacoContext). Called before the editor is destroyed, eg. when updating a component via AJAX.</li> <li>afterDestroy(monacoContext). Called after the editor is destroyed, eg. when updating a component via AJAX. Note that monacoContext.getMonaco() now returns undefined.</li> <li>createEditorOverrideServices(monacoContext, options). Called when the monaco editor is created. May return an object with services that should be overriden. See <a href=\"https://github.com/Microsoft/monaco-editor/issues/935#issuecomment-402174095\">here on github</a> for details on the available services. The options are the editor constructor options that will be used to create the editor, they are readonly and must not be changed.</li> <li>createModel(monacoContext, options). Called when a model needs to retrieved or created. The options contains value (current value that should be set on the model by the extender), url (default URL that was determined for the model), language (requested code language), and editorOptions (monaco editor constructor options). Should return the model. When it returns nothing, the default mechanism for creating a model is used. Note that monacoContext.getMonaco() returns undefined as the Monaco editor was not created yet.</li> <li>createWorker(monacoContext, moduleId, label). Called when a worker for additional language support needs to be created. By default, monaco editor ships with the workers for JSON, CSS, HTML, and TYPESCRIPT. The label is the name of the language, eg. css or javascript . Must return the worker to be used for the given language. Note that monacoContext.getMonaco() returns undefined as the Monaco editor was not created yet.</li> </ul> All methods of the extender are evaluated within the iframe page, so the editor widget instance is not available. The monacoContext passed as the first argument to the extender methods is an object with one essential method: getMonaco() . Use this method to get the current monaco editor instance and interact with the editor.",
+            "description": "An extender object to further customize the monaco editor via JavaScript. This must be a URL to a JavaScript file with the extender. The JavaScript file is loaded inside the iframe context and must (synchronously, i.e. upon its execution) set window.MonacoEnvironment.Extender to the extender object that is to be used. The extender object may have one or more of the following optional properties: beforeCreate(monacoContext, options). Called before the monaco editor is created. It is passed the current options object that would be used to initialize the monaco editor. If this callback does not return a value, the options are used as they were passed to the callback. The callback is allowed to modify the passed options object. If the callback returns an options object, that options object is used instead. If it returns a thenable/Promise, the monaco editor is created only once the Promise resolves (successfully). If the Promise resolves with an options object, that options object is used to create the editor. See IStandaloneEditorConstructionOptions for all editor options. afterCreate(monacoContext). Called after the editor was created. beforeDestroy(monacoContext). Called before the editor is destroyed, eg. when updating a component via AJAX. afterDestroy(monacoContext). Called after the editor is destroyed, eg. when updating a component via AJAX. Note that monacoContext.getMonaco() now returns undefined. createEditorOverrideServices(monacoContext, options). Called when the monaco editor is created. May return an object with services that should be overriden. See here on github for details on the available services. The options are the editor constructor options that will be used to create the editor, they are readonly and must not be changed. createModel(monacoContext, options). Called when a model needs to retrieved or created. The options contains value (current value that should be set on the model by the extender), url (default URL that was determined for the model), language (requested code language), and editorOptions (monaco editor constructor options). Should return the model. When it returns nothing, the default mechanism for creating a model is used. Note that monacoContext.getMonaco() returns undefined as the Monaco editor was not created yet. createWorker(monacoContext, moduleId, label). Called when a worker for additional language support needs to be created. By default, monaco editor ships with the workers for JSON, CSS, HTML, and TYPESCRIPT. The label is the name of the language, eg. css or javascript. Must return the worker to be used for the given language. Note that monacoContext.getMonaco() returns undefined as the Monaco editor was not created yet. All methods of the extender are evaluated within the iframe page, so the editor widget instance is not available. The monacoContext passed as the first argument to the extender methods is an object with one essential method: getMonaco(). Use this method to get the current monaco editor instance and interact with the editor.",
             "name": "extender",
             "required": "false",
             "type": "java.lang.String"
@@ -595,7 +595,7 @@
             "type": "java.util.Map"
           },
           {
-            "description": "The monaco editor requires a unique URI for an opened model (i.e. the code currently being edited). This is the scheme (protocol) for that URI. Defaults to inmemory .",
+            "description": "The monaco editor requires a unique URI for an opened model (i.e. the code currently being edited). This is the scheme (protocol) for that URI. Defaults to inmemory.",
             "name": "scheme",
             "required": "false",
             "type": "java.lang.String"
@@ -631,13 +631,13 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Options for the monaco code editor. This is a simple wrapper around the JavaScript API, see <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditorconstructionoptions.html\">IEditorConstructionOptions</a> The code language can be set via the EditorOptions#setLanguage option.",
+            "description": "Options for the monaco code editor. This is a simple wrapper around the JavaScript API, see IEditorConstructionOptions The code language can be set via the EditorOptions#setLanguage option.",
             "name": "editorOptions",
             "required": "false",
             "type": "org.primefaces.extensions.model.monacoeditor.EditorOptions"
           },
           {
-            "description": "If true , resizes the editor automatically when the iframe element changes its size. Please note that this makes uses of the <a href=\"https://wicg.github.io/ResizeObserver/\">new ResizeObserver API</a> and <a href=\"https://caniuse.com/#feat=resizeobserver\">works only in newer browers.</a> This widget checks whether ResizeObserver API is available, and when it is not, no resizing is performed. To support resizing for older browsers, search for a ResizeObserver polyfill. If you know when the size of the editor conainer could have changed, you can resize the editor manually via PF(\"editorWidgetVar\").layout() ",
+            "description": "If true, resizes the editor automatically when the iframe element changes its size. Please note that this makes uses of the new ResizeObserver API and works only in newer browers. This widget checks whether ResizeObserver API is available, and when it is not, no resizing is performed. To support resizing for older browsers, search for a ResizeObserver polyfill. If you know when the size of the editor conainer could have changed, you can resize the editor manually via PF(\"editorWidgetVar\").layout()",
             "name": "autoResize",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -646,7 +646,7 @@
       },
       {
         "name": "monacoDiffEditor",
-        "description": "A JSF component that wraps the JavaScript libary <a href=\"https://microsoft.github.io/monaco-editor/\">Monaco Editor</a>. This component renders the diff editor directly into the host page without an iframe. Available client behavior events: <ul> <li>initialized - fired when the editor has become ready (javax.faces.event.AjaxBehaviorEvent). That is, after required resources have been downloaded and the editor was fully created and can now be interacted with by the user.</li> <li>originalBlur - fired when the original editor loses focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#ondidblureditorwidget\">IStandaloneCodeEditor#onDidBlurEditorWidget</a>.</li> <li>originalChange - fired if the content of the original editor has been changed (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#ondidchangemodelcontent\">IStandaloneCodeEditor#onDidChangeModelContent</a>.</li> <li>originalFocus - fired when the original editor gets focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#ondidfocuseditorwidget\">IStandaloneCodeEditor#onDidFocusEditorWidget</a>.</li>, <li>originalKeydown - fired when a key was pressed down on the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onkeydown\">IStandaloneCodeEditor#onKeyDown</a>.</li>, <li>originalKeyup - fired when a key was released on the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onkeyup\">IStandaloneCodeEditor#onKeyUp</a>.</li>, <li>originalMousedown - fired when a mouse button was pressed down on the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onmousedown\">IStandaloneCodeEditor#onMouseDown</a>.</li>, <li>originalMousemove - fired when the mouse was moved over the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onmousemove\">IStandaloneCodeEditor#onMouseMove</a>.</li>, <li>originalMouseup - fired when a mouse button was released down on the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onmouseup\">IStandaloneCodeEditor#onMouseUp</a>.</li>, <li>originalPaste - fired when the text was pasted into the original editor (javax.faces.event.AjaxBehaviorEvent),</li>, <li>blur - fired when the modified editor loses focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#ondidblureditorwidget\">IStandaloneCodeEditor#onDidBlurEditorWidget</a>.</li> <li>change - fired if the content of the modified editor has been changed (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#ondidchangemodelcontent\">IStandaloneCodeEditor#onDidChangeModelContent</a>.</li> <li>focus - fired when the modified editor gets focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#ondidfocuseditorwidget\">IStandaloneCodeEditor#onDidFocusEditorWidget</a>.</li>, <li>keydown - fired when a key was pressed down on the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onkeydown\">IStandaloneCodeEditor#onKeyDown</a>.</li>, <li>keyup - fired when a key was released on the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onkeyup\">IStandaloneCodeEditor#onKeyUp</a>.</li>, <li>mousedown - fired when a mouse button was pressed down on the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onmousedown\">IStandaloneCodeEditor#onMouseDown</a>.</li>, <li>mousemove - fired when the mouse was moved over the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onmousemove\">IStandaloneCodeEditor#onMouseMove</a>.</li>, <li>mouseup - fired when a mouse button was released down on the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onmouseup\">IStandaloneCodeEditor#onMouseUp</a>.</li>, <li>paste - fired when the text was pasted into the modified editor (javax.faces.event.AjaxBehaviorEvent),</li>, </ul>",
+        "description": "A JSF component that wraps the JavaScript libary Monaco Editor. This component renders the diff editor directly into the host page without an iframe. Available client behavior events: initialized - fired when the editor has become ready (javax.faces.event.AjaxBehaviorEvent). That is, after required resources have been downloaded and the editor was fully created and can now be interacted with by the user. originalBlur - fired when the original editor loses focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onDidBlurEditorWidget. originalChange - fired if the content of the original editor has been changed (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onDidChangeModelContent. originalFocus - fired when the original editor gets focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onDidFocusEditorWidget., originalKeydown - fired when a key was pressed down on the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onKeyDown., originalKeyup - fired when a key was released on the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onKeyUp., originalMousedown - fired when a mouse button was pressed down on the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onMouseDown., originalMousemove - fired when the mouse was moved over the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onMouseMove., originalMouseup - fired when a mouse button was released down on the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onMouseUp., originalPaste - fired when the text was pasted into the original editor (javax.faces.event.AjaxBehaviorEvent),, blur - fired when the modified editor loses focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onDidBlurEditorWidget. change - fired if the content of the modified editor has been changed (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onDidChangeModelContent. focus - fired when the modified editor gets focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onDidFocusEditorWidget., keydown - fired when a key was pressed down on the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onKeyDown., keyup - fired when a key was released on the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onKeyUp., mousedown - fired when a mouse button was pressed down on the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onMouseDown., mousemove - fired when the mouse was moved over the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onMouseMove., mouseup - fired when a mouse button was released down on the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onMouseUp., paste - fired when the text was pasted into the modified editor (javax.faces.event.AjaxBehaviorEvent),,",
         "attribute": [
           {
             "description": "Unique identifier of the component in a naming container.",
@@ -697,7 +697,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Defines if the original editor is readonly. This option makes the UI not editable, but still accepts values that are submitted (e.g. when the editor value was changed via JavaScript). Use originalDisabled if submitted values should not be accepted. Defaults to false .",
+            "description": "Defines if the original editor is readonly. This option makes the UI not editable, but still accepts values that are submitted (e.g. when the editor value was changed via JavaScript). Use originalDisabled if submitted values should not be accepted. Defaults to false.",
             "name": "originalReadonly",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -709,7 +709,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Defines if the original editor is disabled. This option does not accept a value to be submitted and ensures the model values stays the same (server validation). Defaults to true .",
+            "description": "Defines if the original editor is disabled. This option does not accept a value to be submitted and ensures the model values stays the same (server validation). Defaults to true.",
             "name": "originalDisabled",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -889,43 +889,43 @@
             "type": "java.lang.String"
           },
           {
-            "description": "The code language for the modified editor, such as typescript or css</css>. This is also the language for the original editor when originalLanguage is not specified. Defaults to plaintext when not specified. Can be either a string or one of the constants defined in org.primefaces.extensions.model.monacoeditor.ELanguage .",
+            "description": "The code language for the modified editor, such as typescript or css. This is also the language for the original editor when originalLanguage is not specified. Defaults to plaintext when not specified. Can be either a string or one of the constants defined in org.primefaces.extensions.model.monacoeditor.ELanguage.",
             "name": "language",
             "required": "false",
             "type": "java.lang.Object"
           },
           {
-            "description": "The code language for the original editor, such as typescript or css</css>. Defaults to language when not specified. Can be either a string or one of the constants defined in org.primefaces.extensions.model.monacoeditor.ELanguage .",
+            "description": "The code language for the original editor, such as typescript or css. Defaults to language when not specified. Can be either a string or one of the constants defined in org.primefaces.extensions.model.monacoeditor.ELanguage.",
             "name": "originalLanguage",
             "required": "false",
             "type": "java.lang.Object"
           },
           {
-            "description": "Allows you to register custom themes with the editor via Java. This must be a Map<String, org.primefaces.extensions.model.monacoeditor.EditorStandaloneTheme> . It maps between the name of the theme and the styling data for that theme. You can then specify the theme name for the theme option in the editorOptions .",
+            "description": "Allows you to register custom themes with the editor via Java. This must be a Map<String, org.primefaces.extensions.model.monacoeditor.EditorStandaloneTheme>. It maps between the name of the theme and the styling data for that theme. You can then specify the theme name for the theme option in the editorOptions.",
             "name": "customThemes",
             "required": "false",
             "type": "java.lang.Map"
           },
           {
-            "description": "Locale for the user interface. Can be either a java.util.Locale object or a string with the locale code. Built-in languages are \"cs\", \"de\", \"en\", \"es\", \"fr\", \"it\", \"ja\", \"ko\", \"pl\", \"pt_BR\", \"ru\", \"tr\", \"zh_CN\", and \"zh_TW\". To use a custom language or translation, you can specify a language file with custom translations via the option localeUrl .",
+            "description": "Locale for the user interface. Can be either a java.util.Locale object or a string with the locale code. Built-in languages are \"cs\", \"de\", \"en\", \"es\", \"fr\", \"it\", \"ja\", \"ko\", \"pl\", \"pt_BR\", \"ru\", \"tr\", \"zh_CN\", and \"zh_TW\". To use a custom language or translation, you can specify a language file with custom translations via the option localeUrl.",
             "name": "locale",
             "required": "false",
             "type": "java.lang.Object"
           },
           {
-            "description": "For custom language files. If given, this is used instead of the built-in language files. This URL must point to a JavaScript file that, when executed, adds the localization to window.MonacoEnvironment.Locale[\"LOCALE_CODE\"] , where LOCALE_CODE is the value you set for locale . See the language file the widget downloads (when locale is not set to English) for an example and all available messages that need to be translated.",
+            "description": "For custom language files. If given, this is used instead of the built-in language files. This URL must point to a JavaScript file that, when executed, adds the localization to window.MonacoEnvironment.Locale[\"LOCALE_CODE\"], where LOCALE_CODE is the value you set for locale. See the language file the widget downloads (when locale is not set to English) for an example and all available messages that need to be translated.",
             "name": "localeUrl",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": " An extender object to further customize the monaco editor via JavaScript. This can be either: <ul> <li>unset, in which case no further customization is performed</li> <li>or a JavaScript expression that evaluates to an extender object</li> </ul> The extender object may have one or more of the following optional properties: <ul> <li>beforeCreate(editorWidget, options). Called before the monaco editor is created. It is passed the current options object that would be used to initialize the monaco editor. If this callback does not return a value, the options are used as they were passed to the callback. The callback is allowed to modify the passed options object. If the callback returns an options object, that options object is used instead. If it returns a thenable/Promise, the monaco editor is created only once the Promise resolves (successfully). If the Promise resolves with an options object, that options object is used to create the editor. See <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneDiffEditorConstructionOptions.html\">IStandaloneDiffEditorConstructionOptions</a> for all editor options.</li> <li>afterCreate(editorWidget). Called after the editor was created.</li> <li>beforeDestroy(editorWidget). Called before the editor is destroyed, eg. when updating a component via AJAX.</li> <li>afterDestroy(editorWidget). Called after the editor is destroyed, eg. when updating a component via AJAX. Note that editorWidget.getMonaco() now returns undefined.</li> <li>createModel(editorWidget, options). Called when a for the modified editor model needs to retrieved or created. The options contains value (current value that should be set on the model by the extender), url (default URL that was determined for the model), language (requested code language), and editorOptions (monaco editor constructor options). Should return the model. When it returns nothing, the default mechanism for creating a model is used. Note that editorWidget.getMonaco() returns undefined as the monaco editor was not created yet.</li> <li>createOriginalModel(editorWidget, options). Called when a model for the original editor needs to retrieved or created. The options contains value (current value that should be set on the model by the extender), url (default URL that was determined for the model), language (requested code language), and editorOptions (monaco editor constructor options). Should return the model. When it returns nothing, the default mechanism for creating a model is used. Note that editorWidget.getMonaco() returns undefined as the monaco editor was not created yet.</li> <li>createEditorOverrideServices(editorWidget, options). Called when the monaco editor is created. May return an object with services that should be overriden. See <a href=\"https://github.com/Microsoft/monaco-editor/issues/935#issuecomment-402174095\">here on github</a> for details on the available services. The options are the editor constructor options that will be used to create the editor, they are readonly and must not be changed.</li> <li>createWorker(editorWidget, moduleId, label). Called when a worker for additional language support needs to be created. By default, monaco editor ships with the workers for JSON, CSS, HTML, and TYPESCRIPT. The label is the name of the language, eg. css or javascript . Must return the worker to be used for the given language. Note that editorWidget.getMonaco() returns undefined as the monaco editor was not created yet.</li> </ul>",
+            "description": "An extender object to further customize the monaco editor via JavaScript. This can be either: unset, in which case no further customization is performed or a JavaScript expression that evaluates to an extender object The extender object may have one or more of the following optional properties: beforeCreate(editorWidget, options). Called before the monaco editor is created. It is passed the current options object that would be used to initialize the monaco editor. If this callback does not return a value, the options are used as they were passed to the callback. The callback is allowed to modify the passed options object. If the callback returns an options object, that options object is used instead. If it returns a thenable/Promise, the monaco editor is created only once the Promise resolves (successfully). If the Promise resolves with an options object, that options object is used to create the editor. See IStandaloneDiffEditorConstructionOptions for all editor options. afterCreate(editorWidget). Called after the editor was created. beforeDestroy(editorWidget). Called before the editor is destroyed, eg. when updating a component via AJAX. afterDestroy(editorWidget). Called after the editor is destroyed, eg. when updating a component via AJAX. Note that editorWidget.getMonaco() now returns undefined. createModel(editorWidget, options). Called when a for the modified editor model needs to retrieved or created. The options contains value (current value that should be set on the model by the extender), url (default URL that was determined for the model), language (requested code language), and editorOptions (monaco editor constructor options). Should return the model. When it returns nothing, the default mechanism for creating a model is used. Note that editorWidget.getMonaco() returns undefined as the monaco editor was not created yet. createOriginalModel(editorWidget, options). Called when a model for the original editor needs to retrieved or created. The options contains value (current value that should be set on the model by the extender), url (default URL that was determined for the model), language (requested code language), and editorOptions (monaco editor constructor options). Should return the model. When it returns nothing, the default mechanism for creating a model is used. Note that editorWidget.getMonaco() returns undefined as the monaco editor was not created yet. createEditorOverrideServices(editorWidget, options). Called when the monaco editor is created. May return an object with services that should be overriden. See here on github for details on the available services. The options are the editor constructor options that will be used to create the editor, they are readonly and must not be changed. createWorker(editorWidget, moduleId, label). Called when a worker for additional language support needs to be created. By default, monaco editor ships with the workers for JSON, CSS, HTML, and TYPESCRIPT. The label is the name of the language, eg. css or javascript. Must return the worker to be used for the given language. Note that editorWidget.getMonaco() returns undefined as the monaco editor was not created yet.",
             "name": "extender",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "The monaco editor requires a unique URI for an opened model (i.e. the code currently being edited). This is the scheme (protocol) for that URI. Defaults to inmemory .",
+            "description": "The monaco editor requires a unique URI for an opened model (i.e. the code currently being edited). This is the scheme (protocol) for that URI. Defaults to inmemory.",
             "name": "scheme",
             "required": "false",
             "type": "java.lang.String"
@@ -949,7 +949,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "The monaco editor requires a unique URI for an opened model (i.e. the code currently being edited). This is the scheme (protocol) for that URI of the original editor. Defaults to inmemory .",
+            "description": "The monaco editor requires a unique URI for an opened model (i.e. the code currently being edited). This is the scheme (protocol) for that URI of the original editor. Defaults to inmemory.",
             "name": "originalScheme",
             "required": "false",
             "type": "java.lang.String"
@@ -985,13 +985,13 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Options for the Monaco code editor. This is a simple wrapper around the JavaScript API, see <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditorconstructionoptions.html\">IEditorConstructionOptions</a> The code language can be set via the EditorOptions#setLanguage option.",
+            "description": "Options for the Monaco code editor. This is a simple wrapper around the JavaScript API, see IEditorConstructionOptions The code language can be set via the EditorOptions#setLanguage option.",
             "name": "editorOptions",
             "required": "false",
             "type": "org.primefaces.extensions.model.monacoeditor.DiffEditorOptions"
           },
           {
-            "description": "If true , resizes the editor automatically when the iframe element changes its size. Please note that this makes uses of the <a href=\"https://wicg.github.io/ResizeObserver/\">new ResizeObserver API</a> and <a href=\"https://caniuse.com/#feat=resizeobserver\">works only in newer browers.</a> This widget checks whether ResizeObserver API is available, and when it is not, no resizing is performed. To support resizing for older browsers, search for a ResizeObserver polyfill. If you know when the size of the editor conainer could have changed, you can resize the editor manually via PF(\"editorWidgetVar\").layout() ",
+            "description": "If true, resizes the editor automatically when the iframe element changes its size. Please note that this makes uses of the new ResizeObserver API and works only in newer browers. This widget checks whether ResizeObserver API is available, and when it is not, no resizing is performed. To support resizing for older browsers, search for a ResizeObserver polyfill. If you know when the size of the editor conainer could have changed, you can resize the editor manually via PF(\"editorWidgetVar\").layout()",
             "name": "autoResize",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -1005,7 +1005,7 @@
       },
       {
         "name": "monacoDiffEditorFramed",
-        "description": "A JSF component that wraps the JavaScript libary <a href=\"https://microsoft.github.io/monaco-editor/\">Monaco Editor</a>. This component renders the diff editor inside an iframe for improved encapsulation, as the Monaco editor library and its settings are window global. This also mean that you cannot get access to the monaco editor instance from the PrimeFaces widget. However, the widget offers a method invokeMonaco(methodName, ...params) that lets you call a method on the monaco editor instance in the iframe -- the method parameters are sent via postMessage . Note, however, that this does not work for methods that takes a non-data object as a parameter or return such an object (i.e. an object that cannot be structurally cloned). Available client behavior events: <ul> <li>initialized - fired when the editor has become ready (javax.faces.event.AjaxBehaviorEvent). That is, after required resources have been downloaded and the editor was fully created and can now be interacted with by the user.</li> <li>originalBlur - fired when the original editor loses focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#ondidblureditorwidget\">IStandaloneCodeEditor#onDidBlurEditorWidget</a>.</li> <li>originalChange - fired if the content of the original editor has been changed (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#ondidchangemodelcontent\">IStandaloneCodeEditor#onDidChangeModelContent</a>.</li> <li>originalFocus - fired when the original editor gets focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#ondidfocuseditorwidget\">IStandaloneCodeEditor#onDidFocusEditorWidget</a>.</li>, <li>originalKeydown - fired when a key was pressed down on the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onkeydown\">IStandaloneCodeEditor#onKeyDown</a>.</li>, <li>originalKeyup - fired when a key was released on the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onkeyup\">IStandaloneCodeEditor#onKeyUp</a>.</li>, <li>originalMousedown - fired when a mouse button was pressed down on the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onmousedown\">IStandaloneCodeEditor#onMouseDown</a>.</li>, <li>originalMousemove - fired when the mouse was moved over the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onmousemove\">IStandaloneCodeEditor#onMouseMove</a>.</li>, <li>originalMouseup - fired when a mouse button was released down on the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onmouseup\">IStandaloneCodeEditor#onMouseUp</a>.</li>, <li>originalPaste - fired when the text was pasted into the original editor (javax.faces.event.AjaxBehaviorEvent),</li>, <li>blur - fired when the modified editor loses focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#ondidblureditorwidget\">IStandaloneCodeEditor#onDidBlurEditorWidget</a>.</li> <li>change - fired if the content of the modified editor has been changed (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#ondidchangemodelcontent\">IStandaloneCodeEditor#onDidChangeModelContent</a>.</li> <li>focus - fired when the modified editor gets focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#ondidfocuseditorwidget\">IStandaloneCodeEditor#onDidFocusEditorWidget</a>.</li>, <li>keydown - fired when a key was pressed down on the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onkeydown\">IStandaloneCodeEditor#onKeyDown</a>.</li>, <li>keyup - fired when a key was released on the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onkeyup\">IStandaloneCodeEditor#onKeyUp</a>.</li>, <li>mousedown - fired when a mouse button was pressed down on the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onmousedown\">IStandaloneCodeEditor#onMouseDown</a>.</li>, <li>mousemove - fired when the mouse was moved over the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onmousemove\">IStandaloneCodeEditor#onMouseMove</a>.</li>, <li>mouseup - fired when a mouse button was released down on the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onmouseup\">IStandaloneCodeEditor#onMouseUp</a>.</li>, <li>paste - fired when the text was pasted into the modified editor (javax.faces.event.AjaxBehaviorEvent),</li>, </ul>",
+        "description": "A JSF component that wraps the JavaScript libary Monaco Editor. This component renders the diff editor inside an iframe for improved encapsulation, as the Monaco editor library and its settings are window global. This also mean that you cannot get access to the monaco editor instance from the PrimeFaces widget. However, the widget offers a method invokeMonaco(methodName, ...params) that lets you call a method on the monaco editor instance in the iframe -- the method parameters are sent via postMessage. Note, however, that this does not work for methods that takes a non-data object as a parameter or return such an object (i.e. an object that cannot be structurally cloned). Available client behavior events: initialized - fired when the editor has become ready (javax.faces.event.AjaxBehaviorEvent). That is, after required resources have been downloaded and the editor was fully created and can now be interacted with by the user. originalBlur - fired when the original editor loses focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onDidBlurEditorWidget. originalChange - fired if the content of the original editor has been changed (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onDidChangeModelContent. originalFocus - fired when the original editor gets focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onDidFocusEditorWidget., originalKeydown - fired when a key was pressed down on the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onKeyDown., originalKeyup - fired when a key was released on the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onKeyUp., originalMousedown - fired when a mouse button was pressed down on the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onMouseDown., originalMousemove - fired when the mouse was moved over the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onMouseMove., originalMouseup - fired when a mouse button was released down on the original editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onMouseUp., originalPaste - fired when the text was pasted into the original editor (javax.faces.event.AjaxBehaviorEvent),, blur - fired when the modified editor loses focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onDidBlurEditorWidget. change - fired if the content of the modified editor has been changed (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onDidChangeModelContent. focus - fired when the modified editor gets focus (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onDidFocusEditorWidget., keydown - fired when a key was pressed down on the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onKeyDown., keyup - fired when a key was released on the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onKeyUp., mousedown - fired when a mouse button was pressed down on the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onMouseDown., mousemove - fired when the mouse was moved over the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onMouseMove., mouseup - fired when a mouse button was released down on the modified editor (javax.faces.event.AjaxBehaviorEvent). Corresponds to IStandaloneCodeEditor#onMouseUp., paste - fired when the text was pasted into the modified editor (javax.faces.event.AjaxBehaviorEvent),,",
         "attribute": [
           {
             "description": "Unique identifier of the component in a naming container.",
@@ -1056,7 +1056,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Defines if the original editor is readonly. This option makes the UI not editable, but still accepts values that are submitted (e.g. when the editor value was changed via JavaScript). Use originalDisabled if submitted values should not be accepted. Defaults to false .",
+            "description": "Defines if the original editor is readonly. This option makes the UI not editable, but still accepts values that are submitted (e.g. when the editor value was changed via JavaScript). Use originalDisabled if submitted values should not be accepted. Defaults to false.",
             "name": "originalReadonly",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -1068,7 +1068,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Defines if the original editor is disabled. This option does not accept a value to be submitted and ensures the model values stays the same (server validation). Defaults to true .",
+            "description": "Defines if the original editor is disabled. This option does not accept a value to be submitted and ensures the model values stays the same (server validation). Defaults to true.",
             "name": "originalDisabled",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -1248,37 +1248,37 @@
             "type": "java.lang.String"
           },
           {
-            "description": "The code language for the modified editor, such as typescript or css</css>. This is also the language for the original editor when originalLanguage is not specified. Defaults to plaintext when not specified. Can be either a string or one of the constants defined in org.primefaces.extensions.model.monacoeditor.ELanguage .",
+            "description": "The code language for the modified editor, such as typescript or css. This is also the language for the original editor when originalLanguage is not specified. Defaults to plaintext when not specified. Can be either a string or one of the constants defined in org.primefaces.extensions.model.monacoeditor.ELanguage.",
             "name": "language",
             "required": "false",
             "type": "java.lang.Object"
           },
           {
-            "description": "The code language for the original editor, such as typescript or css</css>. Defaults to language when not specified. Can be either a string or one of the constants defined in org.primefaces.extensions.model.monacoeditor.ELanguage .",
+            "description": "The code language for the original editor, such as typescript or css. Defaults to language when not specified. Can be either a string or one of the constants defined in org.primefaces.extensions.model.monacoeditor.ELanguage.",
             "name": "originalLanguage",
             "required": "false",
             "type": "java.lang.Object"
           },
           {
-            "description": "Allows you to register custom themes with the editor via Java. This must be a Map<String, org.primefaces.extensions.model.monacoeditor.EditorStandaloneTheme> . It maps between the name of the theme and the styling data for that theme. You can then specify the theme name for the theme option in the editorOptions .",
+            "description": "Allows you to register custom themes with the editor via Java. This must be a Map<String, org.primefaces.extensions.model.monacoeditor.EditorStandaloneTheme>. It maps between the name of the theme and the styling data for that theme. You can then specify the theme name for the theme option in the editorOptions.",
             "name": "customThemes",
             "required": "false",
             "type": "java.lang.Map"
           },
           {
-            "description": "Locale for the user interface. Can be either a java.util.Locale object or a string with the locale code. Built-in languages are \"cs\", \"de\", \"en\", \"es\", \"fr\", \"it\", \"ja\", \"ko\", \"pl\", \"pt_BR\", \"ru\", \"tr\", \"zh_CN\", and \"zh_TW\". To use a custom language or translation, you can specify a language file with custom translations via the option localeUrl .",
+            "description": "Locale for the user interface. Can be either a java.util.Locale object or a string with the locale code. Built-in languages are \"cs\", \"de\", \"en\", \"es\", \"fr\", \"it\", \"ja\", \"ko\", \"pl\", \"pt_BR\", \"ru\", \"tr\", \"zh_CN\", and \"zh_TW\". To use a custom language or translation, you can specify a language file with custom translations via the option localeUrl.",
             "name": "locale",
             "required": "false",
             "type": "java.lang.Object"
           },
           {
-            "description": "For custom language files. If given, this is used instead of the built-in language files. This URL must point to a JavaScript file that, when executed, adds the localization to window.MonacoEnvironment.Locale[\"LOCALE_CODE\"] , where LOCALE_CODE is the value you set for locale . See the language file the widget downloads (when language is not set to English) for an example and all available messages that need to be translated.",
+            "description": "For custom language files. If given, this is used instead of the built-in language files. This URL must point to a JavaScript file that, when executed, adds the localization to window.MonacoEnvironment.Locale[\"LOCALE_CODE\"], where LOCALE_CODE is the value you set for locale. See the language file the widget downloads (when language is not set to English) for an example and all available messages that need to be translated.",
             "name": "localeUrl",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "  An extender object to further customize the monaco editor via JavaScript. This must be a URL to a JavaScript file with the extender. The JavaScript file is loaded inside the iframe context and must (synchronously, i.e. upon its execution) set window.MonacoEnvironment.Extender to the extender object that is to be used.  The extender object may have one or more of the following optional properties: <ul> <li>beforeCreate(monacoContext, options). Called before the monaco editor is created. It is passed the current options object that would be used to initialize the monaco editor. If this callback does not return a value, the options are used as they were passed to the callback. The callback is allowed to modify the passed options object. If the callback returns an options object, that options object is used instead. If it returns a thenable/Promise, the monaco editor is created only once the Promise resolves (successfully). If the Promise resolves with an options object, that options object is used to create the editor. See <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneDiffEditorConstructionOptions.html\">IStandaloneDiffEditorConstructionOptions</a> for all editor options.</li> <li>afterCreate(monacoContext). Called after the editor was created.</li> <li>beforeDestroy(monacoContext). Called before the editor is destroyed, eg. when updating a component via AJAX.</li> <li>afterDestroy(monacoContext). Called after the editor is destroyed, eg. when updating a component via AJAX. Note that monacoContext.getMonaco() now returns undefined.</li> <li>createEditorOverrideServices(monacoContext, options). Called when the monaco editor is created. May return an object with services that should be overriden. See <a href=\"https://github.com/Microsoft/monaco-editor/issues/935#issuecomment-402174095\">here on github</a> for details on the available services. The options are the editor constructor options that will be used to create the editor, they are readonly and must not be changed.</li> <li>createModel(monacoContext, options). Called when a model for the modified needs to retrieved or created. The options contains value (current value that should be set on the model by the extender), url (default URL that was determined for the model), language (requested code language), and editorOptions (monaco editor constructor options). Should return the model. When it returns nothing, the default mechanism for creating a model is used. Note that monacoContext.getMonaco() returns undefined as the Monaco editor was not created yet.</li> <li>createOriginalModel(monacoContext, options). Called when a model for the original editor needs to retrieved or created. The options contains value (current value that should be set on the model by the extender), url (default URL that was determined for the model), language (requested code language), and editorOptions (monaco editor constructor options). Should return the model. When it returns nothing, the default mechanism for creating a model is used. Note that monacoContext.getMonaco() returns undefined as the Monaco editor was not created yet.</li> <li>createWorker(monacoContext, moduleId, label). Called when a worker for additional language support needs to be created. By default, monaco editor ships with the workers for JSON, CSS, HTML, and TYPESCRIPT. The label is the name of the language, eg. css or javascript . Must return the worker to be used for the given language. Note that monacoContext.getMonaco() returns undefined as the Monaco editor was not created yet.</li> </ul> All methods of the extender are evaluated within the iframe page, so the editor widget instance is not available. The monacoContext passed as the first argument to the extender methods is an object with one essential method: getMonaco() . Use this method to get the current monaco editor instance and interact with the editor.",
+            "description": "An extender object to further customize the monaco editor via JavaScript. This must be a URL to a JavaScript file with the extender. The JavaScript file is loaded inside the iframe context and must (synchronously, i.e. upon its execution) set window.MonacoEnvironment.Extender to the extender object that is to be used. The extender object may have one or more of the following optional properties: beforeCreate(monacoContext, options). Called before the monaco editor is created. It is passed the current options object that would be used to initialize the monaco editor. If this callback does not return a value, the options are used as they were passed to the callback. The callback is allowed to modify the passed options object. If the callback returns an options object, that options object is used instead. If it returns a thenable/Promise, the monaco editor is created only once the Promise resolves (successfully). If the Promise resolves with an options object, that options object is used to create the editor. See IStandaloneDiffEditorConstructionOptions for all editor options. afterCreate(monacoContext). Called after the editor was created. beforeDestroy(monacoContext). Called before the editor is destroyed, eg. when updating a component via AJAX. afterDestroy(monacoContext). Called after the editor is destroyed, eg. when updating a component via AJAX. Note that monacoContext.getMonaco() now returns undefined. createEditorOverrideServices(monacoContext, options). Called when the monaco editor is created. May return an object with services that should be overriden. See here on github for details on the available services. The options are the editor constructor options that will be used to create the editor, they are readonly and must not be changed. createModel(monacoContext, options). Called when a model for the modified needs to retrieved or created. The options contains value (current value that should be set on the model by the extender), url (default URL that was determined for the model), language (requested code language), and editorOptions (monaco editor constructor options). Should return the model. When it returns nothing, the default mechanism for creating a model is used. Note that monacoContext.getMonaco() returns undefined as the Monaco editor was not created yet. createOriginalModel(monacoContext, options). Called when a model for the original editor needs to retrieved or created. The options contains value (current value that should be set on the model by the extender), url (default URL that was determined for the model), language (requested code language), and editorOptions (monaco editor constructor options). Should return the model. When it returns nothing, the default mechanism for creating a model is used. Note that monacoContext.getMonaco() returns undefined as the Monaco editor was not created yet. createWorker(monacoContext, moduleId, label). Called when a worker for additional language support needs to be created. By default, monaco editor ships with the workers for JSON, CSS, HTML, and TYPESCRIPT. The label is the name of the language, eg. css or javascript. Must return the worker to be used for the given language. Note that monacoContext.getMonaco() returns undefined as the Monaco editor was not created yet. All methods of the extender are evaluated within the iframe page, so the editor widget instance is not available. The monacoContext passed as the first argument to the extender methods is an object with one essential method: getMonaco(). Use this method to get the current monaco editor instance and interact with the editor.",
             "name": "extender",
             "required": "false",
             "type": "java.lang.String"
@@ -1290,7 +1290,7 @@
             "type": "java.util.Map"
           },
           {
-            "description": "The monaco editor requires a unique URI for an opened model (i.e. the code currently being edited). This is the scheme (protocol) for that URI. Defaults to inmemory .",
+            "description": "The monaco editor requires a unique URI for an opened model (i.e. the code currently being edited). This is the scheme (protocol) for that URI. Defaults to inmemory.",
             "name": "scheme",
             "required": "false",
             "type": "java.lang.String"
@@ -1314,7 +1314,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "The monaco editor requires a unique URI for an opened model (i.e. the code currently being edited). This is the scheme (protocol) for that URI of the original editor. Defaults to inmemory .",
+            "description": "The monaco editor requires a unique URI for an opened model (i.e. the code currently being edited). This is the scheme (protocol) for that URI of the original editor. Defaults to inmemory.",
             "name": "originalScheme",
             "required": "false",
             "type": "java.lang.String"
@@ -1350,13 +1350,13 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Options for the Monaco code editor. This is a simple wrapper around the JavaScript API, see <a href=\"https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditorconstructionoptions.html\">IEditorConstructionOptions</a> The code language can be set via the EditorOptions#setLanguage option.",
+            "description": "Options for the Monaco code editor. This is a simple wrapper around the JavaScript API, see IEditorConstructionOptions The code language can be set via the EditorOptions#setLanguage option.",
             "name": "editorOptions",
             "required": "false",
             "type": "org.primefaces.extensions.model.monacoeditor.DiffEditorOptions"
           },
           {
-            "description": "If true , resizes the editor automatically when the iframe element changes its size. Please note that this makes uses of the <a href=\"https://wicg.github.io/ResizeObserver/\">new ResizeObserver API</a> and <a href=\"https://caniuse.com/#feat=resizeobserver\">works only in newer browers.</a> This widget checks whether ResizeObserver API is available, and when it is not, no resizing is performed. To support resizing for older browsers, search for a ResizeObserver polyfill. If you know when the size of the editor conainer could have changed, you can resize the editor manually via PF(\"editorWidgetVar\").layout() ",
+            "description": "If true, resizes the editor automatically when the iframe element changes its size. Please note that this makes uses of the new ResizeObserver API and works only in newer browers. This widget checks whether ResizeObserver API is available, and when it is not, no resizing is performed. To support resizing for older browsers, search for a ResizeObserver polyfill. If you know when the size of the editor conainer could have changed, you can resize the editor manually via PF(\"editorWidgetVar\").layout()",
             "name": "autoResize",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -1875,7 +1875,7 @@
       },
       {
         "name": "counter",
-        "description": "Counter component animates a numerical value by counting to it. Client behavior events: start - fires when the counter is started (org.primefaces.event.SelectEvent<Double>), end - fires when the counter is stopped (org.primefaces.event.SelectEvent<Double>).",
+        "description": "Counter component animates a numerical value by counting to it. Client behavior events: start - fires when the counter is started (org.primefaces.event.SelectEvent), end - fires when the counter is stopped (org.primefaces.event.SelectEvent).",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -2454,7 +2454,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "onchange",
             "required": "false",
             "type": "java.lang.String"
@@ -2478,7 +2478,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "\n                \n            ",
+            "description": "",
             "name": "unselectable",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -3069,7 +3069,7 @@
       },
       {
         "name": "methodSignature",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": {
           "description": "A comma separated list with full qualified class names. Class names should match passed parameters in the same order as they were defined.",
           "name": "parameters",
@@ -4273,7 +4273,7 @@
       },
       {
         "name": "triStateManyCheckbox",
-        "description": "\n            \n        ",
+        "description": "",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -4856,6 +4856,12 @@
             "name": "value",
             "required": "false",
             "type": "java.lang.Object"
+          },
+          {
+            "description": "Flag to control using system fonts or font loaded in document. If your PDF does not render correctly try setting this flag to false. Default is true.",
+            "name": "disableFontFace",
+            "required": "false",
+            "type": "java.lang.Boolean"
           }
         ]
       },
@@ -6550,25 +6556,25 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Whether or not to allow the dropdown. If disabled, there is no dropdown arrow, and the selected flag is not clickable.\nAlso we display the selected flag on the right instead because it is just a country marker.",
+            "description": "Whether or not to allow the dropdown. If disabled, there is no dropdown arrow, and the selected flag is not clickable.Also we display the selected flag on the right instead because it is just a country marker.",
             "name": "allowDropdown",
             "required": "false",
             "type": "boolean"
           },
           {
-            "description": "If there is just a dial code in the input: remove it on blur or submit.\nThis is to prevent just a dial code getting submitted with the form. Requires nationalMode to be set to false.",
+            "description": "If there is just a dial code in the input: remove it on blur or submit.This is to prevent just a dial code getting submitted with the form. Requires nationalMode to be set to false.",
             "name": "autoHideDialCode",
             "required": "false",
             "type": "boolean"
           },
           {
-            "description": "Set the input's placeholder to an example number for the selected country, and update it if the country changes.\nYou can specify the number type using the placeholderNumberType attribute.\nBy default it is set to \"polite\", which means it will only set the placeholder if the input doesn't already have one.\nYou can also set it to \"aggressive\", which will replace any existing placeholder, or \"off\". Loads the utils script.",
+            "description": "Set the input's placeholder to an example number for the selected country, and update it if the country changes.You can specify the number type using the placeholderNumberType attribute.By default it is set to \"polite\", which means it will only set the placeholder if the input doesn't already have one.You can also set it to \"aggressive\", which will replace any existing placeholder, or \"off\". Loads the utils script.",
             "name": "autoPlaceholder",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "In the dropdown, display all countries except the ones you specify here.\nEither a comma separated string or collection of ISO 2 country codes. Default is none.",
+            "description": "In the dropdown, display all countries except the ones you specify here.Either a comma separated string or collection of ISO 2 country codes. Default is none.",
             "name": "excludeCountries",
             "required": "false",
             "type": "java.lang.Object"
@@ -6580,7 +6586,7 @@
             "type": "boolean"
           },
           {
-            "description": "Format the input value (according to the nationalMode option) during initialisation, and on setNumber.\nLoads the utils script. Default true.",
+            "description": "Format the input value (according to the nationalMode option) during initialisation, and on setNumber.Loads the utils script. Default true.",
             "name": "formatOnDisplay",
             "required": "false",
             "type": "boolean"
@@ -6592,7 +6598,7 @@
             "type": "boolean"
           },
           {
-            "description": "Set the initial country selection by specifying it's country code.\nIf you leave initialCountry blank, it will default to the first country in the list. Default is \"us\".",
+            "description": "Set the initial country selection by specifying it's country code.If you leave initialCountry blank, it will default to the first country in the list. Default is \"us\".",
             "name": "initialCountry",
             "required": "false",
             "type": "java.lang.String"
@@ -6604,43 +6610,43 @@
             "type": "boolean"
           },
           {
-            "description": "Allow users to enter national numbers (and not have to think about international dial codes).\nFormatting, JS validation and placeholders still work. Defaults is true.",
+            "description": "Allow users to enter national numbers (and not have to think about international dial codes).Formatting, JS validation and placeholders still work. Defaults is true.",
             "name": "nationalMode",
             "required": "false",
             "type": "boolean"
           },
           {
-            "description": "In the dropdown, display only the countries you specify here.\nEither a comma separated string or collection of ISO 2 country codes. Default is null (so all countries).",
+            "description": "In the dropdown, display only the countries you specify here.Either a comma separated string or collection of ISO 2 country codes. Default is null (so all countries).",
             "name": "onlyCountries",
             "required": "false",
             "type": "java.lang.Object"
           },
           {
-            "description": "Specify one of \"fixed_line\", \"mobile\", \"toll_free\", \"shared_cost\", \"voip\", \"personal_number\", \"pager\", \"uan\", \"voicemail\" or \"unknown\".\nDefault is \"mobile\".",
+            "description": "Specify one of \"fixed_line\", \"mobile\", \"toll_free\", \"shared_cost\", \"voip\", \"personal_number\", \"pager\", \"uan\", \"voicemail\" or \"unknown\".Default is \"mobile\".",
             "name": "placeholderNumberType",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Specify the countries to appear at the top of the list.\nEither a comma separated string or collection of ISO 2 country codes. Default is none.",
+            "description": "Specify the countries to appear at the top of the list.Either a comma separated string or collection of ISO 2 country codes. Default is none.",
             "name": "preferredCountries",
             "required": "false",
             "type": "java.lang.Object"
           },
           {
-            "description": "Display the country dial code next to the selected flag so it's not part of the typed number.\nNote that this will disable nationalMode because technically we are dealing with international numbers,\nbut with the dial code separated. Default false.",
+            "description": "Display the country dial code next to the selected flag so it's not part of the typed number.Note that this will disable nationalMode because technically we are dealing with international numbers,but with the dial code separated. Default false.",
             "name": "separateDialCode",
             "required": "false",
             "type": "boolean"
           },
           {
-            "description": "When setting initialCountry to \"auto\", you must use this attribute to specify a custom function\nthat looks up the user's location, and then calls the success callback with the relevant country code.\nSee showcase for an example. Default null.",
+            "description": "When setting initialCountry to \"auto\", you must use this attribute to specify a custom functionthat looks up the user's location, and then calls the success callback with the relevant country code.See showcase for an example. Default null.",
             "name": "geoIpLookup",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Localized countries map (key ISO 2 code, value name), or JSON string, example\n\"{'de':'Deutschland'}\". Default null.",
+            "description": "Localized countries map (key ISO 2 code, value name), or JSON string, example\"{'de':'Deutschland'}\". Default null.",
             "name": "localizedCountries",
             "required": "false",
             "type": "java.lang.Object"
@@ -7455,6 +7461,468 @@
           {
             "description": "JSON array of array using single quote that defines the toolbar.",
             "name": "toolbar",
+            "required": "false",
+            "type": "java.lang.String"
+          }
+        ]
+      },
+      {
+        "name": "clockpicker",
+        "description": "ClockPicker based on https://weareoutman.github.io/clockpicker/",
+        "attribute": [
+          {
+            "description": "Unique identifier of the component in a namingContainer.",
+            "name": "id",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "name": "rendered",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "An el expression referring to a server side UIComponent instance in a backing bean.",
+            "name": "binding",
+            "required": "false",
+            "type": "javax.faces.component.UIComponent"
+          },
+          {
+            "description": "Value of the component.",
+            "name": "value",
+            "required": "false",
+            "type": "java.lang.Object"
+          },
+          {
+            "description": "An el expression or a literal text that defines a converter for the component. When it's an EL expression, it's resolved to a converter instance. In case it's a static text, it must refer to a converter id.",
+            "name": "converter",
+            "required": "false",
+            "type": "java.faces.convert.Converter"
+          },
+          {
+            "description": "When set true, process validations logic is executed at apply request values phase for this component. Default is false.",
+            "name": "immediate",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Marks component as required.",
+            "name": "required",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "A method expression referring to a method validationg the input.",
+            "name": "validator",
+            "required": "false",
+            "type": "javax.faces.validator.Validator"
+          },
+          {
+            "description": "A method binding expression referring to a method for handling a valuchangeevent.",
+            "name": "valueChangeListener",
+            "required": "false",
+            "type": "javax.faces.event.ValueChangeListener"
+          },
+          {
+            "description": "Message to display when required field validation fails.",
+            "name": "requiredMessage",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Message to display when conversion fails.",
+            "name": "converterMessage",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Message to display when validation fails.",
+            "name": "validatorMessage",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Access key to transfer focus to the input element.",
+            "name": "accesskey",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Alternate textual description of the input element.",
+            "name": "alt",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Controls browser autocomplete behavior.",
+            "name": "autocomplete",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Defines text direction, valid values are \"ltr\" (default) and \"rtl\".",
+            "name": "dir",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Disables the input element, default is false.",
+            "name": "disabled",
+            "required": "false",
+            "type": "boolean"
+          },
+          {
+            "description": "HTML5 inputmode attribute for hinting at the type of data this control has for touch devices to display appropriate virtual keyboard.",
+            "name": "inputmode",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "A localized user presentable name.",
+            "name": "label",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Code describing the language used in the generated markup.",
+            "name": "lang",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Maximum number of characters that may be entered in this field.",
+            "name": "maxlength",
+            "required": "false",
+            "type": "int"
+          },
+          {
+            "description": "Client side callback to execute when input element loses focus.",
+            "name": "onblur",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when input element loses focus and its value has been modified since gaining focus.",
+            "name": "onchange",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when input element is clicked.",
+            "name": "onclick",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when input element is double clicked.",
+            "name": "ondblclick",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when input element receives focus.",
+            "name": "onfocus",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when a key is pressed down over input element.",
+            "name": "onkeydown",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when a key is pressed and released over input element.",
+            "name": "onkeypress",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when a key is released over input element.",
+            "name": "onkeyup",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when a pointer input element is pressed down over input element.",
+            "name": "onmousedown",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when a pointer input element is moved within input element.",
+            "name": "onmousemove",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when a pointer input element is moved away from input element.",
+            "name": "onmouseout",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when a pointer input element is moved onto input element.",
+            "name": "onmouseover",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when a pointer input element is released over input element.",
+            "name": "onmouseup",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when the mouse wheel rolls up or down over an element.",
+            "name": "onwheel",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when text within input element is selected by user.",
+            "name": "onselect",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when the user copies the content of an element.",
+            "name": "oncut",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when the user cuts the content of an element.",
+            "name": "oncopy",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when the user pastes some content in an element.",
+            "name": "onpaste",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when an element gets user input.",
+            "name": "oninput",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when a context menu is triggered.",
+            "name": "oncontextmenu",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when an element is invalid.",
+            "name": "oninvalid",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when the Reset button in a form is clicked.",
+            "name": "onreset",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when the user writes something in a search field.",
+            "name": "onsearch",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when an element is dragged.",
+            "name": "ondrag",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute at the end of a drag operation.",
+            "name": "ondragend",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when an element has been dragged to a valid drop target.",
+            "name": "ondragenter",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when an element leaves a valid drop target.",
+            "name": "ondragleave",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when an element is being dragged over a valid drop target.",
+            "name": "ondragover",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute at the start of a drag operation.",
+            "name": "ondragstart",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when dragged element is being dropped.",
+            "name": "ondrop",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Client side callback to execute when an element's scrollbar is being scrolled.",
+            "name": "onscroll",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Flag indicating that this input element will prevent changes by the user.",
+            "name": "readonly",
+            "required": "false",
+            "type": "boolean"
+          },
+          {
+            "description": "Number of characters used to determine the width of the input element.",
+            "name": "size",
+            "required": "false",
+            "type": "int"
+          },
+          {
+            "description": "Inline style of the component.",
+            "name": "style",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Style class of the component.",
+            "name": "styleClass",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Position of the element in the tabbing order.",
+            "name": "tabindex",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Advisory tooltip information.",
+            "name": "title",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "The placeholder attribute specifies a short hint that describes the expected value of an input field.",
+            "name": "placeholder",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Name of the client side widget.",
+            "name": "widgetVar",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "popover placement. Default is \"bottom\"",
+            "name": "placement",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "popover arrow align. Default is \"bottom\"",
+            "name": "align",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "auto close when minute is selected. Default is false",
+            "name": "autoClose",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "vibrate the device when dragging clock hand. Default is true",
+            "name": "vibrate",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "enables twelve hour mode with AM & PM buttons. Default is false",
+            "name": "twelveHour",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "String or java.util.Locale representing user locale. Default is a locale specified in view root.",
+            "name": "locale",
+            "required": "false",
+            "type": "java.lang.Object"
+          },
+          {
+            "description": "When to display the calculator: 'focus' for popup on focus, 'button' for trigger button, 'both' for either, 'operator' for non-numeric character entered, 'opbutton' for operator/button combination.",
+            "name": "showOn",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Javascript handler callback function triggered before popup is shown.",
+            "name": "onbeforeshow",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Javascript handler callback function triggered after popup is shown.",
+            "name": "onaftershow",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Javascript handler callback function triggered before popup is hidden. Note:will be triggered between a beforeDone and afterDone",
+            "name": "onbeforehide",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Javascript handler callback function triggered after popup is hidden. Note:will be triggered between a beforeDone and afterDone",
+            "name": "onafterhide",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Javascript handler callback function triggered before time is written to input.",
+            "name": "onbeforedone",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Javascript handler callback function triggered before time is written to input.",
+            "name": "onafterdone",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Javascript handler callback function triggered before user makes an hour selection.",
+            "name": "onbeforehourselect",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Javascript handler callback function triggered before user makes an hour selection.",
+            "name": "onafterhourselect",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Javascript handler callback function triggered after user makes an Am/PM selection.",
+            "name": "onafterampmselect",
             "required": "false",
             "type": "java.lang.String"
           }

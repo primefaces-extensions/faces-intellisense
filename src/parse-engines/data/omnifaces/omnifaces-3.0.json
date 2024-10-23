@@ -3,7 +3,7 @@
     "component": [
       {
         "name": "tree",
-        "description": "The <o:tree> allows the developers to have full control over the markup of a tree hierarchy by declaring the appropriate JSF components or HTML elements in the markup. The <o:tree> does namely not render any HTML markup by itself.  The component value must point to a tree of data objects represented by a TreeModel instance, typically established via a ValueExpression . During iterative processing over the nodes of tree in the tree model, the object for the current node is exposed as a request attribute under the key specified by the var attribute. The node itself is exposed as a request attribute under the key specified by the varNode attribute.  The <o:tree> tag supports only child tags of type <o:treeNode> , representing parent tree nodes. There can be multiple <o:treeNode> tags, each representing a separate parent tree node level, so that different markup could be declared for each tree node level, if necessary. The <o:treeNode> tag in turn supports child tag <o:treeNodeItem> which represents each child of the current parent tree node. The <o:treeNodeItem> in turn supports child tag <o:treeInsertChildren> which represents the insertion point of the grand children.  Here is a basic usage example where each parent tree node level is treated the same way via a single <o:treeNode> : <pre>\n<o:tree value=\"#{bean.treeModel}\" var=\"item\" varNode=\"node\"> <o:treeNode> <ul> <o:treeNodeItem> <li> #{node.index} #{item.someProperty} <o:treeInsertChildren /> </li> </o:treeNodeItem> </ul> </o:treeNode>\n</o:tree> </pre>",
+        "description": "The <o:tree> allows the developers to have full control over the markup of a tree hierarchy by declaring the appropriate JSF components or HTML elements in the markup. The <o:tree> does namely not render any HTML markup by itself. The component value must point to a tree of data objects represented by a TreeModel instance, typically established via a ValueExpression. During iterative processing over the nodes of tree in the tree model, the object for the current node is exposed as a request attribute under the key specified by the var attribute. The node itself is exposed as a request attribute under the key specified by the varNode attribute. The <o:tree> tag supports only child tags of type <o:treeNode>, representing parent tree nodes. There can be multiple <o:treeNode> tags, each representing a separate parent tree node level, so that different markup could be declared for each tree node level, if necessary. The <o:treeNode> tag in turn supports child tag <o:treeNodeItem> which represents each child of the current parent tree node. The <o:treeNodeItem> in turn supports child tag <o:treeInsertChildren> which represents the insertion point of the grand children. Here is a basic usage example where each parent tree node level is treated the same way via a single <o:treeNode>: <o:tree value=\"#{bean.treeModel}\" var=\"item\" varNode=\"node\"> <o:treeNode> <ul> <o:treeNodeItem> <li> #{node.index} #{item.someProperty} <o:treeInsertChildren /> </li> </o:treeNodeItem> </ul> </o:treeNode></o:tree>",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -43,7 +43,7 @@
       },
       {
         "name": "treeNode",
-        "description": "The <o:treeNode> represents the parent tree node. Within this component, the var attribute of the <o:tree> will expose the parent tree node. Each of its children is processed by <o:treeNodeItem> on which the var attribute of the <o:tree> in turn exposes each child of the parent tree node.  The optional level attribute can be used to specify for which tree node level as obtained by TreeModel#getLevel() the <o:treeNode> should be rendered. The root tree node has level 0. If the level attribute is unspecified, then the <o:treeNode> will be rendered for any tree node level which hasn't already a <o:treeNode level=\"x\"> specified.",
+        "description": "The <o:treeNode> represents the parent tree node. Within this component, the var attribute of the <o:tree> will expose the parent tree node. Each of its children is processed by <o:treeNodeItem> on which the var attribute of the <o:tree> in turn exposes each child of the parent tree node. The optional level attribute can be used to specify for which tree node level as obtained by TreeModel#getLevel() the <o:treeNode> should be rendered. The root tree node has level 0. If the level attribute is unspecified, then the <o:treeNode> will be rendered for any tree node level which hasn't already a <o:treeNode level=\"x\"> specified.",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -64,7 +64,7 @@
             "type": "javax.faces.component.UIComponent"
           },
           {
-            "description": "The tree node level to render the node children for. The root level is 0 .",
+            "description": "The tree node level to render the node children for. The root level is 0.",
             "name": "level",
             "required": "false",
             "type": "java.lang.Integer"
@@ -73,7 +73,7 @@
       },
       {
         "name": "treeNodeItem",
-        "description": "The <o:treeNodeItem> represents the child item of the parent tree note as represented by <o:treeNode> . Within this component, the var attribute of the parent <o:tree> component will expose the child tree node.  Within <o:treeNodeItem> you can use <o:treeInsertChildren> to declare the place where to recursively render the <o:treeNode> whereby the current child item is in turn interpreted as a parent tree node (i.e. where you'd like to insert the grand-children).",
+        "description": "The <o:treeNodeItem> represents the child item of the parent tree note as represented by <o:treeNode>. Within this component, the var attribute of the parent <o:tree> component will expose the child tree node. Within <o:treeNodeItem> you can use <o:treeInsertChildren> to declare the place where to recursively render the <o:treeNode> whereby the current child item is in turn interpreted as a parent tree node (i.e. where you'd like to insert the grand-children).",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -97,7 +97,7 @@
       },
       {
         "name": "treeInsertChildren",
-        "description": "The <o:treeInsertChildren> represents the insertion point for the grand children. This is in turn further interpreted as <o:treeNode> .",
+        "description": "The <o:treeInsertChildren> represents the insertion point for the grand children. This is in turn further interpreted as <o:treeNode>.",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -131,7 +131,7 @@
       },
       {
         "name": "deferredScript",
-        "description": " DeferredScript is a component which defers the loading of the given script resource to the window load event. In other words, the given script resource is only loaded when the window is really finished with loading. So, the enduser can start working with the webpage without waiting for the additional scripts to be loaded. Usually, it are those kind of scripts which are just for progressive enhancement and thus not essential for the functioning of the webpage.  This will give bonus points with among others the Google PageSpeed tool, on the contrary to placing the script at bottom of body, or using defer=\"true\" or even async=\"true\" .",
+        "description": "DeferredScript is a component which defers the loading of the given script resource to the window load event. In other words, the given script resource is only loaded when the window is really finished with loading. So, the enduser can start working with the webpage without waiting for the additional scripts to be loaded. Usually, it are those kind of scripts which are just for progressive enhancement and thus not essential for the functioning of the webpage. This will give bonus points with among others the Google PageSpeed tool, on the contrary to placing the script at bottom of body, or using defer=\"true\" or even async=\"true\".",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -191,7 +191,7 @@
       },
       {
         "name": "onloadScript",
-        "description": "  o:onloadScript  is an extension to <h:outputScript> which will be executed in the end of the HTML body (thus when all HTML elements are initialized in the HTML DOM tree) and will re-execute its script body on every ajax request. This is particularly useful if you want to re-execute a specific helper script to manipulate the HTML DOM tree, such as (re-)adding fancy tooltips, performing highlights, etcetera, also after changes in the HTML DOM tree on ajax responses.  You can put it anywhere in the view, it will always be relocated to the end of body. <pre>\n<o:onloadScript>alert('OnloadScript is invoked!');</o:onloadScript> </pre>",
+        "description": "o:onloadScript is an extension to <h:outputScript> which will be executed in the end of the HTML body (thus when all HTML elements are initialized in the HTML DOM tree) and will re-execute its script body on every ajax request. This is particularly useful if you want to re-execute a specific helper script to manipulate the HTML DOM tree, such as (re-)adding fancy tooltips, performing highlights, etcetera, also after changes in the HTML DOM tree on ajax responses. You can put it anywhere in the view, it will always be relocated to the end of body. <o:onloadScript>alert('OnloadScript is invoked!');</o:onloadScript>",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -215,7 +215,7 @@
       },
       {
         "name": "highlight",
-        "description": "  o:highlight  is a helper component which highlights all invalid UIInput components and the associated labels by adding an error style class to them. Additionally, it by default focuses the first invalid UIInput component. The <o:highlight /> component can be placed anywhere in the view, as long as there's only one of it.\tPreferably put it somewhere in the master template for forms. <pre>\n<h:form> <h:inputText value=\"#{bean.input1}\" required=\"true\" /> <h:inputText value=\"#{bean.input1}\" required=\"true\" /> <h:commandButton value=\"Submit\" action=\"#{bean.submit}\" />\n</h:form>\n<o:highlight /> </pre>  The default error style class name is error . You need to specify a CSS style associated with the class yourself. For example, <pre>\nlabel.error { color: #f00;\n}\ninput.error, select.error, textarea.error { background-color: #fee;\n} </pre>  You can override the default error style class by the styleClass attribute: <pre>\n<o:highlight styleClass=\"invalid\" /> </pre>  You can disable the default focus on the first invalid input element setting the focus attribute. <pre>\n<o:highlight styleClass=\"invalid\" focus=\"false\" /> </pre>",
+        "description": "o:highlight is a helper component which highlights all invalid UIInput components and the associated labels by adding an error style class to them. Additionally, it by default focuses the first invalid UIInput component. The <o:highlight /> component can be placed anywhere in the view, as long as there's only one of it.Preferably put it somewhere in the master template for forms. <h:form> <h:inputText value=\"#{bean.input1}\" required=\"true\" /> <h:inputText value=\"#{bean.input1}\" required=\"true\" /> <h:commandButton value=\"Submit\" action=\"#{bean.submit}\" /></h:form><o:highlight /> The default error style class name is error. You need to specify a CSS style associated with the class yourself. For example, label.error { color: #f00;}input.error, select.error, textarea.error { background-color: #fee;} You can override the default error style class by the styleClass attribute: <o:highlight styleClass=\"invalid\" /> You can disable the default focus on the first invalid input element setting the focus attribute. <o:highlight styleClass=\"invalid\" focus=\"false\" />",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -236,13 +236,13 @@
             "type": "javax.faces.component.UIComponent"
           },
           {
-            "description": "The error style class which is to be applied on invalid inputs. Defaults to error .",
+            "description": "The error style class which is to be applied on invalid inputs. Defaults to error.",
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Whether the first error element should gain focus. Defaults to true .",
+            "description": "Whether the first error element should gain focus. Defaults to true.",
             "name": "focus",
             "required": "false",
             "type": "boolean"
@@ -251,7 +251,7 @@
       },
       {
         "name": "conditionalComment",
-        "description": "  o:conditionalComment is an UIComponent which renders a conditional comment. Conditional comments are an IE specific feature which enables the developer to (out)comment blocks of HTML depending on whether the client is using IE and if so even which version. They are often seen in combination with CSS stylesheets like so: <pre>\n<!--[if lte IE 7]> <link rel=\"stylesheet\" href=\"ie6-ie7.css\" />\n<![endif]--> </pre> However, Facelets renders them HTML-escaped and if javax.faces.FACELETS_SKIP_COMMENTS context param is set to true then it will even not be rendered at all. You would need to workaround this with an ugly <h:outputText escape=\"false\"> . <pre>\n<h:outputText value=\"<!--[if lte IE 7]><link rel=\"stylesheet\" href=\"ie6-ie7.css\" /><![endif]-->\" escape=\"false\" /> </pre> This component is designed to solve this problem. <pre>\n<o:conditionalComment if=\"lte IE 7\"> <link rel=\"stylesheet\" href=\"ie6-ie7.css\" />\n</o:conditionalComment> </pre> Note that you cannot use this with <h:outputStylesheet> as it would implicitly be relocated as direct child of <h:head> .",
+        "description": "o:conditionalComment is an UIComponent which renders a conditional comment. Conditional comments are an IE specific feature which enables the developer to (out)comment blocks of HTML depending on whether the client is using IE and if so even which version. They are often seen in combination with CSS stylesheets like so: <!--[if lte IE 7]> <link rel=\"stylesheet\" href=\"ie6-ie7.css\" /><![endif]--> However, Facelets renders them HTML-escaped and if javax.faces.FACELETS_SKIP_COMMENTS context param is set to true then it will even not be rendered at all. You would need to workaround this with an ugly <h:outputText escape=\"false\">. <h:outputText value=\"<!--[if lte IE 7]><link rel=\"stylesheet\" href=\"ie6-ie7.css\" /><![endif]-->\" escape=\"false\" /> This component is designed to solve this problem. <o:conditionalComment if=\"lte IE 7\"> <link rel=\"stylesheet\" href=\"ie6-ie7.css\" /></o:conditionalComment> Note that you cannot use this with <h:outputStylesheet> as it would implicitly be relocated as direct child of <h:head>.",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -272,7 +272,7 @@
             "type": "javax.faces.component.UIComponent"
           },
           {
-            "description": "The if condition of the conditional comment. This is exactly the value you would use in <!--[if ...]> , e.g. if=\"lte IE 7\" .",
+            "description": "The if condition of the conditional comment. This is exactly the value you would use in <!--[if ...]>, e.g. if=\"lte IE 7\".",
             "name": "if",
             "required": "true",
             "type": "java.lang.String"
@@ -281,7 +281,7 @@
       },
       {
         "name": "validateAll",
-        "description": "  o:validateAll  validates validates if ALL of the given UIInput components have been filled out. The default message is <blockquote>{0}: Please fill out all of those fields</blockquote> <hr> <h3>General usage of all multiple field validators</h3>  This validator must be placed inside the same UIForm as the UIInput components in question. The UIInput components must be referenced by a space separated collection of their client IDs in the components attribute. This validator can be placed anywhere in the form, but keep in mind that the components will be validated in the order as they appear in the form. So if this validator is been placed before all of the components, then it will be executed before any of the component's own validators. If this validator fails, then the component's own validators will not be fired. If this validator is been placed after all of the components, then it will be executed after any of the component's own validators. If any of them fails, then this validator will not be exeucted. It is not recommended to put this validator somewhere in between the referenced components as the resulting behaviour may be confusing. Put this validator either before or after all of the components, depending on how you would like to prioritize the validation. <pre>\n<o:validateMultipleFields id=\"myId\" components=\"foo bar baz\" />\n<h:message for=\"myId\" />\n<h:inputText id=\"foo\" />\n<h:inputText id=\"bar\" />\n<h:inputText id=\"baz\" /> </pre>  By default, in an invalidating case, all of the referenced components will be marked invalid and a faces message will be added on the client ID of this validator component. The default message can be changed by the message attribute. Any \"{0}\" placeholder in the message will be substituted with a comma separated string of labels of the referenced input components. <pre>\n<o:validateMultipleFields components=\"foo bar baz\" message=\"{0} are wrong!\" /> </pre>  You can use invalidateAll=\"false\" to mark only those components which are actually invalid as invalid. In case of for example \"input all\" or \"input all or none\" validation, that would be only the fields which are left empty. <pre>\n<o:validateMultipleFields components=\"foo bar baz\" message=\"{0} are wrong!\" invalidateAll=\"false\" /> </pre>  The faces message can also be shown for all of the referenced components using showMessageFor=\"@all\" . <pre>\n<o:validateMultipleFields components=\"foo bar baz\" message=\"This is wrong!\" showMessageFor=\"@all\" />\n<h:inputText id=\"foo\" />\n<h:message for=\"foo\" />\n<h:inputText id=\"bar\" />\n<h:message for=\"bar\" />\n<h:inputText id=\"baz\" />\n<h:message for=\"baz\" /> </pre>  The faces message can also be shown for only the invalidated components using showMessageFor=\"@invalid\" . <pre>\n<o:validateMultipleFields components=\"foo bar baz\" message=\"This is wrong!\" showMessageFor=\"@invalid\" /> </pre>  The faces message can also be shown as global message using showMessageFor=\"@global\" . <pre>\n<o:validateMultipleFields components=\"foo bar baz\" message=\"This is wrong!\" showMessageFor=\"@global\" /> </pre>  The faces message can also be shown for specific components referenced by a space separated collection of their client IDs in showMessageFor attribute. <pre>\n<o:validateMultipleFields components=\"foo bar baz\" message=\"This is wrong!\" showMessageFor=\"foo baz\" /> </pre>  The showMessageFor attribute defaults to @this .  The validator can be disabled by the disabled attribute. It accepts a request based EL expression. <pre>\n<o:validateMultipleFields components=\"foo bar baz\" disabled=\"#{param.validationDisabled}\" /> </pre>  There is a read-only validationFailed attribute which can be used to determine if the validation by this component has failed. <pre>\n<o:validateMultipleFields id=\"myId\" binding=\"#{myId}\" components=\"foo bar baz\" />\n<h:panelGroup rendered=\"#{myId.validationFailed}\"> Validation has failed! <h:message for=\"myId\" />\n</h:panelGroup> </pre>",
+        "description": "o:validateAll validates validates if ALL of the given UIInput components have been filled out. The default message is {0}: Please fill out all of those fields General usage of all multiple field validators This validator must be placed inside the same UIForm as the UIInput components in question. The UIInput components must be referenced by a space separated collection of their client IDs in the components attribute. This validator can be placed anywhere in the form, but keep in mind that the components will be validated in the order as they appear in the form. So if this validator is been placed before all of the components, then it will be executed before any of the component's own validators. If this validator fails, then the component's own validators will not be fired. If this validator is been placed after all of the components, then it will be executed after any of the component's own validators. If any of them fails, then this validator will not be exeucted. It is not recommended to put this validator somewhere in between the referenced components as the resulting behaviour may be confusing. Put this validator either before or after all of the components, depending on how you would like to prioritize the validation. <o:validateMultipleFields id=\"myId\" components=\"foo bar baz\" /><h:message for=\"myId\" /><h:inputText id=\"foo\" /><h:inputText id=\"bar\" /><h:inputText id=\"baz\" /> By default, in an invalidating case, all of the referenced components will be marked invalid and a faces message will be added on the client ID of this validator component. The default message can be changed by the message attribute. Any \"{0}\" placeholder in the message will be substituted with a comma separated string of labels of the referenced input components. <o:validateMultipleFields components=\"foo bar baz\" message=\"{0} are wrong!\" /> You can use invalidateAll=\"false\" to mark only those components which are actually invalid as invalid. In case of for example \"input all\" or \"input all or none\" validation, that would be only the fields which are left empty. <o:validateMultipleFields components=\"foo bar baz\" message=\"{0} are wrong!\" invalidateAll=\"false\" /> The faces message can also be shown for all of the referenced components using showMessageFor=\"@all\". <o:validateMultipleFields components=\"foo bar baz\" message=\"This is wrong!\" showMessageFor=\"@all\" /><h:inputText id=\"foo\" /><h:message for=\"foo\" /><h:inputText id=\"bar\" /><h:message for=\"bar\" /><h:inputText id=\"baz\" /><h:message for=\"baz\" /> The faces message can also be shown for only the invalidated components using showMessageFor=\"@invalid\". <o:validateMultipleFields components=\"foo bar baz\" message=\"This is wrong!\" showMessageFor=\"@invalid\" /> The faces message can also be shown as global message using showMessageFor=\"@global\". <o:validateMultipleFields components=\"foo bar baz\" message=\"This is wrong!\" showMessageFor=\"@global\" /> The faces message can also be shown for specific components referenced by a space separated collection of their client IDs in showMessageFor attribute. <o:validateMultipleFields components=\"foo bar baz\" message=\"This is wrong!\" showMessageFor=\"foo baz\" /> The showMessageFor attribute defaults to @this. The validator can be disabled by the disabled attribute. It accepts a request based EL expression. <o:validateMultipleFields components=\"foo bar baz\" disabled=\"#{param.validationDisabled}\" /> There is a read-only validationFailed attribute which can be used to determine if the validation by this component has failed. <o:validateMultipleFields id=\"myId\" binding=\"#{myId}\" components=\"foo bar baz\" /><h:panelGroup rendered=\"#{myId.validationFailed}\"> Validation has failed! <h:message for=\"myId\" /></h:panelGroup>",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -326,7 +326,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Whether the validation should be disabled or not. Defaults to false .",
+            "description": "Whether the validation should be disabled or not. Defaults to false.",
             "name": "disabled",
             "required": "false",
             "type": "boolean"
@@ -335,7 +335,7 @@
       },
       {
         "name": "validateAllOrNone",
-        "description": "  o:validateAllOrNone  validates validates if at least ALL of the given UIInput components have been filled out or that NONE of the given UIInput components have been filled out. The default message is <blockquote>{0}: Please fill out all or none of those fields</blockquote>  For general usage instructions, refer validateAll tag documentation.",
+        "description": "o:validateAllOrNone validates validates if at least ALL of the given UIInput components have been filled out or that NONE of the given UIInput components have been filled out. The default message is {0}: Please fill out all or none of those fields For general usage instructions, refer validateAll tag documentation.",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -380,7 +380,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Whether the validation should be disabled or not. Defaults to false .",
+            "description": "Whether the validation should be disabled or not. Defaults to false.",
             "name": "disabled",
             "required": "false",
             "type": "boolean"
@@ -389,7 +389,7 @@
       },
       {
         "name": "validateOneOrMore",
-        "description": "  o:validateOneOrMore  validates if at least ONE of the given UIInput components has been filled out. The default message is <blockquote>{0}: Please fill out at least one of those fields</blockquote>  For general usage instructions, refer validateAll tag documentation. The invalidateAll attribute has no effect on this component and is therefore not listed.",
+        "description": "o:validateOneOrMore validates if at least ONE of the given UIInput components has been filled out. The default message is {0}: Please fill out at least one of those fields For general usage instructions, refer validateAll tag documentation. The invalidateAll attribute has no effect on this component and is therefore not listed.",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -428,7 +428,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Whether the validation should be disabled or not. Defaults to false .",
+            "description": "Whether the validation should be disabled or not. Defaults to false.",
             "name": "disabled",
             "required": "false",
             "type": "boolean"
@@ -437,7 +437,7 @@
       },
       {
         "name": "validateOne",
-        "description": "  o:validateOne  validates if ONLY ONE of the given UIInput components has been filled out. The default message is <blockquote>{0}: Please fill out only one of those fields</blockquote>  For general usage instructions, refer validateAll tag documentation. The invalidateAll attribute has no effect on this component and is therefore not listed.",
+        "description": "o:validateOne validates if ONLY ONE of the given UIInput components has been filled out. The default message is {0}: Please fill out only one of those fields For general usage instructions, refer validateAll tag documentation. The invalidateAll attribute has no effect on this component and is therefore not listed.",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -476,7 +476,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Whether the validation should be disabled or not. Defaults to false .",
+            "description": "Whether the validation should be disabled or not. Defaults to false.",
             "name": "disabled",
             "required": "false",
             "type": "boolean"
@@ -485,7 +485,7 @@
       },
       {
         "name": "validateOneOrNone",
-        "description": "  o:validateOneOrNone  validates if ONLY ONE of the given UIInput components has been filled out or that NONE of the given UIInput components have been filled out. The default message is <blockquote>{0}: Please fill out only one or none of those fields</blockquote>  For general usage instructions, refer validateAll tag documentation. The invalidateAll attribute has no effect on this component and is therefore not listed.",
+        "description": "o:validateOneOrNone validates if ONLY ONE of the given UIInput components has been filled out or that NONE of the given UIInput components have been filled out. The default message is {0}: Please fill out only one or none of those fields For general usage instructions, refer validateAll tag documentation. The invalidateAll attribute has no effect on this component and is therefore not listed.",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -524,7 +524,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Whether the validation should be disabled or not. Defaults to false .",
+            "description": "Whether the validation should be disabled or not. Defaults to false.",
             "name": "disabled",
             "required": "false",
             "type": "boolean"
@@ -533,7 +533,7 @@
       },
       {
         "name": "validateEqual",
-        "description": "  o:validateEqual  validates if ALL of the given UIInput components have the same value. The default message is <blockquote>{0}: Please fill out the same value for all of those fields</blockquote>  For general usage instructions, refer validateAll tag documentation. The invalidateAll attribute has no effect on this component and is therefore not listed.",
+        "description": "o:validateEqual validates if ALL of the given UIInput components have the same value. The default message is {0}: Please fill out the same value for all of those fields For general usage instructions, refer validateAll tag documentation. The invalidateAll attribute has no effect on this component and is therefore not listed.",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -572,7 +572,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Whether the validation should be disabled or not. Defaults to false .",
+            "description": "Whether the validation should be disabled or not. Defaults to false.",
             "name": "disabled",
             "required": "false",
             "type": "boolean"
@@ -581,7 +581,7 @@
       },
       {
         "name": "validateUnique",
-        "description": "  o:validateUnique  validates if ALL of the given UIInput components have an unique value. The default message is <blockquote>{0}: Please fill out an unique value for all of those fields</blockquote>  For general usage instructions, refer validateAll tag documentation. The invalidateAll attribute has no effect on this component and is therefore not listed.",
+        "description": "o:validateUnique validates if ALL of the given UIInput components have an unique value. The default message is {0}: Please fill out an unique value for all of those fields For general usage instructions, refer validateAll tag documentation. The invalidateAll attribute has no effect on this component and is therefore not listed.",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -620,7 +620,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Whether the validation should be disabled or not. Defaults to false .",
+            "description": "Whether the validation should be disabled or not. Defaults to false.",
             "name": "disabled",
             "required": "false",
             "type": "boolean"
@@ -629,7 +629,7 @@
       },
       {
         "name": "validateOrder",
-        "description": " ValidateOrder validates if the values of the given UIInput components as specified in the components attribute are in the order as specified by the type attribute which accepts the following values: <ul> <li> lt (default): from least to greatest, without duplicates.</li> <li> lte : from least to greatest, allowing duplicates (equal values next to each other).</li> <li> gt : from greatest to least, without duplicates.</li> <li> gte : from greatest to least, allowing duplicates (equal values next to each other).</li> </ul> The default message is <blockquote>{0}: Please fill out the values of all those fields in order</blockquote>  For general usage instructions, refer validateAll tag documentation. The invalidateAll attribute has no effect on this component and is therefore not listed.  This validator has the additional requirement that the to-be-validated values must implement Comparable . This validator throws an IllegalArgumentException when one or more of the values do not implement it.",
+        "description": "ValidateOrder validates if the values of the given UIInput components as specified in the components attribute are in the order as specified by the type attribute which accepts the following values: lt (default): from least to greatest, without duplicates. lte: from least to greatest, allowing duplicates (equal values next to each other). gt: from greatest to least, without duplicates. gte: from greatest to least, allowing duplicates (equal values next to each other). The default message is {0}: Please fill out the values of all those fields in order For general usage instructions, refer validateAll tag documentation. The invalidateAll attribute has no effect on this component and is therefore not listed. This validator has the additional requirement that the to-be-validated values must implement Comparable. This validator throws an IllegalArgumentException when one or more of the values do not implement it.",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -674,7 +674,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Whether the validation should be disabled or not. Defaults to false .",
+            "description": "Whether the validation should be disabled or not. Defaults to false.",
             "name": "disabled",
             "required": "false",
             "type": "boolean"
@@ -683,7 +683,7 @@
       },
       {
         "name": "validateMultiple",
-        "description": " ValidateMultiple allows the developer to validate multiple fields by a custom validator method: <pre>\n<o:validateMultiple id=\"myId\" components=\"foo bar baz\" validator=\"#{bean.validateValues}\" />\n<h:message for=\"myId\" />\n<h:inputText id=\"foo\" />\n<h:inputText id=\"bar\" />\n<h:inputText id=\"baz\" /> </pre> <pre>\npublic boolean validateValues(FacesContext context, List<UIInput> components, List<Object> values) { // ...\n} </pre> Or by a managed bean instance which implements the MultiFieldValidator interface: <pre>\n<o:validateMultiple id=\"myId\" components=\"foo bar baz\" validator=\"#{validateValuesBean}\" />\n<h:message for=\"myId\" />\n<h:inputText id=\"foo\" />\n<h:inputText id=\"bar\" />\n<h:inputText id=\"baz\" /> </pre> <pre>\n@ManagedBean\n@RequestScoped\npublic class ValidateValuesBean implements MultiFieldValidator { @Override boolean validateValues(FacesContext context, List<UIInput> components, List<Object> values) { // ... }\n} </pre>",
+        "description": "ValidateMultiple allows the developer to validate multiple fields by a custom validator method: <o:validateMultiple id=\"myId\" components=\"foo bar baz\" validator=\"#{bean.validateValues}\" /><h:message for=\"myId\" /><h:inputText id=\"foo\" /><h:inputText id=\"bar\" /><h:inputText id=\"baz\" /> public boolean validateValues(FacesContext context, List<UIInput> components, List<Object> values) { // ...} Or by a managed bean instance which implements the MultiFieldValidator interface: <o:validateMultiple id=\"myId\" components=\"foo bar baz\" validator=\"#{validateValuesBean}\" /><h:message for=\"myId\" /><h:inputText id=\"foo\" /><h:inputText id=\"bar\" /><h:inputText id=\"baz\" /> @ManagedBean@RequestScopedpublic class ValidateValuesBean implements MultiFieldValidator { @Override boolean validateValues(FacesContext context, List<UIInput> components, List<Object> values) { // ... }}",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -728,7 +728,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Whether the validation should be disabled or not. Defaults to false .",
+            "description": "Whether the validation should be disabled or not. Defaults to false.",
             "name": "disabled",
             "required": "false",
             "type": "boolean"
@@ -737,7 +737,7 @@
       },
       {
         "name": "validator",
-        "description": "The <o:validator> basically extends the <f:validator> tag family with the possibility to evaluate the value expression in all attributes on a per request basis instead of on a per view build time basis. This allows the developer to change the attributes on a per request basis, such as the disabled attribute. <pre>\n<o:validator validatorId=\"someValidatorId\" disabled=\"#{param.disableValidation}\" /> </pre> Note that not all available attributes are listed. This depends on the validator you're specifying. When you specify for example the standard <f:validateLongRange> by validatorId=\"javax.faces.LongRange\" , then you'll be able to use all its attributes such as minimum and maximum as per its documentation, but then with the possibility to supply request based value expressions. <pre>\n<o:validator validatorId=\"javax.faces.LongRange\" minimum=\"#{item.minimum}\" maximum=\"#{item.maximum}\" /> </pre>",
+        "description": "The <o:validator> basically extends the <f:validator> tag family with the possibility to evaluate the value expression in all attributes on a per request basis instead of on a per view build time basis. This allows the developer to change the attributes on a per request basis, such as the disabled attribute. <o:validator validatorId=\"someValidatorId\" disabled=\"#{param.disableValidation}\" /> Note that not all available attributes are listed. This depends on the validator you're specifying. When you specify for example the standard <f:validateLongRange> by validatorId=\"javax.faces.LongRange\", then you'll be able to use all its attributes such as minimum and maximum as per its documentation, but then with the possibility to supply request based value expressions. <o:validator validatorId=\"javax.faces.LongRange\" minimum=\"#{item.minimum}\" maximum=\"#{item.maximum}\" />",
         "attribute": [
           {
             "description": "A ValueExpression that evaluates to an object that implements the javax.faces.validator.Validator interface.",
@@ -773,7 +773,7 @@
       },
       {
         "name": "converter",
-        "description": "The <o:converter> basically extends the <f:converter> tag family with the possibility to evaluate the value expression in all attributes on a per request basis instead of on a per view build time basis. This allows the developer to change the attributes on a per request basis.  When you specify for example the standard <f:convertDateTime> by converterId=\"javax.faces.DateTime\" , then you'll be able to use all its attribuces such as pattern and locale as per its documentation, but then with the possibility to supply request based value expressions. <pre>\n<o:converter converterId=\"javax.faces.DateTime\" pattern=\"#{item.pattern}\" locale=\"#{item.locale}\" /> </pre>",
+        "description": "The <o:converter> basically extends the <f:converter> tag family with the possibility to evaluate the value expression in all attributes on a per request basis instead of on a per view build time basis. This allows the developer to change the attributes on a per request basis. When you specify for example the standard <f:convertDateTime> by converterId=\"javax.faces.DateTime\", then you'll be able to use all its attribuces such as pattern and locale as per its documentation, but then with the possibility to supply request based value expressions. <o:converter converterId=\"javax.faces.DateTime\" pattern=\"#{item.pattern}\" locale=\"#{item.locale}\" />",
         "attribute": [
           {
             "description": "A ValueExpression that evaluates to an object that implements the javax.faces.convert.Converter interface.",
@@ -797,7 +797,7 @@
       },
       {
         "name": "inputFile",
-        "description": "The <o:inputFile> is a component that extends the standard <h:inputFile> and adds support for multiple , directory , accept and maxsize attributes, along with built-in server side validation on accept and maxsize attributes. Additionally, it makes sure that the value of HTML file input element is never rendered. The standard <h:inputFile> renders Part#toString() to it which is unnecessary.",
+        "description": "The <o:inputFile> is a component that extends the standard <h:inputFile> and adds support for multiple, directory, accept and maxsize attributes, along with built-in server side validation on accept and maxsize attributes. Additionally, it makes sure that the value of HTML file input element is never rendered. The standard <h:inputFile> renders Part#toString() to it which is unnecessary.",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -824,13 +824,13 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "Whether or not to allow multiple file selection. Defaults to false .",
+            "description": "Whether or not to allow multiple file selection. Defaults to false.",
             "name": "multiple",
             "required": "false",
             "type": "boolean"
           },
           {
-            "description": "Whether or not to enable directory selection. Defaults to false .",
+            "description": "Whether or not to enable directory selection. Defaults to false.",
             "name": "directory",
             "required": "false",
             "type": "boolean"
@@ -860,193 +860,193 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Converter instance\tregistered with\tthis component.",
+            "description": "Converter instanceregistered withthis component.",
             "name": "converter",
             "required": "false",
             "type": "javax.faces.convert.Converter"
           },
           {
-            "description": "A ValueExpression enabled attribute that, if present, will\tbe used as\tthe\ttext of\tthe\tconverter message, replacing any message that comes from\tthe\tconverter.",
+            "description": "A ValueExpression enabled attribute that, if present, willbe used asthetext oftheconverter message, replacing any message that comes fromtheconverter.",
             "name": "converterMessage",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Flag indicating that this component's value must be converted and validated\timmediately\t(that is, during Apply Request Values phase), rather\tthan waiting until Process Validations phase.",
+            "description": "Flag indicating that this component's value must be converted and validatedimmediately(that is, during Apply Request Values phase), ratherthan waiting until Process Validations phase.",
             "name": "immediate",
             "required": "false",
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Flag indicating that the user is required to provide a\tsubmitted value for this input component.",
+            "description": "Flag indicating that the user is required to provide asubmitted value for this input component.",
             "name": "required",
             "required": "false",
             "type": "java.lang.Boolean"
           },
           {
-            "description": "A ValueExpression enabled attribute that, if present, will\tbe used as\tthe\ttext of\tthe\tvalidation message for the \"required\" facility, if the \"required\"\tfacility is\tused.",
+            "description": "A ValueExpression enabled attribute that, if present, willbe used asthetext ofthevalidation message for the \"required\" facility, if the \"required\"facility isused.",
             "name": "requiredMessage",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "MethodExpression representing a validator method that will\tbe called during Process Validations to perform correctness checks on\tthe value of this component. The expression must evaluate to a\tpublic method that\ttakes FacesContext,\tUIComponent, and Object\tparameters, with a return type of void.",
+            "description": "MethodExpression representing a validator method that willbe called during Process Validations to perform correctness checks onthe value of this component. The expression must evaluate to apublic method thattakes FacesContext,UIComponent, and Objectparameters, with a return type of void.",
             "name": "validator",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "MethodExpression representing a\tvalue change listener method that will be notified when a new value has been\tset\tfor\tthis input component. The expression must evaluate to a\tpublic method that\ttakes a\t ValueChangeEvent parameter, with a return type of void,\t<span class=\"changed_added_2_0\">or to a public\tmethod that\ttakes no arguments with\ta return type of void. In the latter\tcase, the method has no\tway\tof easily knowing\twhat the new value is, but this\tcan\tbe useful in cases where a\tnotification is\tneeded that\t\"this value changed\".</span>",
+            "description": "MethodExpression representing avalue change listener method that will be notified when a new value has beensetforthis input component. The expression must evaluate to apublic method thattakes aValueChangeEvent parameter, with a return type of void,or to a publicmethod thattakes no arguments witha return type of void. In the lattercase, the method has nowayof easily knowingwhat the new value is, but thiscanbe useful in cases where anotification isneeded that\"this value changed\".",
             "name": "valueChangeListener",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Direction indication for text that\tdoes not inherit directionality. Valid values are \"LTR\" (left-to-right) and \"RTL\" (right-to-left). These attributes are case sensitive\twhen rendering to XHTML, so care must be taken to have the correct case.",
+            "description": "Direction indication for text thatdoes not inherit directionality. Valid values are \"LTR\" (left-to-right) and \"RTL\" (right-to-left). These attributes are case sensitivewhen rendering to XHTML, so care must be taken to have the correct case.",
             "name": "dir",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Flag indicating that this element must\tnever receive focus\tor be included\tin a subsequent\tsubmit. A value of\tfalse causes no attribute to\tbe rendered, while a value of true causes the attribute to be\trendered as\tdisabled=\"disabled\".",
+            "description": "Flag indicating that this element mustnever receive focusor be includedin a subsequentsubmit. A value offalse causes no attribute tobe rendered, while a value of true causes the attribute to berendered asdisabled=\"disabled\".",
             "name": "disabled",
             "required": "false",
             "type": "java.lang.Boolean"
           },
           {
-            "description": "A localized user presentable name for this\tcomponent.",
+            "description": "A localized user presentable name for thiscomponent.",
             "name": "label",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Code describing the language used in the generated\tmarkup for\tthis component.",
+            "description": "Code describing the language used in the generatedmarkup forthis component.",
             "name": "lang",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Javascript\tcode executed when this\telement\tloses focus.",
+            "description": "Javascriptcode executed when thiselementloses focus.",
             "name": "onblur",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Javascript\tcode executed when this\telement\tloses focus and\tits\tvalue has been modified\tsince gaining focus.",
+            "description": "Javascriptcode executed when thiselementloses focus anditsvalue has been modifiedsince gaining focus.",
             "name": "onchange",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Javascript\tcode executed when a pointer button\tis clicked\tover this element.",
+            "description": "Javascriptcode executed when a pointer buttonis clickedover this element.",
             "name": "onclick",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Javascript\tcode executed when a pointer button\tis double clicked over\tthis element.",
+            "description": "Javascriptcode executed when a pointer buttonis double clicked overthis element.",
             "name": "ondblclick",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Javascript\tcode executed when this\telement\treceives focus.",
+            "description": "Javascriptcode executed when thiselementreceives focus.",
             "name": "onfocus",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Javascript\tcode executed when a key is pressed\tdown over this element.",
+            "description": "Javascriptcode executed when a key is presseddown over this element.",
             "name": "onkeydown",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Javascript\tcode executed when a key is pressed\tand\treleased over this element.",
+            "description": "Javascriptcode executed when a key is pressedandreleased over this element.",
             "name": "onkeypress",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Javascript\tcode executed when a key is released over this element.",
+            "description": "Javascriptcode executed when a key is released over this element.",
             "name": "onkeyup",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Javascript\tcode executed when a pointer button\tis pressed\tdown over this element.",
+            "description": "Javascriptcode executed when a pointer buttonis presseddown over this element.",
             "name": "onmousedown",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Javascript\tcode executed when a pointer button\tis moved within this element.",
+            "description": "Javascriptcode executed when a pointer buttonis moved within this element.",
             "name": "onmousemove",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Javascript\tcode executed when a pointer button\tis moved away from\tthis element.",
+            "description": "Javascriptcode executed when a pointer buttonis moved away fromthis element.",
             "name": "onmouseout",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Javascript\tcode executed when a pointer button\tis moved onto this\telement.",
+            "description": "Javascriptcode executed when a pointer buttonis moved onto thiselement.",
             "name": "onmouseover",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Javascript\tcode executed when a pointer button\tis released over this element.",
+            "description": "Javascriptcode executed when a pointer buttonis released over this element.",
             "name": "onmouseup",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Javascript\tcode executed when text\twithin this element\tis selected\tby the user.",
+            "description": "Javascriptcode executed when textwithin this elementis selectedby the user.",
             "name": "onselect",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Flag indicating that this component will prohibit changes by the\tuser. The element may receive focus unless\tit has also been disabled.\tA value\tof false causes no attribute to\tbe rendered, while a value of true causes the attribute to be\trendered as\treadonly=\"readonly\".",
+            "description": "Flag indicating that this component will prohibit changes by theuser. The element may receive focus unlessit has also been disabled.A valueof false causes no attribute tobe rendered, while a value of true causes the attribute to berendered asreadonly=\"readonly\".",
             "name": "readonly",
             "required": "false",
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Per the WAI-ARIA spec\tand\tits relationship to\tHTML5 (Section title ARIA Role Attriubute), every HTML element may have\ta \"role\" attribute whose value must be\tpassed through unmodified on the element on\twhich it is declared\tin the final rendered markup. The attribute, if specified, must\thave a value that is a string literal that is, or an EL Expression\tthat evaluates to, a set of space-separated\ttokens representing\tthe\tvarious\tWAI-ARIA roles that the element belongs to. It\tis the page\tauthor's responsibility to ensure that the user agent is\tcapable\tof correctly interpreting the value of\tthis attribute.",
+            "description": "Per the WAI-ARIA specandits relationship toHTML5 (Section title ARIA Role Attriubute), every HTML element may havea \"role\" attribute whose value must bepassed through unmodified on the element onwhich it is declaredin the final rendered markup. The attribute, if specified, musthave a value that is a string literal that is, or an EL Expressionthat evaluates to, a set of space-separatedtokens representingthevariousWAI-ARIA roles that the element belongs to. Itis the pageauthor's responsibility to ensure that the user agent iscapableof correctly interpreting the value ofthis attribute.",
             "name": "role",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "The number\tof characters used to determine the\twidth of this field.",
+            "description": "The numberof characters used to determine thewidth of this field.",
             "name": "size",
             "required": "false",
             "type": "int"
           },
           {
-            "description": "CSS style(s) to be\tapplied\twhen this component\tis rendered.",
+            "description": "CSS style(s) to beappliedwhen this componentis rendered.",
             "name": "style",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Space-separated list of CSS style class(es) to\tbe applied when this element is\trendered. This\tvalue must be passed through as the \"class\" attribute on\tgenerated markup.",
+            "description": "Space-separated list of CSS style class(es) tobe applied when this element isrendered. Thisvalue must be passed through as the \"class\" attribute ongenerated markup.",
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Position of this element in the tabbing order for\tthe\tcurrent\tdocument. This\tvalue must be an integer between 0 and 32767.",
+            "description": "Position of this element in the tabbing order forthecurrentdocument. Thisvalue must be an integer between 0 and 32767.",
             "name": "tabindex",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Advisory title\tinformation\tabout markup elements generated for\tthis component.",
+            "description": "Advisory titleinformationabout markup elements generated forthis component.",
             "name": "title",
             "required": "false",
             "type": "java.lang.String"
@@ -1055,7 +1055,7 @@
       },
       {
         "name": "viewParam",
-        "description": " ViewParameter is a component that extends the standard UIViewParameter and provides a stateless mode of operation and fixes the issue wherein null model values are converted to empty string parameters in query string (e.g. when includeViewParams=true ) and the (bean) validation never being triggered when the parameter is completely absent in query string, causing e.g. @NotNull to fail.  The standard UIViewParameter implementation calls the model setter again after postback. This is not always desired when being bound to a view scoped bean and can lead to performance problems when combined with an expensive converter. To solve this, this component by default stores the submitted value as a component property instead of in the model (and thus in the view state in case the binding is to a view scoped bean).  The standard UIViewParameter implementation calls the converter regardless of whether the evaluated model value is null or not. As converters by specification return an empty string in case of null value, this is being added to the query string as an empty parameter. This is not desired.  The standard UIViewParameter implementation uses an internal \"is required\" check when the submitted value is null , hereby completely bypassing the standard UIInput validation, including any bean validation annotations and even the PreValidateEvent and PostValidateEvent events. This is not desired.  You can use it the same way as <f:viewParam> , you only need to change f: to o: .",
+        "description": "ViewParameter is a component that extends the standard UIViewParameter and provides a stateless mode of operation and fixes the issue wherein null model values are converted to empty string parameters in query string (e.g. when includeViewParams=true) and the (bean) validation never being triggered when the parameter is completely absent in query string, causing e.g. @NotNull to fail. The standard UIViewParameter implementation calls the model setter again after postback. This is not always desired when being bound to a view scoped bean and can lead to performance problems when combined with an expensive converter. To solve this, this component by default stores the submitted value as a component property instead of in the model (and thus in the view state in case the binding is to a view scoped bean). The standard UIViewParameter implementation calls the converter regardless of whether the evaluated model value is null or not. As converters by specification return an empty string in case of null value, this is being added to the query string as an empty parameter. This is not desired. The standard UIViewParameter implementation uses an internal \"is required\" check when the submitted value is null, hereby completely bypassing the standard UIInput validation, including any bean validation annotations and even the PreValidateEvent and PostValidateEvent events. This is not desired. You can use it the same way as <f:viewParam>, you only need to change f: to o:.",
         "attribute": [
           {
             "description": "The name of the request parameter from which the value for this component is retrieved on an initial request or to override the stored value on a postback.",
@@ -1145,16 +1145,16 @@
       },
       {
         "name": "viewAction",
-        "description": "The <o:viewAction> is a component that extends the standard <f:viewAction> and changes the if attribute to be evaluated during INVOKE_APPLICATION phase instead of the APPLY_REQUEST_VALUES phase. This allows developers to let the if attribute check the converted and validated model values before performing the view action, which results in much more intuitive behavior.  In below example, the FooConverter may convert a non-null parameter to null without causing a validation or conversion error, and the intent is to redirect the current page to otherpage.xhtml when the converted result is null . <pre> <f:viewParam name=\"foo\" value=\"#{bean.foo}\" converter=\"fooConverter\" /> <f:viewAction action=\"otherpage\" if=\"#{bean.foo eq null}\" /> </pre>  This is however not possible with standard <f:viewAction> as it evaluates the if attribute already before the conversion has taken place. This component solves that by postponing the evaluation of the if attribute to the INVOKE_APPLICATION phase. <pre> <f:viewParam name=\"foo\" value=\"#{bean.foo}\" converter=\"fooConverter\" /> <o:viewAction action=\"otherpage\" if=\"#{bean.foo eq null}\" />  Only when you set immediate=\"true\" , then it will behave the same as the standard <f:viewAction> .",
+        "description": "The <o:viewAction> is a component that extends the standard <f:viewAction> and changes the if attribute to be evaluated during INVOKE_APPLICATION phase instead of the APPLY_REQUEST_VALUES phase. This allows developers to let the if attribute check the converted and validated model values before performing the view action, which results in much more intuitive behavior. In below example, the FooConverter may convert a non-null parameter to null without causing a validation or conversion error, and the intent is to redirect the current page to otherpage.xhtml when the converted result is null. <f:viewParam name=\"foo\" value=\"#{bean.foo}\" converter=\"fooConverter\" /> <f:viewAction action=\"otherpage\" if=\"#{bean.foo eq null}\" /> This is however not possible with standard <f:viewAction> as it evaluates the if attribute already before the conversion has taken place. This component solves that by postponing the evaluation of the if attribute to the INVOKE_APPLICATION phase. <f:viewParam name=\"foo\" value=\"#{bean.foo}\" converter=\"fooConverter\" /> <o:viewAction action=\"otherpage\" if=\"#{bean.foo eq null}\" /> Only when you set immediate=\"true\", then it will behave the same as the standard <f:viewAction>.",
         "attribute": [
           {
-            "description": " MethodExpression representing the application action to invoke when this component is activated by the user. The expression must evaluate to a public method that takes no parameters, and returns an Object (the toString() of which is called to derive the logical outcome) which is passed to the NavigationHandler for this application.",
+            "description": "MethodExpression representing the application action to invoke when this component is activated by the user. The expression must evaluate to a public method that takes no parameters, and returns an Object (the toString() of which is called to derive the logical outcome) which is passed to the NavigationHandler for this application.",
             "name": "action",
             "required": "false",
             "method-signature": "java.lang.Object action()"
           },
           {
-            "description": " MethodExpression representing an action listener method that will be notified when this component is activated by the user. The expression must evaluate to a public method that takes an ActionEvent parameter, with a return type of void, or to a public method that takes no arguments with a return type of void. In the latter case, the method has no way of easily knowing where the event came from, but this can be useful in cases where a notification is needed that \"some action happened\".",
+            "description": "MethodExpression representing an action listener method that will be notified when this component is activated by the user. The expression must evaluate to a public method that takes an ActionEvent parameter, with a return type of void, or to a public method that takes no arguments with a return type of void. In the latter case, the method has no way of easily knowing where the event came from, but this can be useful in cases where a notification is needed that \"some action happened\".",
             "name": "actionListener",
             "required": "false",
             "method-signature": "void actionListener(javax.faces.event.ActionEvent)"
@@ -1187,7 +1187,7 @@
       },
       {
         "name": "resolveComponent",
-        "description": " ResolveComponent is a utility component via which a component can be looked up by its ID and a reference to it put in either the \"facelet scope\" (default) or the request scope.",
+        "description": "ResolveComponent is a utility component via which a component can be looked up by its ID and a reference to it put in either the \"facelet scope\" (default) or the request scope.",
         "attribute": [
           {
             "description": "Name under which the component will be made available to EL, scoped to the body of the Facelets tag (default) or to the request.",
@@ -1202,7 +1202,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Optional scope identifier used to set the scope in which the component reference is inserted. If no scope is specified, the default scope \"facelet\" will be used.  Values values are \"facelet\" (default) and \"request\".",
+            "description": "Optional scope identifier used to set the scope in which the component reference is inserted. If no scope is specified, the default scope \"facelet\" will be used. Values values are \"facelet\" (default) and \"request\".",
             "name": "scope",
             "required": "false",
             "type": "java.lang.String"
@@ -1211,7 +1211,7 @@
       },
       {
         "name": "moveComponent",
-        "description": " MoveComponent is a utility component via which a components and behaviors can be moved to a target component at various ways.",
+        "description": "MoveComponent is a utility component via which a components and behaviors can be moved to a target component at various ways.",
         "attribute": [
           {
             "description": "ID of the target component for which the component moving will be done",
@@ -1220,7 +1220,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "The destination relative to the target component where the source component(s) are moved to. Valid values are <ul> <li> BEFORE - Component is moved right before target component, i.e. as a sibling with an index that's 1 position lower <li> ADD_FIRST - Component is added as the first child of the target component, any other children will have their index increased by 1 <li> ADD_LAST - Component is added as the last child of the target component, any other children will stay at their original location <li> FACET - Component will be moved to the facet section of the target component under the name denoted by \"facet\" <li> BEHAVIOR - A Behavior will be moved to the behavior section of the target component <li> AFTER - Component is moved right after target component, i.e. as a sibling with an index that's 1 position higher </ul>",
+            "description": "The destination relative to the target component where the source component(s) are moved to. Valid values are BEFORE - Component is moved right before target component, i.e. as a sibling with an index that's 1 position lower ADD_FIRST - Component is added as the first child of the target component, any other children will have their index increased by 1 ADD_LAST - Component is added as the last child of the target component, any other children will stay at their original location FACET - Component will be moved to the facet section of the target component under the name denoted by \"facet\" BEHAVIOR - A Behavior will be moved to the behavior section of the target component AFTER - Component is moved right after target component, i.e. as a sibling with an index that's 1 position higher",
             "name": "destination",
             "required": "false",
             "type": "java.lang.String"
@@ -1232,13 +1232,13 @@
             "type": "java.lang.String"
           },
           {
-            "description": "In case the destination is set to BEHAVIOR, the name of the default event that the <b>target</b> component is 'supposed' to have. This normally does not need to be set, but might be needed for some over-eager tag handlers associated with a behavior that in advance try to check whether the behavior event matches with what the component supports.",
+            "description": "In case the destination is set to BEHAVIOR, the name of the default event that the target component is 'supposed' to have. This normally does not need to be set, but might be needed for some over-eager tag handlers associated with a behavior that in advance try to check whether the behavior event matches with what the component supports.",
             "name": "behaviorDefaultEvent",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "In case the destination is set to BEHAVIOR, the comma separated list events that the <b>target</b> component is 'supposed' to support. This normally does not need to be set, but might be needed for some over-eager tag handlers associated with a behavior that in advance try to check whether the behavior event matches with what the component supports.",
+            "description": "In case the destination is set to BEHAVIOR, the comma separated list events that the target component is 'supposed' to support. This normally does not need to be set, but might be needed for some over-eager tag handlers associated with a behavior that in advance try to check whether the behavior event matches with what the component supports.",
             "name": "behaviorEvents",
             "required": "false",
             "type": "java.lang.String"
@@ -1247,7 +1247,7 @@
       },
       {
         "name": "methodParam",
-        "description": "  o:methodParam  is a tag handler that can be used to pass a method expression into a Facelets tag.  By default this is not possible, and the expression that's intended to be a method expression will be created and made available as a value expression. This handler should be placed inside a Facelets tag as follows: <pre>\n<ui:composition xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:ui=\"http://java.sun.com/jsf/facelets\" xmlns:h=\"http://java.sun.com/jsf/html\" xmlns:o=\"http://omnifaces.org/ui\"\n> <o:methodParam name=\"method\" value=\"#{action}\"/> <h:commandButton value=\"test\" action=\"#{method}\" /> </ui:composition> </pre>  Assuming the above is a tag called actionmethod in the namespace test , a method can be passed into it as follows: <pre>\n<test:actionmethod action=\"#{methodParamBean.doAction}\" /> </pre>  In case a method with no parameters is passed that is to be used as an action listener with no parameters, then the component using this method unfortunely has to be wrapped by a component that puts the method in request scoped (with nested visibility), e.g. by using ui:repeat as follows: <pre>\n<ui:repeat var=\"method\" value=\"#{method}\"> <h:commandButton value=\"test\" actionListener=\"#{method}\" />\n</ui:repeat> </pre>  Using modern EL implementations, this is not needed in case the EL expression references the method using explicit parenthesis, e.g. #{methodParamBean.doAction()} ",
+        "description": "o:methodParam is a tag handler that can be used to pass a method expression into a Facelets tag. By default this is not possible, and the expression that's intended to be a method expression will be created and made available as a value expression. This handler should be placed inside a Facelets tag as follows: <ui:composition xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:ui=\"http://java.sun.com/jsf/facelets\" xmlns:h=\"http://java.sun.com/jsf/html\" xmlns:o=\"http://omnifaces.org/ui\"> <o:methodParam name=\"method\" value=\"#{action}\"/> <h:commandButton value=\"test\" action=\"#{method}\" /> </ui:composition> Assuming the above is a tag called actionmethod in the namespace test, a method can be passed into it as follows: <test:actionmethod action=\"#{methodParamBean.doAction}\" /> In case a method with no parameters is passed that is to be used as an action listener with no parameters, then the component using this method unfortunely has to be wrapped by a component that puts the method in request scoped (with nested visibility), e.g. by using ui:repeat as follows: <ui:repeat var=\"method\" value=\"#{method}\"> <h:commandButton value=\"test\" actionListener=\"#{method}\" /></ui:repeat> Using modern EL implementations, this is not needed in case the EL expression references the method using explicit parenthesis, e.g. #{methodParamBean.doAction()}",
         "attribute": [
           {
             "description": "Name under which the method expression will be made available to EL, scoped to the body of the Facelets tag.",
@@ -1274,7 +1274,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "The default value to be used when actual value is null .",
+            "description": "The default value to be used when actual value is null.",
             "name": "default",
             "required": "false",
             "type": "java.lang.Object"
@@ -1283,7 +1283,7 @@
       },
       {
         "name": "componentIdParam",
-        "description": " ComponentIdParam is a component that allows component ids to be provided as request parameters causing only components with matching ids to be rendered.  Both simple component ids as well as client ids are supported. Components can be rendered without their parents having to be rendered. As such, e.g. single rows appearing in a table can be rendered without any of the surrounding markup appearing in the response.  The intended usage of this component is to allow client-side scripts to request markup for specific components via a GET request (as opposed to AJAX based post-backs).  This component is used in the same way view parameters are and needs to be put into the metadata section of a Facelet.",
+        "description": "ComponentIdParam is a component that allows component ids to be provided as request parameters causing only components with matching ids to be rendered. Both simple component ids as well as client ids are supported. Components can be rendered without their parents having to be rendered. As such, e.g. single rows appearing in a table can be rendered without any of the surrounding markup appearing in the response. The intended usage of this component is to allow client-side scripts to request markup for specific components via a GET request (as opposed to AJAX based post-backs). This component is used in the same way view parameters are and needs to be put into the metadata section of a Facelet.",
         "attribute": [
           {
             "description": "The name of the request parameters from which the values are retrieved on an initial request that represent component ids of those components from which the markup should appear in the response (i.e. which should be rendered)",
@@ -1298,7 +1298,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Whether children of the components identified by clientIdName or componentIdName are rendered in addition to the component itself. Defaults to true ",
+            "description": "Whether children of the components identified by clientIdName or componentIdName are rendered in addition to the component itself. Defaults to true",
             "name": "renderChildren",
             "required": "false",
             "type": "boolean"
@@ -1319,28 +1319,28 @@
       },
       {
         "name": "outputFormat",
-        "description": " OutputFormat is a component that extends the standard HtmlOutputFormat and provides support for capturing the output and exposing it into the request scope by the variable name as specified by the var attribute.",
+        "description": "OutputFormat is a component that extends the standard HtmlOutputFormat and provides support for capturing the output and exposing it into the request scope by the variable name as specified by the var attribute.",
         "attribute": [
           {
-            "description": "Converter instance registered with this\tcomponent.",
+            "description": "Converter instance registered with thiscomponent.",
             "name": "converter",
             "required": "false",
             "type": "javax.faces.convert.Converter"
           },
           {
-            "description": "The\tcomponent identifier for this component. This value\tmust be unique within the closest parent component that\tis a naming container.",
+            "description": "Thecomponent identifier for this component. This valuemust be unique within the closest parent component thatis a naming container.",
             "name": "id",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Flag indicating\twhether\tor not this\tcomponent should be\trendered (during\tRender Response\tPhase),\tor processed on\tany\tsubsequent form submit. The default value for this\tproperty is\ttrue.",
+            "description": "Flag indicatingwhetheror not thiscomponent should berendered (duringRender ResponsePhase),or processed onanysubsequent form submit. The default value for thisproperty istrue.",
             "name": "rendered",
             "required": "false",
             "type": "boolean"
           },
           {
-            "description": "The\tcurrent\tvalue of this component.",
+            "description": "Thecurrentvalue of this component.",
             "name": "value",
             "required": "false",
             "type": "java.lang.Object"
@@ -1351,43 +1351,43 @@
             "required": "false"
           },
           {
-            "description": "Direction indication for text that does\tnot\tinherit directionality. Valid values are \"LTR\" (left-to-right) and \"RTL\" (right-to-left).",
+            "description": "Direction indication for text that doesnotinherit directionality. Valid values are \"LTR\" (left-to-right) and \"RTL\" (right-to-left).",
             "name": "dir",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Flag indicating\tthat characters\tthat are sensitive in HTML\tand\tXML\tmarkup must\tbe escaped.\tThis flag is set to \"true\" by\tdefault.",
+            "description": "Flag indicatingthat charactersthat are sensitive in HTMLandXMLmarkup mustbe escaped.This flag is set to \"true\" bydefault.",
             "name": "escape",
             "required": "false",
             "type": "boolean"
           },
           {
-            "description": "Code describing\tthe\tlanguage used in the generated markup for\tthis component.",
+            "description": "Code describingthelanguage used in the generated markup forthis component.",
             "name": "lang",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "CSS\tstyle(s) to\tbe applied when\tthis component is rendered.",
+            "description": "CSSstyle(s) tobe applied whenthis component is rendered.",
             "name": "style",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Space-separated\tlist of\tCSS\tstyle class(es)\tto be applied when this element is\trendered. This value must be passed\tthrough as the \"class\" attribute on\tgenerated markup.",
+            "description": "Space-separatedlist ofCSSstyle class(es)to be applied when this element isrendered. This value must be passedthrough as the \"class\" attribute ongenerated markup.",
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Advisory title information about markup\telements generated for\tthis component.",
+            "description": "Advisory title information about markupelements generated forthis component.",
             "name": "title",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "The\tValueExpression\tlinking\tthis component to a\tproperty in\ta backing\tbean",
+            "description": "TheValueExpressionlinkingthis component to aproperty ina backingbean",
             "name": "binding",
             "required": "false",
             "type": "javax.faces.component.UIComponent"
@@ -1396,7 +1396,7 @@
       },
       {
         "name": "outputLabel",
-        "description": "  o:outputLabel  is a component that extends the standard outputLabel and provides extra support for automatically setting its value as the label of the component identified by its for attribute.  It renders an HTML \"label\" element. If a \"for\" attribute is specified, the component specified by the value of the \"for\" attribute is queried for its client id, which is then rendered as the value of the \"for\" attribute of the HTML label element.",
+        "description": "o:outputLabel is a component that extends the standard outputLabel and provides extra support for automatically setting its value as the label of the component identified by its for attribute. It renders an HTML \"label\" element. If a \"for\" attribute is specified, the component specified by the value of the \"for\" attribute is queried for its client id, which is then rendered as the value of the \"for\" attribute of the HTML label element.",
         "attribute": [
           {
             "description": "Converter instance registered with this component.",
@@ -1609,13 +1609,13 @@
             "type": "java.lang.String"
           },
           {
-            "description": "The resource name of the resource. Works the same way as on <h:graphicImage> . When this attribute is specified, 'value', 'type' and 'lastModified' attributes are ignored.",
+            "description": "The resource name of the resource. Works the same way as on <h:graphicImage>. When this attribute is specified, 'value', 'type' and 'lastModified' attributes are ignored.",
             "name": "name",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "The resource library name of the resource. Works the same way as on <h:graphicImage> . This attribtue is only used when 'name' attribute is specified.",
+            "description": "The resource library name of the resource. Works the same way as on <h:graphicImage>. This attribtue is only used when 'name' attribute is specified.",
             "name": "library",
             "required": "false",
             "type": "java.lang.String"
@@ -1756,7 +1756,7 @@
       },
       {
         "name": "url",
-        "description": "The <o:url> is a component which renders the given target URL or JSF view ID as a bookmarkable URL with support for adding additional query string parameters to the URL via nested <f:param> and <o:param> , and for exposing it into the request scope by the variable name as specified by the var attribute instead of rendering it.",
+        "description": "The <o:url> is a component which renders the given target URL or JSF view ID as a bookmarkable URL with support for adding additional query string parameters to the URL via nested <f:param> and <o:param>, and for exposing it into the request scope by the variable name as specified by the var attribute instead of rendering it.",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -1794,19 +1794,19 @@
             "type": "java.lang.String"
           },
           {
-            "description": "The domain of the URL. Valid formats are: http://example.com , //example.com , example.com , / and // . If the value equals / , then the URL becomes domain-relative. If the value equals // , then the URL becomes scheme-relative. Defaults to current domain. This is ignored when value attribute is specified.",
+            "description": "The domain of the URL. Valid formats are: http://example.com, //example.com, example.com, / and //. If the value equals /, then the URL becomes domain-relative. If the value equals //, then the URL becomes scheme-relative. Defaults to current domain. This is ignored when value attribute is specified.",
             "name": "domain",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Whether to include view parameters in the URL. Defaults to false. This setting is ignored when includeRequestParams is set to true .",
+            "description": "Whether to include view parameters in the URL. Defaults to false. This setting is ignored when includeRequestParams is set to true.",
             "name": "includeViewParams",
             "required": "false",
             "type": "boolean"
           },
           {
-            "description": "Whether to include request query string parameters in the URL. Defaults to false. When this setting is set to true , includeViewParams is ignored.",
+            "description": "Whether to include request query string parameters in the URL. Defaults to false. When this setting is set to true, includeViewParams is ignored.",
             "name": "includeRequestParams",
             "required": "false",
             "type": "boolean"
@@ -1815,7 +1815,7 @@
       },
       {
         "name": "form",
-        "description": " Form is a component that extends the standard UIForm and submits by default to current request URI with query string and offers in combination with the <o:ignoreValidationFailed> tag on an UICommand component the possibility to ignore validation failures so that the invoke action phase will be executed anyway. It also supports adding custom query string parameters via a nested <o|h:param> .",
+        "description": "Form is a component that extends the standard UIForm and submits by default to current request URI with query string and offers in combination with the <o:ignoreValidationFailed> tag on an UICommand component the possibility to ignore validation failures so that the invoke action phase will be executed anyway. It also supports adding custom query string parameters via a nested <o|h:param>.",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -1977,40 +1977,40 @@
       },
       {
         "name": "cache",
-        "description": " Cache is a component that initially renders the output of its children into a buffer instead of to the response. This output is then inserted into a cache and on subsequent requests the content retrieved from the cache is used.  By default the viewid concatenated to the component id via an underscore is used as the cache key.  Note that this component does not support a cache loader and locking mechanism. This mean several simultaenous page requests may render the same content and it's undetermined which of those will end up being cached.  An optional caching provider (see below) can be set to control the caching implementation that is used for the actual caching. If no such provider is installed, a default caching implementation is used that's based on <a href=\"https://github.com/ben-manes/concurrentlinkedhashmap\">https://github.com/ben-manes/concurrentlinkedhashmap</a> in case a maximum cache capacity is set, or on a plain ConcurrentMap if no capacity is set. <hr> <h3>Setting a custom caching provider</h3> A custom caching provider can be set by using the org.omnifaces.CACHE_PROVIDER context parameter in web.xml to point to an implementation of org.omnifaces.component.output.cache.CacheProvider . For example: <pre>\n<context-param> <param-name>org.omnifaces.CACHE_PROVIDER</param-name> <param-value>com.example.MyProvider</param-value>\n</context-param> </pre>  The default provider, org.omnifaces.component.output.cache.DefaultCacheProvider can be used as an example. <hr> <h3>Global settings</h3> For the default provider, the maximum capacity and the default time to live can be specified for the supported scopes \"session\" and \"application\". If the maximum capacity is reached, an entry will be evicted following a least recently used policy. The default time to live specifies for how long entries are considered to be valid. A value for the time attribute on this component will override this global default time to live. The following context parameters can be used in web.xml:  <table> <tr> <td nowrap> org.omnifaces.CACHE_SETTING_APPLICATION_MAX_CAPACITY </td> <td>Sets the maximum number of elements that will be stored per web module (application scope). Default: no limit</td> </tr> <tr> <td nowrap> org.omnifaces.CACHE_SETTING_SESSION_MAX_CAPACITY </td> <td>Sets the maximum number of elements that will be stored per session. Default: no limit</td> </tr> <tr> <td nowrap> org.omnifaces.CACHE_SETTING_APPLICATION_TTL </td> <td>Sets the maximum amount of time in seconds that cached content is valid for the application scope. Can be overriden by individal cache components. Default: no limit</td> </tr> <tr> <td nowrap> org.omnifaces.CACHE_SETTING_SESSION_TTL </td> <td>Sets the maximum amount of time in seconds that cached content is valid for the session scope. Can be overriden by individal cache components. Default: no limit</td> </tr> <tr> <td nowrap> org.omnifaces.CACHE_INSTALL_BUFFER_FILTER </td> <td>Boolean that when true installs a Servlet Filter (Servlet 3.0+ only) that works in conjunction with the useBuffer attribute of the Cache component to enable an alternative way to grab the content that needs to be cached. This is a convenience setting that is a short-cut for installing the org.omnifaces.servlet.BufferedHttpServletResponse filter manually. If more finegrained control is needed regarding which place in the filter chain the filter appears and which resources it exactly filters, this setting should not be used and the mentioned filter should be manually configured. Default: false ) </td> </tr> </table>",
+        "description": "Cache is a component that initially renders the output of its children into a buffer instead of to the response. This output is then inserted into a cache and on subsequent requests the content retrieved from the cache is used. By default the viewid concatenated to the component id via an underscore is used as the cache key. Note that this component does not support a cache loader and locking mechanism. This mean several simultaenous page requests may render the same content and it's undetermined which of those will end up being cached. An optional caching provider (see below) can be set to control the caching implementation that is used for the actual caching. If no such provider is installed, a default caching implementation is used that's based on https://github.com/ben-manes/concurrentlinkedhashmap in case a maximum cache capacity is set, or on a plain ConcurrentMap if no capacity is set. Setting a custom caching provider A custom caching provider can be set by using the org.omnifaces.CACHE_PROVIDER context parameter in web.xml to point to an implementation of org.omnifaces.component.output.cache.CacheProvider. For example: <context-param> <param-name>org.omnifaces.CACHE_PROVIDER</param-name> <param-value>com.example.MyProvider</param-value></context-param> The default provider, org.omnifaces.component.output.cache.DefaultCacheProvider can be used as an example. Global settings For the default provider, the maximum capacity and the default time to live can be specified for the supported scopes \"session\" and \"application\". If the maximum capacity is reached, an entry will be evicted following a least recently used policy. The default time to live specifies for how long entries are considered to be valid. A value for the time attribute on this component will override this global default time to live. The following context parameters can be used in web.xml: org.omnifaces.CACHE_SETTING_APPLICATION_MAX_CAPACITY Sets the maximum number of elements that will be stored per web module (application scope). Default: no limit org.omnifaces.CACHE_SETTING_SESSION_MAX_CAPACITY Sets the maximum number of elements that will be stored per session. Default: no limit org.omnifaces.CACHE_SETTING_APPLICATION_TTL Sets the maximum amount of time in seconds that cached content is valid for the application scope. Can be overriden by individal cache components. Default: no limit org.omnifaces.CACHE_SETTING_SESSION_TTL Sets the maximum amount of time in seconds that cached content is valid for the session scope. Can be overriden by individal cache components. Default: no limit org.omnifaces.CACHE_INSTALL_BUFFER_FILTER Boolean that when true installs a Servlet Filter (Servlet 3.0+ only) that works in conjunction with the useBuffer attribute of the Cache component to enable an alternative way to grab the content that needs to be cached. This is a convenience setting that is a short-cut for installing the org.omnifaces.servlet.BufferedHttpServletResponse filter manually. If more finegrained control is needed regarding which place in the filter chain the filter appears and which resources it exactly filters, this setting should not be used and the mentioned filter should be manually configured. Default: false)",
         "attribute": [
           {
-            "description": "Optional key used to store content in the cache. If no key is specified, a key is calculated based on the client Id of this component.  While auto-generated keys can be convenient, note that in the face of dynamic behavior on a view the id of a component and thus the cache key can change in ways that are difficult to predict.  Keys are relative to the scope for which they are defined, meaning a key \"foo\" for the a session scoped cache will not conflict with a key of the same name for an application scoped cache.",
+            "description": "Optional key used to store content in the cache. If no key is specified, a key is calculated based on the client Id of this component. While auto-generated keys can be convenient, note that in the face of dynamic behavior on a view the id of a component and thus the cache key can change in ways that are difficult to predict. Keys are relative to the scope for which they are defined, meaning a key \"foo\" for the a session scoped cache will not conflict with a key of the same name for an application scoped cache.",
             "name": "key",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Optional scope identifier used to set the scope in which caching takes place. If no scope is specified, the default scope \"session\" will be used.  The supported scopes depent on the caching provider that is installed via the org.omnifaces.CACHE_PROVIDER . If no such provider is installed, a default one is used that supports scopes \"session\" and \"application\".  A runtime exception will be thrown if an unsupported value for scope is used.",
+            "description": "Optional scope identifier used to set the scope in which caching takes place. If no scope is specified, the default scope \"session\" will be used. The supported scopes depent on the caching provider that is installed via the org.omnifaces.CACHE_PROVIDER. If no such provider is installed, a default one is used that supports scopes \"session\" and \"application\". A runtime exception will be thrown if an unsupported value for scope is used.",
             "name": "scope",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Optional amount of time in seconds for which the cached content is valid (TTL). This is counted from the moment content is actually added to the cache. If no time is provided the content will be subject to the global cache settings, and in absence of these are subject to the behavior of the cache implementation that is used. The default cache implementation will simply cache indefinitely.  Whether the content is actually removed from the cache (to preserve memory) after the given time has elapsed is dependend on the actual cache implementation that is used. The default cache implementation will NOT do this automatically, but will instead remove it only when the cache item is being accessed again.  Following the above, new content will only be inserted into the cache following a page request. A time of e.g. 30 will not cause new content to be inserted into the cache at 30 seconds intervals.  Note that this component does not support a cache loader and locking mechanism. This means after content times out, several simultaneous page requests may render the same content and it's undetermined which of those will end up being cached.",
+            "description": "Optional amount of time in seconds for which the cached content is valid (TTL). This is counted from the moment content is actually added to the cache. If no time is provided the content will be subject to the global cache settings, and in absence of these are subject to the behavior of the cache implementation that is used. The default cache implementation will simply cache indefinitely. Whether the content is actually removed from the cache (to preserve memory) after the given time has elapsed is dependend on the actual cache implementation that is used. The default cache implementation will NOT do this automatically, but will instead remove it only when the cache item is being accessed again. Following the above, new content will only be inserted into the cache following a page request. A time of e.g. 30 will not cause new content to be inserted into the cache at 30 seconds intervals. Note that this component does not support a cache loader and locking mechanism. This means after content times out, several simultaneous page requests may render the same content and it's undetermined which of those will end up being cached.",
             "name": "time",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Switches to an alternative method to grab the content generated by the children of this component. Default is false .  Normally this content is obtained by replacing the so-called response writer when the parent Cache component delegates rendering to its children. However, in some cases (like h:form ) there is an amount of post-processing being done on the response outside the context of this parent - child delegation.  Via this switch, the full response is buffered if the cache doesn't contain content for this component and special markers are inserted surrounding the children's rendering. Afterwards, the content between the markers (if any) is extracted and inserted into the cache. Note that the full response is only buffered incase there's no value in the cache. For all other requests this buffering will not happen.  Since this is clearly a more resource intensive and invasive method to grab content, it's not enabled by default. In addition to setting this attribute to true , the org.omnifaces.servlet.BufferedHttpServletResponse Servlet Filter needs to be configured to filter the Faces Servlet (or alternatively just the pages for which the buffering method should be used).",
+            "description": "Switches to an alternative method to grab the content generated by the children of this component. Default is false. Normally this content is obtained by replacing the so-called response writer when the parent Cache component delegates rendering to its children. However, in some cases (like h:form) there is an amount of post-processing being done on the response outside the context of this parent - child delegation. Via this switch, the full response is buffered if the cache doesn't contain content for this component and special markers are inserted surrounding the children's rendering. Afterwards, the content between the markers (if any) is extracted and inserted into the cache. Note that the full response is only buffered incase there's no value in the cache. For all other requests this buffering will not happen. Since this is clearly a more resource intensive and invasive method to grab content, it's not enabled by default. In addition to setting this attribute to true, the org.omnifaces.servlet.BufferedHttpServletResponse Servlet Filter needs to be configured to filter the Faces Servlet (or alternatively just the pages for which the buffering method should be used).",
             "name": "useBuffer",
             "required": "false",
             "type": "boolean"
           },
           {
-            "description": "Resets the cache when set to true . Default is false .  This attribute can be used to reset the cache, meaning that the first time the cache component is rendered again, it will re-render its children and will cause any cached value expressions (via o:cacheValue ) to be re-evaluated when its next referenced.  Note that this value has to remain true until the cache component is rendered, after that it should be set to false again otherwise the cached content will be reset again at the next rendering.",
+            "description": "Resets the cache when set to true. Default is false. This attribute can be used to reset the cache, meaning that the first time the cache component is rendered again, it will re-render its children and will cause any cached value expressions (via o:cacheValue) to be re-evaluated when its next referenced. Note that this value has to remain true until the cache component is rendered, after that it should be set to false again otherwise the cached content will be reset again at the next rendering.",
             "name": "reset",
             "required": "false",
             "type": "boolean"
           },
           {
-            "description": "Disables the cache when set to true . Default is false .  This attribute can be used to disable the cache (temporarily). In disabled state the children will be rendered directly and cached content (if any) will not be used, nor will the rendering outcome of the children be cached.  When the attribute is set to false again any content that was cached before the cache was disabled will be shown again if said content is still available in the cache. The content that was rendered when the cache was disabled has no effect on any such previously cached content.",
+            "description": "Disables the cache when set to true. Default is false. This attribute can be used to disable the cache (temporarily). In disabled state the children will be rendered directly and cached content (if any) will not be used, nor will the rendering outcome of the children be cached. When the attribute is set to false again any content that was cached before the cache was disabled will be shown again if said content is still available in the cache. The content that was rendered when the cache was disabled has no effect on any such previously cached content.",
             "name": "disabled",
             "required": "false",
             "type": "boolean"
@@ -2019,7 +2019,7 @@
       },
       {
         "name": "cacheValue",
-        "description": "Tag handler (runs at tree build-time) that makes a value expression available under the given name that caches its value. Although the value expressions scope is that of the entire Facelet in which this tag appears, the value it self is cached using the parent Cache component.  This means that if the parent o:Cache component clears its cache (e.g. because of time to live expiration), the value cached by this value expression will be automatically cleared as well.  The direct parent of this component <b>MUST</b> be o:Cache or a potential subclass of the associated UIComponent. It's an error to have any other kind of parent.  The intended use of this is to explicitly cache a value expression that is used by one of the component children of o:Cache , so that even after a post-back (where the cached markup is of nu use) the original value expression will not be re-evaluated.",
+        "description": "Tag handler (runs at tree build-time) that makes a value expression available under the given name that caches its value. Although the value expressions scope is that of the entire Facelet in which this tag appears, the value it self is cached using the parent Cache component. This means that if the parent o:Cache component clears its cache (e.g. because of time to live expiration), the value cached by this value expression will be automatically cleared as well. The direct parent of this component MUST be o:Cache or a potential subclass of the associated UIComponent. It's an error to have any other kind of parent. The intended use of this is to explicitly cache a value expression that is used by one of the component children of o:Cache, so that even after a post-back (where the cached markup is of nu use) the original value expression will not be re-evaluated.",
         "attribute": [
           {
             "description": "Name under which the value expression will be made available to EL, scoped to the Facelet in which this tag occurs.",
@@ -2037,7 +2037,7 @@
       },
       {
         "name": "importConstants",
-        "description": " The <o:importConstants> allows the developer to have a mapping of all constant field values of the given type in the request scope. The constant field values are those public static final fields. This works for classes, interfaces and enums. For example: <pre>\npublic class Foo { public static final String FOO1 = \"foo1\"; public static final String FOO2 = \"foo2\";\n} public interface Bar { public static final String BAR1 = \"bar1\"; public static final String BAR2 = \"bar2\";\n} public enum Baz { BAZ1, BAZ2;\n} </pre> The constant field values of the above types can be mapped into the request scope as follows: <pre>\n<o:importConstants type=\"com.example.Foo\" />\n<o:importConstants type=\"com.example.Bar\" />\n<o:importConstants type=\"com.example.Baz\" var=\"Bazzz\" />\n...\n#{Foo.FOO1}, #{Foo.FOO2}, #{Bar.BAR1}, #{Bar.BAR2}, #{Bazzz.BAZ1}, #{Bazzz.BAZ2} </pre> The map is by default stored in the request scope by the simple name of the type as variable name. You can override this by explicitly specifying the var attribute, as demonstrated for com.example.Baz in the above example.  The resolved constants are by reference stored in the cache to improve retrieving performance.",
+        "description": "The <o:importConstants> allows the developer to have a mapping of all constant field values of the given type in the request scope. The constant field values are those public static final fields. This works for classes, interfaces and enums. For example: public class Foo { public static final String FOO1 = \"foo1\"; public static final String FOO2 = \"foo2\";} public interface Bar { public static final String BAR1 = \"bar1\"; public static final String BAR2 = \"bar2\";} public enum Baz { BAZ1, BAZ2;} The constant field values of the above types can be mapped into the request scope as follows: <o:importConstants type=\"com.example.Foo\" /><o:importConstants type=\"com.example.Bar\" /><o:importConstants type=\"com.example.Baz\" var=\"Bazzz\" />...#{Foo.FOO1}, #{Foo.FOO2}, #{Bar.BAR1}, #{Bar.BAR2}, #{Bazzz.BAZ1}, #{Bazzz.BAZ2} The map is by default stored in the request scope by the simple name of the type as variable name. You can override this by explicitly specifying the var attribute, as demonstrated for com.example.Baz in the above example. The resolved constants are by reference stored in the cache to improve retrieving performance.",
         "attribute": [
           {
             "description": "The fully qualified name of the class/interface/enum to import the constant field values for.",
@@ -2054,7 +2054,7 @@
       },
       {
         "name": "importFunctions",
-        "description": " The <o:importFunctions> allows the developer to have access to all functions of the given fully qualified name of a type in the Facelet scope using the usual EL functions syntax without the need to register them in .taglib.xml file. The functions are those public static methods with a non - void return type. For example: <pre>\n<o:importFunctions type=\"java.lang.Math\" var=\"m\" />\n<o:importFunctions type=\"org.omnifaces.util.Faces\" />\n...\n#{m:abs(-10)}\n#{m:max(bean.number1, bean.number2)}\n...\n<base href=\"#{Faces:getRequestBaseURL()}\" /> </pre> The functions prefix becomes by default the simple name of the type. You can override this by explicitly specifying the var attribute. If there are multiple function methods with exactly the same name, then the one with the least amount of parameters will be used. If there are multiple function methods with exactly the same name and amount of parameters, then the choice is unspecified (technically, JVM-dependent) and should not be relied upon. So if you absolutely need to differentiate functions in such case, give them each a different name. Note that the colon : operator to invoke the method is as required by EL functions spec. It's by design not easily possible to change it to the period . operator. Also note that in case of org.omnifaces.util.Faces it's considered poor practice if the same functionality is already available through the implicit EL variables #{facesContext} , #{view} , #{request} , etc such as #{request.contextPath} which should be preferred over #{Faces:getRequestContextPath()} .  The resolved functions are by reference stored in the cache to improve retrieving performance.",
+        "description": "The <o:importFunctions> allows the developer to have access to all functions of the given fully qualified name of a type in the Facelet scope using the usual EL functions syntax without the need to register them in .taglib.xml file. The functions are those public static methods with a non-void return type. For example: <o:importFunctions type=\"java.lang.Math\" var=\"m\" /><o:importFunctions type=\"org.omnifaces.util.Faces\" />...#{m:abs(-10)}#{m:max(bean.number1, bean.number2)}...<base href=\"#{Faces:getRequestBaseURL()}\" /> The functions prefix becomes by default the simple name of the type. You can override this by explicitly specifying the var attribute. If there are multiple function methods with exactly the same name, then the one with the least amount of parameters will be used. If there are multiple function methods with exactly the same name and amount of parameters, then the choice is unspecified (technically, JVM-dependent) and should not be relied upon. So if you absolutely need to differentiate functions in such case, give them each a different name. Note that the colon : operator to invoke the method is as required by EL functions spec. It's by design not easily possible to change it to the period . operator. Also note that in case of org.omnifaces.util.Faces it's considered poor practice if the same functionality is already available through the implicit EL variables #{facesContext}, #{view}, #{request}, etc such as #{request.contextPath} which should be preferred over #{Faces:getRequestContextPath()}. The resolved functions are by reference stored in the cache to improve retrieving performance.",
         "attribute": [
           {
             "description": "The fully qualified name of the class to import the public static non-void methods for.",
@@ -2071,22 +2071,22 @@
       },
       {
         "name": "ignoreValidationFailed",
-        "description": "The <o:ignoreValidationFailed> allows the developer to ignore validation failures when executing an UICommand action. This taghandler must be placed inside an UICommand component and the parent UIForm must be an <o:form> .  Any validation errors will be ignored and thus not be displayed. Note that the model values will (obviously) only be updated for components which have passed the validation.",
+        "description": "The <o:ignoreValidationFailed> allows the developer to ignore validation failures when executing an UICommand action. This taghandler must be placed inside an UICommand component and the parent UIForm must be an <o:form>. Any validation errors will be ignored and thus not be displayed. Note that the model values will (obviously) only be updated for components which have passed the validation.",
         "attribute": []
       },
       {
         "name": "skipValidators",
-        "description": "The <o:skipValidators> allows the developer to skip validators when executing a submit. This taghandler must be placed inside the component that invokes the submit, may be an UICommand (both ajaxified or not) as well as any ClientBehaviorHolder (ajax enabled) component.  Validation will happen, but no validator will be executed since they will be temporary detached from processed components. Conversion errors could still occur. Note that the model values will be updated for all processed components.",
+        "description": "The <o:skipValidators> allows the developer to skip validators when executing a submit. This taghandler must be placed inside the component that invokes the submit, may be an UICommand (both ajaxified or not) as well as any ClientBehaviorHolder (ajax enabled) component. Validation will happen, but no validator will be executed since they will be temporary detached from processed components. Conversion errors could still occur. Note that the model values will be updated for all processed components.",
         "attribute": []
       },
       {
         "name": "enableRestorableView",
-        "description": "The <o:enableRestorableView> instructs the view handler to recreate the entire view whenever the view has been expired, i.e. whenever #restoreView(FacesContext, String) returns null and the current request is a postback. This effectively prevents ViewExpiredException on the view. This tag needs to be placed in <f:metadata> of the view.  There are however technical design limitations: please consult the javadoc for details. To the point, the bean associated with the view has to be exclusively request scoped in order to properly recreate the same view.",
+        "description": "The <o:enableRestorableView> instructs the view handler to recreate the entire view whenever the view has been expired, i.e. whenever #restoreView(FacesContext, String) returns null and the current request is a postback. This effectively prevents ViewExpiredException on the view. This tag needs to be placed in <f:metadata> of the view. There are however technical design limitations: please consult the javadoc for details. To the point, the bean associated with the view has to be exclusively request scoped in order to properly recreate the same view.",
         "attribute": []
       },
       {
         "name": "validateBean",
-        "description": "The <o:validateBean> allows the developer to control bean validation groups on a per- UICommand or UIInput component basis. Usage example: <pre>\n<h:commandButton> <o:validateBean groups=\"javax.validation.groups.Default,com.example.MyGroup\"/>\n</h:commandButton> </pre>",
+        "description": "The <o:validateBean> allows the developer to control bean validation groups on a per-UICommand or UIInput component basis. Usage example: <h:commandButton> <o:validateBean groups=\"javax.validation.groups.Default,com.example.MyGroup\"/></h:commandButton>",
         "attribute": [
           {
             "description": "A comma-separated list of validation groups. A validation group is a fully-qualified class name.",
@@ -2119,7 +2119,7 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "The identifier for which this validator should show the message. Defaults to \"@form\" which is the parent UIForm . Other available values are \"@all\" which will show the message for all invalidated components, \"@global\" which will show a global message, and \"@violating\" which will match components by ConstraintViolation Property Path. Any other space separated value will be treated as client ID of UI input component.",
+            "description": "The identifier for which this validator should show the message. Defaults to \"@form\" which is the parent UIForm. Other available values are \"@all\" which will show the message for all invalidated components, \"@global\" which will show a global message, and \"@violating\" which will match components by ConstraintViolation Property Path. Any other space separated value will be treated as client ID of UI input component.",
             "name": "showMessageFor",
             "required": "false",
             "type": "java.lang.String"
@@ -2128,7 +2128,7 @@
       },
       {
         "name": "validateUniqueColumn",
-        "description": " ValidateUniqueColumn validates if the given UIInput component in an UIData component has an unique value throughout all rows, also those not visible by pagination. This validator works directly on the data model and may therefore not work as expected if the data model does not represent all available rows of the UIData component (e.g. when there's means of lazy loading).  The default message is <blockquote>{0}: Please fill out an unique value for the entire column. Duplicate found in row {1}</blockquote>  Usage example: <pre>\n<h:dataTable value=\"#{bean.items}\" var=\"item\"> <h:column> <h:inputText value=\"#{item.value}\"> <o:validateUniqueColumn /> </h:inputText> </h:column>\n</h:dataTable> </pre>  In an invalidating case, only the first row on which the value is actually changed (i.e. the value change event has been fired on the input component in the particular row) will be marked invalid and a faces message will be added on the client ID of the input component in the particular row. The default message can be changed by the message attribute. Any \"{0}\" placeholder in the message will be substituted with the label of the input component. Any \"{1}\" placeholder in the message will be substituted with the 1-based row index of the data model. Note that this does not take pagination into account and that this needs if necessary to be taken care of in the custom message yourself. <pre>\n<o:validateUniqueColumn message=\"Duplicate value!\" /> </pre>",
+        "description": "ValidateUniqueColumn validates if the given UIInput component in an UIData component has an unique value throughout all rows, also those not visible by pagination. This validator works directly on the data model and may therefore not work as expected if the data model does not represent all available rows of the UIData component (e.g. when there's means of lazy loading). The default message is {0}: Please fill out an unique value for the entire column. Duplicate found in row {1} Usage example: <h:dataTable value=\"#{bean.items}\" var=\"item\"> <h:column> <h:inputText value=\"#{item.value}\"> <o:validateUniqueColumn /> </h:inputText> </h:column></h:dataTable> In an invalidating case, only the first row on which the value is actually changed (i.e. the value change event has been fired on the input component in the particular row) will be marked invalid and a faces message will be added on the client ID of the input component in the particular row. The default message can be changed by the message attribute. Any \"{0}\" placeholder in the message will be substituted with the label of the input component. Any \"{1}\" placeholder in the message will be substituted with the 1-based row index of the data model. Note that this does not take pagination into account and that this needs if necessary to be taken care of in the custom message yourself. <o:validateUniqueColumn message=\"Duplicate value!\" />",
         "attribute": [
           {
             "description": "The validator message to be shown on failure. Any \"{0}\" placeholder in the message will be substituted with the label of the input component. Any \"{1}\" placeholder in the message will be substituted with the 1-based row index of the data model.",
@@ -2137,7 +2137,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Whether the validation should be disabled or not. Defaults to false .",
+            "description": "Whether the validation should be disabled or not. Defaults to false.",
             "name": "disabled",
             "required": "false",
             "type": "boolean"
@@ -2146,7 +2146,7 @@
       },
       {
         "name": "massAttribute",
-        "description": "The <o:massAttribute> sets an attribute of the given name and value on all nested components, if they don't already have an attribute set. On boolean attributes like disabled , readonly and rendered , any literal (static) attribute value will be ignored and overridden. Only if they have already a value expression #{...} as attribute value, then it won't be overridden. This is a technical limitation specifically for boolean attributes as they don't default to null .  For example, the following setup <pre>\n<o:massAttribute name=\"disabled\" value=\"true\"> <h:inputText id=\"input1\" /> <h:inputText id=\"input2\" disabled=\"true\" /> <h:inputText id=\"input3\" disabled=\"false\" /> <h:inputText id=\"input4\" disabled=\"#{true}\" /> <h:inputText id=\"input5\" disabled=\"#{false}\" />\n</o:massAttribute> </pre> will set the disabled=\"true\" attribute in input1 , input2 and input3 as those are the only components without a value expression on the boolean attribute.  As another general example without booleans, the following setup <pre>\n<o:massAttribute name=\"styleClass\" value=\"#{component.valid ? '' : 'error'}\"> <h:inputText id=\"input1\" /> <h:inputText id=\"input2\" styleClass=\"some\" /> <h:inputText id=\"input3\" styleClass=\"#{'some'}\" /> <h:inputText id=\"input4\" styleClass=\"#{null}\" />\n</o:massAttribute> </pre> will only set the styleClass=\"#{component.valid ? '' : 'error'}\" attribute in input1 as that's the only component on which the attribute is absent. Do note that the specified EL expression will actually be evaluated on a per-component basis.  To target a specific component (super)class, use the target attribute. The example below skips labels (as that would otherwise fail in the example below because they don't have a valid property): <pre>\n<o:massAttribute name=\"styleClass\" value=\"#{component.valid ? '' : 'error'}\" target=\"javax.faces.component.UIInput\"> <h:outputLabel for=\"input1\" /> <h:inputText id=\"input1\" /> <h:outputLabel for=\"input2\" /> <h:inputText id=\"input2\" /> <h:outputLabel for=\"input3\" /> <h:inputText id=\"input3\" />\n</o:massAttribute> </pre>",
+        "description": "The <o:massAttribute> sets an attribute of the given name and value on all nested components, if they don't already have an attribute set. On boolean attributes like disabled, readonly and rendered, any literal (static) attribute value will be ignored and overridden. Only if they have already a value expression #{...} as attribute value, then it won't be overridden. This is a technical limitation specifically for boolean attributes as they don't default to null. For example, the following setup <o:massAttribute name=\"disabled\" value=\"true\"> <h:inputText id=\"input1\" /> <h:inputText id=\"input2\" disabled=\"true\" /> <h:inputText id=\"input3\" disabled=\"false\" /> <h:inputText id=\"input4\" disabled=\"#{true}\" /> <h:inputText id=\"input5\" disabled=\"#{false}\" /></o:massAttribute> will set the disabled=\"true\" attribute in input1, input2 and input3 as those are the only components without a value expression on the boolean attribute. As another general example without booleans, the following setup <o:massAttribute name=\"styleClass\" value=\"#{component.valid ? '' : 'error'}\"> <h:inputText id=\"input1\" /> <h:inputText id=\"input2\" styleClass=\"some\" /> <h:inputText id=\"input3\" styleClass=\"#{'some'}\" /> <h:inputText id=\"input4\" styleClass=\"#{null}\" /></o:massAttribute> will only set the styleClass=\"#{component.valid ? '' : 'error'}\" attribute in input1 as that's the only component on which the attribute is absent. Do note that the specified EL expression will actually be evaluated on a per-component basis. To target a specific component (super)class, use the target attribute. The example below skips labels (as that would otherwise fail in the example below because they don't have a valid property): <o:massAttribute name=\"styleClass\" value=\"#{component.valid ? '' : 'error'}\" target=\"javax.faces.component.UIInput\"> <h:outputLabel for=\"input1\" /> <h:inputText id=\"input1\" /> <h:outputLabel for=\"input2\" /> <h:inputText id=\"input2\" /> <h:outputLabel for=\"input3\" /> <h:inputText id=\"input3\" /></o:massAttribute>",
         "attribute": [
           {
             "description": "The name of the attribute to be set on all nested components. This cannot be set to id or binding as those are already evaluated during view build time and they shouldn't be shared among components anyway.",
@@ -2168,7 +2168,7 @@
       },
       {
         "name": "viewParamValidationFailed",
-        "description": " <o:viewParamValidationFailed> allows the developer to handle a view parameter validation failure with either a redirect or a HTTP error status, optionally with respectively a flash message or HTTP error message. This tag can be placed inside <f:metadata> or <f|o:viewParam> . When placed in <f|o:viewParam> , then it will be applied when the particular view parameter has a validation error as per UIViewParameter#isValid() . When placed in <f:metadata> , and no one view parameter has already handled the validation error via its own <o:viewParamValidationFailed> , then it will be applied when there's a general validation error as per FacesContext#isValidationFailed() .  The sendRedirect attribute uses under the covers Faces#redirect(String, String...) to send the redirect, so the same rules as to scheme and leading slash apply here. The sendError attribute uses under the covers Faces#responseSendError(int, String) to send the error, so you can customize HTTP error pages via <error-page> entries in web.xml , otherwise the server-default one will be displayed instead. * <h3>f:viewParam required=\"true\" fail</h3>  As a precaution, the <f:viewParam required=\"true\"> has in current Mojarra and MyFaces releases (as of now, Mojarra 2.2.7 and MyFaces 2.2.4) a design error. When the parameter is not specified in the query string, then it is retrieved as null which causes that an internal isRequired() check is performed instead of delegating the check to standard UIInput implementation. This has the consequence that PreValidateEvent and PostValidateEvent listeners are never invoked, which the <o:viewParamValidationFailed> is actually relying on. This is fixed in <o:viewParam . * <h3>Examples</h3>  With the example below, when at least one view param is absent, then the client will be returned a HTTP 400 error. <pre> <f:metadata> <o:viewParam name=\"foo\" required=\"true\" /> <o:viewParam name=\"bar\" required=\"true\" /> <o:viewParamValidationFailed sendError=\"400\" /> </f:metadata> </pre>  With the example below, only when the \"foo\" parameter is absent, then the client will be redirected to \"login.xhtml\". When the \"bar\" parameter is absent, nothing new will happen. The process will proceed \"as usual\". I.e. the validation error will end up as a faces message in the current view the usual way. <pre> <f:metadata> <o:viewParam name=\"foo\" required=\"true\"> <o:viewParamValidationFailed sendRedirect=\"login.xhtml\" /> </o:viewParam> <o:viewParam name=\"bar\" required=\"true\" /> </f:metadata> </pre>  With the example below, only when the \"foo\" parameter is absent, regardless of the \"bar\" or \"baz\" parameters, then the client will be returned a HTTP 401 error. When the \"foo\" parameter is present, but either \"bar\" or \"baz\" parameter is absent, then the client will be redirected to \"search.xhtml\". <pre> <f:metadata> <o:viewParam name=\"foo\" required=\"true\"> <o:viewParamValidationFailed sendError=\"401\" /> </o:viewParam> <o:viewParam name=\"bar\" required=\"true\" /> <o:viewParam name=\"baz\" required=\"true\" /> <o:viewParamValidationFailed sendRedirect=\"search.xhtml\" /> </f:metadata> </pre>  In a nutshell: when there are multiple <o:viewParamValidationFailed> tags, then they will be applied in the same order as they are declared in the view. So, with the example above, the one nested in <f|o:viewParam> takes precedence over the one nested in <f:metadata> . * <h3>Messaging</h3>  By default, the first occurring faces message on the parent component will be copied, or when there is none, then the first occurring global faces message will be copied. When sendRedirect is used, then it will be set as a global flash error message. When sendError is used, then it will be set as HTTP status message.  You can override this message by explicitly specifying the message attribute. This is applicable on both sendRedirect and sendError . <pre> <o:viewParamValidationFailed sendRedirect=\"search.xhtml\" message=\"You need to perform a search.\" /> ... <o:viewParamValidationFailed sendError=\"401\" message=\"Authentication failed. You need to login.\" /> </pre> * <h3>Design notes</h3>  You can technically nest multiple <o:viewParamValidationFailed> inside the same parent, but this is not the documented approach and the behavior is unspecified.  You can not change the HTTP status code of a redirect. This is not a JSF limitation, but a HTTP limitation. The status code of a redirect will always end up the one of the redirected response. If you intend to \"redirect\" with a different HTTP status code, then you should be using sendError instead and specify the desired page as <error-page> in web.xml .",
+        "description": "<o:viewParamValidationFailed> allows the developer to handle a view parameter validation failure with either a redirect or a HTTP error status, optionally with respectively a flash message or HTTP error message. This tag can be placed inside <f:metadata> or <f|o:viewParam>. When placed in <f|o:viewParam>, then it will be applied when the particular view parameter has a validation error as per UIViewParameter#isValid(). When placed in <f:metadata>, and no one view parameter has already handled the validation error via its own <o:viewParamValidationFailed>, then it will be applied when there's a general validation error as per FacesContext#isValidationFailed(). The sendRedirect attribute uses under the covers Faces#redirect(String, String...) to send the redirect, so the same rules as to scheme and leading slash apply here. The sendError attribute uses under the covers Faces#responseSendError(int, String) to send the error, so you can customize HTTP error pages via <error-page> entries in web.xml, otherwise the server-default one will be displayed instead. * f:viewParam required=\"true\" fail As a precaution, the <f:viewParam required=\"true\"> has in current Mojarra and MyFaces releases (as of now, Mojarra 2.2.7 and MyFaces 2.2.4) a design error. When the parameter is not specified in the query string, then it is retrieved as null which causes that an internal isRequired() check is performed instead of delegating the check to standard UIInput implementation. This has the consequence that PreValidateEvent and PostValidateEvent listeners are never invoked, which the <o:viewParamValidationFailed> is actually relying on. This is fixed in <o:viewParam. * Examples With the example below, when at least one view param is absent, then the client will be returned a HTTP 400 error. <f:metadata> <o:viewParam name=\"foo\" required=\"true\" /> <o:viewParam name=\"bar\" required=\"true\" /> <o:viewParamValidationFailed sendError=\"400\" /> </f:metadata> With the example below, only when the \"foo\" parameter is absent, then the client will be redirected to \"login.xhtml\". When the \"bar\" parameter is absent, nothing new will happen. The process will proceed \"as usual\". I.e. the validation error will end up as a faces message in the current view the usual way. <f:metadata> <o:viewParam name=\"foo\" required=\"true\"> <o:viewParamValidationFailed sendRedirect=\"login.xhtml\" /> </o:viewParam> <o:viewParam name=\"bar\" required=\"true\" /> </f:metadata> With the example below, only when the \"foo\" parameter is absent, regardless of the \"bar\" or \"baz\" parameters, then the client will be returned a HTTP 401 error. When the \"foo\" parameter is present, but either \"bar\" or \"baz\" parameter is absent, then the client will be redirected to \"search.xhtml\". <f:metadata> <o:viewParam name=\"foo\" required=\"true\"> <o:viewParamValidationFailed sendError=\"401\" /> </o:viewParam> <o:viewParam name=\"bar\" required=\"true\" /> <o:viewParam name=\"baz\" required=\"true\" /> <o:viewParamValidationFailed sendRedirect=\"search.xhtml\" /> </f:metadata> In a nutshell: when there are multiple <o:viewParamValidationFailed> tags, then they will be applied in the same order as they are declared in the view. So, with the example above, the one nested in <f|o:viewParam> takes precedence over the one nested in <f:metadata>. * Messaging By default, the first occurring faces message on the parent component will be copied, or when there is none, then the first occurring global faces message will be copied. When sendRedirect is used, then it will be set as a global flash error message. When sendError is used, then it will be set as HTTP status message. You can override this message by explicitly specifying the message attribute. This is applicable on both sendRedirect and sendError. <o:viewParamValidationFailed sendRedirect=\"search.xhtml\" message=\"You need to perform a search.\" /> ... <o:viewParamValidationFailed sendError=\"401\" message=\"Authentication failed. You need to login.\" /> * Design notes You can technically nest multiple <o:viewParamValidationFailed> inside the same parent, but this is not the documented approach and the behavior is unspecified. You can not change the HTTP status code of a redirect. This is not a JSF limitation, but a HTTP limitation. The status code of a redirect will always end up the one of the redirected response. If you intend to \"redirect\" with a different HTTP status code, then you should be using sendError instead and specify the desired page as <error-page> in web.xml.",
         "attribute": [
           {
             "description": "The URL to send redirect to on validation failure. The same rules apply as with Faces#redirect(). This attribute is required when the sendError attribute is absent.",
@@ -2192,7 +2192,7 @@
       },
       {
         "name": "commandScript",
-        "description": "  CommandScript is an extension to <h:commandXxx> which generates a JavaScript function in the global JavaScript scope which allows the enduser to execute a JSF ajax request by a just function call functionName() in the JavaScript context.  The <o:commandScript> component is required to be enclosed in an UIForm component. The name attribute is required and it represents the JavaScript function name. The execute and render attributes work exactly the same as in <f:ajax> . The onbegin and oncomplete attributes must represent (valid!) JavaScript code which will be executed before sending the ajax request and after processing the ajax response respectively. The action , actionListener and immediate attributes work exactly the same as in <h:commandXxx> .  Basic usage example of <o:commandScript> which submits the entire form on click of a plain HTML button: <pre>\n<h:form> <h:inputText value=\"#{bean.input1}\" ... /> <h:inputText value=\"#{bean.input2}\" ... /> <h:inputText value=\"#{bean.input3}\" ... /> <o:commandScript name=\"submitForm\" action=\"#{bean.submit}\" render=\"@form\" />\n</h:form>\n<input type=\"button\" value=\"submit\" onclick=\"submitForm()\" /> </pre>  Usage example which uses the <o:commandScript> as a poll function which updates every 3 seconds: <pre>\n<h:form> <h:dataTable id=\"data\" value=\"#{bean.data}\" ...>...</h:dataTable> <o:commandScript name=\"updateData\" action=\"#{bean.reloadData}\" render=\"data\" />\n</h:form>\n<h:outputScript target=\"body\">setInterval(updateData, 3000);</h:outputScript> </pre> The component also supports nesting of <f:param> , <f:actionListener> and <f:setPropertyActionListener> , exactly like as in <h:commandXxx> . The function also supports a JS object as argument which will then end up in the HTTP request parameter map: <pre>\nfunctionName({ name1: \"value1\", name2: \"value2\" }); </pre>  With the above example, the parameters are in the action method available as follows: <pre>\nString name1 = Faces.getRequestParameter(\"name1\"); // value1\nString name2 = Faces.getRequestParameter(\"name2\"); // value2 </pre>",
+        "description": "CommandScript is an extension to <h:commandXxx> which generates a JavaScript function in the global JavaScript scope which allows the enduser to execute a JSF ajax request by a just function call functionName() in the JavaScript context. The <o:commandScript> component is required to be enclosed in an UIForm component. The name attribute is required and it represents the JavaScript function name. The execute and render attributes work exactly the same as in <f:ajax>. The onbegin and oncomplete attributes must represent (valid!) JavaScript code which will be executed before sending the ajax request and after processing the ajax response respectively. The action, actionListener and immediate attributes work exactly the same as in <h:commandXxx>. Basic usage example of <o:commandScript> which submits the entire form on click of a plain HTML button: <h:form> <h:inputText value=\"#{bean.input1}\" ... /> <h:inputText value=\"#{bean.input2}\" ... /> <h:inputText value=\"#{bean.input3}\" ... /> <o:commandScript name=\"submitForm\" action=\"#{bean.submit}\" render=\"@form\" /></h:form><input type=\"button\" value=\"submit\" onclick=\"submitForm()\" /> Usage example which uses the <o:commandScript> as a poll function which updates every 3 seconds: <h:form> <h:dataTable id=\"data\" value=\"#{bean.data}\" ...>...</h:dataTable> <o:commandScript name=\"updateData\" action=\"#{bean.reloadData}\" render=\"data\" /></h:form><h:outputScript target=\"body\">setInterval(updateData, 3000);</h:outputScript> The component also supports nesting of <f:param>, <f:actionListener> and <f:setPropertyActionListener>, exactly like as in <h:commandXxx>. The function also supports a JS object as argument which will then end up in the HTTP request parameter map: functionName({ name1: \"value1\", name2: \"value2\" }); With the above example, the parameters are in the action method available as follows: String name1 = Faces.getRequestParameter(\"name1\"); // value1String name2 = Faces.getRequestParameter(\"name2\"); // value2",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -2249,13 +2249,13 @@
             "type": "boolean"
           },
           {
-            "description": " MethodExpression representing the application action to invoke when this component is activated by the user. The expression must evaluate to a public method that takes no parameters, and returns an Object (the toString() of which is called to derive the logical outcome) which is passed to the NavigationHandler for this application.",
+            "description": "MethodExpression representing the application action to invoke when this component is activated by the user. The expression must evaluate to a public method that takes no parameters, and returns an Object (the toString() of which is called to derive the logical outcome) which is passed to the NavigationHandler for this application.",
             "name": "action",
             "required": "false",
             "method-signature": "java.lang.Object action()"
           },
           {
-            "description": " MethodExpression representing an action listener method that will be notified when this component is activated by the user. The expression must evaluate to a public method that takes an ActionEvent parameter, with a return type of void, or to a public method that takes no arguments with a return type of void. In the latter case, the method has no way of easily knowing where the event came from, but this can be useful in cases where a notification is needed that \"some action happened\".",
+            "description": "MethodExpression representing an action listener method that will be notified when this component is activated by the user. The expression must evaluate to a public method that takes an ActionEvent parameter, with a return type of void, or to a public method that takes no arguments with a return type of void. In the latter case, the method has no way of easily knowing where the event came from, but this can be useful in cases where a notification is needed that \"some action happened\".",
             "name": "actionListener",
             "required": "false",
             "method-signature": "void actionListener(javax.faces.event.ActionEvent)"
@@ -2270,7 +2270,7 @@
       },
       {
         "name": "param",
-        "description": " Param is a component that extends the standard UIParameter to implement ValueHolder and thus support a Converter to convert the supplied value to string, if necessary.  You can use it the same way as <f:param> , you only need to change f: into o: to get the extra support for a Converter by usual means via the converter attribute of the tag, or the nested <f:converter> tag, or just automatically if a converter is already registered for the target class. Also, if no value is specified, but children are present, then the encoded output of children will be returned as value. This is useful when you want to supply JSF components or HTML as parameter of an unescaped <h:outputFormat> . For example, <pre> <h:outputFormat value=\"#{bundle.paragraph}\" escape=\"false\"> <o:param><h:link outcome=\"contact\" value=\"#{bundle.contact}\" /></o:param> </h:outputFormat> </pre> with this bundle <pre> paragraph = Please {0} for more information. contact = contact us </pre> will result in the link being actually encoded as output format parameter value.",
+        "description": "Param is a component that extends the standard UIParameter to implement ValueHolder and thus support a Converter to convert the supplied value to string, if necessary. You can use it the same way as <f:param>, you only need to change f: into o: to get the extra support for a Converter by usual means via the converter attribute of the tag, or the nested <f:converter> tag, or just automatically if a converter is already registered for the target class. Also, if no value is specified, but children are present, then the encoded output of children will be returned as value. This is useful when you want to supply JSF components or HTML as parameter of an unescaped <h:outputFormat>. For example, <h:outputFormat value=\"#{bundle.paragraph}\" escape=\"false\"> <o:param><h:link outcome=\"contact\" value=\"#{bundle.contact}\" /></o:param> </h:outputFormat> with this bundle paragraph = Please {0} for more information. contact = contact us will result in the link being actually encoded as output format parameter value.",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -2312,7 +2312,7 @@
       },
       {
         "name": "messages",
-        "description": "The <o:messages> is a component that extends the standard <h:messages> with the following new features: <dl> <dt>Multiple for components</dt> <dd>Possibility to specify multiple client IDs space separated in the for attribute. The example below would only display messages for input1 and input3 : <pre> \n<h:form> <o:messages for=\"input1 input3\" /> <h:inputText id=\"input1\" /> <h:inputText id=\"input2\" /> <h:inputText id=\"input3\" /> <h:inputText id=\"input4\" />\n</h:form>  </pre> It can even refer non-input components which in turn contains input components. The example below would only display messages for input1 and input2 : <pre> \n<h:form> <o:messages for=\"inputs\" /> <h:panelGroup id=\"inputs\"> <h:inputText id=\"input1\" /> <h:inputText id=\"input2\" /> </h:panelGroup> <h:inputText id=\"input3\" /> <h:inputText id=\"input4\" />\n</h:form>  </pre> You can even combine them. The example below would only display messages for input1 , input2 and input4 . <pre> \n<h:form> <o:messages for=\"inputs input4\" /> <h:panelGroup id=\"inputs\"> <h:inputText id=\"input1\" /> <h:inputText id=\"input2\" /> </h:panelGroup> <h:inputText id=\"input3\" /> <h:inputText id=\"input4\" />\n</h:form>  </pre> </dd> <dt>Displaying single message</dt> <dd>Show a single custom message whenever the component has received any faces message. This is particularly useful when you want to display a global message in case any of the in for specified components has a faces message. For example: <pre> \n<o:messages for=\"form\" message=\"There are validation errors. Please fix them.\" />\n<h:form id=\"form\"> <h:inputText id=\"input1\" /><h:message for=\"input1\" /> <h:inputText id=\"input2\" /><h:message for=\"input2\" /> <h:inputText id=\"input3\" /><h:message for=\"input3\" />\n</h:form>  </pre> </dd> <dt>HTML escaping</dt> <dd>Control HTML escaping by the new escape attribute. <pre> \n<o:messages escape=\"false\" />  </pre> Beware of potential XSS attack holes when user-controlled input is redisplayed through messages! </dd> <dt>Iteration markup control</dt> <dd>Control iteration markup fully by the new var attribute which sets the current FacesMessage in the request scope and disables the default table/list rendering. For example, <pre> \n<dl> <o:messages var=\"message\"> <dt>#{message.severity}</dt> <dd title=\"#{message.detail}\">#{message.summary}</dd> </o:messages>\n</dl>  </pre> Note: the iteration is by design completely stateless. It's therefore not recommended to nest form components inside the <o:messages> component. It should be used for pure output only, like as the standard <h:messages> . Plain output links are however no problem. Also note that the message and escape attributes have in this case no effect. With a single message, there's no point of iteration. As to escaping, just use <h:outputText escape=\"false\"> the usual way. </dd> </dl>  Design notice: the component class is named OmniMessages instead of Messages to avoid confusion with the Messages utility class.",
+        "description": "The <o:messages> is a component that extends the standard <h:messages> with the following new features: Multiple for components Possibility to specify multiple client IDs space separated in the for attribute. The example below would only display messages for input1 and input3: <h:form> <o:messages for=\"input1 input3\" /> <h:inputText id=\"input1\" /> <h:inputText id=\"input2\" /> <h:inputText id=\"input3\" /> <h:inputText id=\"input4\" /></h:form> It can even refer non-input components which in turn contains input components. The example below would only display messages for input1 and input2: <h:form> <o:messages for=\"inputs\" /> <h:panelGroup id=\"inputs\"> <h:inputText id=\"input1\" /> <h:inputText id=\"input2\" /> </h:panelGroup> <h:inputText id=\"input3\" /> <h:inputText id=\"input4\" /></h:form> You can even combine them. The example below would only display messages for input1, input2 and input4. <h:form> <o:messages for=\"inputs input4\" /> <h:panelGroup id=\"inputs\"> <h:inputText id=\"input1\" /> <h:inputText id=\"input2\" /> </h:panelGroup> <h:inputText id=\"input3\" /> <h:inputText id=\"input4\" /></h:form> Displaying single message Show a single custom message whenever the component has received any faces message. This is particularly useful when you want to display a global message in case any of the in for specified components has a faces message. For example: <o:messages for=\"form\" message=\"There are validation errors. Please fix them.\" /><h:form id=\"form\"> <h:inputText id=\"input1\" /><h:message for=\"input1\" /> <h:inputText id=\"input2\" /><h:message for=\"input2\" /> <h:inputText id=\"input3\" /><h:message for=\"input3\" /></h:form> HTML escaping Control HTML escaping by the new escape attribute. <o:messages escape=\"false\" /> Beware of potential XSS attack holes when user-controlled input is redisplayed through messages! Iteration markup control Control iteration markup fully by the new var attribute which sets the current FacesMessage in the request scope and disables the default table/list rendering. For example, <dl> <o:messages var=\"message\"> <dt>#{message.severity}</dt> <dd title=\"#{message.detail}\">#{message.summary}</dd> </o:messages></dl> Note: the iteration is by design completely stateless. It's therefore not recommended to nest form components inside the <o:messages> component. It should be used for pure output only, like as the standard <h:messages>. Plain output links are however no problem. Also note that the message and escape attributes have in this case no effect. With a single message, there's no point of iteration. As to escaping, just use <h:outputText escape=\"false\"> the usual way. Design notice: the component class is named OmniMessages instead of Messages to avoid confusion with the Messages utility class.",
         "attribute": [
           {
             "description": "The component identifier for this component. This value must be unique within the closest parent component that is a naming container.",
@@ -2473,7 +2473,7 @@
       },
       {
         "name": "socket",
-        "description": "  o:socket  opens an one-way (server to client) web socket based push conntection in client side which can be reached from server side via org.omnifaces.cdi.PushContext interface injected in any CDI/container managed artifact via org.omnifaces.cdi.Push annotation.  For detailed usage instructions, see org.omnifaces.cdi.push.Socket javadoc.",
+        "description": "o:socket opens an one-way (server to client) web socket based push conntection in client side which can be reached from server side via org.omnifaces.cdi.PushContext interface injected in any CDI/container managed artifact via org.omnifaces.cdi.Push annotation. For detailed usage instructions, see org.omnifaces.cdi.push.Socket javadoc.",
         "attribute": [
           {
             "description": "The port number of the web socket host, in case it is different from the port number in the request URI. Defaults to the port number of the request URI.",
@@ -2487,12 +2487,12 @@
             "required": "true"
           },
           {
-            "description": "The scope of the web socket channel. It may not be an EL expression and allowed values are application , session and view , case insensitive. When the value is application , then all channels with the same name throughout the application will receive the same push message. When the value is session , then only the channels with the same name in the current user session will receive the same push message. When the value is view , then only the channel in the current view will receive the push message. The default scope is application . When the user attribute is specified, then the default scope is session .",
+            "description": "The scope of the web socket channel. It may not be an EL expression and allowed values are application, session and view, case insensitive. When the value is application, then all channels with the same name throughout the application will receive the same push message. When the value is session, then only the channels with the same name in the current user session will receive the same push message. When the value is view, then only the channel in the current view will receive the push message. The default scope is application. When the user attribute is specified, then the default scope is session.",
             "name": "scope",
             "required": "false"
           },
           {
-            "description": "The user identifier of the web socket channel, so that user-targeted push messages can be sent. It must implement Serializable and preferably have low memory footprint. Suggestion: use #{request.remoteUser} or #{someLoggedInUser.id} . All open websockets on the same channel and user will receive the same push message from the server.",
+            "description": "The user identifier of the web socket channel, so that user-targeted push messages can be sent. It must implement Serializable and preferably have low memory footprint. Suggestion: use #{request.remoteUser} or #{someLoggedInUser.id}. All open websockets on the same channel and user will receive the same push message from the server.",
             "name": "user",
             "required": "false",
             "type": "java.io.Serializable"
@@ -2510,13 +2510,13 @@
             "type": "java.lang.String"
           },
           {
-            "description": "The JavaScript event handler function that is invoked when the web socket is closed. The function will be invoked with three arguments: the close reason code, the channel name and the raw CloseEvent itself. Note that this will also be invoked on errors and that you can inspect the close reason code if an error occurred and which one (i.e. when the code is not 1000). See also <a href=\"http://tools.ietf.org/html/rfc6455#section-7.4.1\">RFC 6455 section 7.4.1</a> and <a href=\"http://docs.oracle.com/javaee/7/api/javax/websocket/CloseReason.CloseCodes.html\">CloseCodes</a> API for an elaborate list of all close codes.",
+            "description": "The JavaScript event handler function that is invoked when the web socket is closed. The function will be invoked with three arguments: the close reason code, the channel name and the raw CloseEvent itself. Note that this will also be invoked on errors and that you can inspect the close reason code if an error occurred and which one (i.e. when the code is not 1000). See also RFC 6455 section 7.4.1 and CloseCodes API for an elaborate list of all close codes.",
             "name": "onclose",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "Whether to (auto)connect the web socket or not. Defaults to true . It's interpreted as a JavaScript instruction whether to open or close the web socket push connection. Note that this attribute is re-evaluated on every ajax request. You can also explicitly set it to false and then manually control in JavaScript by OmniFaces.Push.open(\"channelName\") and OmniFaces.Push.close(\"channelName\") .",
+            "description": "Whether to (auto)connect the web socket or not. Defaults to true. It's interpreted as a JavaScript instruction whether to open or close the web socket push connection. Note that this attribute is re-evaluated on every ajax request. You can also explicitly set it to false and then manually control in JavaScript by OmniFaces.Push.open(\"channelName\") and OmniFaces.Push.close(\"channelName\").",
             "name": "connected",
             "required": "false",
             "type": "boolean"
@@ -2525,7 +2525,7 @@
       },
       {
         "name": "selectItemGroups",
-        "description": "The o:selectItemGroups is an extension of {@link UISelectItems} which allows you to iterate over a nested collection representing groups of select items. This is the {@link UIComponent} counterpart of javax.faces.model.SelectItemGroup . There is no equivalent (yet) in the standard JSF API. Currently the only way to represent {@link SelectItemGroup} in UI is to manually create and populate them in a backing bean which can end up to be quite verbose.  Below example assumes a List<Category> as value wherein Category in turn has a List<Product> . <pre>\n<h:selectOneMenu value=\"#{bean.selectedProduct}\" converter=\"omnifaces.SelectItemsConverter\"> <f:selectItem itemValue=\"#{null}\" /> <o:selectItemGroups value=\"#{bean.categories}\" var=\"category\" itemLabel=\"#{category.name}\"> <f:selectItems value=\"#{category.products}\" var=\"product\" itemLabel=\"#{product.name}\" /> </o:selectItemGroups>\n</h:selectOneMenu> </pre>",
+        "description": "The o:selectItemGroups is an extension of {@link UISelectItems} which allows you to iterate over a nested collection representing groups of select items. This is the {@link UIComponent} counterpart of javax.faces.model.SelectItemGroup. There is no equivalent (yet) in the standard JSF API. Currently the only way to represent {@link SelectItemGroup} in UI is to manually create and populate them in a backing bean which can end up to be quite verbose. Below example assumes a List<Category> as value wherein Category in turn has a List<Product>. <h:selectOneMenu value=\"#{bean.selectedProduct}\" converter=\"omnifaces.SelectItemsConverter\"> <f:selectItem itemValue=\"#{null}\" /> <o:selectItemGroups value=\"#{bean.categories}\" var=\"category\" itemLabel=\"#{category.name}\"> <f:selectItems value=\"#{category.products}\" var=\"product\" itemLabel=\"#{product.name}\" /> </o:selectItemGroups></h:selectOneMenu>",
         "attribute": [
           {
             "description": "Any Iterable, Map or array of objects representing select item groups.",
@@ -2534,7 +2534,7 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "The name of the EL variable which exposes the currently iterated select item group. Defaults to item .",
+            "description": "The name of the EL variable which exposes the currently iterated select item group. Defaults to item.",
             "name": "var",
             "required": "false"
           },
@@ -2545,7 +2545,7 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "The label of the select item group. Defaults to the String representation of itemValue .",
+            "description": "The label of the select item group. Defaults to the String representation of itemValue.",
             "name": "itemLabel",
             "required": "false",
             "type": "java.lang.String"

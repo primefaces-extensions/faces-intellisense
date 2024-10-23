@@ -32,17 +32,11 @@ const createAttr = (jsonFileName: string, xmlFileName: string) => {
             allTag.forEach((tag: any) => {
                 const tagName = tag.name?.trim() || '';
                 let desc = tag?.description ?? '';
-                desc = desc
-                    .replace(/<[^>]*>/g, '')
-                    .replace(/[\n\t]/g, '')
-                    .trim(); // strip HTML tags
+                desc = clearValue(desc);
                 const attr = tag?.attribute ?? [];
                 Array.isArray(attr) &&
                     attr.forEach((attribute: any) => {
-                        attribute.description = attribute.description
-                            ?.replace(/<[^>]*>/g, '')
-                            .replace(/[\n\t]/g, '')
-                            .trim(); // strip HTML tags
+                        attribute.description = clearValue(attribute.description);
                     });
                 finalTag.push(new Tag(tagName ?? '', desc, attr));
             });
@@ -52,6 +46,15 @@ const createAttr = (jsonFileName: string, xmlFileName: string) => {
     fs.writeFileSync(jsonFileName, json);
     fs.unlinkSync(xmlFileName);
     clearJson(jsonFileName);
+};
+
+const clearValue = (value: string): string => {
+    if (!value) return '';
+    value = value.replace(/<[^>]*>/g, ''); // strip HTML tags
+    value = value.replace(/[\n\t]/g, ''); // strip new lines and tabs
+    value = value.replace(/\s+/g, ' '); // strip multiple spaces
+    value = value.trim();
+    return value;
 };
 
 const convertJson = (xmlFileName: string, jsonFileName: string) => {
