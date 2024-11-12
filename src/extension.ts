@@ -462,51 +462,84 @@ function loadAllXmlnsContent(xmlns: XmlNamespace): void {
  *   - 'attributes': A string of pipe-separated attribute names already used in the component.
  */
 function getComponentInformation(document: TextDocument, position: Position): Map<string, string> {
+    // Create a new Map to store component information
     const componentInfo = new Map<string, string>();
+    // Initialize empty text string
     let text: string = '';
+    // Create start position at beginning of document
     const start: Position = new Position(0, 0);
+    // Create range from start to current position
     const range: Range = new Range(start, position);
+    // Get all text from start to current position
     const allText: string = document.getText(range);
+    // Find index of last opening angle bracket
     let lastC: number = allText.lastIndexOf('<');
+    // Get substring from last opening bracket
     text = allText.substring(lastC);
 
-    const blank_ = text.indexOf(' ');
-    const break_ = text.indexOf('\n');
+    // Find indexes of space, tab and newlines
+    const blank_space = text.indexOf(' ');
+    const blank_tab = text.indexOf('\t');
+    const break_n = text.indexOf('\n');
+    const break_r = text.indexOf('\r');
     let delimiter: number = -1;
+
+    // Get earliest space/tab position
+    const blank_ = blank_space === -1 ? blank_tab : blank_tab === -1 ? blank_space : Math.min(blank_space, blank_tab);
+
+    // Get earliest newline position
+    const break_ = break_n === -1 ? break_r : break_r === -1 ? break_n : Math.min(break_n, break_r);
+
+    // Determine which comes first - space/tab or newline
     if (blank_ < break_) {
         delimiter = blank_ > -1 ? blank_ : break_;
     } else if (break_ < blank_) {
         delimiter = break_ > -1 ? break_ : blank_;
     }
+    // Get substring up to delimiter
     text = text.substring(0, delimiter);
+    // Remove opening angle bracket
     text = text.replace('<', '');
+    // If text contains colon (namespace separator)
     if (text.includes(':')) {
+        // Split on colon to get prefix and component name
         const div = text.split(':');
         componentInfo.set('xmlnsPrefix', div[0]);
         componentInfo.set('componentName', div[1]);
 
+        // Initialize attributes string
         let attributes: string = '';
+        // Find last occurrence of full component tag
         lastC = allText.lastIndexOf('<' + div[0] + ':' + div[1]);
         text = allText.substring(lastC);
 
+        // Return empty map if within attribute or tag is closed
         if (inAttribute(text)) {
             return new Map<string, string>();
         }
         if (text.includes('>')) {
             return new Map<string, string>();
         }
+        // Initialize index for attribute parsing
         let index: number;
+        // Regex to match attributes
         const rExp: RegExp = /(\w+=("|')([^"|']*)("|'))/g;
+        // Find all attribute matches
         const rawClasses: RegExpMatchArray | null = text.match(rExp);
+        // If attributes found, process them
         if (rawClasses && rawClasses.length > 0) {
             rawClasses?.forEach((item) => {
+                // Get attribute name before equals sign
                 index = item.indexOf('=');
                 item = item.substring(0, index);
+                // Add to pipe-separated attribute string
                 attributes = attributes + (attributes !== '' ? '|' : '') + item;
             });
         }
+        // Store attributes in component info
         componentInfo.set('attributes', attributes);
     }
+    // Return the component information map
     return componentInfo;
 }
 
