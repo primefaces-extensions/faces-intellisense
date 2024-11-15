@@ -50,7 +50,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the behavior, when set to false behavior will not be rendered.",
+            "description": "Boolean value to specify the rendering of the behavior, when Set false behavior will not be rendered.",
             "name": "disabled",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -80,7 +80,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -104,7 +104,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "The layout of keys: 'standard', scientific', or a custom defined layout.",
+            "description": "The layout of keys: 'standard', 'scientific', or a custom defined layout.",
             "name": "layout",
             "required": "false",
             "type": "java.lang.String"
@@ -170,7 +170,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -421,7 +421,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -667,7 +667,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -1032,7 +1032,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -1398,7 +1398,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -1464,7 +1464,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -1908,7 +1908,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -2016,7 +2016,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Set to false to hide the counter. The listener will be fired anyway. Default is true.",
+            "description": "Set false to hide the counter. The listener will be fired anyway. Default is true.",
             "name": "visible",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -2112,7 +2112,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -2196,7 +2196,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -2244,7 +2244,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -2310,13 +2310,13 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Controls the horizontal flow of the layout. By default, item elements start positioning at the left. Set to false for right-to-left layouts.",
+            "description": "Controls the horizontal flow of the layout. By default, item elements start positioning at the left. Set false for right-to-left layouts.",
             "name": "originLeft",
             "required": "false",
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Controls the vertical flow of the layout. By default, item elements start positioning at the top. Set to false for bottom-up layouts. It's like Tetris!",
+            "description": "Controls the vertical flow of the layout. By default, item elements start positioning at the top. Set false for bottom-up layouts. It's like Tetris!",
             "name": "originTop",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -2358,7 +2358,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -2394,7 +2394,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -2550,7 +2550,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -2586,7 +2586,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -2730,7 +2730,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -2766,7 +2766,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -2838,7 +2838,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -2898,7 +2898,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -3030,7 +3030,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -3112,7 +3112,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -3274,7 +3274,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -3370,7 +3370,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -3550,7 +3550,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -3628,7 +3628,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -3724,7 +3724,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -3838,7 +3838,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -4204,13 +4204,13 @@
             "type": "java.lang.Integer"
           },
           {
-            "description": "Defines if the hours section is displayed or not. Set to false to get a minute only dialog. Default is true.",
+            "description": "Defines if the hours section is displayed or not. Set false to get a minute only dialog. Default is true.",
             "name": "showHours",
             "required": "false",
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Defines if the minutes section is displayed or not. Set to false to get a hours only dialog. Default is true.",
+            "description": "Defines if the minutes section is displayed or not. Set false to get an hours only dialog. Default is true.",
             "name": "showMinutes",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -4306,7 +4306,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -4468,7 +4468,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -4504,7 +4504,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Default waypoints live on the vertical axis. Their offset is calculated in relation to the top of the viewport and they listen for vertical scroll changes. If horizontal is set to true, offset is calculated in relation to the left of the viewport and listens for horizontal scroll changes. For instance, the value 50 means \"when the left side of this element reaches 50px from the left side of the viewport\". Default is false.",
+            "description": "Default waypoints live on the vertical axis. Their offset is calculated in relation to the top of the viewport, and they listen for vertical scroll changes. If horizontal is set to true, offset is calculated in relation to the left of the viewport and listens for horizontal scroll changes. For instance, the value 50 means \"when the left side of this element reaches 50px from the left side of the viewport\". Default is false.",
             "name": "horizontal",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -4540,7 +4540,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -4726,7 +4726,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Corner radius relative to module width: 0.0 .. 0.5. Default value is 0.0",
+            "description": "Corner radius relative to module width: 0.0 to 0.5. Default value is 0.0",
             "name": "radius",
             "required": "false",
             "type": "java.lang.Double"
@@ -4780,7 +4780,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -4900,7 +4900,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -4972,13 +4972,13 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
           },
           {
-            "description": "set to false to hide the timer. The listener will be fired anyway. Default is true.",
+            "description": "Set false to hide the timer. The listener will be fired anyway. Default is true.",
             "name": "visible",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -5182,7 +5182,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -5356,7 +5356,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -5590,7 +5590,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -5956,7 +5956,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -6052,7 +6052,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -6208,7 +6208,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -6603,7 +6603,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -6981,13 +6981,13 @@
             "type": "boolean"
           },
           {
-            "description": "If there is just a dial code in the input: remove it on blur or submit.This is to prevent just a dial code getting submitted with the form. Requires nationalMode to be set to false.",
+            "description": "If there is just a dial code in the input: remove it on blur or submit.This is to prevent just a dial code getting submitted with the form. Requires nationalMode to be Set false.",
             "name": "autoHideDialCode",
             "required": "false",
             "type": "boolean"
           },
           {
-            "description": "Set the input's placeholder to an example number for the selected country, and update it if the country changes.You can specify the number type using the placeholderNumberType attribute.By default it is set to \"polite\", which means it will only set the placeholder if the input doesn't already have one.You can also set it to \"aggressive\", which will replace any existing placeholder, or \"off\". Loads the utils script.",
+            "description": "Set the input's placeholder to an example number for the selected country, and update it if the country changes.You can specify the number type using the placeholderNumberType attribute.By default, it is set to \"polite\", which means it will only set the placeholder if the input doesn't already have one.You can also set it to \"aggressive\", which will replace any existing placeholder, or \"off\". Loads the utils script.",
             "name": "autoPlaceholder",
             "required": "false",
             "type": "java.lang.String"
@@ -7077,7 +7077,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -7257,7 +7257,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -7377,7 +7377,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -7437,7 +7437,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -7533,7 +7533,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -7614,7 +7614,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -7698,7 +7698,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -7876,6 +7876,12 @@
             "name": "toolbar",
             "required": "false",
             "type": "java.lang.String"
+          },
+          {
+            "description": "Option to disable clean mode, which checks the styles, classes, etc. of the editor content. Default is true.",
+            "name": "strictMode",
+            "required": "false",
+            "type": "java.lang.Boolean"
           }
         ]
       },
@@ -7890,7 +7896,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -8430,7 +8436,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -8490,7 +8496,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -8622,7 +8628,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Client side callback to execute when input element is double clicked.",
+            "description": "Client side callback to execute when input element is double-clicked.",
             "name": "ondblclick",
             "required": "false",
             "type": "java.lang.String"
@@ -8886,7 +8892,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
+            "description": "Boolean value to specify the rendering of the component, when Set false component will not be rendered.",
             "name": "rendered",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -9006,7 +9012,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Client side callback to execute when input element is double clicked.",
+            "description": "Client side callback to execute when input element is double-clicked.",
             "name": "ondblclick",
             "required": "false",
             "type": "java.lang.String"
@@ -9246,7 +9252,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "If set to false, allows side-by-side editing without going into fullscreen. Defaults to true.",
+            "description": "If Set false, allows side-by-side editing without going into fullscreen. Defaults to true.",
             "name": "sideBySideFullscreen",
             "required": "false",
             "type": "java.lang.Boolean"
@@ -9312,7 +9318,7 @@
             "type": "java.lang.Integer"
           },
           {
-            "description": "If set to false, indent using spaces instead of tabs. Defaults to true.",
+            "description": "If Set false, indent using spaces instead of tabs. Defaults to true.",
             "name": "indentWithTabs",
             "required": "false",
             "type": "java.lang.Boolean"

@@ -3573,7 +3573,7 @@
             "description": "Datetime format.",
             "name": "pattern",
             "required": "false",
-            "type": "String"
+            "type": "java.lang.String"
           },
           {
             "description": "Mode of the client, valid values are client and server.",
@@ -14484,7 +14484,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Event to show the overlay panel, default is \"click\".",
+            "description": "Event to show the overlay panel if 'none', the overlay panel will only be displayed by `show()` or `toggle()`. default is \"click\".",
             "name": "showEvent",
             "required": "false",
             "type": "java.lang.String"
@@ -17040,31 +17040,25 @@
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "Disables the component when set to true.",
             "name": "disabled",
             "required": "false",
             "type": "boolean"
           },
           {
-            "description": "",
-            "name": "label",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "",
+            "description": "Client side callback to execute when value changes.",
             "name": "onchange",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "Inline style of the component.",
             "name": "style",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "Style class of the component.",
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"
@@ -24402,7 +24396,7 @@
             "type": "java.lang.Integer"
           },
           {
-            "description": "Type of view to display, valid values are \"date\" for datepicker and \"month\" for month picker.",
+            "description": "Type of view to display, valid values are \"date\" for datepicker, \"week\" for week picker, \"month\" for month picker.",
             "name": "view",
             "required": "false",
             "type": "java.lang.String"
