@@ -8844,7 +8844,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "API type either \"google\" or \"azure\". Defaults to \"google\".",
+            "description": "API type either \"google\" or \"azure\". Defaults to \"google,\" but if any other value is provided, it reverts to the standard InputText behavior.",
             "name": "apiType",
             "required": "false",
             "type": "java.lang.String"

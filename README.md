@@ -13,8 +13,8 @@
 A Visual Studio Code extension that provides component completion in the HTML, XHTML and JSF. Based on the official Taglib definitions.
 
 # Taglib supported for
-* Primefaces (8.x, 10.x, 11.x, 12.x, 13.x, 14.x)
-* Primefaces Extensions (10.x, 11.x, 12.x, 13.x, 14.x)
+* Primefaces (8.x, 10.x, 11.x, 12.x, 13.x, 14.x, 15.x)
+* Primefaces Extensions (10.x, 11.x, 12.x, 13.x, 14.x, 15.x)
 * OmniFaces (3.x, 4.x)
 * RichFaces (4.5.x)
 * JSF (2.1, 2.2, 2.3)

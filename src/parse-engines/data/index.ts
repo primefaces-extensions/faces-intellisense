@@ -31,12 +31,14 @@ import * as primefaces11 from "../data/primefaces/primefaces-11.0.0.json";
 import * as primefaces12 from "../data/primefaces/primefaces-12.0.0.json";
 import * as primefaces13 from "../data/primefaces/primefaces-13.0.0.json";
 import * as primefaces14 from "../data/primefaces/primefaces-14.0.0.json";
+import * as primefaces15 from "../data/primefaces/primefaces-15.0.0.json";
 // PRIMEFACES EXTENSIONS
 import * as primeext10 from "../data/primefaces/primefaces-extensions-10.0.0.json";
 import * as primeext11 from "../data/primefaces/primefaces-extensions-11.0.0.json";
 import * as primeext12 from "../data/primefaces/primefaces-extensions-12.0.0.json";
 import * as primeext13 from "../data/primefaces/primefaces-extensions-13.0.0.json";
 import * as primeext14 from "../data/primefaces/primefaces-extensions-14.0.0.json";
+import * as primeext15 from "../data/primefaces/primefaces-extensions-15.0.0.json";
 // RICHFACES
 import * as a4j45 from "../data/richfaces/a4j-4.5.17.json";
 import * as richfaces45 from "../data/richfaces/richfaces-4.5.17.json";

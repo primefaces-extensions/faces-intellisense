@@ -2,7 +2,7 @@
   "name": "faces-intellisense",
   "displayName": "Jakarta Faces Intellisense",
   "description": "Jakarta Faces Intellisense provides components completion in the HTML, XHTML and Jakarta Faces. Based on the official Tag Library definitions.",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "publisher": "FlipWarthog",
   "license": "MIT",
   "engines": {
@@ -63,9 +63,10 @@
               "primefaces-11.0.0",
               "primefaces-12.0.0",
               "primefaces-13.0.0",
-              "primefaces-14.0.0"
+              "primefaces-14.0.0",
+			  "primefaces-15.0.0"
             ],
-            "default": "primefaces-14.0.0",
+            "default": "primefaces-15.0.0",
             "description": "PrimeFaces Version. (Restart Required)."
           },
           "faces-intellisense.primeExtVersion": {
@@ -74,9 +75,10 @@
               "primefaces-extensions-11.0.0",
               "primefaces-extensions-12.0.0",
               "primefaces-extensions-13.0.0",
-              "primefaces-extensions-14.0.0"
+              "primefaces-extensions-14.0.0",
+			  "primefaces-extensions-15.0.0"
             ],
-            "default": "primefaces-extensions-14.0.0",
+            "default": "primefaces-extensions-15.0.0",
             "description": "PrimeFaces Extensions Version. (Restart Required)."
           },
           "faces-intellisense.omniVersion": {
@@ -125,14 +127,14 @@
   },
   "devDependencies": {
     "@types/glob": "8.1.0",
-    "@types/lodash": "^4.17.5",
-    "@types/mocha": "^10.0.6",
+    "@types/lodash": "^4.17.15",
+    "@types/mocha": "^10.0.10",
     "@types/node": "20.14.2",
     "@types/verror": "^1.10.10",
-    "@types/vscode": "^1.90.0",
+    "@types/vscode": "^1.97.0",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
-    "@vscode/test-electron": "^2.4.0",
+    "@vscode/test-electron": "^2.4.1",
     "@vscode/vsce": "^2.27.0",
     "eslint": "^8.56.0",
     "glob": "8.1.0",
