@@ -3,7 +3,7 @@
     "component": [
       {
         "name": "validateFile",
-        "description": "",
+        "description": "`p:validateFile` is a validator which can be used to validate single and mulitple files, either of `p:fileUpload` or `h:inputFile`.",
         "attribute": [
           {
             "description": "Regular expression for accepted file types, e.g., /(\\.|\\/)(gif|jpeg|jpg|png)$/",
@@ -159,7 +159,7 @@
       },
       {
         "name": "fileDownload",
-        "description": "The legacy way to present dynamic binary data to the client is to write a servlet or a filter and stream the binary data. FileDownload presents an easier way to do the same.",
+        "description": "Traditionally, dynamic binary data was presented to the client by writing a servlet or filter to stream the data. FileDownload simplifies this process.",
         "attribute": [
           {
             "description": "A streamed content instance.",
@@ -222,7 +222,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Client side callback execute before ajax request is begins.",
+            "description": "Client side callback execute before ajax request begins.",
             "name": "onstart",
             "required": "false",
             "type": "java.lang.String"
@@ -315,7 +315,7 @@
       },
       {
         "name": "printer",
-        "description": "Printer allows sending a specific JSF component to the printer, not the whole page.",
+        "description": "Printer allows sending a specific Faces component to the printer, not the whole page.",
         "attribute": [
           {
             "description": "Id of the component to print.",
@@ -378,6 +378,42 @@
             "type": "java.lang.Boolean"
           },
           {
+            "description": "Overrides label of 'Yes' button (and restores it before the global confirm dialog is reused elsewhere)",
+            "name": "yesButtonLabel",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Adds given style class to 'Yes' button (and removes it before the global confirm dialog is reused elsewhere)",
+            "name": "yesButtonClass",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Overrides icon of 'Yes' button (and removes it before the global confirm dialog is reused elsewhere)",
+            "name": "yesButtonIcon",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Overrides label of 'No' button (and restores it before the global confirm dialog is reused elsewhere)",
+            "name": "noButtonLabel",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Adds given style class to 'No' button (and removes it before the global confirm dialog is reused elsewhere)",
+            "name": "noButtonClass",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Overrides icon of 'No' button (and removes it before the global confirm dialog is reused elsewhere)",
+            "name": "noButtonIcon",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
             "description": "Callback to execute before displaying confirmation dialog. Return false to prevent dialog from appearing.",
             "name": "beforeShow",
             "required": "false",
@@ -423,7 +459,7 @@
       },
       {
         "name": "importConstants",
-        "description": "Util tag to import constants.",
+        "description": "Utility tag to import constants.",
         "attribute": [
           {
             "description": "The constants class.",
@@ -434,14 +470,13 @@
           {
             "description": "The EL variable which can be used to obtain the constants. Default value: Name of the class without package.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           }
         ]
       },
       {
         "name": "importEnum",
-        "description": "Util tag to import enums.",
+        "description": "Utility tag to import enums.",
         "attribute": [
           {
             "description": "The enum class.",
@@ -452,11 +487,10 @@
           {
             "description": "The EL variable which can be used to obtain the enum values. Default value: Name of the class without package.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
-            "description": "The suffix mapping for a array with all enum values. Default value: ALL_VALUES.",
+            "description": "Deprecated. Use the key ALL_VALUES to access all values, which is and was always available. The suffix mapping for an array with all enum values. Default value: ALL_VALUES.",
             "name": "allSuffix",
             "required": "false",
             "type": "java.lang.String"
@@ -542,8 +576,7 @@
           {
             "description": "Name of collection iterator to use in dynamic number of tabs.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Name of the exported request scoped variable for the status of the iteration.",
@@ -609,7 +642,7 @@
       },
       {
         "name": "ajaxExceptionHandler",
-        "description": "",
+        "description": "AjaxExceptionHandler is a utility component for the built-in ExceptionHandler.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -628,6 +661,12 @@
             "name": "binding",
             "required": "false",
             "type": "javax.faces.component.UIComponent"
+          },
+          {
+            "description": "Name of the client side widget.",
+            "name": "widgetVar",
+            "required": "false",
+            "type": "java.lang.String"
           },
           {
             "description": "Client side callback to execute after a exception with this type occured.",
@@ -651,7 +690,7 @@
       },
       {
         "name": "ajaxStatus",
-        "description": "AjaxStatus is a global notifier for ajax requests made by PrimeFaces components.",
+        "description": "AjaxStatus is a global notifier for AJAX requests made by PrimeFaces components.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -723,7 +762,7 @@
       },
       {
         "name": "audio",
-        "description": "Audio component is used for embedding audio content such as MP3, OGG, WAV to JSF views.",
+        "description": "Audio component is used for embedding audio content such as MP3, OGG, WAV to Faces views.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -1190,8 +1229,7 @@
           {
             "description": "Name of the iterator used in pojo based suggestion.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Label of the item.",
@@ -1330,6 +1368,18 @@
             "name": "autoHighlight",
             "required": "false",
             "type": "java.lang.Boolean"
+          },
+          {
+            "description": "jQuery selector specifies what content to identify for highlighting in search results. By default, it targets \"\" elements.",
+            "name": "highlightSelector",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Text to display when there is no data to display. Default is \"No records found.\"",
+            "name": "emptyMessage",
+            "required": "false",
+            "type": "java.lang.String"
           },
           {
             "description": "Should the empty message be displayed when no items are found? Default is true.",
@@ -1494,6 +1544,12 @@
             "type": "java.lang.Integer"
           },
           {
+            "description": "The magnification factor of the barcode. Default is 2.0.",
+            "name": "magnification",
+            "required": "false",
+            "type": "java.lang.Double"
+          },
+          {
             "description": "The QR Code error correction level. L (default) - up to 7% damage. M - up to 15% damage. Q - up to 25% damage. H - up to 30% damage",
             "name": "qrErrorCorrection",
             "required": "false",
@@ -1635,7 +1691,7 @@
       },
       {
         "name": "blockUI",
-        "description": "BlockUI blocks JSF components during ajax processing.",
+        "description": "BlockUI blocks Faces components during AJAX processing.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -2067,7 +2123,7 @@
       },
       {
         "name": "calendar",
-        "description": "Calendar is an input component used to provide a date. Other than basic features calendar supports paging, localization, ajax selection and more.",
+        "description": "Calendar is an input component used to provide a date. Other than basic features calendar supports paging, localization, AJAX selection and more.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -2520,6 +2576,12 @@
             "type": "java.lang.Boolean"
           },
           {
+            "description": "Displays long month names instead of short names in month picker and month navigator. Default is false.",
+            "name": "showLongMonthNames",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
             "description": "Enables selection of days belonging to other months. Default is false.",
             "name": "selectOtherMonths",
             "required": "false",
@@ -2731,7 +2793,7 @@
           },
           {
             "description": "Default for millisecond selection, if no date is given. Default is 0.",
-            "name": "defaultMillisec",
+            "name": "defaultMillisecond",
             "required": "false",
             "type": "java.lang.Integer"
           },
@@ -2757,7 +2819,7 @@
       },
       {
         "name": "captcha",
-        "description": "Captcha is a form validation component based on Recaptcha API.",
+        "description": "Captcha is a form validation component based on Recaptcha/hCaptcha API.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -2832,6 +2894,18 @@
             "type": "java.lang.String"
           },
           {
+            "description": "Which captcha to use, either 'g-recaptcha' for Google reCaptcha or 'h-captcha` for hCaptcha. Default is 'g-recaptcha'.",
+            "name": "type",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "JavaScript global executor for the captcha. Default is 'grecaptcha'.",
+            "name": "executor",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
             "description": "Theme of the captcha either 'light', 'dark', or 'auto'. Default is auto.",
             "name": "theme",
             "required": "false",
@@ -2878,6 +2952,12 @@
             "name": "sourceUrl",
             "required": "false",
             "type": "java.lang.String"
+          },
+          {
+            "description": "URL for the verification of the captcha.",
+            "name": "verifyUrl",
+            "required": "false",
+            "type": "java.lang.String"
           }
         ]
       },
@@ -2916,10 +2996,9 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "Name of the iterator variable used to refer each data.",
+            "description": "Name of the iterator variable that references each element in the data set.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Name of the exported request scoped variable for the status of the iteration.",
@@ -3069,7 +3148,7 @@
       },
       {
         "name": "checkbox",
-        "description": "",
+        "description": "Checkbox is a helper component of SelectManyCheckbox to implement custom layouts.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -3615,7 +3694,7 @@
       },
       {
         "name": "colorPicker",
-        "description": "",
+        "description": "ColorPicker is an input component with a color palette.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -4278,7 +4357,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Label to read by screen readers, when not specified headerText is used.",
+            "description": "Accessible label for screen readers. IMPORTANT: Overrides headerText and headerFacet if specified. Only necessary when the column header is not human readable (e.g. empty header or icon-only header).",
             "name": "ariaHeaderText",
             "required": "false",
             "type": "java.lang.String"
@@ -4377,7 +4456,7 @@
       },
       {
         "name": "columns",
-        "description": "",
+        "description": "Columns is used by datatable to create columns dynamically.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -4404,10 +4483,9 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "",
+            "description": "Name of the iterator variable that references each element in the data set.",
             "name": "var",
-            "required": "true",
-            "type": "java.lang.String"
+            "required": "true"
           },
           {
             "description": "Property to be used for sorting.",
@@ -4614,7 +4692,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Label to read by screen readers, when not specified headerText is used.",
+            "description": "Accessible label for screen readers. IMPORTANT: Overrides headerText and headerFacet if specified. Only necessary when the column header is not human readable (e.g. empty header or icon-only header).",
             "name": "ariaHeaderText",
             "required": "false",
             "type": "java.lang.String"
@@ -4725,7 +4803,7 @@
       },
       {
         "name": "commandButton",
-        "description": "CommandButton is an extended version of standard JSF commandButton with ajax and skinning features.",
+        "description": "CommandButton is an extended version of standard Faces commandButton with ajax and skinning features.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -4800,7 +4878,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Client side callback to execute before ajax request is begins.",
+            "description": "Client side callback to execute before ajax request begins.",
             "name": "onstart",
             "required": "false",
             "type": "java.lang.String"
@@ -5085,7 +5163,7 @@
       },
       {
         "name": "commandLink",
-        "description": "CommandLink extends standard JSF commandLink with Ajax capabilities.",
+        "description": "CommandLink extends standard Faces commandLink with extra PrimeFaces capabilities.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -5160,7 +5238,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Client side callback to execute before ajax request is begins.",
+            "description": "Client side callback to execute before ajax request begins.",
             "name": "onstart",
             "required": "false",
             "type": "java.lang.String"
@@ -5250,7 +5328,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Languae code of the resource designated by the link.",
+            "description": "Language code of the resource designated by the link.",
             "name": "hreflang",
             "required": "false",
             "type": "java.lang.String"
@@ -5708,14 +5786,18 @@
           {
             "description": "Name of collection iterator which will be the value of DashboardWidget.getValue().",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
+          },
+          {
+            "description": "Scope for dashboard drag and drop behaviour. Items can be dragged between multiple dashboards with the same scope. (default: dashboard)",
+            "name": "scope",
+            "required": "false"
           }
         ]
       },
       {
         "name": "dataGrid",
-        "description": "DataGrid displays a collection of data in grid layout. Ajax Pagination is a built-in feature and paginator UI is fully customizable via various options like paginatorTemplate, rowPerPageOptions, pageLinks and more.",
+        "description": "DataGrid displays a collection of data in grid layout. AJAX Pagination is a built-in feature and paginator UI is fully customizable via various options like paginatorTemplate, rowPerPageOptions, pageLinks and more.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -5742,10 +5824,9 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "Name of the iterator variable used to refer each data.",
+            "description": "Name of the iterator variable that references each element in the data set.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Number of rows to display per page. Default value is 0 meaning to display all data available.",
@@ -5844,12 +5925,6 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Layout approach to use, valid values are \"tabular\" and \"grid\" (default) for responsive grid.",
-            "name": "layout",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
             "description": "Keeps state of its children on a per-row basis. Default is false.",
             "name": "rowStatePreserved",
             "required": "false",
@@ -5889,7 +5964,7 @@
       },
       {
         "name": "dataList",
-        "description": "DataList presents a collection of data in list layout with several display types. Ajax Pagination is a built-in feature and paginator UI is fully customizable via various options like paginatorTemplate, rowsPerPageOptions, pageLinks and more.",
+        "description": "DataList presents a collection of data in list layout with several display types. AJAX Pagination is a built-in feature and paginator UI is fully customizable via various options like paginatorTemplate, rowsPerPageOptions, pageLinks and more.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -5916,10 +5991,9 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "Name of the iterator variable used to refer each data.",
+            "description": "Name of the iterator variable that references each element in the data set.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Number of rows to display per page. Default value is 0 meaning to display all data available.",
@@ -6084,10 +6158,9 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "Name of the iterator variable used to refer each data.",
+            "description": "Name of the iterator variable that references each element in the data set.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Number of rows to display per page. Default value is 0 meaning to display all data available.",
@@ -6198,10 +6271,9 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "Name of the iterator variable used to refer each data.",
+            "description": "Name of the iterator variable that references each element in the data set.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Number of rows to display per page. Default value is 0 meaning to display all data available.",
@@ -6384,6 +6456,12 @@
             "type": "java.lang.String"
           },
           {
+            "description": "Defines if filtering would be done using normalized values (accents will be removed from characters). Default is false.",
+            "name": "filterNormalize",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
             "description": "Delay to wait in milliseconds before sending each filter query. Default is 300.",
             "name": "filterDelay",
             "required": "false",
@@ -6498,7 +6576,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Defines row select mode for checkbox based selection, valid values are new (default), and none.",
+            "description": "Indicates how rows of a DataTable may be selected, when clicking on the row itself (not the checkbox / radiobutton from p:column). The value `new` always unselects other rows, `add` preserves the currently selected rows, and `none` disables row selection.",
             "name": "selectionRowMode",
             "required": "false",
             "type": "java.lang.String"
@@ -6526,6 +6604,12 @@
             "name": "frozenColumns",
             "required": "false",
             "type": "java.lang.Integer"
+          },
+          {
+            "description": "Defines the alignment of frozen columns, valid values are 'left' and 'right', default is 'left'",
+            "name": "frozenColumnsAlignment",
+            "required": "false",
+            "type": "java.lang.String"
           },
           {
             "description": "When enabled, rows can be reordered using dragdrop.",
@@ -6786,10 +6870,9 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "Name of the iterator variable used to refer each data.",
+            "description": "Name of the iterator variable that references each element in the data set.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Number of rows to display per page. Default value is 0 meaning to display all data available.",
@@ -7023,7 +7106,7 @@
       },
       {
         "name": "diagram",
-        "description": "",
+        "description": "Diagram is a component to create visual elements and connect them on a web page.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -7080,10 +7163,9 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Name of the iterator variable used to refer each data.",
+            "description": "Name of the iterator variable that references each element in the data set.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Inline style of the component.",
@@ -7395,7 +7477,7 @@
       },
       {
         "name": "draggable",
-        "description": "",
+        "description": "Draggable allows any component to be enhanced with draggable behavior.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -7569,7 +7651,7 @@
       },
       {
         "name": "droppable",
-        "description": "",
+        "description": "Droppable allows any component to be enhanced with droppable behavior.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -7725,7 +7807,7 @@
       },
       {
         "name": "feedReader",
-        "description": "feedReader displays content from a feed.",
+        "description": "FeedReader retrieves and displays content from an RSS, Atom, or Itunes Podcast feed.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -7752,16 +7834,21 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Iterator to refer each item in feed.",
+            "description": "Name of the iterator variable that references each element in the data set.",
             "name": "var",
-            "required": "true",
-            "type": "java.lang.String"
+            "required": "true"
           },
           {
             "description": "Number of items to display.",
             "name": "size",
             "required": "false",
             "type": "java.lang.Integer"
+          },
+          {
+            "description": "Flag to control if this is a podcast feed which will include extra podcast metadata. Default false.",
+            "name": "podcast",
+            "required": "false",
+            "type": "java.lang.Boolean"
           }
         ]
       },
@@ -7992,24 +8079,6 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Regular expression for accepted file types, e.g., /(\\.|\\/)(gif|jpeg|jpg|png)$/",
-            "name": "allowTypes",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Maximum number of files to be uploaded. Deprecated please attach 'p:validateFile'.",
-            "name": "fileLimit",
-            "required": "false",
-            "type": "java.lang.Integer"
-          },
-          {
-            "description": "Individual file size limit in bytes. Default is unlimited. Deprecated please attach 'p:validateFile'.",
-            "name": "sizeLimit",
-            "required": "false",
-            "type": "java.lang.Long"
-          },
-          {
             "description": "To upload large files in smaller chunks, set this option to a preferred maximum chunk size. If set to 0 (default), null or undefined, or the browser does not support the required Blob API, files will be uploaded as a whole. Only works in \"advanced\" mode.",
             "name": "maxChunkSize",
             "required": "false",
@@ -8047,7 +8116,7 @@
           },
           {
             "description": "Specifies dragdrop based file selection from filesystem, default is true and works only on supported browsers.",
-            "name": "dragDropSupport",
+            "name": "dragDrop",
             "required": "false",
             "type": "java.lang.Boolean"
           },
@@ -8223,7 +8292,7 @@
       },
       {
         "name": "focus",
-        "description": "Focus is a handy component that makes it easy to manage the element focus on a JSF page.",
+        "description": "Focus is a handy component that makes it easy to manage the element focus on a Faces page.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -8336,8 +8405,7 @@
           {
             "description": "Name of the iterator to display a collection of images.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Name of the exported request scoped variable for the status of the iteration.",
@@ -8481,7 +8549,7 @@
       },
       {
         "name": "gmap",
-        "description": "GMap component is built on Google Maps API Version 3. Gmap is highly integrated with JSF development model and enhanced with Ajax capabilities.",
+        "description": "GMap component is built on Google Maps API Version 3. Gmap is highly integrated with Faces development model and enhanced with AJAX capabilities.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -8631,7 +8699,7 @@
       },
       {
         "name": "graphicImage",
-        "description": "PrimeFaces GraphicImage extends standard JSF graphic image component with the ability of displaying binary data like an inputstream. Main use cases of GraphicImage is to make displaying images stored in database or on-the-fly images easier. Legacy way to do this is to come up with a Servlet that does the streaming, GraphicImage does all the hard work without the need of a Servlet.",
+        "description": "GraphicImage extends standard Faces graphic image component with the ability of displaying binary data like an inputstream. Main use cases of GraphicImage is to make displaying images stored in database or on-the-fly images easier. Legacy way to do this is to come up with a Servlet that does the streaming, GraphicImage does all the hard work without the need of a Servlet.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -9060,7 +9128,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Javascript handler to execute before ajax request is begins.",
+            "description": "Javascript handler to execute before ajax request begins.",
             "name": "onstart",
             "required": "false",
             "type": "java.lang.String"
@@ -10029,7 +10097,7 @@
       },
       {
         "name": "inputNumber",
-        "description": "InputNumber is an extension to the inputText with optimized handling for numbers.",
+        "description": "InputNumber is an extension to the InputText with optimized handling for numbers.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -10446,6 +10514,12 @@
             "type": "java.lang.String"
           },
           {
+            "description": "Specifies the number of decimal places to retain for the raw value and `decimalPlaces` will be used for display values. If this option is left as `null` (the default), the `decimalPlaces` value will be used. Note: Setting this to fewer decimal places than those displayed may cause user confusion.",
+            "name": "decimalPlacesRawValue",
+            "required": "false",
+            "type": "java.lang.Integer"
+          },
+          {
             "description": "Defines what to display when the input value is empty (possible options are null, focus, press, always, min, max, zero, number, or a string representing a number). Default is focus.",
             "name": "emptyValue",
             "required": "false",
@@ -10470,10 +10544,10 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Controls padding of the decimal places. If true, always pads the decimal with zeros.",
+            "description": "Allow padding the decimal places with zeros. If set to 'floats', padding is only done when there are some decimals (up to the number of decimal places from the decimalPlaces variable). If set to an integer, padding will use that number for adding the zeros. If set to \"true\" it will always pad the decimal places with zeroes, and never if set to \"false\". Default is \"true\"",
             "name": "padControl",
             "required": "false",
-            "type": "java.lang.Boolean"
+            "type": "java.lang.String"
           },
           {
             "description": "Controls leading zero behavior. Valid values are \"allow\"(default), \"deny\" and \"keep\".",
@@ -10494,6 +10568,12 @@
             "type": "boolean"
           },
           {
+            "description": "Allows the user to increment or decrement the element value with the up and down arrow keys, default is true.",
+            "name": "modifyValueOnUpDownArrow",
+            "required": "false",
+            "type": "boolean"
+          },
+          {
             "description": "Defines if the element value should be selected on focus, default is true.",
             "name": "selectOnFocus",
             "required": "false",
@@ -10502,156 +10582,6 @@
           {
             "description": "Defines where should be positioned the caret on focus such as 'start', 'end', 'decimalLeft', 'decimalRight', default is null.",
             "name": "caretPositionOnFocus",
-            "required": "false",
-            "type": "java.lang.String"
-          }
-        ]
-      },
-      {
-        "name": "inputSwitch",
-        "description": "Deprecated since 10.0 for removal in 15.0.0)",
-        "attribute": [
-          {
-            "description": "Unique identifier of the component in a namingContainer.",
-            "name": "id",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
-            "name": "rendered",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "An el expression referring to a server side UIComponent instance in a backing bean.",
-            "name": "binding",
-            "required": "false",
-            "type": "javax.faces.component.UIComponent"
-          },
-          {
-            "description": "Value of the component.",
-            "name": "value",
-            "required": "false",
-            "type": "java.lang.Object"
-          },
-          {
-            "description": "An el expression or a literal text that defines a converter for the component. When it's an EL expression, it's resolved to a converter instance. In case it's a static text, it must refer to a converter id.",
-            "name": "converter",
-            "required": "false",
-            "type": "javax.faces.convert.Converter"
-          },
-          {
-            "description": "When set true, process validations logic is executed at apply request values phase for this component. Default is false.",
-            "name": "immediate",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "Marks component as required.",
-            "name": "required",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "A method expression referring to a method validating the input.",
-            "name": "validator",
-            "required": "false",
-            "type": "javax.faces.validator.Validator"
-          },
-          {
-            "description": "A method binding expression referring to a method for handling a valuchangeevent.",
-            "name": "valueChangeListener",
-            "required": "false",
-            "type": "javax.faces.event.ValueChangeListener"
-          },
-          {
-            "description": "Message to display when required field validation fails.",
-            "name": "requiredMessage",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Message to display when conversion fails.",
-            "name": "converterMessage",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Message to display when validation fails.",
-            "name": "validatorMessage",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Name of the client side widget.",
-            "name": "widgetVar",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Custom label for on state.",
-            "name": "onLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Custom label for off state.",
-            "name": "offLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "User presentable name.",
-            "name": "label",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Disables or enables the switch.",
-            "name": "disabled",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "Client side callback to execute on value change event.",
-            "name": "onchange",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Inline style of the main container.",
-            "name": "style",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Style class of the main container.",
-            "name": "styleClass",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "The tabindex attribute specifies the tab order of an element when the \"tab\" button is used for navigating.",
-            "name": "tabindex",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Controls the visibility of the labels, defaults to true.",
-            "name": "showLabels",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "Client side callback to execute when component receives focus.",
-            "name": "onfocus",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Client side callback to execute when component loses focus.",
-            "name": "onblur",
             "required": "false",
             "type": "java.lang.String"
           }
@@ -11973,7 +11903,7 @@
       },
       {
         "name": "knob",
-        "description": "",
+        "description": "Knob is an input component to insert numeric values in a range.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -12153,7 +12083,7 @@
       },
       {
         "name": "lifecycle",
-        "description": "",
+        "description": "Lifecycle is a utility component which displays the execution time of each Faces phase. It also synchronizes automatically after each AJAX request.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -12654,7 +12584,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "The aria-label attribute is used to define a string that labels the current element for accessibility.",
+            "description": "The aria-label attribute is used to define a string that labels the current element for accessibility. Only used when the button is icon only.",
             "name": "ariaLabel",
             "required": "false",
             "type": "java.lang.String"
@@ -12693,7 +12623,7 @@
       },
       {
         "name": "media",
-        "description": "Media component is used for embedding multimedia content such as videos and music to JSF views. Media renders object or embed html tags depending on the user client.",
+        "description": "Media component is used for embedding multimedia content such as videos and music to Faces views. Media renders object or embed html tags depending on the user client.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -13260,7 +13190,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Javascript handler to execute before ajax request is begins.",
+            "description": "Javascript handler to execute before ajax request begins.",
             "name": "onstart",
             "required": "false",
             "type": "java.lang.String"
@@ -13437,7 +13367,7 @@
       },
       {
         "name": "message",
-        "description": "Message is a pre-skinned extended version of the standard JSF message component with extensions.",
+        "description": "Message is a pre-skinned extended version of the standard Faces message component with extensions.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -13527,7 +13457,7 @@
       },
       {
         "name": "messages",
-        "description": "Messages is a pre-skinned extended version of the standard JSF messages component with extensions.",
+        "description": "Messages is a pre-skinned extended version of the standard Faces messages component with extensions.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -13821,7 +13751,7 @@
       },
       {
         "name": "notificationBar",
-        "description": "NotificationBar displayes a multipurpose fixed positioned panel for notification. Any group of JSF content can be placed inside notificationbar.",
+        "description": "NotificationBar displayes a multipurpose fixed positioned panel for notification. Any group of Faces content can be placed inside notificationbar.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -13968,10 +13898,9 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Name of the iterator.",
+            "description": "Name of the iterator variable that references each element in the data set.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Label of an item.",
@@ -14055,7 +13984,7 @@
       },
       {
         "name": "organigram",
-        "description": "",
+        "description": "Organigram is a data component to display an organizational hierarchy.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -14090,8 +14019,7 @@
           {
             "description": "Name of the request-scoped variable that'll be used to refer each treenode data during rendering.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "OrganigramNode to reference the selections.",
@@ -14133,7 +14061,7 @@
       },
       {
         "name": "organigramNode",
-        "description": "",
+        "description": "Organigram requires an instance of OrganigramNode interface as its value to define the root, a default implementation DefaultOrganigramNode is provided. Each node has a type where each node at the backend needs to match the p:organigramNode helper component.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -14373,7 +14301,7 @@
       },
       {
         "name": "outputPanel",
-        "description": "OutputPanel is used to group content on a page.",
+        "description": "OutputPanel is a panel component with the ability to deferred loading, which is also the key feature of this component.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -14709,7 +14637,7 @@
       },
       {
         "name": "panelGrid",
-        "description": "PanelGrid is an extension to the standard PanelGrid.",
+        "description": "PanelGrid is an extension to the standard Faces PanelGrid with responsive CSS and skinning.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -15279,7 +15207,7 @@
       },
       {
         "name": "photoCam",
-        "description": ".",
+        "description": "PhotoCam is used to take photos with webcam and send them to the Faces backend model.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -15528,10 +15456,9 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Name of the iterator.",
+            "description": "Name of the iterator variable that references each element in the data set.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Label of an item.",
@@ -15711,7 +15638,7 @@
       },
       {
         "name": "poll",
-        "description": "Poll is an ajax component that has the ability to send periodical ajax requests and execute listeners on JSF backing beans.",
+        "description": "Poll is an AJAX component that has the ability to send periodical AJAX requests and execute listeners on Faces backing beans.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -15762,7 +15689,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Javascript handler to execute before ajax request is begins.",
+            "description": "Javascript handler to execute before ajax request begins.",
             "name": "onstart",
             "required": "false",
             "type": "java.lang.String"
@@ -15993,7 +15920,7 @@
       },
       {
         "name": "radioButton",
-        "description": "",
+        "description": "RadioButton is a helper component of SelectOneRadio to implement custom layouts.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -16197,7 +16124,7 @@
       },
       {
         "name": "remoteCommand",
-        "description": "RemoteCommand provides a way to execute JSF backing bean methods directly from javascript.",
+        "description": "RemoteCommand provides a way to execute Faces backing bean methods directly from javascript.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -16260,7 +16187,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Javascript handler to execute before ajax request is begins.",
+            "description": "Javascript handler to execute before ajax request begins.",
             "name": "onstart",
             "required": "false",
             "type": "java.lang.String"
@@ -16359,7 +16286,7 @@
       },
       {
         "name": "resizable",
-        "description": "PrimeFaces features a resizable component that has the ability to make a JSF component resizable. Resizable can be used on various components like resize an input fields, panels, menus, images and more.",
+        "description": "Resizable component that has the ability to make a Faces component resizable. Resizable can be used on various components like resize an input fields, panels, menus, images and more.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -16644,6 +16571,18 @@
             "type": "java.lang.String"
           },
           {
+            "description": "Icon to expand rowExpansion",
+            "name": "expandIcon",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Icon to collapse rowExpansion",
+            "name": "collapseIcon",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
             "description": "Position of the element in the tabbing order.",
             "name": "tabindex",
             "required": "false",
@@ -16653,7 +16592,7 @@
       },
       {
         "name": "schedule",
-        "description": "Schedule provides an Outlook Calendar, iCal like JSF component to manage events. Schedule is highly customizable featuring various views (month, day, week), built-in I18N, drag-drop, resize, customizable event dialog and skinning.",
+        "description": "Schedule provides an Outlook Calendar, iCal like Faces component to manage events. Schedule is highly customizable featuring various views (month, day, week), built-in I18N, drag-drop, resize, customizable event dialog and skinning.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -16917,7 +16856,7 @@
       },
       {
         "name": "scrollPanel",
-        "description": "",
+        "description": "ScrollPanel is used to display scrollable content with theme aware scrollbars instead of native browser scrollbars.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -16965,7 +16904,7 @@
       },
       {
         "name": "selectBooleanButton",
-        "description": "",
+        "description": "SelectBooleanButton is used to select a binary decision with a toggle button.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -17127,7 +17066,7 @@
       },
       {
         "name": "selectBooleanCheckbox",
-        "description": "",
+        "description": "SelectBooleanCheckbox is an extended version of the standard checkbox with theme integration.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -17283,7 +17222,7 @@
       },
       {
         "name": "selectCheckboxMenu",
-        "description": "",
+        "description": "SelectCheckboxMenu is a multi select component that displays options in an overlay.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -17450,8 +17389,7 @@
           {
             "description": "Name of iterator to be used in custom content display.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Appends the overlay to the element defined by search expression. Defaults to document body.",
@@ -17474,6 +17412,12 @@
           {
             "description": "When enabled, the header of panel is displayed. Default is true.",
             "name": "showHeader",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
+            "description": "When enabled, the \"Select All\" checkbox option is displayed. Default is true.",
+            "name": "showSelectAll",
             "required": "false",
             "type": "java.lang.Boolean"
           },
@@ -17541,7 +17485,7 @@
       },
       {
         "name": "selectManyButton",
-        "description": "",
+        "description": "SelectManyButton is a multi select component using button user interface.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -17667,7 +17611,7 @@
       },
       {
         "name": "selectManyCheckbox",
-        "description": "",
+        "description": "SelectManyCheckbox is an extended version of the standard Faces SelectManyCheckbox.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -17817,7 +17761,7 @@
       },
       {
         "name": "selectManyMenu",
-        "description": "",
+        "description": "SelectManyMenu is an extended version of the standard Faces SelectManyMenu.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -17948,8 +17892,7 @@
           {
             "description": "Name of iterator to be used in custom content display.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "When true, a checkbox is displayed next to each item.",
@@ -18015,7 +17958,7 @@
       },
       {
         "name": "selectOneButton",
-        "description": "",
+        "description": "SelectOneButton is an input component to do a single select.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -18147,7 +18090,7 @@
       },
       {
         "name": "selectOneListbox",
-        "description": "",
+        "description": "SelectOneListbox is an extended version of the standard Faces selectOneListbox component.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -18278,8 +18221,7 @@
           {
             "description": "Name of iterator to be used in custom content display.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Displays an input filter for the list.",
@@ -18468,10 +18410,9 @@
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "Name of the iterator variable that references each element in the data set.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Defines the height of the scrollable area.",
@@ -18621,7 +18562,7 @@
       },
       {
         "name": "selectOneRadio",
-        "description": "",
+        "description": "SelectOneRadio is an extended version of the standard SelectOneRadio.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -19932,7 +19873,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Client side callback to execute before ajax request is begins.",
+            "description": "Client side callback to execute before ajax request begins.",
             "name": "onstart",
             "required": "false",
             "type": "java.lang.String"
@@ -20394,7 +20335,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "The severity of the message: error, info, warn, fatal.",
+            "description": "The severity of the message: success, info, error, warn, fatal.",
             "name": "severity",
             "required": "true",
             "type": "java.lang.String"
@@ -20628,10 +20569,9 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "Name of the iterator variable used to refer each data.",
+            "description": "Name of the iterator variable that references each element in the data set.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Number of rows to display per page. Default value is 0 meaning to display all data available.",
@@ -20894,8 +20834,7 @@
           {
             "description": "Name of collection iterator to use in dynamic number of tabs.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Name of the exported request scoped variable for the status of the iteration.",
@@ -20973,7 +20912,7 @@
       },
       {
         "name": "tagCloud",
-        "description": "",
+        "description": "TagCloud displays a collection of tag with different strengths.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -21410,8 +21349,7 @@
           {
             "description": "Name of the request-scoped variable for underlaying object in the TimelineEvent for each iteration.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "An instance of TimelineModel representing the backing model.",
@@ -22178,8 +22116,7 @@
           {
             "description": "Name of the request-scoped variable that'll be used to refer each treenode data during rendering.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Specifies the ajax/client toggleMode. Default is false.",
@@ -22356,6 +22293,12 @@
             "type": "java.lang.Integer"
           },
           {
+            "description": "Placeholder for the filter input element.",
+            "name": "sourceFilterPlaceholder",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
             "description": "Disables tree.",
             "name": "disabled",
             "required": "false",
@@ -22494,10 +22437,9 @@
             "type": "org.primefaces.model.TreeNode"
           },
           {
-            "description": "",
+            "description": "Name of the iterator variable that references each element in the data set.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Inline style of the container element.",
@@ -22744,6 +22686,12 @@
             "name": "filterEvent",
             "required": "false",
             "type": "java.lang.String"
+          },
+          {
+            "description": "Defines if filtering would be done using normalized values (accents will be removed from characters). Default is false.",
+            "name": "filterNormalize",
+            "required": "false",
+            "type": "java.lang.Boolean"
           },
           {
             "description": "Delay to wait in milliseconds before sending each filter query. Default is 300.",
@@ -23025,7 +22973,7 @@
       },
       {
         "name": "video",
-        "description": "Video component is used for embedding video content such as MP4, OGG, WEBM to JSF views.",
+        "description": "Video component is used for embedding video content such as MP4, OGG, WEBM to Faces views.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -23157,7 +23105,7 @@
       },
       {
         "name": "wizard",
-        "description": "Wizard provides an ajax enhanced UI to implement a workflow easily in a single page. Wizard consists of several child tab components where each tab represents a step in the process.",
+        "description": "Wizard provides an enhanced UI to implement a workflow easily in a single page. Wizard consists of several child tab components where each tab represents a step in the process.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -23342,438 +23290,6 @@
           {
             "description": "Name of javascript function to extend the options of the underlying Chart.js plugin.",
             "name": "extender",
-            "required": "false",
-            "type": "java.lang.String"
-          }
-        ]
-      },
-      {
-        "name": "barChart",
-        "description": "",
-        "attribute": [
-          {
-            "description": "Unique identifier of the component in a namingContainer.",
-            "name": "id",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
-            "name": "rendered",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "An el expression referring to a server side UIComponent instance in a backing bean.",
-            "name": "binding",
-            "required": "false",
-            "type": "javax.faces.component.UIComponent"
-          },
-          {
-            "description": "Name of the client side widget.",
-            "name": "widgetVar",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Model of the chart.",
-            "name": "model",
-            "required": "false",
-            "type": "org.primefaces.model.charts.bar.BarChartModel"
-          },
-          {
-            "description": "Inline style of the component.",
-            "name": "style",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Style class of the component.",
-            "name": "styleClass",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "The aria-label attribute is used to define a string that labels the current element for accessibility.",
-            "name": "ariaLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          }
-        ]
-      },
-      {
-        "name": "bubbleChart",
-        "description": "",
-        "attribute": [
-          {
-            "description": "Unique identifier of the component in a namingContainer.",
-            "name": "id",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
-            "name": "rendered",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "An el expression referring to a server side UIComponent instance in a backing bean.",
-            "name": "binding",
-            "required": "false",
-            "type": "javax.faces.component.UIComponent"
-          },
-          {
-            "description": "Name of the client side widget.",
-            "name": "widgetVar",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Model of the chart.",
-            "name": "model",
-            "required": "false",
-            "type": "org.primefaces.model.charts.bubble.BubbleChartModel"
-          },
-          {
-            "description": "Inline style of the component.",
-            "name": "style",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Style class of the component.",
-            "name": "styleClass",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "The aria-label attribute is used to define a string that labels the current element for accessibility.",
-            "name": "ariaLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          }
-        ]
-      },
-      {
-        "name": "donutChart",
-        "description": "",
-        "attribute": [
-          {
-            "description": "Unique identifier of the component in a namingContainer.",
-            "name": "id",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
-            "name": "rendered",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "An el expression referring to a server side UIComponent instance in a backing bean.",
-            "name": "binding",
-            "required": "false",
-            "type": "javax.faces.component.UIComponent"
-          },
-          {
-            "description": "Name of the client side widget.",
-            "name": "widgetVar",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Model of the chart.",
-            "name": "model",
-            "required": "false",
-            "type": "org.primefaces.model.charts.donut.DonutChartModel"
-          },
-          {
-            "description": "Inline style of the component.",
-            "name": "style",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Style class of the component.",
-            "name": "styleClass",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "The aria-label attribute is used to define a string that labels the current element for accessibility.",
-            "name": "ariaLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          }
-        ]
-      },
-      {
-        "name": "lineChart",
-        "description": "",
-        "attribute": [
-          {
-            "description": "Unique identifier of the component in a namingContainer.",
-            "name": "id",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
-            "name": "rendered",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "An el expression referring to a server side UIComponent instance in a backing bean.",
-            "name": "binding",
-            "required": "false",
-            "type": "javax.faces.component.UIComponent"
-          },
-          {
-            "description": "Name of the client side widget.",
-            "name": "widgetVar",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Model of the chart.",
-            "name": "model",
-            "required": "false",
-            "type": "org.primefaces.model.charts.line.LineChartModel"
-          },
-          {
-            "description": "Inline style of the component.",
-            "name": "style",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Style class of the component.",
-            "name": "styleClass",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "The aria-label attribute is used to define a string that labels the current element for accessibility.",
-            "name": "ariaLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          }
-        ]
-      },
-      {
-        "name": "scatterChart",
-        "description": "Scatter Chart",
-        "attribute": [
-          {
-            "description": "Unique identifier of the component in a namingContainer.",
-            "name": "id",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
-            "name": "rendered",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "An el expression referring to a server side UIComponent instance in a backing bean.",
-            "name": "binding",
-            "required": "false",
-            "type": "javax.faces.component.UIComponent"
-          },
-          {
-            "description": "Name of the client side widget.",
-            "name": "widgetVar",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Model of the chart.",
-            "name": "model",
-            "required": "false",
-            "type": "org.primefaces.model.charts.scatter.ScatterChartModel"
-          },
-          {
-            "description": "Inline style of the component.",
-            "name": "style",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Style class of the component.",
-            "name": "styleClass",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "The aria-label attribute is used to define a string that labels the current element for accessibility.",
-            "name": "ariaLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          }
-        ]
-      },
-      {
-        "name": "pieChart",
-        "description": "",
-        "attribute": [
-          {
-            "description": "Unique identifier of the component in a namingContainer.",
-            "name": "id",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
-            "name": "rendered",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "An el expression referring to a server side UIComponent instance in a backing bean.",
-            "name": "binding",
-            "required": "false",
-            "type": "javax.faces.component.UIComponent"
-          },
-          {
-            "description": "Name of the client side widget.",
-            "name": "widgetVar",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Model of the chart.",
-            "name": "model",
-            "required": "false",
-            "type": "org.primefaces.model.charts.pie.PieChartModel"
-          },
-          {
-            "description": "Inline style of the component.",
-            "name": "style",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Style class of the component.",
-            "name": "styleClass",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "The aria-label attribute is used to define a string that labels the current element for accessibility.",
-            "name": "ariaLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          }
-        ]
-      },
-      {
-        "name": "polarAreaChart",
-        "description": "",
-        "attribute": [
-          {
-            "description": "Unique identifier of the component in a namingContainer.",
-            "name": "id",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
-            "name": "rendered",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "An el expression referring to a server side UIComponent instance in a backing bean.",
-            "name": "binding",
-            "required": "false",
-            "type": "javax.faces.component.UIComponent"
-          },
-          {
-            "description": "Name of the client side widget.",
-            "name": "widgetVar",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Model of the chart.",
-            "name": "model",
-            "required": "false",
-            "type": "org.primefaces.model.charts.polar.PolarAreaChartModel"
-          },
-          {
-            "description": "Inline style of the component.",
-            "name": "style",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Style class of the component.",
-            "name": "styleClass",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "The aria-label attribute is used to define a string that labels the current element for accessibility.",
-            "name": "ariaLabel",
-            "required": "false",
-            "type": "java.lang.String"
-          }
-        ]
-      },
-      {
-        "name": "radarChart",
-        "description": "",
-        "attribute": [
-          {
-            "description": "Unique identifier of the component in a namingContainer.",
-            "name": "id",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Boolean value to specify the rendering of the component, when set to false component will not be rendered.",
-            "name": "rendered",
-            "required": "false",
-            "type": "java.lang.Boolean"
-          },
-          {
-            "description": "An el expression referring to a server side UIComponent instance in a backing bean.",
-            "name": "binding",
-            "required": "false",
-            "type": "javax.faces.component.UIComponent"
-          },
-          {
-            "description": "Name of the client side widget.",
-            "name": "widgetVar",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Model of the chart.",
-            "name": "model",
-            "required": "false",
-            "type": "org.primefaces.model.charts.radar.RadarChartModel"
-          },
-          {
-            "description": "Inline style of the component.",
-            "name": "style",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "Style class of the component.",
-            "name": "styleClass",
-            "required": "false",
-            "type": "java.lang.String"
-          },
-          {
-            "description": "The aria-label attribute is used to define a string that labels the current element for accessibility.",
-            "name": "ariaLabel",
             "required": "false",
             "type": "java.lang.String"
           }
@@ -24294,10 +23810,10 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Whether the year should be rendered as a dropdown instead of text. Default is false.",
+            "description": "Display the year navigator. When set to 'true' or 'input', the year is shown as a numeric input, which is accessible for visually impaired users. If set to 'select', it appears as a dropdown menu. Default is 'false'.",
             "name": "yearNavigator",
             "required": "false",
-            "type": "java.lang.Boolean"
+            "type": "java.lang.String"
           },
           {
             "description": "Whether to display timepicker. Default is false.",
@@ -24316,6 +23832,30 @@
             "name": "timeOnly",
             "required": "false",
             "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Default for hour selection, if no date is given. Default is 0.",
+            "name": "defaultHour",
+            "required": "false",
+            "type": "java.lang.Integer"
+          },
+          {
+            "description": "Default for minute selection, if no date is given. Default is 0.",
+            "name": "defaultMinute",
+            "required": "false",
+            "type": "java.lang.Integer"
+          },
+          {
+            "description": "Default for second selection, if no date is given. Default is 0.",
+            "name": "defaultSecond",
+            "required": "false",
+            "type": "java.lang.Integer"
+          },
+          {
+            "description": "Default for millisecond selection, if no date is given. Default is 0.",
+            "name": "defaultMillisecond",
+            "required": "false",
+            "type": "java.lang.Integer"
           },
           {
             "description": "Whether to show the seconds in time picker. Default is false.",
@@ -24555,7 +24095,7 @@
       },
       {
         "name": "avatar",
-        "description": "",
+        "description": "Avatar represents people using icons, labels and images.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -24657,7 +24197,7 @@
       },
       {
         "name": "avatarGroup",
-        "description": "",
+        "description": "A set of Avatars can be displayed together using this component.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -24693,7 +24233,7 @@
       },
       {
         "name": "badge",
-        "description": "",
+        "description": "Badge is a small status indicator for another element.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -24771,7 +24311,7 @@
       },
       {
         "name": "chip",
-        "description": "",
+        "description": "Chip represents entities using icons, labels and images.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -24843,7 +24383,7 @@
       },
       {
         "name": "tag",
-        "description": "",
+        "description": "Tag component is used to categorize content.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -24909,7 +24449,7 @@
       },
       {
         "name": "skeleton",
-        "description": "",
+        "description": "Skeleton is a placeholder to display instead of the actual content.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -24975,7 +24515,7 @@
       },
       {
         "name": "divider",
-        "description": "",
+        "description": "Divider is used to separate contents.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -25035,7 +24575,7 @@
       },
       {
         "name": "scrollTop",
-        "description": "",
+        "description": "ScrollTop gets displayed after a certain scroll position and used to navigates to the top of the page quickly.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -25101,7 +24641,7 @@
       },
       {
         "name": "splitter",
-        "description": "",
+        "description": "Splitter is utilized to separate and resize panels.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -25179,7 +24719,7 @@
       },
       {
         "name": "splitterPanel",
-        "description": "",
+        "description": "SplitterPanel is utilized by the Splitter component to separate content.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -25245,7 +24785,7 @@
       },
       {
         "name": "card",
-        "description": "",
+        "description": "Card is a flexible container component.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
@@ -25332,10 +24872,9 @@
             "type": "java.lang.Object"
           },
           {
-            "description": "Name of the iterator to display an item.",
+            "description": "Name of the iterator variable that references each element in the data set.",
             "name": "var",
-            "required": "true",
-            "type": "java.lang.String"
+            "required": "true"
           },
           {
             "description": "Position of the chronoline bar relative to the content. Valid values are \"left\", \"right\" for vertical layout and \"top\", \"bottom\" for horizontal layout.",
@@ -25518,10 +25057,9 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Name of the item iterator.",
+            "description": "Name of the iterator variable that references each element in the data set.",
             "name": "var",
-            "required": "false",
-            "type": "java.lang.String"
+            "required": "false"
           },
           {
             "description": "Name of the client side widget.",
@@ -25569,7 +25107,7 @@
       },
       {
         "name": "speedDial",
-        "description": "Speed Dial when pressed, a floating action button can display multiple primary actions that can be performed on a page.",
+        "description": "SpeedDial is a floating action button with a popup menu that can display multiple primary actions that can be performed on a page.",
         "attribute": [
           {
             "description": "Unique identifier of the component in a namingContainer.",
