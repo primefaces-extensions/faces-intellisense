@@ -114,6 +114,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/DebasishWe"><img src="https://avatars.githubusercontent.com/u/125366228?v=4?s=100" width="100px;" alt="DebasishWe"/><br /><sub><b>DebasishWe</b></sub></a><br /><a href="#userTesting-DebasishWe" title="User Testing">📓</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://jeffbrower.com"><img src="https://avatars.githubusercontent.com/u/19825556?v=4?s=100" width="100px;" alt="Jeff Brower"/><br /><sub><b>Jeff Brower</b></sub></a><br /><a href="https://github.com/primefaces-extensions/faces-intellisense/issues?q=author%3Ajbrower2" title="Bug reports">🐛</a></td>
     </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/vtsimbos"><img src="https://avatars.githubusercontent.com/u/36635315?v=4?s=100" width="100px;" alt="vtsimbos"/><br /><sub><b>vtsimbos</b></sub></a><br /><a href="https://github.com/primefaces-extensions/faces-intellisense/issues?q=author%3Avtsimbos" title="Bug reports">🐛</a></td>
+    </tr>
   </tbody>
 </table>
 
