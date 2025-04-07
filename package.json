@@ -64,7 +64,7 @@
               "primefaces-12.0.0",
               "primefaces-13.0.0",
               "primefaces-14.0.0",
-			  "primefaces-15.0.0"
+              "primefaces-15.0.0"
             ],
             "default": "primefaces-15.0.0",
             "description": "PrimeFaces Version. (Restart Required)."
@@ -76,7 +76,7 @@
               "primefaces-extensions-12.0.0",
               "primefaces-extensions-13.0.0",
               "primefaces-extensions-14.0.0",
-			  "primefaces-extensions-15.0.0"
+              "primefaces-extensions-15.0.0"
             ],
             "default": "primefaces-extensions-15.0.0",
             "description": "PrimeFaces Extensions Version. (Restart Required)."
@@ -127,10 +127,10 @@
   },
   "devDependencies": {
     "@types/glob": "8.1.0",
-    "@types/lodash": "^4.17.15",
+    "@types/lodash": "^4.17.16",
     "@types/mocha": "^10.0.10",
-    "@types/node": "20.14.2",
-    "@types/verror": "^1.10.10",
+    "@types/node": "22.14.0",
+    "@types/verror": "^1.10.11",
     "@types/vscode": "^1.90.0",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
