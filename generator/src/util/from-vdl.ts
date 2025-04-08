@@ -26,7 +26,10 @@ const getAllUrlTags = async (url: string, tags: any[]) => {
 const getTagInfo = async (type: string, url: string) => {
     const response = await axios.get(url, { headers: { 'Content-Type': 'text/plain' } });
     const dom = new JSDOM(response.data);
-    const tag_name = url.substring(url.indexOf(`/${type}/`) + type.length + 2, url.indexOf('.html'));
+    const tag_name = url.includes('.html')
+        ? url.substring(url.lastIndexOf('/') + 1, url.indexOf('.html'))
+        : url.substring(url.lastIndexOf('/') + 1);
+    console.log("Processing Tag:", tag_name);
     let tag_description = '';
     dom.window.document
         .querySelector('div.description')
@@ -34,6 +37,12 @@ const getTagInfo = async (type: string, url: string) => {
         .forEach((p) => {
             tag_description = tag_description + ' ' + p.textContent;
         });
+
+    if (tag_description === '') {
+        let description = dom.window.document.querySelector('div.description')?.textContent || '';
+        description = description.replace('Description:', '').trim();
+        tag_description = description;
+    }
     const tag_attribute = getAttributes(dom.window.document.querySelectorAll('tr.rowColor'), dom.window.document.querySelectorAll('tr.altColor'));
     return new Tag(clearValue(tag_name), clearValue(tag_description), tag_attribute);
 };

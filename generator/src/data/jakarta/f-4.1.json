@@ -2,7 +2,7 @@
   "components": {
     "component": [
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "actionlistener",
         "description": "Register an ActionListener instance on the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
@@ -26,7 +26,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "ajax",
         "description": "Register an AjaxBehavior instance on one or more UIComponents implementing the ClientBehaviorHolder interface. This tag may be nested witin a single component (enabling Ajax for a single component), or it may be \"wrapped\" around multiple components (enabling Ajax for many components). The String value for ids specified for execute and render may be specified as a search expression as outlined in the JavaDocs for UIComponent.findComponent(). The implementation must resolve these ids as specified for UIComponent.findComponent(). For example, consider the following Facelets code. When the button is pressed, panel_1, in form_1 will be re-rendered, along with panel_2 in form_2.",
         "attribute": [
           {
@@ -92,7 +92,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "attribute",
         "description": "Add an attribute to the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
@@ -110,7 +110,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "attributes",
         "description": "Add attributes to the UIComponent associated with the closest parent UIComponent tag. For each Map.Entry in the Map referenced by the value attribute of this tag, take the following action. If parent.getAttributes().containsKey(entry.getKey()) returns true, take no action for this entry. Otherwise, if entry.getValue() is a ValueExpression call parent.setValueExpression(entry.getKey(), entry.getValue()). Otherwise, call parent.getAttributes.put(entry.getKey(), entry.getValue()).",
         "attribute": [
           {
@@ -122,7 +122,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "convertdatetime",
         "description": "Register a DateTimeConverter instance on the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
@@ -176,7 +176,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "converter",
         "description": "Register a named Converter instance on the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
@@ -200,8 +200,8 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
-        "description": "",
+        "name": "convertnumber",
+        "description": "Register a NumberConverter instance on the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
             "name": "binding",
@@ -284,7 +284,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "event",
         "description": "Allow Jakarta Faces page authors to install ComponentSystemEventListener instances on a component in a page.",
         "attribute": [
           {
@@ -296,7 +296,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "facet",
         "description": "Register a named facet on the UIComponent associated with the closest parent UIComponent tag. When the facet contains more than one child the children will be automatically put in a container UIPanel.",
         "attribute": [
           {
@@ -308,7 +308,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "importconstants",
         "description": "Used inside of the metadata facet of a view, this tag will import a mapping of all constant field values of the given type in the current view. Constant field values are all public static final fields of the given type. The map key represents the constant field name as String. The map value represents the actual constant field value. This works for classes, interfaces and enums.",
         "attribute": [
           {
@@ -326,7 +326,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "loadbundle",
         "description": "Load a resource bundle localized for the Locale of the current view, and expose it as a java.util.Map in the request attributes of the current request under the key specified by the value of the \"var\" attribute of this tag. The Map must behave such that if a get() call is made for a key that does not exist in the Map, the literal string ???KEY??? is returned from the Map, where KEY is the key being looked up in the Map, instead of a MissingResourceException being thrown. If the ResourceBundle does not exist, a TagAttributeException must be thrown.",
         "attribute": [
           {
@@ -344,12 +344,12 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "metadata",
         "description": "Declare the metadata facet for this view. This must be a direct child of the . This tag must reside within the top level XHTML file for the given viewId, or in a template client, but not in a template. The implementation must insure that the direct child of the facet is a UIPanel, even if there is only one child of the facet. The implementation must set the id of the UIPanel to be the value of the UIViewRoot.METADATA_FACET_NAME symbolic constant. The implementation must allow templating for this element according to the following pattern. template client XHTML view, view01.xhtml Note line 4. The page author must ensure that the element does not appear on a template or included page. It must reside on the root page that corresponds to the viewId. The template page, template.xhtml",
         "attribute": []
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "param",
         "description": "Add a child UIParameter component to the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
@@ -385,7 +385,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "passthroughattribute",
         "description": "Add an attribute to the passThroughAttributes Map of the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
@@ -403,7 +403,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "passthroughattributes",
         "description": "Add attributes to the passThroughAttributes Map of the UIComponent associated with the closest parent UIComponent tag. For each Map.Entry in the Map referenced by the value attribute of this tag, take the following action. Call component.getPassThroughAttributes().put(entry.getKey(), entry.getValue()).",
         "attribute": [
           {
@@ -415,7 +415,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "phaselistener",
         "description": "Register a PhaseListener instance on the UIViewRoot in which this tag is nested.",
         "attribute": [
           {
@@ -433,7 +433,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "selectitem",
         "description": "Add a child UISelectItem component to the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
@@ -493,7 +493,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "selectitemgroup",
         "description": "UISelectItemGroup is a component that may be nested inside a UISelectMany or UISelectOne component, and causes the addition of one SelectItemGroup of one or more SelectItem instances to the list of available options in the parent component. This component accepts only children of type UISelectItems or UISelectItem.",
         "attribute": [
           {
@@ -517,7 +517,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "selectitemgroups",
         "description": "UISelectItemGroups is a component that may be nested inside a UISelectMany or UISelectOne component, and causes the addition of one or more SelectItemGroup of one or more SelectItem instances to the list of available options in the parent component. This component accepts only children of type UISelectItems or UISelectItem.",
         "attribute": [
           {
@@ -559,7 +559,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "selectitems",
         "description": "Add a child UISelectItems component to the UIComponent associated with the closed parent UIComponent tag. When iterating over the select items, toString() must be called on the string rendered attribute values. Version 2 of the specification introduces several new attributes, described below. These are: var, itemValue, itemLabel, itemDescription, itemDisabled, and itemLabelEscaped.",
         "attribute": [
           {
@@ -625,7 +625,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "setpropertyactionlistener",
         "description": "Register an ActionListener instance on the UIComponent associated with the closest parent UIComponent tag. This actionListener will cause the value given by the \"value\" attribute to be set into the ValueExpression given by the \"target\" attribute. The implementation of this tag creates a special ActionListener instance and registers it on the ActionSource associated with our most immediate surrounding instance of a tag whose implementation class is a subclass of UIComponentTag. This tag creates no output to the page currently being created. The ActionListener instance created and installed by this tag has the following behavior and contract.",
         "attribute": [
           {
@@ -649,7 +649,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "subview",
         "description": "Naming Container tag for all Jakarta Faces core and component tags. It is particularly useful when a nested section included via or any tag that dynamically includes another page is included more than once, potentially causing duplicate component IDs. Each of those nested sections can then be wrapped in its own with each an unique id.",
         "attribute": [
           {
@@ -673,7 +673,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "validatebean",
         "description": "A validator that delegates the validation of the local value to the Bean Validation API. The validationGroups attribute serves as a filter that instructs the Bean Validation API which contraints to enforce. If there are any constraint violations reported by Bean Validation, the value is considered invalid. An instance of this validator can participate in class-level validation provided the preconditions mentioned in are met. Please see the documentation for and jakarta.faces.validator.BeanValidator.validate() for the specification and usage example.",
         "attribute": [
           {
@@ -703,7 +703,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "validatedoublerange",
         "description": "Register a DoubleRangeValidator instance on the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
@@ -739,7 +739,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "validatelength",
         "description": "Register a LengthValidator instance on the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
@@ -775,7 +775,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "validatelongrange",
         "description": "Register a LongRangeValidator instance on the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
@@ -811,7 +811,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "validateregex",
         "description": "A validator that uses the pattern attribute to validate the wrapping component. The entire pattern is matched against the String value of the component. If it matches, it's valid.",
         "attribute": [
           {
@@ -841,7 +841,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "validaterequired",
         "description": "A validator that enforces the presence of a value. It has the same affect as setting the required attribute on a UIInput to true.",
         "attribute": [
           {
@@ -865,7 +865,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "validatewholebean",
         "description": "Support multi-field validation by enabling class-level bean validation on CDI based backing beans. This feature causes a temporary copy of the bean referenced by the value attribute, for the sole purpose of populating the bean with field values already validated by and then performing class-level validation on the copy. Regardless of the result of the class-level validation, the copy is discarded. This feature must explicitly be enabled by setting the application parameter specified in the javadoc for the symbolic constant jakarta.faces.validator.BeanValidator.ENABLE_VALIDATE_WHOLE_BEAN_PARAM_NAME. If this parameter is not set, or is set to false, this tag must be a no-op. A non-normative example follows the specification of the feature. At a high level, the feature provides for a UIInput subclass that maintains its own special private Validator that uses information from one or more s to perform class-level bean validation. For discussion, this special Validator is called the wholeBeanValidator. This tag must be backed by a UIInput component with the following specializations. Override getSubmittedValue() to return a non-null non empty String. This allows UIInput.validate() to call wholeBeanValidator.validate(). Override setConverter() to be a no-op. It does not make sense to allow a converter to be installed. Override addValidator() to be a no-op unless the argument is an instance of wholeBeanValidator. It does not make sense to allow additional validators to be installed. Override validate() to take the following actions. If the feature is not enabled, return immediately. If the wholeBeanValidator has not yet been installed, instantiate and pass it to this.addValidator(). Call super.validate(). The wholeBeanValidator must have a validate() method that performs the following actions. Due to the above specification, this method will only ever be passed the special UIInput component. Resolve the value of the component to its Object. Assume that this value is the bean whose properties are intended to be populated by components whose values are each validated by tags. For discussion, this bean is called the candidate bean and the properties and their respective values are called the candidate values. If the candidate bean cannot be referenced, return immediately from validate(). Use the information recorded by each of those tags to ensure that none of the candidate values are invalid. If any of them are invalid, return immediately from validate(). This ensures class-level validation is only performed on an instance whose fields are all individually valid. Otherwise it can be assumed that all field-level validations for this class-level validation have passed. Class-level bean validation must operate on a sufficiently populated bean instance. This differs from Faces field-level validation, which prevents beans from being populated with invalid values. To accomodate this difference, the candidate bean must be copied, populated with the already-validated candidate values, and then subjected to class-level validation. The copying must proceed in the following order. Invoke the newInstance() method on the bean's Class. If this throws any Exception, swallow it and continue. If the bean implements Serializable, use that to copy the bean instance. Otherwise, if the bean implements Cloneable, clone the bean instance. Otherwise, if the bean has a copy constructor, use that to copy the bean instance. If none of these techniques yields a copy, throw FacesException. Populate the copied bean with the candidate values. Obtain a reference to a jakarta.validation.Validator instance using the same steps described in the javadoc for jakarta.faces.validator.BeanValidator.validate(). Let the instance be called beanValidator for discussion. Obtain the value of the validationGroups attribute using the same steps described in the javadoc for jakarta.faces.validator.BeanValidator.validate(). If this value is not present or not valid, throw FacesException. Call the validate method on beanValidator, passing the populated copied bean and the validation groups as arguments. The copied bean can be discarded at this point. If the returned Set is non-empty, for each element in the Set, create a FacesMessage where the summary and detail are the return from calling ConstraintViolation.getMessage(). Capture all such FacesMessage instances into a Collection and pass them to ValidatorException. Using information recorded by the tag(s), call setValid(false) on all of the components whose values contributed to this class-level validation. This is essential to prevent the invalid value from being set into the model during the update model values phase. Finally, throw the exception. This tag must be placed in the component tree after all of the fields that are to be included in the multi-field validation. If this precondition is not met, the results of applying this tag are unspecified. This tag must be used in concert with and Bean Validation. Here is a brief example of the common case of ensuring two password fields are individually valid and also both the same. The feature requires the use of the validationGroups attribute on all of the tags and the tag. First, the ConstraintValidator implementation. Note that a PasswordHolder instance is passed to the isValid() method. This method will only be called if the individual properties of the PasswordHolder are valid. This fact allows the isValid() method to inspect the properties and perform effective class-level validtion. Next, the Constraint. Now the backing bean constrained by this Constraint. Note the use of groups. Note the fact that the bean implements Cloneable. Finally, the Facelets view.",
         "attribute": [
           {
@@ -895,7 +895,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "validator",
         "description": "Register a named Validator instance on the UIComponent associated with the closest parent UIComponent tag. Usage outside of an EditableValueHolder parent If this element is nested within a UIComponent tag that has other UIComponent children, the validator will be automatically added to all the child components as well as this one. The implementation must ensure this occurs even if the parent of this element is not an instance of EditableValueHolder.",
         "attribute": [
           {
@@ -925,7 +925,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "valuechangelistener",
         "description": "Register a ValueChangeListener instance on the UIComponent associated with the closest parent UIComponent tag.",
         "attribute": [
           {
@@ -949,7 +949,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "view",
         "description": "Container for all Jakarta Faces core and component tags used on a page.",
         "attribute": [
           {
@@ -1003,7 +1003,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "viewaction",
         "description": "This action component specifies an application-specific command (or action), using an EL method expression, to be invoked during one of the Faces lifecycle phases, by default Invoke Application.",
         "attribute": [
           {
@@ -1045,7 +1045,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "viewparam",
         "description": "Used inside of the metadata facet of a view, this tag causes a UIViewParameter to be attached as metadata for the current view. Because UIViewParameter extends UIInput all of the attributes and nested child content for any UIInput tags are valid on this tag as well.",
         "attribute": [
           {
@@ -1129,7 +1129,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/f/",
+        "name": "websocket",
         "description": "Registers a websocket push connection in client side by rendering the necessary scripts. Push messages can be sent from server side via jakarta.faces.push.PushContext interface. See also jakarta.faces.push.Push API documentation for an elaborate instruction on how to use .",
         "attribute": [
           {
@@ -1201,7 +1201,7 @@
         ]
       },
       {
-        "name": "ht",
+        "name": "element",
         "description": "Markup element that causes a component of component-family: jakarta.faces.Panel with renderer-type: jakarta.faces.passthrough.Element to be inserted in the tree. This element is primarily intended to be used by the default TagDecorator, when no match is found as described in the javadoc for that class. The component that backs this element must implement jakarta.faces.component.behavior.ClientBehaviorHolder and return \"click\" from its getDefaultEventName() method. The list of events returned from its getEventNames() method must include the \"on*\" attributes below, ommitting the leading \"on\".",
         "attribute": [
           {

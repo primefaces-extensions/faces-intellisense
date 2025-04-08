@@ -2,7 +2,7 @@
   "components": {
     "component": [
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/cc/",
+        "name": "actionsource",
         "description": "Declares that thecomposite component whose contract is declared by the in which this element is nestedexposes an implementation of ActionSource suitable for useas the target of attached objects in the using page.Any attached objects suitable for implementations ofActionSource may be attached to the composite component.Consider this excerpt from the using page: The elements on lines 4, 7, and 10refer to the attached objects declared on lines 2, 3 and 4 below. Most of the concepts from example content from also applies in the case of. Please see for a usageexample.",
         "attribute": [
           {
@@ -26,7 +26,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/cc/",
+        "name": "attribute",
         "description": "Declares an attribute that may be given to an instance of thecomposite component tag for this composite component. Theremay be zero or many of these inside of the section. This element may benested within other elements toconvey a usage contract that includes nested properties. Please see summarypage for a usage example. The top level component in which this element is ultimately nested must be a NamingContainer. There are certain component properties that must not be exposed using this element. The motivation for this restriction is that the mapping of markup attributes to component properties/attributes does not allow for these attributes to be set. The following properties must not be exposed using this element.",
         "attribute": [
           {
@@ -104,7 +104,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/cc/",
+        "name": "clientbehavior",
         "description": "Declares that the composite component whose contract is declared bythe in which this element isnested exposes an implementation of ClientBehaviorHoldersuitable for use as the target of attached objects in theusing page. Any attached objects suitable for implementations ofClientBehaviorHolder may be attached to the compositecomponent.",
         "attribute": [
           {
@@ -134,7 +134,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/cc/",
+        "name": "editablevalueholder",
         "description": "Declares that thecomposite component whose contract is declared by the in which this element is nestedexposes an implementation of EditableValueHolder suitablefor use as the target of attached objects in the usingpage. Any attached objects suitable for implementations ofEditableValueHolder may be attached to the compositecomponent.The example from still applies. Please see for a usageexample.",
         "attribute": [
           {
@@ -152,12 +152,12 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/cc/",
+        "name": "extension",
         "description": "The use of this tag has been deprecated in Faces 4.1, without replacement, and is subject to be removed in Faces 5.0. The reason is that the JSR-276 went dormant and therefore this tag has never been of use.",
         "attribute": []
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/cc/",
+        "name": "facet",
         "description": "Declares that this composite component supports a facet with the name given by the value of the \"name\" attribute. Please see for a usage example.",
         "attribute": [
           {
@@ -205,17 +205,17 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/cc/",
+        "name": "implementation",
         "description": "Defines the implementation of the composite component. There must be zero or one of these in a composite component markup file. If a element appears, there must be a corresponding element. If no element appears, the element is optional.",
         "attribute": []
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/cc/",
+        "name": "insertchildren",
         "description": "This element is used in the section. Any child components or template text within the composite component tag in the using page will be re-parented into the composite component at the point indicated by this tag's placement within the section. The normal use-case for this element is to have only one occurrence within the section. Inserting multiple occurrences may cause duplicate id errors. The results are undefined if there are multiple occurrences of this element in the section.",
         "attribute": []
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/cc/",
+        "name": "insertfacet",
         "description": "The presence of this tag ina section must cause thenamed facet to be taken from the facet map of the top levelcomponent and inserted as a facet child of the component in whichthis element is nested. The results areundefined if there are facets in the composite component tag in theusing page, but there is no correspondingly named occurrence of thiselement in the section.",
         "attribute": [
           {
@@ -233,7 +233,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/cc/",
+        "name": "interface",
         "description": "This element declares the usage contract for a composite component. Optionally, and at the component author's discretion, this contract exposes the features of one or more inner components to the page author. The page author can work with the composite component as a single component whose feature set is the union of the features declared in the usage contract. For example, consider a composite component that implements the functionality of a \"login panel\". Such a component would likely have two text fields and one button. The user of such a component might like to do one or more of the following. Be able to listen for the ActionEvent on the button. In this case, a element is included in the usage contract that refers to the inner button in the section. Provide an \"action\" to invoke when the button is pressed. In this case, a element is included in the usage contract that refers to the inner button in the section and declares the proper method signature for an \"action\". Provide parameters to the composite component for labels and other rendering specific aspects of the composite component. In this case, one or more elements are included in the usage contract and those parameters are referred to in the section using EL expressions like #{cc.attrs.usernameLabel}, assuming usernameLabel is the name of one of the elements in the usage contract. Add ValueChangeListeners, Converters, or Validators to either or both text fields. In this case, a element is included in the usage contract that refers to the inner text field in the section. In the case of wanting to enable only adding a Converter (and not a ValueChangeListener or Validator, a element would be used. Add facet children to the login panel. In this case, a element is included in the usage contract that refers to the inner element in the section. For each of the behaviorial interfaces in section 3.2 \"Component Behavioral Interfaces\" of the Jakarta Faces Specification Document, there is a tag in the cc: library to nest inside of the section. If the section is not present in a VDL view, the contract will be inferred as described in the specification. There must be zero or one of these elements in a composite component VDL file. If a element does appear, there must be an accompanying element in the same VDL file. Nesting of composite components The implementation must support nesting of composite components. Specifically, it must be possible for the section of a composite component to act as the using page for another composite component. When a composite component exposes a behavioral interface to the using page, such as a , , or other behavioral interface, it must be possible to “propogate” the exposure of such an interface in the case of a nested composite component. The composite component author must ensure that the value of the name attributes exactly match at all levels of the nesting to enable this exposure to work. The implementation is not required to support “re-mapping” of names in a nested composite component. For example, consider this nested composite component. Using page actionSourceOuter.xhtml: Outer composite component actionSourceInner.xhtml: the composite component used within acomposite component. The id of the online 6 of actionSourceInner.xhtml must match the name online 2 of that file (this is a standard requirement for all compositecomponents, nested or not). That id must also match thename on line 2 of actionSourceOuter.xhtml, and thefor on line 2 of the using page. The implementation must support any level of nesting as long as thefor, name, and id values matchup. Furthermore, the targets attribute is also valid foruse in this nested fashion. Naming containers within composite components Composite components are themselves naming containers so that anypossible id conflicts between inner components and components in theusing page are avoided. However, special care must be taken when usingnaming containers in the section. In such cases the value of the “name” attribute,or the values of the “targets” attribute must be used with aclientId relative to the top level component to expose anyattached object targets to the using page. For example: Using page loginButton.xhtml Because the button on line 8 resides within a form, it must bereferred to using a client id, relative to the top levelcomponent, in the \"targets\" attribute on line 2. Using a relativeclientId is required due to the semantics ofUIComponent.findComponent().",
         "attribute": [
           {
@@ -281,7 +281,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/cc/",
+        "name": "renderfacet",
         "description": "This element is used in the section. The facet withthe name equal to the value of the name attribute, given by the pageauthor in the using page, will be rendered at this point in thecomposite component VDL view. The implementation of this tag handler must insert a component with component-type jakarta.faces.Output and renderer-type jakarta.faces.CompositeFacet as a child at this point in the component tree. The implementation of this tag handler must store an attribute intothe created component's attribute map under the key given by the valueof the symbolic constant UIComponent.FACETS_KEY. The valuefor this key must be the evaluated value of the \"name\" attribute.",
         "attribute": [
           {
@@ -299,7 +299,7 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/cc/",
+        "name": "valueholder",
         "description": "Declares that thecomposite component whose contract is declared by the in which this element is nestedexposes an implementation of ValueHolder suitable for useas the target of attached objects in the using page.Any attached objects suitable for implementations ofValueHolder may be attached to the composite component.Consider this excerpt from the using page: Line 2 refers to the declaration on line 2 of foo.xhtml: It is possible to declare that a single element should cause multiplecomponents within the section to be the targets of an attached object in theusing page. Assuming the same using page excerpt asabove, the revised VDL view is: In this case, the \"targets\" attribute on the element, on line 2 above,replaces the \"name\" attribute in the previous example. \"targets\" is alist of ids of client ids (relative to the top level component)within the section. Inthis case, \"targets\" refers to the components on lines 6 and 7 above. Please see for a usageexample.",
         "attribute": [
           {

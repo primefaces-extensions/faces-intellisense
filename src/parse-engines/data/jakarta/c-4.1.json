@@ -2,8 +2,8 @@
   "components": {
     "component": [
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/c/",
-        "description": "",
+        "name": "catch",
+        "description": "Catches any Throwable that occurs in its body and optionally exposes it.",
         "attribute": [
           {
             "name": "var",
@@ -14,13 +14,13 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/c/",
-        "description": "",
+        "name": "choose",
+        "description": "Simple conditional tag that establishes a context for mutually exclusive conditional operations, marked by and",
         "attribute": []
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/c/",
-        "description": "",
+        "name": "foreach",
+        "description": "The basic iteration tag, accepting many different collection types and supporting subsetting and other functionality",
         "attribute": [
           {
             "name": "items",
@@ -61,8 +61,8 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/c/",
-        "description": "",
+        "name": "if",
+        "description": "Simple conditional tag, which evalutes its body if the supplied condition is true and optionally exposes a Boolean scripting variable representing the evaluation of this condition",
         "attribute": [
           {
             "name": "test",
@@ -85,12 +85,12 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/c/",
-        "description": "",
+        "name": "otherwise",
+        "description": "Subtag of that follows tags and runs only if all of the prior conditions evaluated to 'false'",
         "attribute": []
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/c/",
+        "name": "set",
         "description": "Sets the result of an expression evaluation based on the value of the attributes. If \"scope\" the is present, but has a zero length or is equal to the string \"page\", TagException is thrown with an informative error message, ensuring page location information is saved. This handler operates in one of two ways. The user has set \"var\", \"value\" and (optionally) \"scope\" attributes. The user has set \"target\", \"property\", and \"value\" attributes. The first case takes precedence over the second.",
         "attribute": [
           {
@@ -126,8 +126,8 @@
         ]
       },
       {
-        "name": "https://jakarta.ee/specifications/faces/4.1/vdldoc/c/",
-        "description": "",
+        "name": "when",
+        "description": "Subtag of that includes its body if its condition evalutes to 'true'",
         "attribute": [
           {
             "name": "test",
