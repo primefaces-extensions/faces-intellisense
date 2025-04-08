@@ -11,7 +11,7 @@ enum Configuration {
 }
 class ParseEngineRegistry {
     public static getParseEngine(taglibId: string): IParseEngine {
-        const foundParseEngine = ParseEngineRegistry.registry.find((value) => value.version === taglibId);
+        const foundParseEngine = ParseEngineRegistry.registry.find((value) => value.version.startsWith(taglibId));
         if (!foundParseEngine) {
             throw new Error(`Could not find a parse engine for the provided id ("${taglibId}").`);
         }
