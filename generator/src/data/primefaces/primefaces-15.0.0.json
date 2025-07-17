@@ -1167,7 +1167,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Flag indicating that this input element will prevent changes by the user.",
+            "description": "Flag indicating that this component will prevent changes by the user.",
             "name": "readonly",
             "required": "false",
             "type": "boolean"
@@ -2444,7 +2444,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Flag indicating that this input element will prevent changes by the user.",
+            "description": "Flag indicating that this component will prevent changes by the user.",
             "name": "readonly",
             "required": "false",
             "type": "boolean"
@@ -3541,7 +3541,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Flag indicating that this input element will prevent changes by the user.",
+            "description": "Flag indicating that this component will prevent changes by the user.",
             "name": "readonly",
             "required": "false",
             "type": "boolean"
@@ -4015,7 +4015,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Flag indicating that this input element will prevent changes by the user.",
+            "description": "Flag indicating that this component will prevent changes by the user.",
             "name": "readonly",
             "required": "false",
             "type": "boolean"
@@ -10022,7 +10022,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Flag indicating that this input element will prevent changes by the user.",
+            "description": "Flag indicating that this component will prevent changes by the user.",
             "name": "readonly",
             "required": "false",
             "type": "boolean"
@@ -10424,7 +10424,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Flag indicating that this input element will prevent changes by the user.",
+            "description": "Flag indicating that this component will prevent changes by the user.",
             "name": "readonly",
             "required": "false",
             "type": "boolean"
@@ -10916,7 +10916,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Flag indicating that this input element will prevent changes by the user.",
+            "description": "Flag indicating that this component will prevent changes by the user.",
             "name": "readonly",
             "required": "false",
             "type": "boolean"
@@ -11294,7 +11294,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Flag indicating that this input element will prevent changes by the user.",
+            "description": "Flag indicating that this component will prevent changes by the user.",
             "name": "readonly",
             "required": "false",
             "type": "boolean"
@@ -11720,7 +11720,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Flag indicating that this input element will prevent changes by the user.",
+            "description": "Flag indicating that this component will prevent changes by the user.",
             "name": "readonly",
             "required": "false",
             "type": "boolean"
@@ -13736,10 +13736,16 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Disables the component.",
+            "description": "Disables or enables the component.",
             "name": "disabled",
             "required": "false",
-            "type": "java.lang.Boolean"
+            "type": "boolean"
+          },
+          {
+            "description": "Flag indicating that this component will prevent changes by the user.",
+            "name": "readonly",
+            "required": "false",
+            "type": "boolean"
           },
           {
             "description": "Effect to use when showing a group of items.",
@@ -14338,6 +14344,12 @@
             "name": "binding",
             "required": "false",
             "type": "javax.faces.component.UIComponent"
+          },
+          {
+            "description": "Name of the client side widget.",
+            "name": "widgetVar",
+            "required": "false",
+            "type": "java.lang.String"
           },
           {
             "description": "Style of the html container element.",
@@ -15096,7 +15108,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Flag indicating that this input element will prevent changes by the user.",
+            "description": "Flag indicating that this component will prevent changes by the user.",
             "name": "readonly",
             "required": "false",
             "type": "boolean"
@@ -17165,8 +17177,14 @@
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "Disables or enables the component.",
             "name": "disabled",
+            "required": "false",
+            "type": "boolean"
+          },
+          {
+            "description": "Flag indicating that this component will prevent changes by the user.",
+            "name": "readonly",
             "required": "false",
             "type": "boolean"
           },
@@ -17722,7 +17740,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Layout of the checkboxes, valid values are lineDirection , pageDirection, grid, responsive and custom.",
+            "description": "Layout of the checkboxes, valid values are lineDirection, pageDirection, responsive and custom.",
             "name": "layout",
             "required": "false",
             "type": "java.lang.String"
@@ -18189,8 +18207,14 @@
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "Disables or enables the component.",
             "name": "disabled",
+            "required": "false",
+            "type": "boolean"
+          },
+          {
+            "description": "Flag indicating that this component will prevent changes by the user.",
+            "name": "readonly",
             "required": "false",
             "type": "boolean"
           },
@@ -18368,13 +18392,19 @@
             "type": "java.lang.String"
           },
           {
+            "description": "Controls browser autocomplete behavior for editable input field.",
+            "name": "autocomplete",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
             "description": "Flag indicating whether the component should be disabled.",
             "name": "disabled",
             "required": "false",
             "type": "boolean"
           },
           {
-            "description": "Flag indicating that this input element will prevent changes by the user.",
+            "description": "Flag indicating that this component will prevent changes by the user.",
             "name": "readonly",
             "required": "false",
             "type": "boolean"
@@ -18733,7 +18763,7 @@
             "type": "boolean"
           },
           {
-            "description": "Flag indicating that this input element will prevent changes by the user.",
+            "description": "Flag indicating that this component will prevent changes by the user.",
             "name": "readonly",
             "required": "false",
             "type": "boolean"
@@ -19255,10 +19285,16 @@
             "type": "java.lang.Double"
           },
           {
-            "description": "Disables or enables the slider.",
+            "description": "Disables or enables the component.",
             "name": "disabled",
             "required": "false",
-            "type": "java.lang.Boolean"
+            "type": "boolean"
+          },
+          {
+            "description": "Flag indicating that this component will prevent changes by the user.",
+            "name": "readonly",
+            "required": "false",
+            "type": "boolean"
           },
           {
             "description": "Client side callback to execute when slide begins.",
@@ -19663,7 +19699,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Flag indicating that this input element will prevent changes by the user.",
+            "description": "Flag indicating that this component will prevent changes by the user.",
             "name": "readonly",
             "required": "false",
             "type": "boolean"
@@ -21805,7 +21841,13 @@
             "description": "Disables or enables the switch.",
             "name": "disabled",
             "required": "false",
-            "type": "java.lang.Boolean"
+            "type": "boolean"
+          },
+          {
+            "description": "Flag indicating that this component will prevent changes by the user.",
+            "name": "readonly",
+            "required": "false",
+            "type": "boolean"
           },
           {
             "description": "Client side callback to execute on value change event.",
@@ -22952,7 +22994,7 @@
             "type": "java.lang.Boolean"
           },
           {
-            "description": "Flag indicating that this input element will prevent changes by the user.",
+            "description": "Flag indicating that this component will prevent changes by the user.",
             "name": "readonly",
             "required": "false",
             "type": "boolean"
@@ -23270,7 +23312,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "JSON value of the chart.",
+            "description": "Chart model data as a JSON string, either generated from an XDEV model object or provided as raw JSON configuration.",
             "name": "value",
             "required": "false",
             "type": "java.lang.String"
@@ -23630,7 +23672,7 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Flag indicating that this input element will prevent changes by the user.",
+            "description": "Flag indicating that this component will prevent changes by the user.",
             "name": "readonly",
             "required": "false",
             "type": "boolean"
@@ -25098,10 +25140,16 @@
             "type": "java.lang.String"
           },
           {
-            "description": "Disables the component.",
+            "description": "Disables or enables the component.",
             "name": "disabled",
             "required": "false",
-            "type": "java.lang.Boolean"
+            "type": "boolean"
+          },
+          {
+            "description": "Flag indicating that this component will prevent changes by the user.",
+            "name": "readonly",
+            "required": "false",
+            "type": "boolean"
           },
           {
             "description": "Position in the tabbing order.",
