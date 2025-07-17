@@ -5920,6 +5920,12 @@
             "type": "java.lang.Boolean"
           },
           {
+            "description": "Boolean value if true, the autocomplete allows filtering if false it makes it a dropdown. Default true.",
+            "name": "autoCompleteFilter",
+            "required": "false",
+            "type": "java.lang.Boolean"
+          },
+          {
             "description": "Boolean value If true, allows manual input of value that does not exist in the source. In this case, the field background highlight becomes red and the selection advances to the next cell.",
             "name": "autoCompleteAllowInvalid",
             "required": "false",
