@@ -17614,6 +17614,12 @@
             "type": "java.lang.String"
           },
           {
+            "description": "Layout of the buttons, valid values are custom or default.",
+            "name": "layout",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
             "description": "",
             "name": "onchange",
             "required": "false",
@@ -18075,31 +18081,37 @@
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "Disables or enables the component.",
             "name": "disabled",
             "required": "false",
             "type": "java.lang.Boolean"
           },
           {
-            "description": "",
+            "description": "Layout of the selectOneButton, valid values are 'custom' or 'default'.",
+            "name": "layout",
+            "required": "false",
+            "type": "java.lang.String"
+          },
+          {
+            "description": "Label of the button.",
             "name": "label",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "Javascript to execute when the value of the button changes.",
             "name": "onchange",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "Inline style of the button element.",
             "name": "style",
             "required": "false",
             "type": "java.lang.String"
           },
           {
-            "description": "",
+            "description": "Style class of the button element.",
             "name": "styleClass",
             "required": "false",
             "type": "java.lang.String"

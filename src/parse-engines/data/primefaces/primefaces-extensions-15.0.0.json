@@ -8428,6 +8428,12 @@
             "name": "scrollWheel",
             "required": "false",
             "type": "java.lang.Boolean"
+          },
+          {
+            "description": "Controls full screen on the map. Default is true.",
+            "name": "fullScreen",
+            "required": "false",
+            "type": "java.lang.Boolean"
           }
         ]
       },

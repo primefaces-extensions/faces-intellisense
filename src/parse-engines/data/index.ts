@@ -24,6 +24,7 @@ import * as ui from "../data/jsf/ui.json";
 // OMNIFACES
 import * as omnifaces3 from "../data/omnifaces/omnifaces-3.0.json";
 import * as omnifaces4 from "../data/omnifaces/omnifaces-4.0.json";
+import * as omnifaces5 from "../data/omnifaces/omnifaces-5.0.json";
 // PRIMEFACES
 import * as primefaces8 from "../data/primefaces/primefaces-8.0.0.json";
 import * as primefaces10 from "../data/primefaces/primefaces-10.0.0.json";

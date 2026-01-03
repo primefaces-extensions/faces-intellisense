@@ -84,7 +84,8 @@
           "faces-intellisense.omniVersion": {
             "enum": [
               "omnifaces-3.0",
-              "omnifaces-4.0"
+              "omnifaces-4.0",
+			  "omnifaces-5.0"
             ],
             "default": "omnifaces-4.0",
             "description": "OmniFaces Version. (Restart Required)."

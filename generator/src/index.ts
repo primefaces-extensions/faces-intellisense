@@ -29,7 +29,7 @@ const tagLibsFromXml = [
             },
             {
                 version: '15.0.0',
-                url: 'https://raw.githubusercontent.com/primefaces-extensions/primefaces-extensions/v15.0.6/core/src/main/resources/META-INF/primefaces-extensions.taglib.xml'
+                url: 'https://raw.githubusercontent.com/primefaces-extensions/primefaces-extensions/v15.0.10/core/src/main/resources/META-INF/primefaces-extensions.taglib.xml'
             }
         ]
     },
@@ -63,7 +63,7 @@ const tagLibsFromXml = [
             },
             {
                 version: '15.0.0',
-                url: 'https://raw.githubusercontent.com/primefaces/primefaces/v15.0.6/primefaces/src/main/resources/META-INF/primefaces.taglib.xml'
+                url: 'https://raw.githubusercontent.com/primefaces/primefaces/v15.0.10/primefaces/src/main/resources/META-INF/primefaces.taglib.xml'
             }
         ]
     },
@@ -78,6 +78,10 @@ const tagLibsFromXml = [
             {
                 version: '4.0',
                 url: 'https://raw.githubusercontent.com/omnifaces/omnifaces/4.0/src/main/resources/META-INF/omnifaces-ui.taglib.xml'
+            },
+			{
+                version: '5.0',
+                url: 'https://raw.githubusercontent.com/omnifaces/omnifaces/refs/tags/5.0/src/main/resources/META-INF/omnifaces.taglib.xml'
             }
         ]
     },

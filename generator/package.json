@@ -30,7 +30,7 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
-    "axios": "^1.7.4",
+    "axios": "^1.12.2",
     "fix-esm": "^1.0.1",
     "got": "^14.4.2",
     "jsdom": "^24.1.1",
